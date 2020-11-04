@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: m2_idm_project.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: m2_idm_project.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: m2_idm_project.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: m2_idm_project,
+ org.junit.jupiter.api;bundle-version="[5.0.0,6.0.0)",
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing
+Bundle-RequiredExecutionEnvironment: JavaSE-11

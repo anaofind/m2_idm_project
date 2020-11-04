@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: m2_idm_project
+Bundle-ManifestVersion: 2
+Bundle-Name: m2_idm_project
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: m2_idm_project; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11

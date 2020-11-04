@@ -1,0 +1,65 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+Regression:
+	dataset=Dataset 
+	(training=Training)? 
+	vars=Variables 
+	(learningType=LearningType)? 
+	(returnType=ReturnType)?
+;
+	
+Dataset:
+	dataset = 'import' data=StringValue ';'
+;
+
+Training:
+	'training' training=(NumberValue | PercentValue) ';'
+;
+
+Variables: 
+	predictives=Predictives targets=Targets 
+;
+
+Predictives:
+	'predict' '{' (vars+=Var)+ '}' ';'
+;
+
+Targets :
+	'target' var=Var ';'
+;
+
+Var:
+	nameVar=StringValue
+;
+
+
+LearningType:
+	'cross_validation' value=BooleanValue
+;
+
+
+ReturnType:
+	'return' nameReturn=StringValue
+;
+
+TypeValue:
+	StringValue | NumberValue | PercentValue | BooleanValue
+;
+
+StringValue: 
+	value=STRING
+;
+
+NumberValue:
+	value=INT ('.' (decimal+=INT)*)?
+;
+
+PercentValue:
+	NumberValue '%'
+;
+
+BooleanValue :
+	value = ('false' | 'true')
+;
