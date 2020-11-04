@@ -8,5 +8,22 @@ Bundle-SymbolicName: m2_idm_project; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.5.0"
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: m2.idm.project.mLRegression.impl,
+ m2.idm.project.mLRegression,
+ m2.idm.project.validation,
+ m2.idm.project.generator,
+ m2.idm.project.parser.antlr.internal,
+ m2.idm.project.scoping,
+ m2.idm.project.services,
+ m2.idm.project.parser.antlr,
+ m2.idm.project.serializer,
+ m2.idm.project,
+ m2.idm.project.mLRegression.util
+Import-Package: org.apache.log4j

@@ -1,21 +1,28 @@
-grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+grammar m2.idm.project.MLRegression with org.eclipse.xtext.common.Terminals
 
-generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+generate mLRegression "http://www.idm.m2/project/MLRegression"
 
-Regression:
-	dataset=Dataset 
-	(training=Training)? 
+MLRegression:
+	dataset=Dataset
+	(learningType=LearningType)?  
 	vars=Variables 
-	(learningType=LearningType)? 
 	(returnType=ReturnType)?
 ;
-	
+
 Dataset:
 	dataset = 'import' data=StringValue ';'
 ;
 
+LearningType: 
+	'learning' (training=Training | crossValidation=CrossValidation)
+;
+
 Training:
 	'training' training=(NumberValue | PercentValue) ';'
+;
+
+CrossValidation:
+	'cross_validation'
 ;
 
 Variables: 
@@ -33,12 +40,6 @@ Targets :
 Var:
 	nameVar=StringValue
 ;
-
-
-LearningType:
-	'cross_validation' value=BooleanValue
-;
-
 
 ReturnType:
 	'return' nameReturn=StringValue

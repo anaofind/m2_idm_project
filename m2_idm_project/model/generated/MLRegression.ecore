@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mLRegression" nsURI="http://www.idm.m2/project/MLRegression"
+    nsPrefix="mLRegression">
+  <eClassifiers xsi:type="ecore:EClass" name="MLRegression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//Dataset"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="learningType" eType="#//LearningType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vars" eType="#//Variables"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//ReturnType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dataset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//StringValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LearningType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="training" eType="#//Training"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="crossValidation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Training">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="training" eType="#//PercentValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variables">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predictives" eType="#//Predictives"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targets" eType="#//Targets"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Predictives">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vars" upperBound="-1" eType="#//Var"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Targets">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Var" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Var">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameVar" eType="#//StringValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameReturn" eType="#//StringValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//TypeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberValue" eSuperTypes="#//TypeValue #//PercentValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="decimal" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PercentValue" eSuperTypes="#//TypeValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="#//TypeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

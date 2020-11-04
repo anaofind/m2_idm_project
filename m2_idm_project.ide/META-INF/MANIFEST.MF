@@ -8,5 +8,8 @@ Bundle-SymbolicName: m2_idm_project.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: m2_idm_project,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: m2.idm.project.ide.contentassist.antlr.internal,
+ m2.idm.project.ide.contentassist.antlr
