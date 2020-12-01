@@ -3,6 +3,8 @@
  */
 package m2.idm.project.mLRegression;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.TargetVar#getVar <em>Var</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.TargetVar#getVars <em>Vars</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVar()
@@ -24,25 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface TargetVar extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Var</b></em>' containment reference.
+   * Returns the value of the '<em><b>Vars</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' containment reference.
-   * @see #setVar(StringValue)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVar_Var()
-   * @model containment="true"
+   * @return the value of the '<em>Vars</em>' attribute list.
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVar_Vars()
+   * @model unique="false"
    * @generated
    */
-  StringValue getVar();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.TargetVar#getVar <em>Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' containment reference.
-   * @see #getVar()
-   * @generated
-   */
-  void setVar(StringValue value);
+  EList<String> getVars();
 
 } // TargetVar

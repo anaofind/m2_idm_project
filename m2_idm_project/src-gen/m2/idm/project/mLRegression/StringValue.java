@@ -3,6 +3,7 @@
  */
 package m2.idm.project.mLRegression;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package m2.idm.project.mLRegression;
  * @model
  * @generated
  */
-public interface StringValue extends TypeValue
+public interface StringValue extends EObject
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

@@ -5,6 +5,8 @@ package m2.idm.project.mLRegression;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Line Regress</b></em>'.
@@ -21,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface LineRegress extends AlgoML
+public interface LineRegress extends EObject
 {
   /**
    * Returns the value of the '<em><b>Columns</b></em>' attribute list.

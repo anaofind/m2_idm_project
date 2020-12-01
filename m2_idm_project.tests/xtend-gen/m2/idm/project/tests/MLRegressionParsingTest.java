@@ -29,12 +29,17 @@ public class MLRegressionParsingTest {
   public void loadModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("import \"test.csv\";\r\n"
-      		+ "partition : 80%, 20%;\r\n"
-      		+ "predictive_vars : \"predict1\",\"predict2\";\r\n"
-      		+ "target_var : \"target\";\r\n"
-      		+ "calculate : min_square_error;\r\n"
-      		+ "algorithm : line_regress(\"column\", \"column2\");");
+      _builder.append("import \"test.csv\";");
+      _builder.newLine();
+      _builder.append("partition : 80%, 20%;");
+      _builder.newLine();
+      _builder.append("predictive_vars : \"predict1\",\"predict2\";");
+      _builder.newLine();
+      _builder.append("target_vars : \"target1\", \"target2\";");
+      _builder.newLine();
+      _builder.append("calculate : min_square_error;");
+      _builder.newLine();
+      _builder.append("algorithm : line_regress(\"column\", \"column2\");");
       _builder.newLine();
       final MLRegression result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);

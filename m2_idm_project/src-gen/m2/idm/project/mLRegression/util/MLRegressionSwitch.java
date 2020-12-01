@@ -87,6 +87,13 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MLRegressionPackage.CALCULATE_TYPE:
+      {
+        CalculateType calculateType = (CalculateType)theEObject;
+        T result = caseCalculateType(calculateType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MLRegressionPackage.DATASET:
       {
         Dataset dataset = (Dataset)theEObject;
@@ -105,7 +112,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         Partition partition = (Partition)theEObject;
         T result = casePartition(partition);
-        if (result == null) result = caseEvaluationType(partition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,7 +119,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         CrossValidation crossValidation = (CrossValidation)theEObject;
         T result = caseCrossValidation(crossValidation);
-        if (result == null) result = caseEvaluationType(crossValidation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,10 +150,10 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.ALGO_ML:
+      case MLRegressionPackage.ALGO_TYPE:
       {
-        AlgoML algoML = (AlgoML)theEObject;
-        T result = caseAlgoML(algoML);
+        AlgoType algoType = (AlgoType)theEObject;
+        T result = caseAlgoType(algoType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -156,7 +161,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         LineRegress lineRegress = (LineRegress)theEObject;
         T result = caseLineRegress(lineRegress);
-        if (result == null) result = caseAlgoML(lineRegress);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -164,7 +168,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         DecisionTreeRegressor decisionTreeRegressor = (DecisionTreeRegressor)theEObject;
         T result = caseDecisionTreeRegressor(decisionTreeRegressor);
-        if (result == null) result = caseAlgoML(decisionTreeRegressor);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -172,7 +175,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         SVR svr = (SVR)theEObject;
         T result = caseSVR(svr);
-        if (result == null) result = caseAlgoML(svr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -187,7 +189,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         StringValue stringValue = (StringValue)theEObject;
         T result = caseStringValue(stringValue);
-        if (result == null) result = caseTypeValue(stringValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -195,7 +196,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         NumericValue numericValue = (NumericValue)theEObject;
         T result = caseNumericValue(numericValue);
-        if (result == null) result = caseTypeValue(numericValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -204,8 +204,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
         NumberValue numberValue = (NumberValue)theEObject;
         T result = caseNumberValue(numberValue);
         if (result == null) result = casePercentValue(numberValue);
-        if (result == null) result = caseNumericValue(numberValue);
-        if (result == null) result = caseTypeValue(numberValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -220,8 +218,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         PercentValue percentValue = (PercentValue)theEObject;
         T result = casePercentValue(percentValue);
-        if (result == null) result = caseNumericValue(percentValue);
-        if (result == null) result = caseTypeValue(percentValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -229,7 +225,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         BooleanValue booleanValue = (BooleanValue)theEObject;
         T result = caseBooleanValue(booleanValue);
-        if (result == null) result = caseTypeValue(booleanValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -265,6 +260,22 @@ public class MLRegressionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCalculate(Calculate object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Calculate Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Calculate Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCalculateType(CalculateType object)
   {
     return null;
   }
@@ -398,17 +409,17 @@ public class MLRegressionSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Algo ML</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Algo Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Algo ML</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Algo Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAlgoML(AlgoML object)
+  public T caseAlgoType(AlgoType object)
   {
     return null;
   }

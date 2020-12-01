@@ -4,10 +4,10 @@ generate mLRegression "http://www.idm.m2/project/MLRegression"
 
 MLRegression:
 	dataset=Dataset
-	evaluation = EvaluationType
-    (vars = Variables) ?
-    calculate = Calculate
-    algo = Algo
+	evaluation=EvaluationType
+    (vars=Variables) ?
+    calculate=Calculate
+    algo=Algo
 ;
 
 
@@ -16,16 +16,16 @@ Calculate :
 ;
 
 CalculateType :
-	MinError | MinSquaredError | SumsSquaredError
+	type=MinError | type=MinSquaredError | type=SumsSquaredError
 ;
 
 Dataset:
-	dataset = 'import' data=StringValue ';'
+	'import' data=StringValue ';'
 ;
 
 
 EvaluationType :
-	Partition | CrossValidation
+	type=Partition | type=CrossValidation
 ;
 
 Partition : 
@@ -46,17 +46,16 @@ ListePredictiveVar :
 ;
 
  
-
 TargetVar : 
-    'target_var' ':' var=StringValue ';'
+    'target_vars' ':' vars+=STRING(','vars+=STRING)* ';'
 ;
 
 Algo :
-	'algorithm' ':' algo=AlgoML ';'
+	'algorithm' ':' algo=AlgoType ';'
 ;
 
-AlgoML : 
-    LineRegress | SVR | DecisionTreeRegressor
+AlgoType : 
+    type=LineRegress | type=SVR | type=DecisionTreeRegressor
 ;
 
 LineRegress :
@@ -90,7 +89,7 @@ SumsSquaredError :
 
 
 TypeValue:
-	StringValue | NumericValue | PercentValue | BooleanValue
+	type=StringValue | type=NumericValue | type=PercentValue | type=BooleanValue
 ;
 
 StringValue: 
@@ -98,7 +97,7 @@ StringValue:
 ;
 
 NumericValue:
-	NumberValue | PercentValue
+	type=NumberValue | type=PercentValue
 ;
 
 NumberValue:

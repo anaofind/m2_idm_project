@@ -33,7 +33,7 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MLRegressionGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getCalculateTypeAccess().getAlternatives(), "rule__CalculateType__Alternatives");
 			builder.put(grammarAccess.getEvaluationTypeAccess().getAlternatives(), "rule__EvaluationType__Alternatives");
-			builder.put(grammarAccess.getAlgoMLAccess().getAlternatives(), "rule__AlgoML__Alternatives");
+			builder.put(grammarAccess.getAlgoTypeAccess().getAlternatives(), "rule__AlgoType__Alternatives");
 			builder.put(grammarAccess.getTypeValueAccess().getAlternatives(), "rule__TypeValue__Alternatives");
 			builder.put(grammarAccess.getNumericValueAccess().getAlternatives(), "rule__NumericValue__Alternatives");
 			builder.put(grammarAccess.getBooleanValueAccess().getValueAlternatives_0(), "rule__BooleanValue__ValueAlternatives_0");
@@ -46,6 +46,7 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getListePredictiveVarAccess().getGroup(), "rule__ListePredictiveVar__Group__0");
 			builder.put(grammarAccess.getListePredictiveVarAccess().getGroup_3(), "rule__ListePredictiveVar__Group_3__0");
 			builder.put(grammarAccess.getTargetVarAccess().getGroup(), "rule__TargetVar__Group__0");
+			builder.put(grammarAccess.getTargetVarAccess().getGroup_3(), "rule__TargetVar__Group_3__0");
 			builder.put(grammarAccess.getAlgoAccess().getGroup(), "rule__Algo__Group__0");
 			builder.put(grammarAccess.getLineRegressAccess().getGroup(), "rule__LineRegress__Group__0");
 			builder.put(grammarAccess.getLineRegressAccess().getGroup_3(), "rule__LineRegress__Group_3__0");
@@ -60,8 +61,12 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMLRegressionAccess().getCalculateAssignment_3(), "rule__MLRegression__CalculateAssignment_3");
 			builder.put(grammarAccess.getMLRegressionAccess().getAlgoAssignment_4(), "rule__MLRegression__AlgoAssignment_4");
 			builder.put(grammarAccess.getCalculateAccess().getCalculateTypeAssignment_2(), "rule__Calculate__CalculateTypeAssignment_2");
-			builder.put(grammarAccess.getDatasetAccess().getDatasetAssignment_0(), "rule__Dataset__DatasetAssignment_0");
+			builder.put(grammarAccess.getCalculateTypeAccess().getTypeAssignment_0(), "rule__CalculateType__TypeAssignment_0");
+			builder.put(grammarAccess.getCalculateTypeAccess().getTypeAssignment_1(), "rule__CalculateType__TypeAssignment_1");
+			builder.put(grammarAccess.getCalculateTypeAccess().getTypeAssignment_2(), "rule__CalculateType__TypeAssignment_2");
 			builder.put(grammarAccess.getDatasetAccess().getDataAssignment_1(), "rule__Dataset__DataAssignment_1");
+			builder.put(grammarAccess.getEvaluationTypeAccess().getTypeAssignment_0(), "rule__EvaluationType__TypeAssignment_0");
+			builder.put(grammarAccess.getEvaluationTypeAccess().getTypeAssignment_1(), "rule__EvaluationType__TypeAssignment_1");
 			builder.put(grammarAccess.getPartitionAccess().getTrainAssignment_2(), "rule__Partition__TrainAssignment_2");
 			builder.put(grammarAccess.getPartitionAccess().getTestAssignment_4(), "rule__Partition__TestAssignment_4");
 			builder.put(grammarAccess.getCrossValidationAccess().getKAssignment_2(), "rule__CrossValidation__KAssignment_2");
@@ -69,13 +74,23 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVariablesAccess().getTargetsAssignment_1(), "rule__Variables__TargetsAssignment_1");
 			builder.put(grammarAccess.getListePredictiveVarAccess().getVarsAssignment_2(), "rule__ListePredictiveVar__VarsAssignment_2");
 			builder.put(grammarAccess.getListePredictiveVarAccess().getVarsAssignment_3_1(), "rule__ListePredictiveVar__VarsAssignment_3_1");
-			builder.put(grammarAccess.getTargetVarAccess().getVarAssignment_2(), "rule__TargetVar__VarAssignment_2");
+			builder.put(grammarAccess.getTargetVarAccess().getVarsAssignment_2(), "rule__TargetVar__VarsAssignment_2");
+			builder.put(grammarAccess.getTargetVarAccess().getVarsAssignment_3_1(), "rule__TargetVar__VarsAssignment_3_1");
 			builder.put(grammarAccess.getAlgoAccess().getAlgoAssignment_2(), "rule__Algo__AlgoAssignment_2");
+			builder.put(grammarAccess.getAlgoTypeAccess().getTypeAssignment_0(), "rule__AlgoType__TypeAssignment_0");
+			builder.put(grammarAccess.getAlgoTypeAccess().getTypeAssignment_1(), "rule__AlgoType__TypeAssignment_1");
+			builder.put(grammarAccess.getAlgoTypeAccess().getTypeAssignment_2(), "rule__AlgoType__TypeAssignment_2");
 			builder.put(grammarAccess.getLineRegressAccess().getColumnsAssignment_2(), "rule__LineRegress__ColumnsAssignment_2");
 			builder.put(grammarAccess.getLineRegressAccess().getColumnsAssignment_3_1(), "rule__LineRegress__ColumnsAssignment_3_1");
 			builder.put(grammarAccess.getDecisionTreeRegressorAccess().getRandAssignment_2(), "rule__DecisionTreeRegressor__RandAssignment_2");
 			builder.put(grammarAccess.getSVRAccess().getParamAssignment_2(), "rule__SVR__ParamAssignment_2");
+			builder.put(grammarAccess.getTypeValueAccess().getTypeAssignment_0(), "rule__TypeValue__TypeAssignment_0");
+			builder.put(grammarAccess.getTypeValueAccess().getTypeAssignment_1(), "rule__TypeValue__TypeAssignment_1");
+			builder.put(grammarAccess.getTypeValueAccess().getTypeAssignment_2(), "rule__TypeValue__TypeAssignment_2");
+			builder.put(grammarAccess.getTypeValueAccess().getTypeAssignment_3(), "rule__TypeValue__TypeAssignment_3");
 			builder.put(grammarAccess.getStringValueAccess().getValueAssignment(), "rule__StringValue__ValueAssignment");
+			builder.put(grammarAccess.getNumericValueAccess().getTypeAssignment_0(), "rule__NumericValue__TypeAssignment_0");
+			builder.put(grammarAccess.getNumericValueAccess().getTypeAssignment_1(), "rule__NumericValue__TypeAssignment_1");
 			builder.put(grammarAccess.getNumberValueAccess().getValueAssignment_0(), "rule__NumberValue__ValueAssignment_0");
 			builder.put(grammarAccess.getNumberValueAccess().getDecimalAssignment_1_1(), "rule__NumberValue__DecimalAssignment_1_1");
 			builder.put(grammarAccess.getIntegerValueAccess().getValueAssignment(), "rule__IntegerValue__ValueAssignment");

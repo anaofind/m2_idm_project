@@ -3,6 +3,7 @@
  */
 package m2.idm.project.mLRegression;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package m2.idm.project.mLRegression;
  * @model
  * @generated
  */
-public interface SVR extends AlgoML
+public interface SVR extends EObject
 {
   /**
    * Returns the value of the '<em><b>Param</b></em>' attribute.

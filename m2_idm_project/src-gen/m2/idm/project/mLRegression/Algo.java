@@ -28,12 +28,12 @@ public interface Algo extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Algo</em>' containment reference.
-   * @see #setAlgo(AlgoML)
+   * @see #setAlgo(AlgoType)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getAlgo_Algo()
    * @model containment="true"
    * @generated
    */
-  AlgoML getAlgo();
+  AlgoType getAlgo();
 
   /**
    * Sets the value of the '{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}' containment reference.
@@ -43,6 +43,6 @@ public interface Algo extends EObject
    * @see #getAlgo()
    * @generated
    */
-  void setAlgo(AlgoML value);
+  void setAlgo(AlgoType value);
 
 } // Algo

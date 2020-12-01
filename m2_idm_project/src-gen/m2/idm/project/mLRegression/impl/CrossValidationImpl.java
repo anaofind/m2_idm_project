@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CrossValidationImpl extends EvaluationTypeImpl implements CrossValidation
+public class CrossValidationImpl extends MinimalEObjectImpl.Container implements CrossValidation
 {
   /**
    * The cached value of the '{@link #getK() <em>K</em>}' containment reference.

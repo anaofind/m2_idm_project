@@ -17,10 +17,31 @@ class MLRegressionGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
+		if (this.ressourceAccepted(resource)) {
+			fsa.generateFile("test", "good");	
+		} else {
+			fsa.generateFile("test", "error");
+		}
+		
+		
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
 	}
+	
+	
+	def boolean ressourceAccepted(Resource resource) {
+		val contents = resource.getAllContents();
+		var nbContents = 0;
+		while (contents.hasNext()) {
+			nbContents++;
+		}
+		if (nbContents == 6) {
+			return true;
+		}
+		return false;
+	}
+	
 }

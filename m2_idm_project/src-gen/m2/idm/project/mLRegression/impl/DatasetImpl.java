@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.DatasetImpl#getDataset <em>Dataset</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.impl.DatasetImpl#getData <em>Data</em>}</li>
  * </ul>
  *
@@ -32,26 +31,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
 {
-  /**
-   * The default value of the '{@link #getDataset() <em>Dataset</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDataset()
-   * @generated
-   * @ordered
-   */
-  protected static final String DATASET_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDataset() <em>Dataset</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDataset()
-   * @generated
-   * @ordered
-   */
-  protected String dataset = DATASET_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getData() <em>Data</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -81,31 +60,6 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   protected EClass eStaticClass()
   {
     return MLRegressionPackage.Literals.DATASET;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getDataset()
-  {
-    return dataset;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDataset(String newDataset)
-  {
-    String oldDataset = dataset;
-    dataset = newDataset;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.DATASET__DATASET, oldDataset, dataset));
   }
 
   /**
@@ -184,8 +138,6 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   {
     switch (featureID)
     {
-      case MLRegressionPackage.DATASET__DATASET:
-        return getDataset();
       case MLRegressionPackage.DATASET__DATA:
         return getData();
     }
@@ -202,9 +154,6 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   {
     switch (featureID)
     {
-      case MLRegressionPackage.DATASET__DATASET:
-        setDataset((String)newValue);
-        return;
       case MLRegressionPackage.DATASET__DATA:
         setData((StringValue)newValue);
         return;
@@ -222,9 +171,6 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   {
     switch (featureID)
     {
-      case MLRegressionPackage.DATASET__DATASET:
-        setDataset(DATASET_EDEFAULT);
-        return;
       case MLRegressionPackage.DATASET__DATA:
         setData((StringValue)null);
         return;
@@ -242,29 +188,10 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   {
     switch (featureID)
     {
-      case MLRegressionPackage.DATASET__DATASET:
-        return DATASET_EDEFAULT == null ? dataset != null : !DATASET_EDEFAULT.equals(dataset);
       case MLRegressionPackage.DATASET__DATA:
         return data != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (dataset: ");
-    result.append(dataset);
-    result.append(')');
-    return result.toString();
   }
 
 } //DatasetImpl

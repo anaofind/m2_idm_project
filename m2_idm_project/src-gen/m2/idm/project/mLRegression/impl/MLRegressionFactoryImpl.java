@@ -67,6 +67,7 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
     {
       case MLRegressionPackage.ML_REGRESSION: return createMLRegression();
       case MLRegressionPackage.CALCULATE: return createCalculate();
+      case MLRegressionPackage.CALCULATE_TYPE: return createCalculateType();
       case MLRegressionPackage.DATASET: return createDataset();
       case MLRegressionPackage.EVALUATION_TYPE: return createEvaluationType();
       case MLRegressionPackage.PARTITION: return createPartition();
@@ -75,7 +76,7 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
       case MLRegressionPackage.LISTE_PREDICTIVE_VAR: return createListePredictiveVar();
       case MLRegressionPackage.TARGET_VAR: return createTargetVar();
       case MLRegressionPackage.ALGO: return createAlgo();
-      case MLRegressionPackage.ALGO_ML: return createAlgoML();
+      case MLRegressionPackage.ALGO_TYPE: return createAlgoType();
       case MLRegressionPackage.LINE_REGRESS: return createLineRegress();
       case MLRegressionPackage.DECISION_TREE_REGRESSOR: return createDecisionTreeRegressor();
       case MLRegressionPackage.SVR: return createSVR();
@@ -113,6 +114,18 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
   {
     CalculateImpl calculate = new CalculateImpl();
     return calculate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CalculateType createCalculateType()
+  {
+    CalculateTypeImpl calculateType = new CalculateTypeImpl();
+    return calculateType;
   }
 
   /**
@@ -217,10 +230,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public AlgoML createAlgoML()
+  public AlgoType createAlgoType()
   {
-    AlgoMLImpl algoML = new AlgoMLImpl();
-    return algoML;
+    AlgoTypeImpl algoType = new AlgoTypeImpl();
+    return algoType;
   }
 
   /**

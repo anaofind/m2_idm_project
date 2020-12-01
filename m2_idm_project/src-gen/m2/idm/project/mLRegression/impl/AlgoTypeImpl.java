@@ -3,14 +3,14 @@
  */
 package m2.idm.project.mLRegression.impl;
 
-import m2.idm.project.mLRegression.Calculate;
-import m2.idm.project.mLRegression.CalculateType;
+import m2.idm.project.mLRegression.AlgoType;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -18,35 +18,35 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Calculate</b></em>'.
+ * An implementation of the model object '<em><b>Algo Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.CalculateImpl#getCalculateType <em>Calculate Type</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.AlgoTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CalculateImpl extends MinimalEObjectImpl.Container implements Calculate
+public class AlgoTypeImpl extends MinimalEObjectImpl.Container implements AlgoType
 {
   /**
-   * The cached value of the '{@link #getCalculateType() <em>Calculate Type</em>}' containment reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCalculateType()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected CalculateType calculateType;
+  protected EObject type;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CalculateImpl()
+  protected AlgoTypeImpl()
   {
     super();
   }
@@ -59,7 +59,7 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.CALCULATE;
+    return MLRegressionPackage.Literals.ALGO_TYPE;
   }
 
   /**
@@ -68,9 +68,9 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
    * @generated
    */
   @Override
-  public CalculateType getCalculateType()
+  public EObject getType()
   {
-    return calculateType;
+    return type;
   }
 
   /**
@@ -78,13 +78,13 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCalculateType(CalculateType newCalculateType, NotificationChain msgs)
+  public NotificationChain basicSetType(EObject newType, NotificationChain msgs)
   {
-    CalculateType oldCalculateType = calculateType;
-    calculateType = newCalculateType;
+    EObject oldType = type;
+    type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CALCULATE__CALCULATE_TYPE, oldCalculateType, newCalculateType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ALGO_TYPE__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
    * @generated
    */
   @Override
-  public void setCalculateType(CalculateType newCalculateType)
+  public void setType(EObject newType)
   {
-    if (newCalculateType != calculateType)
+    if (newType != type)
     {
       NotificationChain msgs = null;
-      if (calculateType != null)
-        msgs = ((InternalEObject)calculateType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.CALCULATE__CALCULATE_TYPE, null, msgs);
-      if (newCalculateType != null)
-        msgs = ((InternalEObject)newCalculateType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.CALCULATE__CALCULATE_TYPE, null, msgs);
-      msgs = basicSetCalculateType(newCalculateType, msgs);
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ALGO_TYPE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ALGO_TYPE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CALCULATE__CALCULATE_TYPE, newCalculateType, newCalculateType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ALGO_TYPE__TYPE, newType, newType));
   }
 
   /**
@@ -122,8 +122,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        return basicSetCalculateType(null, msgs);
+      case MLRegressionPackage.ALGO_TYPE__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +138,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        return getCalculateType();
+      case MLRegressionPackage.ALGO_TYPE__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +154,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        setCalculateType((CalculateType)newValue);
+      case MLRegressionPackage.ALGO_TYPE__TYPE:
+        setType((EObject)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +171,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        setCalculateType((CalculateType)null);
+      case MLRegressionPackage.ALGO_TYPE__TYPE:
+        setType((EObject)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +188,10 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        return calculateType != null;
+      case MLRegressionPackage.ALGO_TYPE__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //CalculateImpl
+} //AlgoTypeImpl

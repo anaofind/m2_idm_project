@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class PartitionImpl extends EvaluationTypeImpl implements Partition
+public class PartitionImpl extends MinimalEObjectImpl.Container implements Partition
 {
   /**
    * The cached value of the '{@link #getTrain() <em>Train</em>}' containment reference.

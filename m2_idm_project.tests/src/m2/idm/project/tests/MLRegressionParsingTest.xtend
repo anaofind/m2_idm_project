@@ -21,7 +21,12 @@ class MLRegressionParsingTest {
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			Hello Xtext!
+			import "test.csv";
+			partition : 80%, 20%;
+			predictive_vars : "predict1","predict2";
+			target_vars : "target1", "target2";
+			calculate : min_square_error;
+			algorithm : line_regress("column", "column2");
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors

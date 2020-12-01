@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Calculate extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Calculate Type</b></em>' attribute.
+   * Returns the value of the '<em><b>Calculate Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Calculate Type</em>' attribute.
-   * @see #setCalculateType(String)
+   * @return the value of the '<em>Calculate Type</em>' containment reference.
+   * @see #setCalculateType(CalculateType)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getCalculate_CalculateType()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getCalculateType();
+  CalculateType getCalculateType();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Calculate#getCalculateType <em>Calculate Type</em>}' attribute.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Calculate#getCalculateType <em>Calculate Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Calculate Type</em>' attribute.
+   * @param value the new value of the '<em>Calculate Type</em>' containment reference.
    * @see #getCalculateType()
    * @generated
    */
-  void setCalculateType(String value);
+  void setCalculateType(CalculateType value);
 
 } // Calculate

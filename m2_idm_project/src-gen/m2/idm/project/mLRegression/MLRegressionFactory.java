@@ -42,6 +42,15 @@ public interface MLRegressionFactory extends EFactory
   Calculate createCalculate();
 
   /**
+   * Returns a new object of class '<em>Calculate Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Calculate Type</em>'.
+   * @generated
+   */
+  CalculateType createCalculateType();
+
+  /**
    * Returns a new object of class '<em>Dataset</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,13 +123,13 @@ public interface MLRegressionFactory extends EFactory
   Algo createAlgo();
 
   /**
-   * Returns a new object of class '<em>Algo ML</em>'.
+   * Returns a new object of class '<em>Algo Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Algo ML</em>'.
+   * @return a new object of class '<em>Algo Type</em>'.
    * @generated
    */
-  AlgoML createAlgoML();
+  AlgoType createAlgoType();
 
   /**
    * Returns a new object of class '<em>Line Regress</em>'.

@@ -86,6 +86,11 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createCalculateAdapter();
       }
       @Override
+      public Adapter caseCalculateType(CalculateType object)
+      {
+        return createCalculateTypeAdapter();
+      }
+      @Override
       public Adapter caseDataset(Dataset object)
       {
         return createDatasetAdapter();
@@ -126,9 +131,9 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createAlgoAdapter();
       }
       @Override
-      public Adapter caseAlgoML(AlgoML object)
+      public Adapter caseAlgoType(AlgoType object)
       {
-        return createAlgoMLAdapter();
+        return createAlgoTypeAdapter();
       }
       @Override
       public Adapter caseLineRegress(LineRegress object)
@@ -228,6 +233,21 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCalculateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.CalculateType <em>Calculate Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.CalculateType
+   * @generated
+   */
+  public Adapter createCalculateTypeAdapter()
   {
     return null;
   }
@@ -353,16 +373,16 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.AlgoML <em>Algo ML</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.AlgoType <em>Algo Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.AlgoML
+   * @see m2.idm.project.mLRegression.AlgoType
    * @generated
    */
-  public Adapter createAlgoMLAdapter()
+  public Adapter createAlgoTypeAdapter()
   {
     return null;
   }

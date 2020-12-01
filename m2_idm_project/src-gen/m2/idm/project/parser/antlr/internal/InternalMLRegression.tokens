@@ -18,7 +18,7 @@
 'predictive_vars'=18
 'sums_square_error'=28
 'svr'=25
-'target_var'=19
+'target_vars'=19
 'true'=32
 RULE_ANY_OTHER=10
 RULE_ID=6

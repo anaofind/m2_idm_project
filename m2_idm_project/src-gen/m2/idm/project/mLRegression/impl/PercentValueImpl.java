@@ -8,6 +8,8 @@ import m2.idm.project.mLRegression.PercentValue;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Percent Value</b></em>'.
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PercentValueImpl extends TypeValueImpl implements PercentValue
+public class PercentValueImpl extends MinimalEObjectImpl.Container implements PercentValue
 {
   /**
    * <!-- begin-user-doc -->

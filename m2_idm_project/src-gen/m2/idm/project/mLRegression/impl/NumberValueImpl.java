@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class NumberValueImpl extends NumericValueImpl implements NumberValue
+public class NumberValueImpl extends PercentValueImpl implements NumberValue
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

@@ -3,6 +3,7 @@
  */
 package m2.idm.project.mLRegression;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package m2.idm.project.mLRegression;
  * @model
  * @generated
  */
-public interface Partition extends EvaluationType
+public interface Partition extends EObject
 {
   /**
    * Returns the value of the '<em><b>Train</b></em>' containment reference.

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.Dataset#getDataset <em>Dataset</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.Dataset#getData <em>Data</em>}</li>
  * </ul>
  *
@@ -24,28 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Dataset extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Dataset</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Dataset</em>' attribute.
-   * @see #setDataset(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getDataset_Dataset()
-   * @model
-   * @generated
-   */
-  String getDataset();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Dataset#getDataset <em>Dataset</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Dataset</em>' attribute.
-   * @see #getDataset()
-   * @generated
-   */
-  void setDataset(String value);
-
   /**
    * Returns the value of the '<em><b>Data</b></em>' containment reference.
    * <!-- begin-user-doc -->

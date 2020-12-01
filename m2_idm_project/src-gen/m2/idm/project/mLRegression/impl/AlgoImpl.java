@@ -4,7 +4,7 @@
 package m2.idm.project.mLRegression.impl;
 
 import m2.idm.project.mLRegression.Algo;
-import m2.idm.project.mLRegression.AlgoML;
+import m2.idm.project.mLRegression.AlgoType;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -39,7 +39,7 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
    * @generated
    * @ordered
    */
-  protected AlgoML algo;
+  protected AlgoType algo;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
    * @generated
    */
   @Override
-  public AlgoML getAlgo()
+  public AlgoType getAlgo()
   {
     return algo;
   }
@@ -78,9 +78,9 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAlgo(AlgoML newAlgo, NotificationChain msgs)
+  public NotificationChain basicSetAlgo(AlgoType newAlgo, NotificationChain msgs)
   {
-    AlgoML oldAlgo = algo;
+    AlgoType oldAlgo = algo;
     algo = newAlgo;
     if (eNotificationRequired())
     {
@@ -96,7 +96,7 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
    * @generated
    */
   @Override
-  public void setAlgo(AlgoML newAlgo)
+  public void setAlgo(AlgoType newAlgo)
   {
     if (newAlgo != algo)
     {
@@ -155,7 +155,7 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
     switch (featureID)
     {
       case MLRegressionPackage.ALGO__ALGO:
-        setAlgo((AlgoML)newValue);
+        setAlgo((AlgoType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,7 +172,7 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
     switch (featureID)
     {
       case MLRegressionPackage.ALGO__ALGO:
-        setAlgo((AlgoML)null);
+        setAlgo((AlgoType)null);
         return;
     }
     super.eUnset(featureID);

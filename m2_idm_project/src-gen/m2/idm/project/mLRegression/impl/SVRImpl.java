@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SVRImpl extends AlgoMLImpl implements SVR
+public class SVRImpl extends MinimalEObjectImpl.Container implements SVR
 {
   /**
    * The default value of the '{@link #getParam() <em>Param</em>}' attribute.
