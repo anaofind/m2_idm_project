@@ -29,12 +29,12 @@ public interface Variables extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Predictives</em>' containment reference.
-   * @see #setPredictives(Predictives)
+   * @see #setPredictives(ListePredictiveVar)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getVariables_Predictives()
    * @model containment="true"
    * @generated
    */
-  Predictives getPredictives();
+  ListePredictiveVar getPredictives();
 
   /**
    * Sets the value of the '{@link m2.idm.project.mLRegression.Variables#getPredictives <em>Predictives</em>}' containment reference.
@@ -44,19 +44,19 @@ public interface Variables extends EObject
    * @see #getPredictives()
    * @generated
    */
-  void setPredictives(Predictives value);
+  void setPredictives(ListePredictiveVar value);
 
   /**
    * Returns the value of the '<em><b>Targets</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Targets</em>' containment reference.
-   * @see #setTargets(Targets)
+   * @see #setTargets(TargetVar)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getVariables_Targets()
    * @model containment="true"
    * @generated
    */
-  Targets getTargets();
+  TargetVar getTargets();
 
   /**
    * Sets the value of the '{@link m2.idm.project.mLRegression.Variables#getTargets <em>Targets</em>}' containment reference.
@@ -66,6 +66,6 @@ public interface Variables extends EObject
    * @see #getTargets()
    * @generated
    */
-  void setTargets(Targets value);
+  void setTargets(TargetVar value);
 
 } // Variables

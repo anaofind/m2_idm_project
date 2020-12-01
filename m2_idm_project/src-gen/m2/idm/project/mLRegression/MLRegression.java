@@ -15,9 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link m2.idm.project.mLRegression.MLRegression#getDataset <em>Dataset</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.MLRegression#getLearningType <em>Learning Type</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.MLRegression#getEvaluation <em>Evaluation</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.MLRegression#getVars <em>Vars</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.MLRegression#getReturnType <em>Return Type</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.MLRegression#getCalculate <em>Calculate</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.MLRegression#getAlgo <em>Algo</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression()
@@ -49,26 +50,26 @@ public interface MLRegression extends EObject
   void setDataset(Dataset value);
 
   /**
-   * Returns the value of the '<em><b>Learning Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Evaluation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Learning Type</em>' containment reference.
-   * @see #setLearningType(LearningType)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_LearningType()
+   * @return the value of the '<em>Evaluation</em>' containment reference.
+   * @see #setEvaluation(EvaluationType)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_Evaluation()
    * @model containment="true"
    * @generated
    */
-  LearningType getLearningType();
+  EvaluationType getEvaluation();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getLearningType <em>Learning Type</em>}' containment reference.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getEvaluation <em>Evaluation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Learning Type</em>' containment reference.
-   * @see #getLearningType()
+   * @param value the new value of the '<em>Evaluation</em>' containment reference.
+   * @see #getEvaluation()
    * @generated
    */
-  void setLearningType(LearningType value);
+  void setEvaluation(EvaluationType value);
 
   /**
    * Returns the value of the '<em><b>Vars</b></em>' containment reference.
@@ -93,25 +94,47 @@ public interface MLRegression extends EObject
   void setVars(Variables value);
 
   /**
-   * Returns the value of the '<em><b>Return Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Calculate</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Return Type</em>' containment reference.
-   * @see #setReturnType(ReturnType)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_ReturnType()
+   * @return the value of the '<em>Calculate</em>' containment reference.
+   * @see #setCalculate(Calculate)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_Calculate()
    * @model containment="true"
    * @generated
    */
-  ReturnType getReturnType();
+  Calculate getCalculate();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getReturnType <em>Return Type</em>}' containment reference.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getCalculate <em>Calculate</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Return Type</em>' containment reference.
-   * @see #getReturnType()
+   * @param value the new value of the '<em>Calculate</em>' containment reference.
+   * @see #getCalculate()
    * @generated
    */
-  void setReturnType(ReturnType value);
+  void setCalculate(Calculate value);
+
+  /**
+   * Returns the value of the '<em><b>Algo</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Algo</em>' containment reference.
+   * @see #setAlgo(Algo)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_Algo()
+   * @model containment="true"
+   * @generated
+   */
+  Algo getAlgo();
+
+  /**
+   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getAlgo <em>Algo</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Algo</em>' containment reference.
+   * @see #getAlgo()
+   * @generated
+   */
+  void setAlgo(Algo value);
 
 } // MLRegression

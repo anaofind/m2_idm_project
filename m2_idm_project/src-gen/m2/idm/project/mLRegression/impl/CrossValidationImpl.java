@@ -3,9 +3,9 @@
  */
 package m2.idm.project.mLRegression.impl;
 
+import m2.idm.project.mLRegression.CrossValidation;
+import m2.idm.project.mLRegression.IntegerValue;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.ReturnType;
-import m2.idm.project.mLRegression.StringValue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,39 +14,38 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Return Type</b></em>'.
+ * An implementation of the model object '<em><b>Cross Validation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.ReturnTypeImpl#getNameReturn <em>Name Return</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.CrossValidationImpl#getK <em>K</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements ReturnType
+public class CrossValidationImpl extends EvaluationTypeImpl implements CrossValidation
 {
   /**
-   * The cached value of the '{@link #getNameReturn() <em>Name Return</em>}' containment reference.
+   * The cached value of the '{@link #getK() <em>K</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameReturn()
+   * @see #getK()
    * @generated
    * @ordered
    */
-  protected StringValue nameReturn;
+  protected IntegerValue k;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReturnTypeImpl()
+  protected CrossValidationImpl()
   {
     super();
   }
@@ -59,7 +58,7 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.RETURN_TYPE;
+    return MLRegressionPackage.Literals.CROSS_VALIDATION;
   }
 
   /**
@@ -68,9 +67,9 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
    * @generated
    */
   @Override
-  public StringValue getNameReturn()
+  public IntegerValue getK()
   {
-    return nameReturn;
+    return k;
   }
 
   /**
@@ -78,13 +77,13 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetNameReturn(StringValue newNameReturn, NotificationChain msgs)
+  public NotificationChain basicSetK(IntegerValue newK, NotificationChain msgs)
   {
-    StringValue oldNameReturn = nameReturn;
-    nameReturn = newNameReturn;
+    IntegerValue oldK = k;
+    k = newK;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.RETURN_TYPE__NAME_RETURN, oldNameReturn, newNameReturn);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__K, oldK, newK);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +95,20 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
    * @generated
    */
   @Override
-  public void setNameReturn(StringValue newNameReturn)
+  public void setK(IntegerValue newK)
   {
-    if (newNameReturn != nameReturn)
+    if (newK != k)
     {
       NotificationChain msgs = null;
-      if (nameReturn != null)
-        msgs = ((InternalEObject)nameReturn).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.RETURN_TYPE__NAME_RETURN, null, msgs);
-      if (newNameReturn != null)
-        msgs = ((InternalEObject)newNameReturn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.RETURN_TYPE__NAME_RETURN, null, msgs);
-      msgs = basicSetNameReturn(newNameReturn, msgs);
+      if (k != null)
+        msgs = ((InternalEObject)k).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.CROSS_VALIDATION__K, null, msgs);
+      if (newK != null)
+        msgs = ((InternalEObject)newK).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.CROSS_VALIDATION__K, null, msgs);
+      msgs = basicSetK(newK, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.RETURN_TYPE__NAME_RETURN, newNameReturn, newNameReturn));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__K, newK, newK));
   }
 
   /**
@@ -122,8 +121,8 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.RETURN_TYPE__NAME_RETURN:
-        return basicSetNameReturn(null, msgs);
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        return basicSetK(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +137,8 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.RETURN_TYPE__NAME_RETURN:
-        return getNameReturn();
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        return getK();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +153,8 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.RETURN_TYPE__NAME_RETURN:
-        setNameReturn((StringValue)newValue);
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        setK((IntegerValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +170,8 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.RETURN_TYPE__NAME_RETURN:
-        setNameReturn((StringValue)null);
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        setK((IntegerValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +187,10 @@ public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements Retu
   {
     switch (featureID)
     {
-      case MLRegressionPackage.RETURN_TYPE__NAME_RETURN:
-        return nameReturn != null;
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        return k != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ReturnTypeImpl
+} //CrossValidationImpl

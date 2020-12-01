@@ -81,19 +81,29 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createMLRegressionAdapter();
       }
       @Override
+      public Adapter caseCalculate(Calculate object)
+      {
+        return createCalculateAdapter();
+      }
+      @Override
       public Adapter caseDataset(Dataset object)
       {
         return createDatasetAdapter();
       }
       @Override
-      public Adapter caseLearningType(LearningType object)
+      public Adapter caseEvaluationType(EvaluationType object)
       {
-        return createLearningTypeAdapter();
+        return createEvaluationTypeAdapter();
       }
       @Override
-      public Adapter caseTraining(Training object)
+      public Adapter casePartition(Partition object)
       {
-        return createTrainingAdapter();
+        return createPartitionAdapter();
+      }
+      @Override
+      public Adapter caseCrossValidation(CrossValidation object)
+      {
+        return createCrossValidationAdapter();
       }
       @Override
       public Adapter caseVariables(Variables object)
@@ -101,24 +111,29 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createVariablesAdapter();
       }
       @Override
-      public Adapter casePredictives(Predictives object)
+      public Adapter caseListePredictiveVar(ListePredictiveVar object)
       {
-        return createPredictivesAdapter();
+        return createListePredictiveVarAdapter();
       }
       @Override
-      public Adapter caseTargets(Targets object)
+      public Adapter caseTargetVar(TargetVar object)
       {
-        return createTargetsAdapter();
+        return createTargetVarAdapter();
       }
       @Override
-      public Adapter caseVar(Var object)
+      public Adapter caseAlgo(Algo object)
       {
-        return createVarAdapter();
+        return createAlgoAdapter();
       }
       @Override
-      public Adapter caseReturnType(ReturnType object)
+      public Adapter caseAlgoML(AlgoML object)
       {
-        return createReturnTypeAdapter();
+        return createAlgoMLAdapter();
+      }
+      @Override
+      public Adapter caseLineRegress(LineRegress object)
+      {
+        return createLineRegressAdapter();
       }
       @Override
       public Adapter caseTypeValue(TypeValue object)
@@ -131,9 +146,19 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createStringValueAdapter();
       }
       @Override
+      public Adapter caseNumericValue(NumericValue object)
+      {
+        return createNumericValueAdapter();
+      }
+      @Override
       public Adapter caseNumberValue(NumberValue object)
       {
         return createNumberValueAdapter();
+      }
+      @Override
+      public Adapter caseIntegerValue(IntegerValue object)
+      {
+        return createIntegerValueAdapter();
       }
       @Override
       public Adapter casePercentValue(PercentValue object)
@@ -183,6 +208,21 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Calculate <em>Calculate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.Calculate
+   * @generated
+   */
+  public Adapter createCalculateAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Dataset <em>Dataset</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -198,31 +238,46 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.LearningType <em>Learning Type</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.EvaluationType <em>Evaluation Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.LearningType
+   * @see m2.idm.project.mLRegression.EvaluationType
    * @generated
    */
-  public Adapter createLearningTypeAdapter()
+  public Adapter createEvaluationTypeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Training <em>Training</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Partition <em>Partition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.Training
+   * @see m2.idm.project.mLRegression.Partition
    * @generated
    */
-  public Adapter createTrainingAdapter()
+  public Adapter createPartitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.CrossValidation <em>Cross Validation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.CrossValidation
+   * @generated
+   */
+  public Adapter createCrossValidationAdapter()
   {
     return null;
   }
@@ -243,61 +298,76 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Predictives <em>Predictives</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.ListePredictiveVar <em>Liste Predictive Var</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.Predictives
+   * @see m2.idm.project.mLRegression.ListePredictiveVar
    * @generated
    */
-  public Adapter createPredictivesAdapter()
+  public Adapter createListePredictiveVarAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Targets <em>Targets</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.TargetVar <em>Target Var</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.Targets
+   * @see m2.idm.project.mLRegression.TargetVar
    * @generated
    */
-  public Adapter createTargetsAdapter()
+  public Adapter createTargetVarAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Var <em>Var</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Algo <em>Algo</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.Var
+   * @see m2.idm.project.mLRegression.Algo
    * @generated
    */
-  public Adapter createVarAdapter()
+  public Adapter createAlgoAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.ReturnType <em>Return Type</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.AlgoML <em>Algo ML</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.ReturnType
+   * @see m2.idm.project.mLRegression.AlgoML
    * @generated
    */
-  public Adapter createReturnTypeAdapter()
+  public Adapter createAlgoMLAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.LineRegress <em>Line Regress</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.LineRegress
+   * @generated
+   */
+  public Adapter createLineRegressAdapter()
   {
     return null;
   }
@@ -333,6 +403,21 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.NumericValue <em>Numeric Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.NumericValue
+   * @generated
+   */
+  public Adapter createNumericValueAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.NumberValue <em>Number Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -343,6 +428,21 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNumberValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.IntegerValue <em>Integer Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.IntegerValue
+   * @generated
+   */
+  public Adapter createIntegerValueAdapter()
   {
     return null;
   }

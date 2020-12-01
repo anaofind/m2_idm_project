@@ -4,57 +4,115 @@ generate mLRegression "http://www.idm.m2/project/MLRegression"
 
 MLRegression:
 	dataset=Dataset
-	(learningType=LearningType)?  
-	vars=Variables 
-	(returnType=ReturnType)?
+	evaluation = EvaluationType
+    (vars = Variables) ?
+    calculate = Calculate
+    algo = Algo
+;
+
+
+Calculate :
+	'calculate' ':' calculateType=CalculateType ';'
+;
+
+CalculateType :
+	MinError | MinSquaredError | SumsSquaredError
 ;
 
 Dataset:
 	dataset = 'import' data=StringValue ';'
 ;
 
-LearningType: 
-	'learning' (training=Training | crossValidation=CrossValidation)
+
+EvaluationType :
+	Partition | CrossValidation
 ;
 
-Training:
-	'training' training=(NumberValue | PercentValue) ';'
+Partition : 
+    'partition' ':' train=NumericValue ',' test=NumericValue ';'
 ;
 
-CrossValidation:
-	'cross_validation'
+CrossValidation :
+    'cross_validation' ':' k=IntegerValue ';'
 ;
+
 
 Variables: 
-	predictives=Predictives targets=Targets 
+	predictives=ListePredictiveVar targets=TargetVar 
 ;
 
-Predictives:
-	'predict' '{' (vars+=Var)+ '}' ';'
+ListePredictiveVar : 
+    'predictive_vars' ':' varPred=STRING(','predVar+=STRING)* ';'
 ;
 
-Targets :
-	'target' var=Var ';'
+ 
+
+TargetVar : 
+    'target_var' ':' varTar=StringValue ';'
 ;
 
-Var:
-	nameVar=StringValue
+Algo :
+	'algorithm' ':' algo=AlgoML ';'
 ;
 
-ReturnType:
-	'return' nameReturn=StringValue
+AlgoML : 
+    LineRegress
 ;
+
+LineRegress :
+    'line_regress' '(' x1=ID ',' y1=Y ',' x2=ID ',' y2=Y ')'
+;
+
+Y :
+	INT
+;
+
+DecisionTreeRegressor : 
+	'DecisionTreeRegressor'
+;
+
+ 
+
+SVR : 
+	'SVR'
+;
+
+
+MinError : 
+	'min_error'
+;
+
+ 
+
+MinSquaredError :
+	'min_square_error' 
+;
+
+ 
+
+SumsSquaredError : 
+	'sums_square_error'
+;
+
 
 TypeValue:
-	StringValue | NumberValue | PercentValue | BooleanValue
+	StringValue | NumericValue | PercentValue | BooleanValue
 ;
 
 StringValue: 
 	value=STRING
 ;
 
+NumericValue:
+	NumberValue | PercentValue
+;
+
 NumberValue:
 	value=INT ('.' (decimal+=INT)*)?
+;
+
+IntegerValue:
+	value=INT
 ;
 
 PercentValue:

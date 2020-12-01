@@ -66,17 +66,22 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
     switch (eClass.getClassifierID())
     {
       case MLRegressionPackage.ML_REGRESSION: return createMLRegression();
+      case MLRegressionPackage.CALCULATE: return createCalculate();
       case MLRegressionPackage.DATASET: return createDataset();
-      case MLRegressionPackage.LEARNING_TYPE: return createLearningType();
-      case MLRegressionPackage.TRAINING: return createTraining();
+      case MLRegressionPackage.EVALUATION_TYPE: return createEvaluationType();
+      case MLRegressionPackage.PARTITION: return createPartition();
+      case MLRegressionPackage.CROSS_VALIDATION: return createCrossValidation();
       case MLRegressionPackage.VARIABLES: return createVariables();
-      case MLRegressionPackage.PREDICTIVES: return createPredictives();
-      case MLRegressionPackage.TARGETS: return createTargets();
-      case MLRegressionPackage.VAR: return createVar();
-      case MLRegressionPackage.RETURN_TYPE: return createReturnType();
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR: return createListePredictiveVar();
+      case MLRegressionPackage.TARGET_VAR: return createTargetVar();
+      case MLRegressionPackage.ALGO: return createAlgo();
+      case MLRegressionPackage.ALGO_ML: return createAlgoML();
+      case MLRegressionPackage.LINE_REGRESS: return createLineRegress();
       case MLRegressionPackage.TYPE_VALUE: return createTypeValue();
       case MLRegressionPackage.STRING_VALUE: return createStringValue();
+      case MLRegressionPackage.NUMERIC_VALUE: return createNumericValue();
       case MLRegressionPackage.NUMBER_VALUE: return createNumberValue();
+      case MLRegressionPackage.INTEGER_VALUE: return createIntegerValue();
       case MLRegressionPackage.PERCENT_VALUE: return createPercentValue();
       case MLRegressionPackage.BOOLEAN_VALUE: return createBooleanValue();
       default:
@@ -102,6 +107,18 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
+  public Calculate createCalculate()
+  {
+    CalculateImpl calculate = new CalculateImpl();
+    return calculate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Dataset createDataset()
   {
     DatasetImpl dataset = new DatasetImpl();
@@ -114,10 +131,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public LearningType createLearningType()
+  public EvaluationType createEvaluationType()
   {
-    LearningTypeImpl learningType = new LearningTypeImpl();
-    return learningType;
+    EvaluationTypeImpl evaluationType = new EvaluationTypeImpl();
+    return evaluationType;
   }
 
   /**
@@ -126,10 +143,22 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public Training createTraining()
+  public Partition createPartition()
   {
-    TrainingImpl training = new TrainingImpl();
-    return training;
+    PartitionImpl partition = new PartitionImpl();
+    return partition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CrossValidation createCrossValidation()
+  {
+    CrossValidationImpl crossValidation = new CrossValidationImpl();
+    return crossValidation;
   }
 
   /**
@@ -150,10 +179,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public Predictives createPredictives()
+  public ListePredictiveVar createListePredictiveVar()
   {
-    PredictivesImpl predictives = new PredictivesImpl();
-    return predictives;
+    ListePredictiveVarImpl listePredictiveVar = new ListePredictiveVarImpl();
+    return listePredictiveVar;
   }
 
   /**
@@ -162,10 +191,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public Targets createTargets()
+  public TargetVar createTargetVar()
   {
-    TargetsImpl targets = new TargetsImpl();
-    return targets;
+    TargetVarImpl targetVar = new TargetVarImpl();
+    return targetVar;
   }
 
   /**
@@ -174,10 +203,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public Var createVar()
+  public Algo createAlgo()
   {
-    VarImpl var = new VarImpl();
-    return var;
+    AlgoImpl algo = new AlgoImpl();
+    return algo;
   }
 
   /**
@@ -186,10 +215,22 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public ReturnType createReturnType()
+  public AlgoML createAlgoML()
   {
-    ReturnTypeImpl returnType = new ReturnTypeImpl();
-    return returnType;
+    AlgoMLImpl algoML = new AlgoMLImpl();
+    return algoML;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LineRegress createLineRegress()
+  {
+    LineRegressImpl lineRegress = new LineRegressImpl();
+    return lineRegress;
   }
 
   /**
@@ -222,10 +263,34 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
+  public NumericValue createNumericValue()
+  {
+    NumericValueImpl numericValue = new NumericValueImpl();
+    return numericValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NumberValue createNumberValue()
   {
     NumberValueImpl numberValue = new NumberValueImpl();
     return numberValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IntegerValue createIntegerValue()
+  {
+    IntegerValueImpl integerValue = new IntegerValueImpl();
+    return integerValue;
   }
 
   /**

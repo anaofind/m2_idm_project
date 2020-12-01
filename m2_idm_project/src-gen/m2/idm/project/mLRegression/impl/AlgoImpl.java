@@ -3,9 +3,9 @@
  */
 package m2.idm.project.mLRegression.impl;
 
+import m2.idm.project.mLRegression.Algo;
+import m2.idm.project.mLRegression.AlgoML;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.PercentValue;
-import m2.idm.project.mLRegression.Training;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -18,35 +18,35 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Training</b></em>'.
+ * An implementation of the model object '<em><b>Algo</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.TrainingImpl#getTraining <em>Training</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.AlgoImpl#getAlgo <em>Algo</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TrainingImpl extends MinimalEObjectImpl.Container implements Training
+public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
 {
   /**
-   * The cached value of the '{@link #getTraining() <em>Training</em>}' containment reference.
+   * The cached value of the '{@link #getAlgo() <em>Algo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTraining()
+   * @see #getAlgo()
    * @generated
    * @ordered
    */
-  protected PercentValue training;
+  protected AlgoML algo;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TrainingImpl()
+  protected AlgoImpl()
   {
     super();
   }
@@ -59,7 +59,7 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.TRAINING;
+    return MLRegressionPackage.Literals.ALGO;
   }
 
   /**
@@ -68,9 +68,9 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
    * @generated
    */
   @Override
-  public PercentValue getTraining()
+  public AlgoML getAlgo()
   {
-    return training;
+    return algo;
   }
 
   /**
@@ -78,13 +78,13 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTraining(PercentValue newTraining, NotificationChain msgs)
+  public NotificationChain basicSetAlgo(AlgoML newAlgo, NotificationChain msgs)
   {
-    PercentValue oldTraining = training;
-    training = newTraining;
+    AlgoML oldAlgo = algo;
+    algo = newAlgo;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TRAINING__TRAINING, oldTraining, newTraining);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ALGO__ALGO, oldAlgo, newAlgo);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
    * @generated
    */
   @Override
-  public void setTraining(PercentValue newTraining)
+  public void setAlgo(AlgoML newAlgo)
   {
-    if (newTraining != training)
+    if (newAlgo != algo)
     {
       NotificationChain msgs = null;
-      if (training != null)
-        msgs = ((InternalEObject)training).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TRAINING__TRAINING, null, msgs);
-      if (newTraining != null)
-        msgs = ((InternalEObject)newTraining).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TRAINING__TRAINING, null, msgs);
-      msgs = basicSetTraining(newTraining, msgs);
+      if (algo != null)
+        msgs = ((InternalEObject)algo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ALGO__ALGO, null, msgs);
+      if (newAlgo != null)
+        msgs = ((InternalEObject)newAlgo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ALGO__ALGO, null, msgs);
+      msgs = basicSetAlgo(newAlgo, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TRAINING__TRAINING, newTraining, newTraining));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ALGO__ALGO, newAlgo, newAlgo));
   }
 
   /**
@@ -122,8 +122,8 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TRAINING__TRAINING:
-        return basicSetTraining(null, msgs);
+      case MLRegressionPackage.ALGO__ALGO:
+        return basicSetAlgo(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +138,8 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TRAINING__TRAINING:
-        return getTraining();
+      case MLRegressionPackage.ALGO__ALGO:
+        return getAlgo();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +154,8 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TRAINING__TRAINING:
-        setTraining((PercentValue)newValue);
+      case MLRegressionPackage.ALGO__ALGO:
+        setAlgo((AlgoML)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +171,8 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TRAINING__TRAINING:
-        setTraining((PercentValue)null);
+      case MLRegressionPackage.ALGO__ALGO:
+        setAlgo((AlgoML)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +188,10 @@ public class TrainingImpl extends MinimalEObjectImpl.Container implements Traini
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TRAINING__TRAINING:
-        return training != null;
+      case MLRegressionPackage.ALGO__ALGO:
+        return algo != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //TrainingImpl
+} //AlgoImpl

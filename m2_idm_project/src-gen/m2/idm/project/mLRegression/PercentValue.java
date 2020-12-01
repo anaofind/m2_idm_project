@@ -14,6 +14,6 @@ package m2.idm.project.mLRegression;
  * @model
  * @generated
  */
-public interface PercentValue extends TypeValue
+public interface PercentValue extends TypeValue, NumericValue
 {
 } // PercentValue

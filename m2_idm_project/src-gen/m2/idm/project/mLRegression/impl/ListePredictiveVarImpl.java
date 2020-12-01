@@ -5,8 +5,8 @@ package m2.idm.project.mLRegression.impl;
 
 import java.util.Collection;
 
+import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.NumberValue;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,61 +15,62 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Number Value</b></em>'.
+ * An implementation of the model object '<em><b>Liste Predictive Var</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.NumberValueImpl#getValue <em>Value</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.impl.NumberValueImpl#getDecimal <em>Decimal</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.ListePredictiveVarImpl#getVarPred <em>Var Pred</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.ListePredictiveVarImpl#getPredVar <em>Pred Var</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NumberValueImpl extends NumericValueImpl implements NumberValue
+public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container implements ListePredictiveVar
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #getVarPred() <em>Var Pred</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVarPred()
    * @generated
    * @ordered
    */
-  protected static final int VALUE_EDEFAULT = 0;
+  protected static final String VAR_PRED_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getVarPred() <em>Var Pred</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getVarPred()
    * @generated
    * @ordered
    */
-  protected int value = VALUE_EDEFAULT;
+  protected String varPred = VAR_PRED_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDecimal() <em>Decimal</em>}' attribute list.
+   * The cached value of the '{@link #getPredVar() <em>Pred Var</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDecimal()
+   * @see #getPredVar()
    * @generated
    * @ordered
    */
-  protected EList<Integer> decimal;
+  protected EList<String> predVar;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NumberValueImpl()
+  protected ListePredictiveVarImpl()
   {
     super();
   }
@@ -82,7 +83,7 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.NUMBER_VALUE;
+    return MLRegressionPackage.Literals.LISTE_PREDICTIVE_VAR;
   }
 
   /**
@@ -91,9 +92,9 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
    * @generated
    */
   @Override
-  public int getValue()
+  public String getVarPred()
   {
-    return value;
+    return varPred;
   }
 
   /**
@@ -102,12 +103,12 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
    * @generated
    */
   @Override
-  public void setValue(int newValue)
+  public void setVarPred(String newVarPred)
   {
-    int oldValue = value;
-    value = newValue;
+    String oldVarPred = varPred;
+    varPred = newVarPred;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.NUMBER_VALUE__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.LISTE_PREDICTIVE_VAR__VAR_PRED, oldVarPred, varPred));
   }
 
   /**
@@ -116,13 +117,13 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
    * @generated
    */
   @Override
-  public EList<Integer> getDecimal()
+  public EList<String> getPredVar()
   {
-    if (decimal == null)
+    if (predVar == null)
     {
-      decimal = new EDataTypeEList<Integer>(Integer.class, this, MLRegressionPackage.NUMBER_VALUE__DECIMAL);
+      predVar = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR);
     }
-    return decimal;
+    return predVar;
   }
 
   /**
@@ -135,10 +136,10 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   {
     switch (featureID)
     {
-      case MLRegressionPackage.NUMBER_VALUE__VALUE:
-        return getValue();
-      case MLRegressionPackage.NUMBER_VALUE__DECIMAL:
-        return getDecimal();
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VAR_PRED:
+        return getVarPred();
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
+        return getPredVar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,12 +155,12 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   {
     switch (featureID)
     {
-      case MLRegressionPackage.NUMBER_VALUE__VALUE:
-        setValue((Integer)newValue);
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VAR_PRED:
+        setVarPred((String)newValue);
         return;
-      case MLRegressionPackage.NUMBER_VALUE__DECIMAL:
-        getDecimal().clear();
-        getDecimal().addAll((Collection<? extends Integer>)newValue);
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
+        getPredVar().clear();
+        getPredVar().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -175,11 +176,11 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   {
     switch (featureID)
     {
-      case MLRegressionPackage.NUMBER_VALUE__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VAR_PRED:
+        setVarPred(VAR_PRED_EDEFAULT);
         return;
-      case MLRegressionPackage.NUMBER_VALUE__DECIMAL:
-        getDecimal().clear();
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
+        getPredVar().clear();
         return;
     }
     super.eUnset(featureID);
@@ -195,10 +196,10 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   {
     switch (featureID)
     {
-      case MLRegressionPackage.NUMBER_VALUE__VALUE:
-        return value != VALUE_EDEFAULT;
-      case MLRegressionPackage.NUMBER_VALUE__DECIMAL:
-        return decimal != null && !decimal.isEmpty();
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VAR_PRED:
+        return VAR_PRED_EDEFAULT == null ? varPred != null : !VAR_PRED_EDEFAULT.equals(varPred);
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
+        return predVar != null && !predVar.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -214,12 +215,12 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (value: ");
-    result.append(value);
-    result.append(", decimal: ");
-    result.append(decimal);
+    result.append(" (varPred: ");
+    result.append(varPred);
+    result.append(", predVar: ");
+    result.append(predVar);
     result.append(')');
     return result.toString();
   }
 
-} //NumberValueImpl
+} //ListePredictiveVarImpl

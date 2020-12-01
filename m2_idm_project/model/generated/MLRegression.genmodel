@@ -8,44 +8,58 @@
       fileExtensions="mlreg" ecorePackage="MLRegression.ecore#/">
     <genClasses ecoreClass="MLRegression.ecore#//MLRegression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/dataset"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/learningType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/evaluation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/vars"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/calculate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/algo"/>
+    </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//Calculate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Calculate/calculateType"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Dataset">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Dataset/dataset"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Dataset/data"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//LearningType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//LearningType/training"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LearningType/crossValidation"/>
+    <genClasses ecoreClass="MLRegression.ecore#//EvaluationType"/>
+    <genClasses ecoreClass="MLRegression.ecore#//Partition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Partition/train"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Partition/test"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//Training">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Training/training"/>
+    <genClasses ecoreClass="MLRegression.ecore#//CrossValidation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//CrossValidation/k"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Variables">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Variables/predictives"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Variables/targets"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//Predictives">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Predictives/vars"/>
+    <genClasses ecoreClass="MLRegression.ecore#//ListePredictiveVar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//ListePredictiveVar/varPred"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//ListePredictiveVar/predVar"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//Targets">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Targets/var"/>
+    <genClasses ecoreClass="MLRegression.ecore#//TargetVar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//TargetVar/varTar"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//Var">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Var/nameVar"/>
+    <genClasses ecoreClass="MLRegression.ecore#//Algo">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Algo/algo"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//ReturnType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//ReturnType/nameReturn"/>
+    <genClasses ecoreClass="MLRegression.ecore#//AlgoML"/>
+    <genClasses ecoreClass="MLRegression.ecore#//LineRegress">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/x1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/y1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/x2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/y2"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//TypeValue"/>
     <genClasses ecoreClass="MLRegression.ecore#//StringValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//StringValue/value"/>
     </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//NumericValue"/>
     <genClasses ecoreClass="MLRegression.ecore#//NumberValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//NumberValue/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//NumberValue/decimal"/>
+    </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//IntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//IntegerValue/value"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//PercentValue"/>
     <genClasses ecoreClass="MLRegression.ecore#//BooleanValue">

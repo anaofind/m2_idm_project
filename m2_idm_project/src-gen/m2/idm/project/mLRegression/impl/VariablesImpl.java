@@ -3,9 +3,9 @@
  */
 package m2.idm.project.mLRegression.impl;
 
+import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.Predictives;
-import m2.idm.project.mLRegression.Targets;
+import m2.idm.project.mLRegression.TargetVar;
 import m2.idm.project.mLRegression.Variables;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -41,7 +41,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    * @ordered
    */
-  protected Predictives predictives;
+  protected ListePredictiveVar predictives;
 
   /**
    * The cached value of the '{@link #getTargets() <em>Targets</em>}' containment reference.
@@ -51,7 +51,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    * @ordered
    */
-  protected Targets targets;
+  protected TargetVar targets;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    */
   @Override
-  public Predictives getPredictives()
+  public ListePredictiveVar getPredictives()
   {
     return predictives;
   }
@@ -90,9 +90,9 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPredictives(Predictives newPredictives, NotificationChain msgs)
+  public NotificationChain basicSetPredictives(ListePredictiveVar newPredictives, NotificationChain msgs)
   {
-    Predictives oldPredictives = predictives;
+    ListePredictiveVar oldPredictives = predictives;
     predictives = newPredictives;
     if (eNotificationRequired())
     {
@@ -108,7 +108,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    */
   @Override
-  public void setPredictives(Predictives newPredictives)
+  public void setPredictives(ListePredictiveVar newPredictives)
   {
     if (newPredictives != predictives)
     {
@@ -130,7 +130,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    */
   @Override
-  public Targets getTargets()
+  public TargetVar getTargets()
   {
     return targets;
   }
@@ -140,9 +140,9 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTargets(Targets newTargets, NotificationChain msgs)
+  public NotificationChain basicSetTargets(TargetVar newTargets, NotificationChain msgs)
   {
-    Targets oldTargets = targets;
+    TargetVar oldTargets = targets;
     targets = newTargets;
     if (eNotificationRequired())
     {
@@ -158,7 +158,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    */
   @Override
-  public void setTargets(Targets newTargets)
+  public void setTargets(TargetVar newTargets)
   {
     if (newTargets != targets)
     {
@@ -221,10 +221,10 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
     switch (featureID)
     {
       case MLRegressionPackage.VARIABLES__PREDICTIVES:
-        setPredictives((Predictives)newValue);
+        setPredictives((ListePredictiveVar)newValue);
         return;
       case MLRegressionPackage.VARIABLES__TARGETS:
-        setTargets((Targets)newValue);
+        setTargets((TargetVar)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -241,10 +241,10 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
     switch (featureID)
     {
       case MLRegressionPackage.VARIABLES__PREDICTIVES:
-        setPredictives((Predictives)null);
+        setPredictives((ListePredictiveVar)null);
         return;
       case MLRegressionPackage.VARIABLES__TARGETS:
-        setTargets((Targets)null);
+        setTargets((TargetVar)null);
         return;
     }
     super.eUnset(featureID);

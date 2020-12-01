@@ -3,36 +3,30 @@
  */
 package m2.idm.project.mLRegression.impl;
 
-import java.util.Collection;
-
+import m2.idm.project.mLRegression.IntegerValue;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.NumberValue;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Number Value</b></em>'.
+ * An implementation of the model object '<em><b>Integer Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.NumberValueImpl#getValue <em>Value</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.impl.NumberValueImpl#getDecimal <em>Decimal</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.IntegerValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NumberValueImpl extends NumericValueImpl implements NumberValue
+public class IntegerValueImpl extends MinimalEObjectImpl.Container implements IntegerValue
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -55,21 +49,11 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   protected int value = VALUE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDecimal() <em>Decimal</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDecimal()
-   * @generated
-   * @ordered
-   */
-  protected EList<Integer> decimal;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NumberValueImpl()
+  protected IntegerValueImpl()
   {
     super();
   }
@@ -82,7 +66,7 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.NUMBER_VALUE;
+    return MLRegressionPackage.Literals.INTEGER_VALUE;
   }
 
   /**
@@ -107,22 +91,7 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
     int oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.NUMBER_VALUE__VALUE, oldValue, value));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Integer> getDecimal()
-  {
-    if (decimal == null)
-    {
-      decimal = new EDataTypeEList<Integer>(Integer.class, this, MLRegressionPackage.NUMBER_VALUE__DECIMAL);
-    }
-    return decimal;
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.INTEGER_VALUE__VALUE, oldValue, value));
   }
 
   /**
@@ -135,10 +104,8 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   {
     switch (featureID)
     {
-      case MLRegressionPackage.NUMBER_VALUE__VALUE:
+      case MLRegressionPackage.INTEGER_VALUE__VALUE:
         return getValue();
-      case MLRegressionPackage.NUMBER_VALUE__DECIMAL:
-        return getDecimal();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -148,18 +115,13 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MLRegressionPackage.NUMBER_VALUE__VALUE:
+      case MLRegressionPackage.INTEGER_VALUE__VALUE:
         setValue((Integer)newValue);
-        return;
-      case MLRegressionPackage.NUMBER_VALUE__DECIMAL:
-        getDecimal().clear();
-        getDecimal().addAll((Collection<? extends Integer>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -175,11 +137,8 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   {
     switch (featureID)
     {
-      case MLRegressionPackage.NUMBER_VALUE__VALUE:
+      case MLRegressionPackage.INTEGER_VALUE__VALUE:
         setValue(VALUE_EDEFAULT);
-        return;
-      case MLRegressionPackage.NUMBER_VALUE__DECIMAL:
-        getDecimal().clear();
         return;
     }
     super.eUnset(featureID);
@@ -195,10 +154,8 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
   {
     switch (featureID)
     {
-      case MLRegressionPackage.NUMBER_VALUE__VALUE:
+      case MLRegressionPackage.INTEGER_VALUE__VALUE:
         return value != VALUE_EDEFAULT;
-      case MLRegressionPackage.NUMBER_VALUE__DECIMAL:
-        return decimal != null && !decimal.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -216,10 +173,8 @@ public class NumberValueImpl extends NumericValueImpl implements NumberValue
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (value: ");
     result.append(value);
-    result.append(", decimal: ");
-    result.append(decimal);
     result.append(')');
     return result.toString();
   }
 
-} //NumberValueImpl
+} //IntegerValueImpl

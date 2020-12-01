@@ -4,8 +4,8 @@
 package m2.idm.project.mLRegression.impl;
 
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.Targets;
-import m2.idm.project.mLRegression.Var;
+import m2.idm.project.mLRegression.StringValue;
+import m2.idm.project.mLRegression.TargetVar;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -18,35 +18,35 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Targets</b></em>'.
+ * An implementation of the model object '<em><b>Target Var</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.TargetsImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.TargetVarImpl#getVarTar <em>Var Tar</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
+public class TargetVarImpl extends MinimalEObjectImpl.Container implements TargetVar
 {
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
+   * The cached value of the '{@link #getVarTar() <em>Var Tar</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getVarTar()
    * @generated
    * @ordered
    */
-  protected Var var;
+  protected StringValue varTar;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TargetsImpl()
+  protected TargetVarImpl()
   {
     super();
   }
@@ -59,7 +59,7 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.TARGETS;
+    return MLRegressionPackage.Literals.TARGET_VAR;
   }
 
   /**
@@ -68,9 +68,9 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
    * @generated
    */
   @Override
-  public Var getVar()
+  public StringValue getVarTar()
   {
-    return var;
+    return varTar;
   }
 
   /**
@@ -78,13 +78,13 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar(Var newVar, NotificationChain msgs)
+  public NotificationChain basicSetVarTar(StringValue newVarTar, NotificationChain msgs)
   {
-    Var oldVar = var;
-    var = newVar;
+    StringValue oldVarTar = varTar;
+    varTar = newVarTar;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TARGETS__VAR, oldVar, newVar);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TARGET_VAR__VAR_TAR, oldVarTar, newVarTar);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
    * @generated
    */
   @Override
-  public void setVar(Var newVar)
+  public void setVarTar(StringValue newVarTar)
   {
-    if (newVar != var)
+    if (newVarTar != varTar)
     {
       NotificationChain msgs = null;
-      if (var != null)
-        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TARGETS__VAR, null, msgs);
-      if (newVar != null)
-        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TARGETS__VAR, null, msgs);
-      msgs = basicSetVar(newVar, msgs);
+      if (varTar != null)
+        msgs = ((InternalEObject)varTar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TARGET_VAR__VAR_TAR, null, msgs);
+      if (newVarTar != null)
+        msgs = ((InternalEObject)newVarTar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TARGET_VAR__VAR_TAR, null, msgs);
+      msgs = basicSetVarTar(newVarTar, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TARGETS__VAR, newVar, newVar));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TARGET_VAR__VAR_TAR, newVarTar, newVarTar));
   }
 
   /**
@@ -122,8 +122,8 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGETS__VAR:
-        return basicSetVar(null, msgs);
+      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
+        return basicSetVarTar(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +138,8 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGETS__VAR:
-        return getVar();
+      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
+        return getVarTar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +154,8 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGETS__VAR:
-        setVar((Var)newValue);
+      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
+        setVarTar((StringValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +171,8 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGETS__VAR:
-        setVar((Var)null);
+      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
+        setVarTar((StringValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +188,10 @@ public class TargetsImpl extends MinimalEObjectImpl.Container implements Targets
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGETS__VAR:
-        return var != null;
+      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
+        return varTar != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //TargetsImpl
+} //TargetVarImpl

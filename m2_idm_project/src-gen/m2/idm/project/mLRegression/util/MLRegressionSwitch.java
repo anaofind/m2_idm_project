@@ -80,6 +80,13 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MLRegressionPackage.CALCULATE:
+      {
+        Calculate calculate = (Calculate)theEObject;
+        T result = caseCalculate(calculate);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MLRegressionPackage.DATASET:
       {
         Dataset dataset = (Dataset)theEObject;
@@ -87,17 +94,26 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.LEARNING_TYPE:
+      case MLRegressionPackage.EVALUATION_TYPE:
       {
-        LearningType learningType = (LearningType)theEObject;
-        T result = caseLearningType(learningType);
+        EvaluationType evaluationType = (EvaluationType)theEObject;
+        T result = caseEvaluationType(evaluationType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.TRAINING:
+      case MLRegressionPackage.PARTITION:
       {
-        Training training = (Training)theEObject;
-        T result = caseTraining(training);
+        Partition partition = (Partition)theEObject;
+        T result = casePartition(partition);
+        if (result == null) result = caseEvaluationType(partition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MLRegressionPackage.CROSS_VALIDATION:
+      {
+        CrossValidation crossValidation = (CrossValidation)theEObject;
+        T result = caseCrossValidation(crossValidation);
+        if (result == null) result = caseEvaluationType(crossValidation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,31 +124,39 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.PREDICTIVES:
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR:
       {
-        Predictives predictives = (Predictives)theEObject;
-        T result = casePredictives(predictives);
+        ListePredictiveVar listePredictiveVar = (ListePredictiveVar)theEObject;
+        T result = caseListePredictiveVar(listePredictiveVar);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.TARGETS:
+      case MLRegressionPackage.TARGET_VAR:
       {
-        Targets targets = (Targets)theEObject;
-        T result = caseTargets(targets);
+        TargetVar targetVar = (TargetVar)theEObject;
+        T result = caseTargetVar(targetVar);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.VAR:
+      case MLRegressionPackage.ALGO:
       {
-        Var var = (Var)theEObject;
-        T result = caseVar(var);
+        Algo algo = (Algo)theEObject;
+        T result = caseAlgo(algo);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.RETURN_TYPE:
+      case MLRegressionPackage.ALGO_ML:
       {
-        ReturnType returnType = (ReturnType)theEObject;
-        T result = caseReturnType(returnType);
+        AlgoML algoML = (AlgoML)theEObject;
+        T result = caseAlgoML(algoML);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MLRegressionPackage.LINE_REGRESS:
+      {
+        LineRegress lineRegress = (LineRegress)theEObject;
+        T result = caseLineRegress(lineRegress);
+        if (result == null) result = caseAlgoML(lineRegress);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -151,12 +175,28 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MLRegressionPackage.NUMERIC_VALUE:
+      {
+        NumericValue numericValue = (NumericValue)theEObject;
+        T result = caseNumericValue(numericValue);
+        if (result == null) result = caseTypeValue(numericValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MLRegressionPackage.NUMBER_VALUE:
       {
         NumberValue numberValue = (NumberValue)theEObject;
         T result = caseNumberValue(numberValue);
         if (result == null) result = casePercentValue(numberValue);
+        if (result == null) result = caseNumericValue(numberValue);
         if (result == null) result = caseTypeValue(numberValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MLRegressionPackage.INTEGER_VALUE:
+      {
+        IntegerValue integerValue = (IntegerValue)theEObject;
+        T result = caseIntegerValue(integerValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -164,6 +204,7 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         PercentValue percentValue = (PercentValue)theEObject;
         T result = casePercentValue(percentValue);
+        if (result == null) result = caseNumericValue(percentValue);
         if (result == null) result = caseTypeValue(percentValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -197,6 +238,22 @@ public class MLRegressionSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Calculate</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Calculate</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCalculate(Calculate object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Dataset</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -213,33 +270,49 @@ public class MLRegressionSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Learning Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Evaluation Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Learning Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Evaluation Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLearningType(LearningType object)
+  public T caseEvaluationType(EvaluationType object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Training</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Partition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Training</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Partition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTraining(Training object)
+  public T casePartition(Partition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Cross Validation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cross Validation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCrossValidation(CrossValidation object)
   {
     return null;
   }
@@ -261,65 +334,81 @@ public class MLRegressionSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Predictives</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Liste Predictive Var</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predictives</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Liste Predictive Var</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePredictives(Predictives object)
+  public T caseListePredictiveVar(ListePredictiveVar object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Targets</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Target Var</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Targets</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Target Var</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTargets(Targets object)
+  public T caseTargetVar(TargetVar object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Var</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Algo</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Algo</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVar(Var object)
+  public T caseAlgo(Algo object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Return Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Algo ML</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Return Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Algo ML</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseReturnType(ReturnType object)
+  public T caseAlgoML(AlgoML object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Line Regress</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Line Regress</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLineRegress(LineRegress object)
   {
     return null;
   }
@@ -357,6 +446,22 @@ public class MLRegressionSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Numeric Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Numeric Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumericValue(NumericValue object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Number Value</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -368,6 +473,22 @@ public class MLRegressionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNumberValue(NumberValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Integer Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Integer Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntegerValue(IntegerValue object)
   {
     return null;
   }

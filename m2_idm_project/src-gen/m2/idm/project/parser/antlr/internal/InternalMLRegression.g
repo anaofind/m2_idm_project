@@ -98,22 +98,22 @@ ruleMLRegression returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMLRegressionAccess().getLearningTypeLearningTypeParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getMLRegressionAccess().getEvaluationEvaluationTypeParserRuleCall_1_0());
 				}
-				lv_learningType_1_0=ruleLearningType
+				lv_evaluation_1_0=ruleEvaluationType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMLRegressionRule());
 					}
 					set(
 						$current,
-						"learningType",
-						lv_learningType_1_0,
-						"m2.idm.project.MLRegression.LearningType");
+						"evaluation",
+						lv_evaluation_1_0,
+						"m2.idm.project.MLRegression.EvaluationType");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)
 		(
 			(
 				{
@@ -132,26 +132,146 @@ ruleMLRegression returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMLRegressionAccess().getReturnTypeReturnTypeParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getMLRegressionAccess().getCalculateCalculateParserRuleCall_3_0());
 				}
-				lv_returnType_3_0=ruleReturnType
+				lv_calculate_3_0=ruleCalculate
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMLRegressionRule());
 					}
 					set(
 						$current,
-						"returnType",
-						lv_returnType_3_0,
-						"m2.idm.project.MLRegression.ReturnType");
+						"calculate",
+						lv_calculate_3_0,
+						"m2.idm.project.MLRegression.Calculate");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMLRegressionAccess().getAlgoAlgoParserRuleCall_4_0());
+				}
+				lv_algo_4_0=ruleAlgo
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMLRegressionRule());
+					}
+					set(
+						$current,
+						"algo",
+						lv_algo_4_0,
+						"m2.idm.project.MLRegression.Algo");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCalculate
+entryRuleCalculate returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCalculateRule()); }
+	iv_ruleCalculate=ruleCalculate
+	{ $current=$iv_ruleCalculate.current; }
+	EOF;
+
+// Rule Calculate
+ruleCalculate returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='calculate'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCalculateAccess().getCalculateKeyword_0());
+		}
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCalculateAccess().getColonKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCalculateAccess().getCalculateTypeCalculateTypeParserRuleCall_2_0());
+				}
+				lv_calculateType_2_0=ruleCalculateType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCalculateRule());
+					}
+					set(
+						$current,
+						"calculateType",
+						lv_calculateType_2_0,
+						"m2.idm.project.MLRegression.CalculateType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=';'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCalculateAccess().getSemicolonKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleCalculateType
+entryRuleCalculateType returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getCalculateTypeRule()); }
+	iv_ruleCalculateType=ruleCalculateType
+	{ $current=$iv_ruleCalculateType.current.getText(); }
+	EOF;
+
+// Rule CalculateType
+ruleCalculateType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getCalculateTypeAccess().getMinErrorParserRuleCall_0());
+		}
+		this_MinError_0=ruleMinError
+		{
+			$current.merge(this_MinError_0);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCalculateTypeAccess().getMinSquaredErrorParserRuleCall_1());
+		}
+		this_MinSquaredError_1=ruleMinSquaredError
+		{
+			$current.merge(this_MinSquaredError_1);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCalculateTypeAccess().getSumsSquaredErrorParserRuleCall_2());
+		}
+		this_SumsSquaredError_2=ruleSumsSquaredError
+		{
+			$current.merge(this_SumsSquaredError_2);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -211,15 +331,15 @@ ruleDataset returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleLearningType
-entryRuleLearningType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLearningTypeRule()); }
-	iv_ruleLearningType=ruleLearningType
-	{ $current=$iv_ruleLearningType.current; }
+// Entry rule entryRuleEvaluationType
+entryRuleEvaluationType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEvaluationTypeRule()); }
+	iv_ruleEvaluationType=ruleEvaluationType
+	{ $current=$iv_ruleEvaluationType.current; }
 	EOF;
 
-// Rule LearningType
-ruleLearningType returns [EObject current=null]
+// Rule EvaluationType
+ruleEvaluationType returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -227,63 +347,35 @@ ruleLearningType returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='learning'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getLearningTypeAccess().getLearningKeyword_0());
+			newCompositeNode(grammarAccess.getEvaluationTypeAccess().getPartitionParserRuleCall_0());
 		}
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getLearningTypeAccess().getTrainingTrainingParserRuleCall_1_0_0());
-					}
-					lv_training_1_0=ruleTraining
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getLearningTypeRule());
-						}
-						set(
-							$current,
-							"training",
-							lv_training_1_0,
-							"m2.idm.project.MLRegression.Training");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getLearningTypeAccess().getCrossValidationCrossValidationParserRuleCall_1_1_0());
-					}
-					lv_crossValidation_2_0=ruleCrossValidation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getLearningTypeRule());
-						}
-						set(
-							$current,
-							"crossValidation",
-							lv_crossValidation_2_0,
-							"m2.idm.project.MLRegression.CrossValidation");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
+		this_Partition_0=rulePartition
+		{
+			$current = $this_Partition_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEvaluationTypeAccess().getCrossValidationParserRuleCall_1());
+		}
+		this_CrossValidation_1=ruleCrossValidation
+		{
+			$current = $this_CrossValidation_1.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
-// Entry rule entryRuleTraining
-entryRuleTraining returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTrainingRule()); }
-	iv_ruleTraining=ruleTraining
-	{ $current=$iv_ruleTraining.current; }
+// Entry rule entryRulePartition
+entryRulePartition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPartitionRule()); }
+	iv_rulePartition=rulePartition
+	{ $current=$iv_rulePartition.current; }
 	EOF;
 
-// Rule Training
-ruleTraining returns [EObject current=null]
+// Rule Partition
+rulePartition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -291,74 +383,111 @@ ruleTraining returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='training'
+		otherlv_0='partition'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getTrainingAccess().getTrainingKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getPartitionAccess().getPartitionKeyword_0());
+		}
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getPartitionAccess().getColonKeyword_1());
 		}
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTrainingAccess().getTrainingNumberValueParserRuleCall_1_0_0());
+				{
+					newCompositeNode(grammarAccess.getPartitionAccess().getTrainNumericValueParserRuleCall_2_0());
+				}
+				lv_train_2_0=ruleNumericValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPartitionRule());
 					}
-					lv_training_1_1=ruleNumberValue
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTrainingRule());
-						}
-						set(
-							$current,
-							"training",
-							lv_training_1_1,
-							"m2.idm.project.MLRegression.NumberValue");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getTrainingAccess().getTrainingPercentValueParserRuleCall_1_0_1());
-					}
-					lv_training_1_2=rulePercentValue
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTrainingRule());
-						}
-						set(
-							$current,
-							"training",
-							lv_training_1_2,
-							"m2.idm.project.MLRegression.PercentValue");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"train",
+						lv_train_2_0,
+						"m2.idm.project.MLRegression.NumericValue");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
-		otherlv_2=';'
+		otherlv_3=','
 		{
-			newLeafNode(otherlv_2, grammarAccess.getTrainingAccess().getSemicolonKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getPartitionAccess().getCommaKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPartitionAccess().getTestNumericValueParserRuleCall_4_0());
+				}
+				lv_test_4_0=ruleNumericValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPartitionRule());
+					}
+					set(
+						$current,
+						"test",
+						lv_test_4_0,
+						"m2.idm.project.MLRegression.NumericValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5=';'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getPartitionAccess().getSemicolonKeyword_5());
 		}
 	)
 ;
 
 // Entry rule entryRuleCrossValidation
-entryRuleCrossValidation returns [String current=null]:
+entryRuleCrossValidation returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getCrossValidationRule()); }
 	iv_ruleCrossValidation=ruleCrossValidation
-	{ $current=$iv_ruleCrossValidation.current.getText(); }
+	{ $current=$iv_ruleCrossValidation.current; }
 	EOF;
 
 // Rule CrossValidation
-ruleCrossValidation returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleCrossValidation returns [EObject current=null]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	kw='cross_validation'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getCrossValidationAccess().getCross_validationKeyword());
-	}
+	(
+		otherlv_0='cross_validation'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCrossValidationAccess().getCross_validationKeyword_0());
+		}
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCrossValidationAccess().getColonKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCrossValidationAccess().getKIntegerValueParserRuleCall_2_0());
+				}
+				lv_k_2_0=ruleIntegerValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCrossValidationRule());
+					}
+					set(
+						$current,
+						"k",
+						lv_k_2_0,
+						"m2.idm.project.MLRegression.IntegerValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=';'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCrossValidationAccess().getSemicolonKeyword_3());
+		}
+	)
 ;
 
 // Entry rule entryRuleVariables
@@ -380,9 +509,9 @@ ruleVariables returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getVariablesAccess().getPredictivesPredictivesParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getVariablesAccess().getPredictivesListePredictiveVarParserRuleCall_0_0());
 				}
-				lv_predictives_0_0=rulePredictives
+				lv_predictives_0_0=ruleListePredictiveVar
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getVariablesRule());
@@ -391,7 +520,7 @@ ruleVariables returns [EObject current=null]
 						$current,
 						"predictives",
 						lv_predictives_0_0,
-						"m2.idm.project.MLRegression.Predictives");
+						"m2.idm.project.MLRegression.ListePredictiveVar");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -399,9 +528,9 @@ ruleVariables returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getVariablesAccess().getTargetsTargetsParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getVariablesAccess().getTargetsTargetVarParserRuleCall_1_0());
 				}
-				lv_targets_1_0=ruleTargets
+				lv_targets_1_0=ruleTargetVar
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getVariablesRule());
@@ -410,7 +539,7 @@ ruleVariables returns [EObject current=null]
 						$current,
 						"targets",
 						lv_targets_1_0,
-						"m2.idm.project.MLRegression.Targets");
+						"m2.idm.project.MLRegression.TargetVar");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -418,15 +547,15 @@ ruleVariables returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulePredictives
-entryRulePredictives returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPredictivesRule()); }
-	iv_rulePredictives=rulePredictives
-	{ $current=$iv_rulePredictives.current; }
+// Entry rule entryRuleListePredictiveVar
+entryRuleListePredictiveVar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getListePredictiveVarRule()); }
+	iv_ruleListePredictiveVar=ruleListePredictiveVar
+	{ $current=$iv_ruleListePredictiveVar.current; }
 	EOF;
 
-// Rule Predictives
-rulePredictives returns [EObject current=null]
+// Rule ListePredictiveVar
+ruleListePredictiveVar returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -434,53 +563,72 @@ rulePredictives returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='predict'
+		otherlv_0='predictive_vars'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getPredictivesAccess().getPredictKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getListePredictiveVarAccess().getPredictive_varsKeyword_0());
 		}
-		otherlv_1='{'
+		otherlv_1=':'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getPredictivesAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getListePredictiveVarAccess().getColonKeyword_1());
 		}
 		(
 			(
+				lv_varPred_2_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getPredictivesAccess().getVarsVarParserRuleCall_2_0());
+					newLeafNode(lv_varPred_2_0, grammarAccess.getListePredictiveVarAccess().getVarPredSTRINGTerminalRuleCall_2_0());
 				}
-				lv_vars_2_0=ruleVar
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPredictivesRule());
+						$current = createModelElement(grammarAccess.getListePredictiveVarRule());
 					}
-					add(
+					setWithLastConsumed(
 						$current,
-						"vars",
-						lv_vars_2_0,
-						"m2.idm.project.MLRegression.Var");
-					afterParserOrEnumRuleCall();
+						"varPred",
+						lv_varPred_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
-		)+
-		otherlv_3='}'
+		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getListePredictiveVarAccess().getCommaKeyword_3_0());
+			}
+			(
+				(
+					lv_predVar_4_0=RULE_STRING
+					{
+						newLeafNode(lv_predVar_4_0, grammarAccess.getListePredictiveVarAccess().getPredVarSTRINGTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getListePredictiveVarRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"predVar",
+							lv_predVar_4_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+		)*
+		otherlv_5=';'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getPredictivesAccess().getRightCurlyBracketKeyword_3());
-		}
-		otherlv_4=';'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getPredictivesAccess().getSemicolonKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getListePredictiveVarAccess().getSemicolonKeyword_4());
 		}
 	)
 ;
 
-// Entry rule entryRuleTargets
-entryRuleTargets returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTargetsRule()); }
-	iv_ruleTargets=ruleTargets
-	{ $current=$iv_ruleTargets.current; }
+// Entry rule entryRuleTargetVar
+entryRuleTargetVar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTargetVarRule()); }
+	iv_ruleTargetVar=ruleTargetVar
+	{ $current=$iv_ruleTargetVar.current; }
 	EOF;
 
-// Rule Targets
-ruleTargets returns [EObject current=null]
+// Rule TargetVar
+ruleTargetVar returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -488,112 +636,320 @@ ruleTargets returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='target'
+		otherlv_0='target_var'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getTargetsAccess().getTargetKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getTargetVarAccess().getTarget_varKeyword_0());
+		}
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTargetVarAccess().getColonKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTargetsAccess().getVarVarParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getTargetVarAccess().getVarTarStringValueParserRuleCall_2_0());
 				}
-				lv_var_1_0=ruleVar
+				lv_varTar_2_0=ruleStringValue
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTargetsRule());
+						$current = createModelElementForParent(grammarAccess.getTargetVarRule());
 					}
 					set(
 						$current,
-						"var",
-						lv_var_1_0,
-						"m2.idm.project.MLRegression.Var");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2=';'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getTargetsAccess().getSemicolonKeyword_2());
-		}
-	)
-;
-
-// Entry rule entryRuleVar
-entryRuleVar returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVarRule()); }
-	iv_ruleVar=ruleVar
-	{ $current=$iv_ruleVar.current; }
-	EOF;
-
-// Rule Var
-ruleVar returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				newCompositeNode(grammarAccess.getVarAccess().getNameVarStringValueParserRuleCall_0());
-			}
-			lv_nameVar_0_0=ruleStringValue
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getVarRule());
-				}
-				set(
-					$current,
-					"nameVar",
-					lv_nameVar_0_0,
-					"m2.idm.project.MLRegression.StringValue");
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)
-;
-
-// Entry rule entryRuleReturnType
-entryRuleReturnType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getReturnTypeRule()); }
-	iv_ruleReturnType=ruleReturnType
-	{ $current=$iv_ruleReturnType.current; }
-	EOF;
-
-// Rule ReturnType
-ruleReturnType returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='return'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getReturnTypeAccess().getReturnKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getReturnTypeAccess().getNameReturnStringValueParserRuleCall_1_0());
-				}
-				lv_nameReturn_1_0=ruleStringValue
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getReturnTypeRule());
-					}
-					set(
-						$current,
-						"nameReturn",
-						lv_nameReturn_1_0,
+						"varTar",
+						lv_varTar_2_0,
 						"m2.idm.project.MLRegression.StringValue");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_3=';'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getTargetVarAccess().getSemicolonKeyword_3());
+		}
 	)
+;
+
+// Entry rule entryRuleAlgo
+entryRuleAlgo returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAlgoRule()); }
+	iv_ruleAlgo=ruleAlgo
+	{ $current=$iv_ruleAlgo.current; }
+	EOF;
+
+// Rule Algo
+ruleAlgo returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='algorithm'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAlgoAccess().getAlgorithmKeyword_0());
+		}
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAlgoAccess().getColonKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAlgoAccess().getAlgoAlgoMLParserRuleCall_2_0());
+				}
+				lv_algo_2_0=ruleAlgoML
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAlgoRule());
+					}
+					set(
+						$current,
+						"algo",
+						lv_algo_2_0,
+						"m2.idm.project.MLRegression.AlgoML");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=';'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAlgoAccess().getSemicolonKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleAlgoML
+entryRuleAlgoML returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAlgoMLRule()); }
+	iv_ruleAlgoML=ruleAlgoML
+	{ $current=$iv_ruleAlgoML.current; }
+	EOF;
+
+// Rule AlgoML
+ruleAlgoML returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		newCompositeNode(grammarAccess.getAlgoMLAccess().getLineRegressParserRuleCall());
+	}
+	this_LineRegress_0=ruleLineRegress
+	{
+		$current = $this_LineRegress_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
+
+// Entry rule entryRuleLineRegress
+entryRuleLineRegress returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLineRegressRule()); }
+	iv_ruleLineRegress=ruleLineRegress
+	{ $current=$iv_ruleLineRegress.current; }
+	EOF;
+
+// Rule LineRegress
+ruleLineRegress returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='line_regress'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getLineRegressAccess().getLine_regressKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getLineRegressAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				lv_x1_2_0=RULE_ID
+				{
+					newLeafNode(lv_x1_2_0, grammarAccess.getLineRegressAccess().getX1IDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLineRegressRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"x1",
+						lv_x1_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_3=','
+		{
+			newLeafNode(otherlv_3, grammarAccess.getLineRegressAccess().getCommaKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLineRegressAccess().getY1YParserRuleCall_4_0());
+				}
+				lv_y1_4_0=ruleY
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLineRegressRule());
+					}
+					set(
+						$current,
+						"y1",
+						lv_y1_4_0,
+						"m2.idm.project.MLRegression.Y");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5=','
+		{
+			newLeafNode(otherlv_5, grammarAccess.getLineRegressAccess().getCommaKeyword_5());
+		}
+		(
+			(
+				lv_x2_6_0=RULE_ID
+				{
+					newLeafNode(lv_x2_6_0, grammarAccess.getLineRegressAccess().getX2IDTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLineRegressRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"x2",
+						lv_x2_6_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_7=','
+		{
+			newLeafNode(otherlv_7, grammarAccess.getLineRegressAccess().getCommaKeyword_7());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLineRegressAccess().getY2YParserRuleCall_8_0());
+				}
+				lv_y2_8_0=ruleY
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLineRegressRule());
+					}
+					set(
+						$current,
+						"y2",
+						lv_y2_8_0,
+						"m2.idm.project.MLRegression.Y");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_9=')'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getLineRegressAccess().getRightParenthesisKeyword_9());
+		}
+	)
+;
+
+// Entry rule entryRuleY
+entryRuleY returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getYRule()); }
+	iv_ruleY=ruleY
+	{ $current=$iv_ruleY.current.getText(); }
+	EOF;
+
+// Rule Y
+ruleY returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_INT_0=RULE_INT
+	{
+		$current.merge(this_INT_0);
+	}
+	{
+		newLeafNode(this_INT_0, grammarAccess.getYAccess().getINTTerminalRuleCall());
+	}
+;
+
+// Entry rule entryRuleMinError
+entryRuleMinError returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getMinErrorRule()); }
+	iv_ruleMinError=ruleMinError
+	{ $current=$iv_ruleMinError.current.getText(); }
+	EOF;
+
+// Rule MinError
+ruleMinError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='min_error'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getMinErrorAccess().getMin_errorKeyword());
+	}
+;
+
+// Entry rule entryRuleMinSquaredError
+entryRuleMinSquaredError returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getMinSquaredErrorRule()); }
+	iv_ruleMinSquaredError=ruleMinSquaredError
+	{ $current=$iv_ruleMinSquaredError.current.getText(); }
+	EOF;
+
+// Rule MinSquaredError
+ruleMinSquaredError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='min_square_error'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getMinSquaredErrorAccess().getMin_square_errorKeyword());
+	}
+;
+
+// Entry rule entryRuleSumsSquaredError
+entryRuleSumsSquaredError returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getSumsSquaredErrorRule()); }
+	iv_ruleSumsSquaredError=ruleSumsSquaredError
+	{ $current=$iv_ruleSumsSquaredError.current.getText(); }
+	EOF;
+
+// Rule SumsSquaredError
+ruleSumsSquaredError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='sums_square_error'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getSumsSquaredErrorAccess().getSums_square_errorKeyword());
+	}
 ;
 
 // Entry rule entryRuleStringValue
@@ -628,6 +984,42 @@ ruleStringValue returns [EObject current=null]
 					"org.eclipse.xtext.common.Terminals.STRING");
 			}
 		)
+	)
+;
+
+// Entry rule entryRuleNumericValue
+entryRuleNumericValue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNumericValueRule()); }
+	iv_ruleNumericValue=ruleNumericValue
+	{ $current=$iv_ruleNumericValue.current; }
+	EOF;
+
+// Rule NumericValue
+ruleNumericValue returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getNumericValueAccess().getNumberValueParserRuleCall_0());
+		}
+		this_NumberValue_0=ruleNumberValue
+		{
+			$current = $this_NumberValue_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getNumericValueAccess().getPercentValueParserRuleCall_1());
+		}
+		this_PercentValue_1=rulePercentValue
+		{
+			$current = $this_PercentValue_1.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -689,6 +1081,41 @@ ruleNumberValue returns [EObject current=null]
 				)
 			)*
 		)?
+	)
+;
+
+// Entry rule entryRuleIntegerValue
+entryRuleIntegerValue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIntegerValueRule()); }
+	iv_ruleIntegerValue=ruleIntegerValue
+	{ $current=$iv_ruleIntegerValue.current; }
+	EOF;
+
+// Rule IntegerValue
+ruleIntegerValue returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_value_0_0=RULE_INT
+			{
+				newLeafNode(lv_value_0_0, grammarAccess.getIntegerValueAccess().getValueINTTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getIntegerValueRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"value",
+					lv_value_0_0,
+					"org.eclipse.xtext.common.Terminals.INT");
+			}
+		)
 	)
 ;
 

@@ -3,11 +3,12 @@
  */
 package m2.idm.project.mLRegression.impl;
 
+import m2.idm.project.mLRegression.Algo;
+import m2.idm.project.mLRegression.Calculate;
 import m2.idm.project.mLRegression.Dataset;
-import m2.idm.project.mLRegression.LearningType;
+import m2.idm.project.mLRegression.EvaluationType;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.ReturnType;
 import m2.idm.project.mLRegression.Variables;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -28,9 +29,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getDataset <em>Dataset</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getLearningType <em>Learning Type</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getEvaluation <em>Evaluation</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getVars <em>Vars</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getReturnType <em>Return Type</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getCalculate <em>Calculate</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getAlgo <em>Algo</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +50,14 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
   protected Dataset dataset;
 
   /**
-   * The cached value of the '{@link #getLearningType() <em>Learning Type</em>}' containment reference.
+   * The cached value of the '{@link #getEvaluation() <em>Evaluation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLearningType()
+   * @see #getEvaluation()
    * @generated
    * @ordered
    */
-  protected LearningType learningType;
+  protected EvaluationType evaluation;
 
   /**
    * The cached value of the '{@link #getVars() <em>Vars</em>}' containment reference.
@@ -68,14 +70,24 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
   protected Variables vars;
 
   /**
-   * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' containment reference.
+   * The cached value of the '{@link #getCalculate() <em>Calculate</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReturnType()
+   * @see #getCalculate()
    * @generated
    * @ordered
    */
-  protected ReturnType returnType;
+  protected Calculate calculate;
+
+  /**
+   * The cached value of the '{@link #getAlgo() <em>Algo</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlgo()
+   * @generated
+   * @ordered
+   */
+  protected Algo algo;
 
   /**
    * <!-- begin-user-doc -->
@@ -154,9 +166,9 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
    * @generated
    */
   @Override
-  public LearningType getLearningType()
+  public EvaluationType getEvaluation()
   {
-    return learningType;
+    return evaluation;
   }
 
   /**
@@ -164,13 +176,13 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLearningType(LearningType newLearningType, NotificationChain msgs)
+  public NotificationChain basicSetEvaluation(EvaluationType newEvaluation, NotificationChain msgs)
   {
-    LearningType oldLearningType = learningType;
-    learningType = newLearningType;
+    EvaluationType oldEvaluation = evaluation;
+    evaluation = newEvaluation;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE, oldLearningType, newLearningType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__EVALUATION, oldEvaluation, newEvaluation);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -182,20 +194,20 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
    * @generated
    */
   @Override
-  public void setLearningType(LearningType newLearningType)
+  public void setEvaluation(EvaluationType newEvaluation)
   {
-    if (newLearningType != learningType)
+    if (newEvaluation != evaluation)
     {
       NotificationChain msgs = null;
-      if (learningType != null)
-        msgs = ((InternalEObject)learningType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE, null, msgs);
-      if (newLearningType != null)
-        msgs = ((InternalEObject)newLearningType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE, null, msgs);
-      msgs = basicSetLearningType(newLearningType, msgs);
+      if (evaluation != null)
+        msgs = ((InternalEObject)evaluation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__EVALUATION, null, msgs);
+      if (newEvaluation != null)
+        msgs = ((InternalEObject)newEvaluation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__EVALUATION, null, msgs);
+      msgs = basicSetEvaluation(newEvaluation, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE, newLearningType, newLearningType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__EVALUATION, newEvaluation, newEvaluation));
   }
 
   /**
@@ -254,9 +266,9 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
    * @generated
    */
   @Override
-  public ReturnType getReturnType()
+  public Calculate getCalculate()
   {
-    return returnType;
+    return calculate;
   }
 
   /**
@@ -264,13 +276,13 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetReturnType(ReturnType newReturnType, NotificationChain msgs)
+  public NotificationChain basicSetCalculate(Calculate newCalculate, NotificationChain msgs)
   {
-    ReturnType oldReturnType = returnType;
-    returnType = newReturnType;
+    Calculate oldCalculate = calculate;
+    calculate = newCalculate;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__RETURN_TYPE, oldReturnType, newReturnType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__CALCULATE, oldCalculate, newCalculate);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -282,20 +294,70 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
    * @generated
    */
   @Override
-  public void setReturnType(ReturnType newReturnType)
+  public void setCalculate(Calculate newCalculate)
   {
-    if (newReturnType != returnType)
+    if (newCalculate != calculate)
     {
       NotificationChain msgs = null;
-      if (returnType != null)
-        msgs = ((InternalEObject)returnType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__RETURN_TYPE, null, msgs);
-      if (newReturnType != null)
-        msgs = ((InternalEObject)newReturnType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__RETURN_TYPE, null, msgs);
-      msgs = basicSetReturnType(newReturnType, msgs);
+      if (calculate != null)
+        msgs = ((InternalEObject)calculate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__CALCULATE, null, msgs);
+      if (newCalculate != null)
+        msgs = ((InternalEObject)newCalculate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__CALCULATE, null, msgs);
+      msgs = basicSetCalculate(newCalculate, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__RETURN_TYPE, newReturnType, newReturnType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__CALCULATE, newCalculate, newCalculate));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Algo getAlgo()
+  {
+    return algo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAlgo(Algo newAlgo, NotificationChain msgs)
+  {
+    Algo oldAlgo = algo;
+    algo = newAlgo;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__ALGO, oldAlgo, newAlgo);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAlgo(Algo newAlgo)
+  {
+    if (newAlgo != algo)
+    {
+      NotificationChain msgs = null;
+      if (algo != null)
+        msgs = ((InternalEObject)algo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__ALGO, null, msgs);
+      if (newAlgo != null)
+        msgs = ((InternalEObject)newAlgo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__ALGO, null, msgs);
+      msgs = basicSetAlgo(newAlgo, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__ALGO, newAlgo, newAlgo));
   }
 
   /**
@@ -310,12 +372,14 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
     {
       case MLRegressionPackage.ML_REGRESSION__DATASET:
         return basicSetDataset(null, msgs);
-      case MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE:
-        return basicSetLearningType(null, msgs);
+      case MLRegressionPackage.ML_REGRESSION__EVALUATION:
+        return basicSetEvaluation(null, msgs);
       case MLRegressionPackage.ML_REGRESSION__VARS:
         return basicSetVars(null, msgs);
-      case MLRegressionPackage.ML_REGRESSION__RETURN_TYPE:
-        return basicSetReturnType(null, msgs);
+      case MLRegressionPackage.ML_REGRESSION__CALCULATE:
+        return basicSetCalculate(null, msgs);
+      case MLRegressionPackage.ML_REGRESSION__ALGO:
+        return basicSetAlgo(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -332,12 +396,14 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
     {
       case MLRegressionPackage.ML_REGRESSION__DATASET:
         return getDataset();
-      case MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE:
-        return getLearningType();
+      case MLRegressionPackage.ML_REGRESSION__EVALUATION:
+        return getEvaluation();
       case MLRegressionPackage.ML_REGRESSION__VARS:
         return getVars();
-      case MLRegressionPackage.ML_REGRESSION__RETURN_TYPE:
-        return getReturnType();
+      case MLRegressionPackage.ML_REGRESSION__CALCULATE:
+        return getCalculate();
+      case MLRegressionPackage.ML_REGRESSION__ALGO:
+        return getAlgo();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -355,14 +421,17 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
       case MLRegressionPackage.ML_REGRESSION__DATASET:
         setDataset((Dataset)newValue);
         return;
-      case MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE:
-        setLearningType((LearningType)newValue);
+      case MLRegressionPackage.ML_REGRESSION__EVALUATION:
+        setEvaluation((EvaluationType)newValue);
         return;
       case MLRegressionPackage.ML_REGRESSION__VARS:
         setVars((Variables)newValue);
         return;
-      case MLRegressionPackage.ML_REGRESSION__RETURN_TYPE:
-        setReturnType((ReturnType)newValue);
+      case MLRegressionPackage.ML_REGRESSION__CALCULATE:
+        setCalculate((Calculate)newValue);
+        return;
+      case MLRegressionPackage.ML_REGRESSION__ALGO:
+        setAlgo((Algo)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -381,14 +450,17 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
       case MLRegressionPackage.ML_REGRESSION__DATASET:
         setDataset((Dataset)null);
         return;
-      case MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE:
-        setLearningType((LearningType)null);
+      case MLRegressionPackage.ML_REGRESSION__EVALUATION:
+        setEvaluation((EvaluationType)null);
         return;
       case MLRegressionPackage.ML_REGRESSION__VARS:
         setVars((Variables)null);
         return;
-      case MLRegressionPackage.ML_REGRESSION__RETURN_TYPE:
-        setReturnType((ReturnType)null);
+      case MLRegressionPackage.ML_REGRESSION__CALCULATE:
+        setCalculate((Calculate)null);
+        return;
+      case MLRegressionPackage.ML_REGRESSION__ALGO:
+        setAlgo((Algo)null);
         return;
     }
     super.eUnset(featureID);
@@ -406,12 +478,14 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
     {
       case MLRegressionPackage.ML_REGRESSION__DATASET:
         return dataset != null;
-      case MLRegressionPackage.ML_REGRESSION__LEARNING_TYPE:
-        return learningType != null;
+      case MLRegressionPackage.ML_REGRESSION__EVALUATION:
+        return evaluation != null;
       case MLRegressionPackage.ML_REGRESSION__VARS:
         return vars != null;
-      case MLRegressionPackage.ML_REGRESSION__RETURN_TYPE:
-        return returnType != null;
+      case MLRegressionPackage.ML_REGRESSION__CALCULATE:
+        return calculate != null;
+      case MLRegressionPackage.ML_REGRESSION__ALGO:
+        return algo != null;
     }
     return super.eIsSet(featureID);
   }

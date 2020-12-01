@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface NumberValue extends TypeValue, PercentValue
+public interface NumberValue extends NumericValue, PercentValue
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
