@@ -42,13 +42,13 @@ Variables:
 ;
 
 ListePredictiveVar : 
-    'predictive_vars' ':' varPred=STRING(','predVar+=STRING)* ';'
+    'predictive_vars' ':' vars+=STRING(','vars+=STRING)* ';'
 ;
 
  
 
 TargetVar : 
-    'target_var' ':' varTar=StringValue ';'
+    'target_var' ':' var=StringValue ';'
 ;
 
 Algo :
@@ -56,25 +56,19 @@ Algo :
 ;
 
 AlgoML : 
-    LineRegress
+    LineRegress | SVR | DecisionTreeRegressor
 ;
 
 LineRegress :
-    'line_regress' '(' x1=ID ',' y1=Y ',' x2=ID ',' y2=Y ')'
-;
-
-Y :
-	INT
+    'line_regress' '('columns+=STRING (',' columns+=STRING)* ')'
 ;
 
 DecisionTreeRegressor : 
-	'DecisionTreeRegressor'
+    'decision_tree_regressor' '(' rand=INT ')'
 ;
-
  
-
 SVR : 
-	'SVR'
+    'svr' '(' param=ID ')'
 ;
 
 

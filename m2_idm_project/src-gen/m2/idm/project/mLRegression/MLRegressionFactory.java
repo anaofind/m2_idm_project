@@ -132,6 +132,24 @@ public interface MLRegressionFactory extends EFactory
   LineRegress createLineRegress();
 
   /**
+   * Returns a new object of class '<em>Decision Tree Regressor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decision Tree Regressor</em>'.
+   * @generated
+   */
+  DecisionTreeRegressor createDecisionTreeRegressor();
+
+  /**
+   * Returns a new object of class '<em>SVR</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SVR</em>'.
+   * @generated
+   */
+  SVR createSVR();
+
+  /**
    * Returns a new object of class '<em>Type Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

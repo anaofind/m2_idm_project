@@ -318,22 +318,13 @@ public interface MLRegressionPackage extends EPackage
   int LISTE_PREDICTIVE_VAR = 7;
 
   /**
-   * The feature id for the '<em><b>Var Pred</b></em>' attribute.
+   * The feature id for the '<em><b>Vars</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LISTE_PREDICTIVE_VAR__VAR_PRED = 0;
-
-  /**
-   * The feature id for the '<em><b>Pred Var</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LISTE_PREDICTIVE_VAR__PRED_VAR = 1;
+  int LISTE_PREDICTIVE_VAR__VARS = 0;
 
   /**
    * The number of structural features of the '<em>Liste Predictive Var</em>' class.
@@ -342,7 +333,7 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LISTE_PREDICTIVE_VAR_FEATURE_COUNT = 2;
+  int LISTE_PREDICTIVE_VAR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.TargetVarImpl <em>Target Var</em>}' class.
@@ -355,13 +346,13 @@ public interface MLRegressionPackage extends EPackage
   int TARGET_VAR = 8;
 
   /**
-   * The feature id for the '<em><b>Var Tar</b></em>' containment reference.
+   * The feature id for the '<em><b>Var</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TARGET_VAR__VAR_TAR = 0;
+  int TARGET_VAR__VAR = 0;
 
   /**
    * The number of structural features of the '<em>Target Var</em>' class.
@@ -430,40 +421,13 @@ public interface MLRegressionPackage extends EPackage
   int LINE_REGRESS = 11;
 
   /**
-   * The feature id for the '<em><b>X1</b></em>' attribute.
+   * The feature id for the '<em><b>Columns</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINE_REGRESS__X1 = ALGO_ML_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Y1</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LINE_REGRESS__Y1 = ALGO_ML_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>X2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LINE_REGRESS__X2 = ALGO_ML_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Y2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LINE_REGRESS__Y2 = ALGO_ML_FEATURE_COUNT + 3;
+  int LINE_REGRESS__COLUMNS = ALGO_ML_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Line Regress</em>' class.
@@ -472,7 +436,63 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINE_REGRESS_FEATURE_COUNT = ALGO_ML_FEATURE_COUNT + 4;
+  int LINE_REGRESS_FEATURE_COUNT = ALGO_ML_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl <em>Decision Tree Regressor</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getDecisionTreeRegressor()
+   * @generated
+   */
+  int DECISION_TREE_REGRESSOR = 12;
+
+  /**
+   * The feature id for the '<em><b>Rand</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECISION_TREE_REGRESSOR__RAND = ALGO_ML_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Decision Tree Regressor</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECISION_TREE_REGRESSOR_FEATURE_COUNT = ALGO_ML_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.SVRImpl <em>SVR</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see m2.idm.project.mLRegression.impl.SVRImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getSVR()
+   * @generated
+   */
+  int SVR = 13;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SVR__PARAM = ALGO_ML_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SVR</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SVR_FEATURE_COUNT = ALGO_ML_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.TypeValueImpl <em>Type Value</em>}' class.
@@ -482,7 +502,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getTypeValue()
    * @generated
    */
-  int TYPE_VALUE = 12;
+  int TYPE_VALUE = 14;
 
   /**
    * The number of structural features of the '<em>Type Value</em>' class.
@@ -501,7 +521,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 13;
+  int STRING_VALUE = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -529,7 +549,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getNumericValue()
    * @generated
    */
-  int NUMERIC_VALUE = 14;
+  int NUMERIC_VALUE = 16;
 
   /**
    * The number of structural features of the '<em>Numeric Value</em>' class.
@@ -548,7 +568,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getNumberValue()
    * @generated
    */
-  int NUMBER_VALUE = 15;
+  int NUMBER_VALUE = 17;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -585,7 +605,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getIntegerValue()
    * @generated
    */
-  int INTEGER_VALUE = 16;
+  int INTEGER_VALUE = 18;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -613,7 +633,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPercentValue()
    * @generated
    */
-  int PERCENT_VALUE = 17;
+  int PERCENT_VALUE = 19;
 
   /**
    * The number of structural features of the '<em>Percent Value</em>' class.
@@ -632,7 +652,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 18;
+  int BOOLEAN_VALUE = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -877,26 +897,15 @@ public interface MLRegressionPackage extends EPackage
   EClass getListePredictiveVar();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.ListePredictiveVar#getVarPred <em>Var Pred</em>}'.
+   * Returns the meta object for the attribute list '{@link m2.idm.project.mLRegression.ListePredictiveVar#getVars <em>Vars</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var Pred</em>'.
-   * @see m2.idm.project.mLRegression.ListePredictiveVar#getVarPred()
+   * @return the meta object for the attribute list '<em>Vars</em>'.
+   * @see m2.idm.project.mLRegression.ListePredictiveVar#getVars()
    * @see #getListePredictiveVar()
    * @generated
    */
-  EAttribute getListePredictiveVar_VarPred();
-
-  /**
-   * Returns the meta object for the attribute list '{@link m2.idm.project.mLRegression.ListePredictiveVar#getPredVar <em>Pred Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Pred Var</em>'.
-   * @see m2.idm.project.mLRegression.ListePredictiveVar#getPredVar()
-   * @see #getListePredictiveVar()
-   * @generated
-   */
-  EAttribute getListePredictiveVar_PredVar();
+  EAttribute getListePredictiveVar_Vars();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.TargetVar <em>Target Var</em>}'.
@@ -909,15 +918,15 @@ public interface MLRegressionPackage extends EPackage
   EClass getTargetVar();
 
   /**
-   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.TargetVar#getVarTar <em>Var Tar</em>}'.
+   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.TargetVar#getVar <em>Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var Tar</em>'.
-   * @see m2.idm.project.mLRegression.TargetVar#getVarTar()
+   * @return the meta object for the containment reference '<em>Var</em>'.
+   * @see m2.idm.project.mLRegression.TargetVar#getVar()
    * @see #getTargetVar()
    * @generated
    */
-  EReference getTargetVar_VarTar();
+  EReference getTargetVar_Var();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.Algo <em>Algo</em>}'.
@@ -961,48 +970,57 @@ public interface MLRegressionPackage extends EPackage
   EClass getLineRegress();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.LineRegress#getX1 <em>X1</em>}'.
+   * Returns the meta object for the attribute list '{@link m2.idm.project.mLRegression.LineRegress#getColumns <em>Columns</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>X1</em>'.
-   * @see m2.idm.project.mLRegression.LineRegress#getX1()
+   * @return the meta object for the attribute list '<em>Columns</em>'.
+   * @see m2.idm.project.mLRegression.LineRegress#getColumns()
    * @see #getLineRegress()
    * @generated
    */
-  EAttribute getLineRegress_X1();
+  EAttribute getLineRegress_Columns();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.LineRegress#getY1 <em>Y1</em>}'.
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.DecisionTreeRegressor <em>Decision Tree Regressor</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Y1</em>'.
-   * @see m2.idm.project.mLRegression.LineRegress#getY1()
-   * @see #getLineRegress()
+   * @return the meta object for class '<em>Decision Tree Regressor</em>'.
+   * @see m2.idm.project.mLRegression.DecisionTreeRegressor
    * @generated
    */
-  EAttribute getLineRegress_Y1();
+  EClass getDecisionTreeRegressor();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.LineRegress#getX2 <em>X2</em>}'.
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.DecisionTreeRegressor#getRand <em>Rand</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>X2</em>'.
-   * @see m2.idm.project.mLRegression.LineRegress#getX2()
-   * @see #getLineRegress()
+   * @return the meta object for the attribute '<em>Rand</em>'.
+   * @see m2.idm.project.mLRegression.DecisionTreeRegressor#getRand()
+   * @see #getDecisionTreeRegressor()
    * @generated
    */
-  EAttribute getLineRegress_X2();
+  EAttribute getDecisionTreeRegressor_Rand();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.LineRegress#getY2 <em>Y2</em>}'.
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.SVR <em>SVR</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Y2</em>'.
-   * @see m2.idm.project.mLRegression.LineRegress#getY2()
-   * @see #getLineRegress()
+   * @return the meta object for class '<em>SVR</em>'.
+   * @see m2.idm.project.mLRegression.SVR
    * @generated
    */
-  EAttribute getLineRegress_Y2();
+  EClass getSVR();
+
+  /**
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.SVR#getParam <em>Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Param</em>'.
+   * @see m2.idm.project.mLRegression.SVR#getParam()
+   * @see #getSVR()
+   * @generated
+   */
+  EAttribute getSVR_Param();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.TypeValue <em>Type Value</em>}'.
@@ -1337,20 +1355,12 @@ public interface MLRegressionPackage extends EPackage
     EClass LISTE_PREDICTIVE_VAR = eINSTANCE.getListePredictiveVar();
 
     /**
-     * The meta object literal for the '<em><b>Var Pred</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Vars</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LISTE_PREDICTIVE_VAR__VAR_PRED = eINSTANCE.getListePredictiveVar_VarPred();
-
-    /**
-     * The meta object literal for the '<em><b>Pred Var</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LISTE_PREDICTIVE_VAR__PRED_VAR = eINSTANCE.getListePredictiveVar_PredVar();
+    EAttribute LISTE_PREDICTIVE_VAR__VARS = eINSTANCE.getListePredictiveVar_Vars();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.TargetVarImpl <em>Target Var</em>}' class.
@@ -1363,12 +1373,12 @@ public interface MLRegressionPackage extends EPackage
     EClass TARGET_VAR = eINSTANCE.getTargetVar();
 
     /**
-     * The meta object literal for the '<em><b>Var Tar</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TARGET_VAR__VAR_TAR = eINSTANCE.getTargetVar_VarTar();
+    EReference TARGET_VAR__VAR = eINSTANCE.getTargetVar_Var();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.AlgoImpl <em>Algo</em>}' class.
@@ -1409,36 +1419,48 @@ public interface MLRegressionPackage extends EPackage
     EClass LINE_REGRESS = eINSTANCE.getLineRegress();
 
     /**
-     * The meta object literal for the '<em><b>X1</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Columns</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINE_REGRESS__X1 = eINSTANCE.getLineRegress_X1();
+    EAttribute LINE_REGRESS__COLUMNS = eINSTANCE.getLineRegress_Columns();
 
     /**
-     * The meta object literal for the '<em><b>Y1</b></em>' attribute feature.
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl <em>Decision Tree Regressor</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getDecisionTreeRegressor()
      * @generated
      */
-    EAttribute LINE_REGRESS__Y1 = eINSTANCE.getLineRegress_Y1();
+    EClass DECISION_TREE_REGRESSOR = eINSTANCE.getDecisionTreeRegressor();
 
     /**
-     * The meta object literal for the '<em><b>X2</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Rand</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINE_REGRESS__X2 = eINSTANCE.getLineRegress_X2();
+    EAttribute DECISION_TREE_REGRESSOR__RAND = eINSTANCE.getDecisionTreeRegressor_Rand();
 
     /**
-     * The meta object literal for the '<em><b>Y2</b></em>' attribute feature.
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.SVRImpl <em>SVR</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see m2.idm.project.mLRegression.impl.SVRImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getSVR()
+     * @generated
+     */
+    EClass SVR = eINSTANCE.getSVR();
+
+    /**
+     * The meta object literal for the '<em><b>Param</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINE_REGRESS__Y2 = eINSTANCE.getLineRegress_Y2();
+    EAttribute SVR__PARAM = eINSTANCE.getSVR_Param();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.TypeValueImpl <em>Type Value</em>}' class.

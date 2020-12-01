@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'calculate'", "':'", "';'", "'import'", "'partition'", "','", "'cross_validation'", "'predictive_vars'", "'target_var'", "'algorithm'", "'line_regress'", "'('", "')'", "'min_error'", "'min_square_error'", "'sums_square_error'", "'.'", "'%'", "'false'", "'true'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'calculate'", "':'", "';'", "'import'", "'partition'", "','", "'cross_validation'", "'predictive_vars'", "'target_var'", "'algorithm'", "'line_regress'", "'('", "')'", "'decision_tree_regressor'", "'svr'", "'min_error'", "'min_square_error'", "'sums_square_error'", "'.'", "'%'", "'false'", "'true'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -36,13 +36,15 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
-    public static final int RULE_ID=5;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_ID=6;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=5;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -521,17 +523,17 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
             // InternalMLRegression.g:242:2: (this_MinError_0= ruleMinError | this_MinSquaredError_1= ruleMinSquaredError | this_SumsSquaredError_2= ruleSumsSquaredError )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 24:
+            case 26:
                 {
                 alt2=1;
                 }
                 break;
-            case 25:
+            case 27:
                 {
                 alt2=2;
                 }
                 break;
-            case 26:
+            case 28:
                 {
                 alt2=3;
                 }
@@ -1348,26 +1350,26 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleListePredictiveVar"
-    // InternalMLRegression.g:558:1: ruleListePredictiveVar returns [EObject current=null] : (otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_varPred_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_predVar_4_0= RULE_STRING ) ) )* otherlv_5= ';' ) ;
+    // InternalMLRegression.g:558:1: ruleListePredictiveVar returns [EObject current=null] : (otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_vars_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_vars_4_0= RULE_STRING ) ) )* otherlv_5= ';' ) ;
     public final EObject ruleListePredictiveVar() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_varPred_2_0=null;
+        Token lv_vars_2_0=null;
         Token otherlv_3=null;
-        Token lv_predVar_4_0=null;
+        Token lv_vars_4_0=null;
         Token otherlv_5=null;
 
 
         	enterRule();
 
         try {
-            // InternalMLRegression.g:564:2: ( (otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_varPred_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_predVar_4_0= RULE_STRING ) ) )* otherlv_5= ';' ) )
-            // InternalMLRegression.g:565:2: (otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_varPred_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_predVar_4_0= RULE_STRING ) ) )* otherlv_5= ';' )
+            // InternalMLRegression.g:564:2: ( (otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_vars_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_vars_4_0= RULE_STRING ) ) )* otherlv_5= ';' ) )
+            // InternalMLRegression.g:565:2: (otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_vars_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_vars_4_0= RULE_STRING ) ) )* otherlv_5= ';' )
             {
-            // InternalMLRegression.g:565:2: (otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_varPred_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_predVar_4_0= RULE_STRING ) ) )* otherlv_5= ';' )
-            // InternalMLRegression.g:566:3: otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_varPred_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_predVar_4_0= RULE_STRING ) ) )* otherlv_5= ';'
+            // InternalMLRegression.g:565:2: (otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_vars_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_vars_4_0= RULE_STRING ) ) )* otherlv_5= ';' )
+            // InternalMLRegression.g:566:3: otherlv_0= 'predictive_vars' otherlv_1= ':' ( (lv_vars_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_vars_4_0= RULE_STRING ) ) )* otherlv_5= ';'
             {
             otherlv_0=(Token)match(input,18,FOLLOW_6); 
 
@@ -1377,24 +1379,24 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getListePredictiveVarAccess().getColonKeyword_1());
             		
-            // InternalMLRegression.g:574:3: ( (lv_varPred_2_0= RULE_STRING ) )
-            // InternalMLRegression.g:575:4: (lv_varPred_2_0= RULE_STRING )
+            // InternalMLRegression.g:574:3: ( (lv_vars_2_0= RULE_STRING ) )
+            // InternalMLRegression.g:575:4: (lv_vars_2_0= RULE_STRING )
             {
-            // InternalMLRegression.g:575:4: (lv_varPred_2_0= RULE_STRING )
-            // InternalMLRegression.g:576:5: lv_varPred_2_0= RULE_STRING
+            // InternalMLRegression.g:575:4: (lv_vars_2_0= RULE_STRING )
+            // InternalMLRegression.g:576:5: lv_vars_2_0= RULE_STRING
             {
-            lv_varPred_2_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+            lv_vars_2_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
-            					newLeafNode(lv_varPred_2_0, grammarAccess.getListePredictiveVarAccess().getVarPredSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_vars_2_0, grammarAccess.getListePredictiveVarAccess().getVarsSTRINGTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getListePredictiveVarRule());
             					}
-            					setWithLastConsumed(
+            					addWithLastConsumed(
             						current,
-            						"varPred",
-            						lv_varPred_2_0,
+            						"vars",
+            						lv_vars_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1403,7 +1405,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMLRegression.g:592:3: (otherlv_3= ',' ( (lv_predVar_4_0= RULE_STRING ) ) )*
+            // InternalMLRegression.g:592:3: (otherlv_3= ',' ( (lv_vars_4_0= RULE_STRING ) ) )*
             loop4:
             do {
                 int alt4=2;
@@ -1416,21 +1418,21 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalMLRegression.g:593:4: otherlv_3= ',' ( (lv_predVar_4_0= RULE_STRING ) )
+            	    // InternalMLRegression.g:593:4: otherlv_3= ',' ( (lv_vars_4_0= RULE_STRING ) )
             	    {
             	    otherlv_3=(Token)match(input,16,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getListePredictiveVarAccess().getCommaKeyword_3_0());
             	    			
-            	    // InternalMLRegression.g:597:4: ( (lv_predVar_4_0= RULE_STRING ) )
-            	    // InternalMLRegression.g:598:5: (lv_predVar_4_0= RULE_STRING )
+            	    // InternalMLRegression.g:597:4: ( (lv_vars_4_0= RULE_STRING ) )
+            	    // InternalMLRegression.g:598:5: (lv_vars_4_0= RULE_STRING )
             	    {
-            	    // InternalMLRegression.g:598:5: (lv_predVar_4_0= RULE_STRING )
-            	    // InternalMLRegression.g:599:6: lv_predVar_4_0= RULE_STRING
+            	    // InternalMLRegression.g:598:5: (lv_vars_4_0= RULE_STRING )
+            	    // InternalMLRegression.g:599:6: lv_vars_4_0= RULE_STRING
             	    {
-            	    lv_predVar_4_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+            	    lv_vars_4_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
-            	    						newLeafNode(lv_predVar_4_0, grammarAccess.getListePredictiveVarAccess().getPredVarSTRINGTerminalRuleCall_3_1_0());
+            	    						newLeafNode(lv_vars_4_0, grammarAccess.getListePredictiveVarAccess().getVarsSTRINGTerminalRuleCall_3_1_0());
             	    					
 
             	    						if (current==null) {
@@ -1438,8 +1440,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
             	    						}
             	    						addWithLastConsumed(
             	    							current,
-            	    							"predVar",
-            	    							lv_predVar_4_0,
+            	    							"vars",
+            	    							lv_vars_4_0,
             	    							"org.eclipse.xtext.common.Terminals.STRING");
             	    					
 
@@ -1520,25 +1522,25 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTargetVar"
-    // InternalMLRegression.g:631:1: ruleTargetVar returns [EObject current=null] : (otherlv_0= 'target_var' otherlv_1= ':' ( (lv_varTar_2_0= ruleStringValue ) ) otherlv_3= ';' ) ;
+    // InternalMLRegression.g:631:1: ruleTargetVar returns [EObject current=null] : (otherlv_0= 'target_var' otherlv_1= ':' ( (lv_var_2_0= ruleStringValue ) ) otherlv_3= ';' ) ;
     public final EObject ruleTargetVar() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
-        EObject lv_varTar_2_0 = null;
+        EObject lv_var_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalMLRegression.g:637:2: ( (otherlv_0= 'target_var' otherlv_1= ':' ( (lv_varTar_2_0= ruleStringValue ) ) otherlv_3= ';' ) )
-            // InternalMLRegression.g:638:2: (otherlv_0= 'target_var' otherlv_1= ':' ( (lv_varTar_2_0= ruleStringValue ) ) otherlv_3= ';' )
+            // InternalMLRegression.g:637:2: ( (otherlv_0= 'target_var' otherlv_1= ':' ( (lv_var_2_0= ruleStringValue ) ) otherlv_3= ';' ) )
+            // InternalMLRegression.g:638:2: (otherlv_0= 'target_var' otherlv_1= ':' ( (lv_var_2_0= ruleStringValue ) ) otherlv_3= ';' )
             {
-            // InternalMLRegression.g:638:2: (otherlv_0= 'target_var' otherlv_1= ':' ( (lv_varTar_2_0= ruleStringValue ) ) otherlv_3= ';' )
-            // InternalMLRegression.g:639:3: otherlv_0= 'target_var' otherlv_1= ':' ( (lv_varTar_2_0= ruleStringValue ) ) otherlv_3= ';'
+            // InternalMLRegression.g:638:2: (otherlv_0= 'target_var' otherlv_1= ':' ( (lv_var_2_0= ruleStringValue ) ) otherlv_3= ';' )
+            // InternalMLRegression.g:639:3: otherlv_0= 'target_var' otherlv_1= ':' ( (lv_var_2_0= ruleStringValue ) ) otherlv_3= ';'
             {
             otherlv_0=(Token)match(input,19,FOLLOW_6); 
 
@@ -1548,17 +1550,17 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTargetVarAccess().getColonKeyword_1());
             		
-            // InternalMLRegression.g:647:3: ( (lv_varTar_2_0= ruleStringValue ) )
-            // InternalMLRegression.g:648:4: (lv_varTar_2_0= ruleStringValue )
+            // InternalMLRegression.g:647:3: ( (lv_var_2_0= ruleStringValue ) )
+            // InternalMLRegression.g:648:4: (lv_var_2_0= ruleStringValue )
             {
-            // InternalMLRegression.g:648:4: (lv_varTar_2_0= ruleStringValue )
-            // InternalMLRegression.g:649:5: lv_varTar_2_0= ruleStringValue
+            // InternalMLRegression.g:648:4: (lv_var_2_0= ruleStringValue )
+            // InternalMLRegression.g:649:5: lv_var_2_0= ruleStringValue
             {
 
-            					newCompositeNode(grammarAccess.getTargetVarAccess().getVarTarStringValueParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getTargetVarAccess().getVarStringValueParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_8);
-            lv_varTar_2_0=ruleStringValue();
+            lv_var_2_0=ruleStringValue();
 
             state._fsp--;
 
@@ -1568,8 +1570,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"varTar",
-            						lv_varTar_2_0,
+            						"var",
+            						lv_var_2_0,
             						"m2.idm.project.MLRegression.StringValue");
             					afterParserOrEnumRuleCall();
             				
@@ -1764,32 +1766,107 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlgoML"
-    // InternalMLRegression.g:731:1: ruleAlgoML returns [EObject current=null] : this_LineRegress_0= ruleLineRegress ;
+    // InternalMLRegression.g:731:1: ruleAlgoML returns [EObject current=null] : (this_LineRegress_0= ruleLineRegress | this_SVR_1= ruleSVR | this_DecisionTreeRegressor_2= ruleDecisionTreeRegressor ) ;
     public final EObject ruleAlgoML() throws RecognitionException {
         EObject current = null;
 
         EObject this_LineRegress_0 = null;
+
+        EObject this_SVR_1 = null;
+
+        EObject this_DecisionTreeRegressor_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalMLRegression.g:737:2: (this_LineRegress_0= ruleLineRegress )
-            // InternalMLRegression.g:738:2: this_LineRegress_0= ruleLineRegress
+            // InternalMLRegression.g:737:2: ( (this_LineRegress_0= ruleLineRegress | this_SVR_1= ruleSVR | this_DecisionTreeRegressor_2= ruleDecisionTreeRegressor ) )
+            // InternalMLRegression.g:738:2: (this_LineRegress_0= ruleLineRegress | this_SVR_1= ruleSVR | this_DecisionTreeRegressor_2= ruleDecisionTreeRegressor )
             {
+            // InternalMLRegression.g:738:2: (this_LineRegress_0= ruleLineRegress | this_SVR_1= ruleSVR | this_DecisionTreeRegressor_2= ruleDecisionTreeRegressor )
+            int alt5=3;
+            switch ( input.LA(1) ) {
+            case 21:
+                {
+                alt5=1;
+                }
+                break;
+            case 25:
+                {
+                alt5=2;
+                }
+                break;
+            case 24:
+                {
+                alt5=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
 
-            		newCompositeNode(grammarAccess.getAlgoMLAccess().getLineRegressParserRuleCall());
-            	
-            pushFollow(FOLLOW_2);
-            this_LineRegress_0=ruleLineRegress();
+                throw nvae;
+            }
 
-            state._fsp--;
+            switch (alt5) {
+                case 1 :
+                    // InternalMLRegression.g:739:3: this_LineRegress_0= ruleLineRegress
+                    {
+
+                    			newCompositeNode(grammarAccess.getAlgoMLAccess().getLineRegressParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_LineRegress_0=ruleLineRegress();
+
+                    state._fsp--;
 
 
-            		current = this_LineRegress_0;
-            		afterParserOrEnumRuleCall();
-            	
+                    			current = this_LineRegress_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMLRegression.g:748:3: this_SVR_1= ruleSVR
+                    {
+
+                    			newCompositeNode(grammarAccess.getAlgoMLAccess().getSVRParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_SVR_1=ruleSVR();
+
+                    state._fsp--;
+
+
+                    			current = this_SVR_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalMLRegression.g:757:3: this_DecisionTreeRegressor_2= ruleDecisionTreeRegressor
+                    {
+
+                    			newCompositeNode(grammarAccess.getAlgoMLAccess().getDecisionTreeRegressorParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_DecisionTreeRegressor_2=ruleDecisionTreeRegressor();
+
+                    state._fsp--;
+
+
+                    			current = this_DecisionTreeRegressor_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -1810,7 +1887,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLineRegress"
-    // InternalMLRegression.g:749:1: entryRuleLineRegress returns [EObject current=null] : iv_ruleLineRegress= ruleLineRegress EOF ;
+    // InternalMLRegression.g:769:1: entryRuleLineRegress returns [EObject current=null] : iv_ruleLineRegress= ruleLineRegress EOF ;
     public final EObject entryRuleLineRegress() throws RecognitionException {
         EObject current = null;
 
@@ -1818,8 +1895,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:749:52: (iv_ruleLineRegress= ruleLineRegress EOF )
-            // InternalMLRegression.g:750:2: iv_ruleLineRegress= ruleLineRegress EOF
+            // InternalMLRegression.g:769:52: (iv_ruleLineRegress= ruleLineRegress EOF )
+            // InternalMLRegression.g:770:2: iv_ruleLineRegress= ruleLineRegress EOF
             {
              newCompositeNode(grammarAccess.getLineRegressRule()); 
             pushFollow(FOLLOW_1);
@@ -1846,60 +1923,54 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLineRegress"
-    // InternalMLRegression.g:756:1: ruleLineRegress returns [EObject current=null] : (otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_x1_2_0= RULE_ID ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleY ) ) otherlv_5= ',' ( (lv_x2_6_0= RULE_ID ) ) otherlv_7= ',' ( (lv_y2_8_0= ruleY ) ) otherlv_9= ')' ) ;
+    // InternalMLRegression.g:776:1: ruleLineRegress returns [EObject current=null] : (otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_columns_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_columns_4_0= RULE_STRING ) ) )* otherlv_5= ')' ) ;
     public final EObject ruleLineRegress() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_x1_2_0=null;
+        Token lv_columns_2_0=null;
         Token otherlv_3=null;
+        Token lv_columns_4_0=null;
         Token otherlv_5=null;
-        Token lv_x2_6_0=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        AntlrDatatypeRuleToken lv_y1_4_0 = null;
-
-        AntlrDatatypeRuleToken lv_y2_8_0 = null;
-
 
 
         	enterRule();
 
         try {
-            // InternalMLRegression.g:762:2: ( (otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_x1_2_0= RULE_ID ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleY ) ) otherlv_5= ',' ( (lv_x2_6_0= RULE_ID ) ) otherlv_7= ',' ( (lv_y2_8_0= ruleY ) ) otherlv_9= ')' ) )
-            // InternalMLRegression.g:763:2: (otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_x1_2_0= RULE_ID ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleY ) ) otherlv_5= ',' ( (lv_x2_6_0= RULE_ID ) ) otherlv_7= ',' ( (lv_y2_8_0= ruleY ) ) otherlv_9= ')' )
+            // InternalMLRegression.g:782:2: ( (otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_columns_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_columns_4_0= RULE_STRING ) ) )* otherlv_5= ')' ) )
+            // InternalMLRegression.g:783:2: (otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_columns_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_columns_4_0= RULE_STRING ) ) )* otherlv_5= ')' )
             {
-            // InternalMLRegression.g:763:2: (otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_x1_2_0= RULE_ID ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleY ) ) otherlv_5= ',' ( (lv_x2_6_0= RULE_ID ) ) otherlv_7= ',' ( (lv_y2_8_0= ruleY ) ) otherlv_9= ')' )
-            // InternalMLRegression.g:764:3: otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_x1_2_0= RULE_ID ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleY ) ) otherlv_5= ',' ( (lv_x2_6_0= RULE_ID ) ) otherlv_7= ',' ( (lv_y2_8_0= ruleY ) ) otherlv_9= ')'
+            // InternalMLRegression.g:783:2: (otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_columns_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_columns_4_0= RULE_STRING ) ) )* otherlv_5= ')' )
+            // InternalMLRegression.g:784:3: otherlv_0= 'line_regress' otherlv_1= '(' ( (lv_columns_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_columns_4_0= RULE_STRING ) ) )* otherlv_5= ')'
             {
             otherlv_0=(Token)match(input,21,FOLLOW_15); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLineRegressAccess().getLine_regressKeyword_0());
             		
-            otherlv_1=(Token)match(input,22,FOLLOW_16); 
+            otherlv_1=(Token)match(input,22,FOLLOW_9); 
 
             			newLeafNode(otherlv_1, grammarAccess.getLineRegressAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalMLRegression.g:772:3: ( (lv_x1_2_0= RULE_ID ) )
-            // InternalMLRegression.g:773:4: (lv_x1_2_0= RULE_ID )
+            // InternalMLRegression.g:792:3: ( (lv_columns_2_0= RULE_STRING ) )
+            // InternalMLRegression.g:793:4: (lv_columns_2_0= RULE_STRING )
             {
-            // InternalMLRegression.g:773:4: (lv_x1_2_0= RULE_ID )
-            // InternalMLRegression.g:774:5: lv_x1_2_0= RULE_ID
+            // InternalMLRegression.g:793:4: (lv_columns_2_0= RULE_STRING )
+            // InternalMLRegression.g:794:5: lv_columns_2_0= RULE_STRING
             {
-            lv_x1_2_0=(Token)match(input,RULE_ID,FOLLOW_11); 
+            lv_columns_2_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
-            					newLeafNode(lv_x1_2_0, grammarAccess.getLineRegressAccess().getX1IDTerminalRuleCall_2_0());
+            					newLeafNode(lv_columns_2_0, grammarAccess.getLineRegressAccess().getColumnsSTRINGTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getLineRegressRule());
             					}
-            					setWithLastConsumed(
+            					addWithLastConsumed(
             						current,
-            						"x1",
-            						lv_x1_2_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
+            						"columns",
+            						lv_columns_2_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
             }
@@ -1907,109 +1978,63 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_10); 
+            // InternalMLRegression.g:810:3: (otherlv_3= ',' ( (lv_columns_4_0= RULE_STRING ) ) )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-            			newLeafNode(otherlv_3, grammarAccess.getLineRegressAccess().getCommaKeyword_3());
-            		
-            // InternalMLRegression.g:794:3: ( (lv_y1_4_0= ruleY ) )
-            // InternalMLRegression.g:795:4: (lv_y1_4_0= ruleY )
-            {
-            // InternalMLRegression.g:795:4: (lv_y1_4_0= ruleY )
-            // InternalMLRegression.g:796:5: lv_y1_4_0= ruleY
-            {
-
-            					newCompositeNode(grammarAccess.getLineRegressAccess().getY1YParserRuleCall_4_0());
-            				
-            pushFollow(FOLLOW_11);
-            lv_y1_4_0=ruleY();
-
-            state._fsp--;
+                if ( (LA6_0==16) ) {
+                    alt6=1;
+                }
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getLineRegressRule());
-            					}
-            					set(
-            						current,
-            						"y1",
-            						lv_y1_4_0,
-            						"m2.idm.project.MLRegression.Y");
-            					afterParserOrEnumRuleCall();
-            				
+                switch (alt6) {
+            	case 1 :
+            	    // InternalMLRegression.g:811:4: otherlv_3= ',' ( (lv_columns_4_0= RULE_STRING ) )
+            	    {
+            	    otherlv_3=(Token)match(input,16,FOLLOW_9); 
 
-            }
+            	    				newLeafNode(otherlv_3, grammarAccess.getLineRegressAccess().getCommaKeyword_3_0());
+            	    			
+            	    // InternalMLRegression.g:815:4: ( (lv_columns_4_0= RULE_STRING ) )
+            	    // InternalMLRegression.g:816:5: (lv_columns_4_0= RULE_STRING )
+            	    {
+            	    // InternalMLRegression.g:816:5: (lv_columns_4_0= RULE_STRING )
+            	    // InternalMLRegression.g:817:6: lv_columns_4_0= RULE_STRING
+            	    {
+            	    lv_columns_4_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
+            	    						newLeafNode(lv_columns_4_0, grammarAccess.getLineRegressAccess().getColumnsSTRINGTerminalRuleCall_3_1_0());
+            	    					
 
-            }
+            	    						if (current==null) {
+            	    							current = createModelElement(grammarAccess.getLineRegressRule());
+            	    						}
+            	    						addWithLastConsumed(
+            	    							current,
+            	    							"columns",
+            	    							lv_columns_4_0,
+            	    							"org.eclipse.xtext.common.Terminals.STRING");
+            	    					
 
-            otherlv_5=(Token)match(input,16,FOLLOW_16); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getLineRegressAccess().getCommaKeyword_5());
-            		
-            // InternalMLRegression.g:817:3: ( (lv_x2_6_0= RULE_ID ) )
-            // InternalMLRegression.g:818:4: (lv_x2_6_0= RULE_ID )
-            {
-            // InternalMLRegression.g:818:4: (lv_x2_6_0= RULE_ID )
-            // InternalMLRegression.g:819:5: lv_x2_6_0= RULE_ID
-            {
-            lv_x2_6_0=(Token)match(input,RULE_ID,FOLLOW_11); 
-
-            					newLeafNode(lv_x2_6_0, grammarAccess.getLineRegressAccess().getX2IDTerminalRuleCall_6_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getLineRegressRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"x2",
-            						lv_x2_6_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
+            	    }
 
 
-            }
-
-            otherlv_7=(Token)match(input,16,FOLLOW_10); 
-
-            			newLeafNode(otherlv_7, grammarAccess.getLineRegressAccess().getCommaKeyword_7());
-            		
-            // InternalMLRegression.g:839:3: ( (lv_y2_8_0= ruleY ) )
-            // InternalMLRegression.g:840:4: (lv_y2_8_0= ruleY )
-            {
-            // InternalMLRegression.g:840:4: (lv_y2_8_0= ruleY )
-            // InternalMLRegression.g:841:5: lv_y2_8_0= ruleY
-            {
-
-            					newCompositeNode(grammarAccess.getLineRegressAccess().getY2YParserRuleCall_8_0());
-            				
-            pushFollow(FOLLOW_17);
-            lv_y2_8_0=ruleY();
-
-            state._fsp--;
+            	    }
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getLineRegressRule());
-            					}
-            					set(
-            						current,
-            						"y2",
-            						lv_y2_8_0,
-            						"m2.idm.project.MLRegression.Y");
-            					afterParserOrEnumRuleCall();
-            				
+            	    }
+            	    break;
 
-            }
+            	default :
+            	    break loop6;
+                }
+            } while (true);
 
+            otherlv_5=(Token)match(input,23,FOLLOW_2); 
 
-            }
-
-            otherlv_9=(Token)match(input,23,FOLLOW_2); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getLineRegressAccess().getRightParenthesisKeyword_9());
+            			newLeafNode(otherlv_5, grammarAccess.getLineRegressAccess().getRightParenthesisKeyword_4());
             		
 
             }
@@ -2033,25 +2058,25 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleLineRegress"
 
 
-    // $ANTLR start "entryRuleY"
-    // InternalMLRegression.g:866:1: entryRuleY returns [String current=null] : iv_ruleY= ruleY EOF ;
-    public final String entryRuleY() throws RecognitionException {
-        String current = null;
+    // $ANTLR start "entryRuleDecisionTreeRegressor"
+    // InternalMLRegression.g:842:1: entryRuleDecisionTreeRegressor returns [EObject current=null] : iv_ruleDecisionTreeRegressor= ruleDecisionTreeRegressor EOF ;
+    public final EObject entryRuleDecisionTreeRegressor() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleY = null;
+        EObject iv_ruleDecisionTreeRegressor = null;
 
 
         try {
-            // InternalMLRegression.g:866:41: (iv_ruleY= ruleY EOF )
-            // InternalMLRegression.g:867:2: iv_ruleY= ruleY EOF
+            // InternalMLRegression.g:842:62: (iv_ruleDecisionTreeRegressor= ruleDecisionTreeRegressor EOF )
+            // InternalMLRegression.g:843:2: iv_ruleDecisionTreeRegressor= ruleDecisionTreeRegressor EOF
             {
-             newCompositeNode(grammarAccess.getYRule()); 
+             newCompositeNode(grammarAccess.getDecisionTreeRegressorRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleY=ruleY();
+            iv_ruleDecisionTreeRegressor=ruleDecisionTreeRegressor();
 
             state._fsp--;
 
-             current =iv_ruleY.getText(); 
+             current =iv_ruleDecisionTreeRegressor; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2066,30 +2091,70 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleY"
+    // $ANTLR end "entryRuleDecisionTreeRegressor"
 
 
-    // $ANTLR start "ruleY"
-    // InternalMLRegression.g:873:1: ruleY returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
-    public final AntlrDatatypeRuleToken ruleY() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // $ANTLR start "ruleDecisionTreeRegressor"
+    // InternalMLRegression.g:849:1: ruleDecisionTreeRegressor returns [EObject current=null] : (otherlv_0= 'decision_tree_regressor' otherlv_1= '(' ( (lv_rand_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
+    public final EObject ruleDecisionTreeRegressor() throws RecognitionException {
+        EObject current = null;
 
-        Token this_INT_0=null;
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token lv_rand_2_0=null;
+        Token otherlv_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalMLRegression.g:879:2: (this_INT_0= RULE_INT )
-            // InternalMLRegression.g:880:2: this_INT_0= RULE_INT
+            // InternalMLRegression.g:855:2: ( (otherlv_0= 'decision_tree_regressor' otherlv_1= '(' ( (lv_rand_2_0= RULE_INT ) ) otherlv_3= ')' ) )
+            // InternalMLRegression.g:856:2: (otherlv_0= 'decision_tree_regressor' otherlv_1= '(' ( (lv_rand_2_0= RULE_INT ) ) otherlv_3= ')' )
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            // InternalMLRegression.g:856:2: (otherlv_0= 'decision_tree_regressor' otherlv_1= '(' ( (lv_rand_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // InternalMLRegression.g:857:3: otherlv_0= 'decision_tree_regressor' otherlv_1= '(' ( (lv_rand_2_0= RULE_INT ) ) otherlv_3= ')'
+            {
+            otherlv_0=(Token)match(input,24,FOLLOW_15); 
 
-            		current.merge(this_INT_0);
-            	
+            			newLeafNode(otherlv_0, grammarAccess.getDecisionTreeRegressorAccess().getDecision_tree_regressorKeyword_0());
+            		
+            otherlv_1=(Token)match(input,22,FOLLOW_10); 
 
-            		newLeafNode(this_INT_0, grammarAccess.getYAccess().getINTTerminalRuleCall());
-            	
+            			newLeafNode(otherlv_1, grammarAccess.getDecisionTreeRegressorAccess().getLeftParenthesisKeyword_1());
+            		
+            // InternalMLRegression.g:865:3: ( (lv_rand_2_0= RULE_INT ) )
+            // InternalMLRegression.g:866:4: (lv_rand_2_0= RULE_INT )
+            {
+            // InternalMLRegression.g:866:4: (lv_rand_2_0= RULE_INT )
+            // InternalMLRegression.g:867:5: lv_rand_2_0= RULE_INT
+            {
+            lv_rand_2_0=(Token)match(input,RULE_INT,FOLLOW_17); 
+
+            					newLeafNode(lv_rand_2_0, grammarAccess.getDecisionTreeRegressorAccess().getRandINTTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getDecisionTreeRegressorRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"rand",
+            						lv_rand_2_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,23,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getDecisionTreeRegressorAccess().getRightParenthesisKeyword_3());
+            		
+
+            }
+
 
             }
 
@@ -2106,11 +2171,127 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleY"
+    // $ANTLR end "ruleDecisionTreeRegressor"
+
+
+    // $ANTLR start "entryRuleSVR"
+    // InternalMLRegression.g:891:1: entryRuleSVR returns [EObject current=null] : iv_ruleSVR= ruleSVR EOF ;
+    public final EObject entryRuleSVR() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSVR = null;
+
+
+        try {
+            // InternalMLRegression.g:891:44: (iv_ruleSVR= ruleSVR EOF )
+            // InternalMLRegression.g:892:2: iv_ruleSVR= ruleSVR EOF
+            {
+             newCompositeNode(grammarAccess.getSVRRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSVR=ruleSVR();
+
+            state._fsp--;
+
+             current =iv_ruleSVR; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSVR"
+
+
+    // $ANTLR start "ruleSVR"
+    // InternalMLRegression.g:898:1: ruleSVR returns [EObject current=null] : (otherlv_0= 'svr' otherlv_1= '(' ( (lv_param_2_0= RULE_ID ) ) otherlv_3= ')' ) ;
+    public final EObject ruleSVR() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token lv_param_2_0=null;
+        Token otherlv_3=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalMLRegression.g:904:2: ( (otherlv_0= 'svr' otherlv_1= '(' ( (lv_param_2_0= RULE_ID ) ) otherlv_3= ')' ) )
+            // InternalMLRegression.g:905:2: (otherlv_0= 'svr' otherlv_1= '(' ( (lv_param_2_0= RULE_ID ) ) otherlv_3= ')' )
+            {
+            // InternalMLRegression.g:905:2: (otherlv_0= 'svr' otherlv_1= '(' ( (lv_param_2_0= RULE_ID ) ) otherlv_3= ')' )
+            // InternalMLRegression.g:906:3: otherlv_0= 'svr' otherlv_1= '(' ( (lv_param_2_0= RULE_ID ) ) otherlv_3= ')'
+            {
+            otherlv_0=(Token)match(input,25,FOLLOW_15); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getSVRAccess().getSvrKeyword_0());
+            		
+            otherlv_1=(Token)match(input,22,FOLLOW_18); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSVRAccess().getLeftParenthesisKeyword_1());
+            		
+            // InternalMLRegression.g:914:3: ( (lv_param_2_0= RULE_ID ) )
+            // InternalMLRegression.g:915:4: (lv_param_2_0= RULE_ID )
+            {
+            // InternalMLRegression.g:915:4: (lv_param_2_0= RULE_ID )
+            // InternalMLRegression.g:916:5: lv_param_2_0= RULE_ID
+            {
+            lv_param_2_0=(Token)match(input,RULE_ID,FOLLOW_17); 
+
+            					newLeafNode(lv_param_2_0, grammarAccess.getSVRAccess().getParamIDTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSVRRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"param",
+            						lv_param_2_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,23,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getSVRAccess().getRightParenthesisKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSVR"
 
 
     // $ANTLR start "entryRuleMinError"
-    // InternalMLRegression.g:890:1: entryRuleMinError returns [String current=null] : iv_ruleMinError= ruleMinError EOF ;
+    // InternalMLRegression.g:940:1: entryRuleMinError returns [String current=null] : iv_ruleMinError= ruleMinError EOF ;
     public final String entryRuleMinError() throws RecognitionException {
         String current = null;
 
@@ -2118,8 +2299,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:890:48: (iv_ruleMinError= ruleMinError EOF )
-            // InternalMLRegression.g:891:2: iv_ruleMinError= ruleMinError EOF
+            // InternalMLRegression.g:940:48: (iv_ruleMinError= ruleMinError EOF )
+            // InternalMLRegression.g:941:2: iv_ruleMinError= ruleMinError EOF
             {
              newCompositeNode(grammarAccess.getMinErrorRule()); 
             pushFollow(FOLLOW_1);
@@ -2146,7 +2327,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMinError"
-    // InternalMLRegression.g:897:1: ruleMinError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'min_error' ;
+    // InternalMLRegression.g:947:1: ruleMinError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'min_error' ;
     public final AntlrDatatypeRuleToken ruleMinError() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2156,10 +2337,10 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:903:2: (kw= 'min_error' )
-            // InternalMLRegression.g:904:2: kw= 'min_error'
+            // InternalMLRegression.g:953:2: (kw= 'min_error' )
+            // InternalMLRegression.g:954:2: kw= 'min_error'
             {
-            kw=(Token)match(input,24,FOLLOW_2); 
+            kw=(Token)match(input,26,FOLLOW_2); 
 
             		current.merge(kw);
             		newLeafNode(kw, grammarAccess.getMinErrorAccess().getMin_errorKeyword());
@@ -2184,7 +2365,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMinSquaredError"
-    // InternalMLRegression.g:912:1: entryRuleMinSquaredError returns [String current=null] : iv_ruleMinSquaredError= ruleMinSquaredError EOF ;
+    // InternalMLRegression.g:962:1: entryRuleMinSquaredError returns [String current=null] : iv_ruleMinSquaredError= ruleMinSquaredError EOF ;
     public final String entryRuleMinSquaredError() throws RecognitionException {
         String current = null;
 
@@ -2192,8 +2373,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:912:55: (iv_ruleMinSquaredError= ruleMinSquaredError EOF )
-            // InternalMLRegression.g:913:2: iv_ruleMinSquaredError= ruleMinSquaredError EOF
+            // InternalMLRegression.g:962:55: (iv_ruleMinSquaredError= ruleMinSquaredError EOF )
+            // InternalMLRegression.g:963:2: iv_ruleMinSquaredError= ruleMinSquaredError EOF
             {
              newCompositeNode(grammarAccess.getMinSquaredErrorRule()); 
             pushFollow(FOLLOW_1);
@@ -2220,7 +2401,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMinSquaredError"
-    // InternalMLRegression.g:919:1: ruleMinSquaredError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'min_square_error' ;
+    // InternalMLRegression.g:969:1: ruleMinSquaredError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'min_square_error' ;
     public final AntlrDatatypeRuleToken ruleMinSquaredError() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2230,10 +2411,10 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:925:2: (kw= 'min_square_error' )
-            // InternalMLRegression.g:926:2: kw= 'min_square_error'
+            // InternalMLRegression.g:975:2: (kw= 'min_square_error' )
+            // InternalMLRegression.g:976:2: kw= 'min_square_error'
             {
-            kw=(Token)match(input,25,FOLLOW_2); 
+            kw=(Token)match(input,27,FOLLOW_2); 
 
             		current.merge(kw);
             		newLeafNode(kw, grammarAccess.getMinSquaredErrorAccess().getMin_square_errorKeyword());
@@ -2258,7 +2439,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSumsSquaredError"
-    // InternalMLRegression.g:934:1: entryRuleSumsSquaredError returns [String current=null] : iv_ruleSumsSquaredError= ruleSumsSquaredError EOF ;
+    // InternalMLRegression.g:984:1: entryRuleSumsSquaredError returns [String current=null] : iv_ruleSumsSquaredError= ruleSumsSquaredError EOF ;
     public final String entryRuleSumsSquaredError() throws RecognitionException {
         String current = null;
 
@@ -2266,8 +2447,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:934:56: (iv_ruleSumsSquaredError= ruleSumsSquaredError EOF )
-            // InternalMLRegression.g:935:2: iv_ruleSumsSquaredError= ruleSumsSquaredError EOF
+            // InternalMLRegression.g:984:56: (iv_ruleSumsSquaredError= ruleSumsSquaredError EOF )
+            // InternalMLRegression.g:985:2: iv_ruleSumsSquaredError= ruleSumsSquaredError EOF
             {
              newCompositeNode(grammarAccess.getSumsSquaredErrorRule()); 
             pushFollow(FOLLOW_1);
@@ -2294,7 +2475,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSumsSquaredError"
-    // InternalMLRegression.g:941:1: ruleSumsSquaredError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'sums_square_error' ;
+    // InternalMLRegression.g:991:1: ruleSumsSquaredError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'sums_square_error' ;
     public final AntlrDatatypeRuleToken ruleSumsSquaredError() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2304,10 +2485,10 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:947:2: (kw= 'sums_square_error' )
-            // InternalMLRegression.g:948:2: kw= 'sums_square_error'
+            // InternalMLRegression.g:997:2: (kw= 'sums_square_error' )
+            // InternalMLRegression.g:998:2: kw= 'sums_square_error'
             {
-            kw=(Token)match(input,26,FOLLOW_2); 
+            kw=(Token)match(input,28,FOLLOW_2); 
 
             		current.merge(kw);
             		newLeafNode(kw, grammarAccess.getSumsSquaredErrorAccess().getSums_square_errorKeyword());
@@ -2332,7 +2513,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringValue"
-    // InternalMLRegression.g:956:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
+    // InternalMLRegression.g:1006:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
     public final EObject entryRuleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -2340,8 +2521,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:956:52: (iv_ruleStringValue= ruleStringValue EOF )
-            // InternalMLRegression.g:957:2: iv_ruleStringValue= ruleStringValue EOF
+            // InternalMLRegression.g:1006:52: (iv_ruleStringValue= ruleStringValue EOF )
+            // InternalMLRegression.g:1007:2: iv_ruleStringValue= ruleStringValue EOF
             {
              newCompositeNode(grammarAccess.getStringValueRule()); 
             pushFollow(FOLLOW_1);
@@ -2368,7 +2549,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringValue"
-    // InternalMLRegression.g:963:1: ruleStringValue returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
+    // InternalMLRegression.g:1013:1: ruleStringValue returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -2378,14 +2559,14 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:969:2: ( ( (lv_value_0_0= RULE_STRING ) ) )
-            // InternalMLRegression.g:970:2: ( (lv_value_0_0= RULE_STRING ) )
+            // InternalMLRegression.g:1019:2: ( ( (lv_value_0_0= RULE_STRING ) ) )
+            // InternalMLRegression.g:1020:2: ( (lv_value_0_0= RULE_STRING ) )
             {
-            // InternalMLRegression.g:970:2: ( (lv_value_0_0= RULE_STRING ) )
-            // InternalMLRegression.g:971:3: (lv_value_0_0= RULE_STRING )
+            // InternalMLRegression.g:1020:2: ( (lv_value_0_0= RULE_STRING ) )
+            // InternalMLRegression.g:1021:3: (lv_value_0_0= RULE_STRING )
             {
-            // InternalMLRegression.g:971:3: (lv_value_0_0= RULE_STRING )
-            // InternalMLRegression.g:972:4: lv_value_0_0= RULE_STRING
+            // InternalMLRegression.g:1021:3: (lv_value_0_0= RULE_STRING )
+            // InternalMLRegression.g:1022:4: lv_value_0_0= RULE_STRING
             {
             lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2427,7 +2608,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumericValue"
-    // InternalMLRegression.g:991:1: entryRuleNumericValue returns [EObject current=null] : iv_ruleNumericValue= ruleNumericValue EOF ;
+    // InternalMLRegression.g:1041:1: entryRuleNumericValue returns [EObject current=null] : iv_ruleNumericValue= ruleNumericValue EOF ;
     public final EObject entryRuleNumericValue() throws RecognitionException {
         EObject current = null;
 
@@ -2435,8 +2616,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:991:53: (iv_ruleNumericValue= ruleNumericValue EOF )
-            // InternalMLRegression.g:992:2: iv_ruleNumericValue= ruleNumericValue EOF
+            // InternalMLRegression.g:1041:53: (iv_ruleNumericValue= ruleNumericValue EOF )
+            // InternalMLRegression.g:1042:2: iv_ruleNumericValue= ruleNumericValue EOF
             {
              newCompositeNode(grammarAccess.getNumericValueRule()); 
             pushFollow(FOLLOW_1);
@@ -2463,7 +2644,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericValue"
-    // InternalMLRegression.g:998:1: ruleNumericValue returns [EObject current=null] : (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue ) ;
+    // InternalMLRegression.g:1048:1: ruleNumericValue returns [EObject current=null] : (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue ) ;
     public final EObject ruleNumericValue() throws RecognitionException {
         EObject current = null;
 
@@ -2476,15 +2657,15 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:1004:2: ( (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue ) )
-            // InternalMLRegression.g:1005:2: (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue )
+            // InternalMLRegression.g:1054:2: ( (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue ) )
+            // InternalMLRegression.g:1055:2: (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue )
             {
-            // InternalMLRegression.g:1005:2: (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue )
-            int alt5=2;
-            alt5 = dfa5.predict(input);
-            switch (alt5) {
+            // InternalMLRegression.g:1055:2: (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue )
+            int alt7=2;
+            alt7 = dfa7.predict(input);
+            switch (alt7) {
                 case 1 :
-                    // InternalMLRegression.g:1006:3: this_NumberValue_0= ruleNumberValue
+                    // InternalMLRegression.g:1056:3: this_NumberValue_0= ruleNumberValue
                     {
 
                     			newCompositeNode(grammarAccess.getNumericValueAccess().getNumberValueParserRuleCall_0());
@@ -2502,7 +2683,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMLRegression.g:1015:3: this_PercentValue_1= rulePercentValue
+                    // InternalMLRegression.g:1065:3: this_PercentValue_1= rulePercentValue
                     {
 
                     			newCompositeNode(grammarAccess.getNumericValueAccess().getPercentValueParserRuleCall_1());
@@ -2542,7 +2723,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberValue"
-    // InternalMLRegression.g:1027:1: entryRuleNumberValue returns [EObject current=null] : iv_ruleNumberValue= ruleNumberValue EOF ;
+    // InternalMLRegression.g:1077:1: entryRuleNumberValue returns [EObject current=null] : iv_ruleNumberValue= ruleNumberValue EOF ;
     public final EObject entryRuleNumberValue() throws RecognitionException {
         EObject current = null;
 
@@ -2550,8 +2731,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:1027:52: (iv_ruleNumberValue= ruleNumberValue EOF )
-            // InternalMLRegression.g:1028:2: iv_ruleNumberValue= ruleNumberValue EOF
+            // InternalMLRegression.g:1077:52: (iv_ruleNumberValue= ruleNumberValue EOF )
+            // InternalMLRegression.g:1078:2: iv_ruleNumberValue= ruleNumberValue EOF
             {
              newCompositeNode(grammarAccess.getNumberValueRule()); 
             pushFollow(FOLLOW_1);
@@ -2578,7 +2759,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberValue"
-    // InternalMLRegression.g:1034:1: ruleNumberValue returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )? ) ;
+    // InternalMLRegression.g:1084:1: ruleNumberValue returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )? ) ;
     public final EObject ruleNumberValue() throws RecognitionException {
         EObject current = null;
 
@@ -2590,19 +2771,19 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:1040:2: ( ( ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )? ) )
-            // InternalMLRegression.g:1041:2: ( ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )? )
+            // InternalMLRegression.g:1090:2: ( ( ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )? ) )
+            // InternalMLRegression.g:1091:2: ( ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )? )
             {
-            // InternalMLRegression.g:1041:2: ( ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )? )
-            // InternalMLRegression.g:1042:3: ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )?
+            // InternalMLRegression.g:1091:2: ( ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )? )
+            // InternalMLRegression.g:1092:3: ( (lv_value_0_0= RULE_INT ) ) (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )?
             {
-            // InternalMLRegression.g:1042:3: ( (lv_value_0_0= RULE_INT ) )
-            // InternalMLRegression.g:1043:4: (lv_value_0_0= RULE_INT )
+            // InternalMLRegression.g:1092:3: ( (lv_value_0_0= RULE_INT ) )
+            // InternalMLRegression.g:1093:4: (lv_value_0_0= RULE_INT )
             {
-            // InternalMLRegression.g:1043:4: (lv_value_0_0= RULE_INT )
-            // InternalMLRegression.g:1044:5: lv_value_0_0= RULE_INT
+            // InternalMLRegression.g:1093:4: (lv_value_0_0= RULE_INT )
+            // InternalMLRegression.g:1094:5: lv_value_0_0= RULE_INT
             {
-            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_18); 
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_19); 
 
             					newLeafNode(lv_value_0_0, grammarAccess.getNumberValueAccess().getValueINTTerminalRuleCall_0_0());
             				
@@ -2622,40 +2803,40 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMLRegression.g:1060:3: (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalMLRegression.g:1110:3: (otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )* )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA7_0==27) ) {
-                alt7=1;
+            if ( (LA9_0==29) ) {
+                alt9=1;
             }
-            switch (alt7) {
+            switch (alt9) {
                 case 1 :
-                    // InternalMLRegression.g:1061:4: otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )*
+                    // InternalMLRegression.g:1111:4: otherlv_1= '.' ( (lv_decimal_2_0= RULE_INT ) )*
                     {
-                    otherlv_1=(Token)match(input,27,FOLLOW_19); 
+                    otherlv_1=(Token)match(input,29,FOLLOW_20); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getNumberValueAccess().getFullStopKeyword_1_0());
                     			
-                    // InternalMLRegression.g:1065:4: ( (lv_decimal_2_0= RULE_INT ) )*
-                    loop6:
+                    // InternalMLRegression.g:1115:4: ( (lv_decimal_2_0= RULE_INT ) )*
+                    loop8:
                     do {
-                        int alt6=2;
-                        int LA6_0 = input.LA(1);
+                        int alt8=2;
+                        int LA8_0 = input.LA(1);
 
-                        if ( (LA6_0==RULE_INT) ) {
-                            alt6=1;
+                        if ( (LA8_0==RULE_INT) ) {
+                            alt8=1;
                         }
 
 
-                        switch (alt6) {
+                        switch (alt8) {
                     	case 1 :
-                    	    // InternalMLRegression.g:1066:5: (lv_decimal_2_0= RULE_INT )
+                    	    // InternalMLRegression.g:1116:5: (lv_decimal_2_0= RULE_INT )
                     	    {
-                    	    // InternalMLRegression.g:1066:5: (lv_decimal_2_0= RULE_INT )
-                    	    // InternalMLRegression.g:1067:6: lv_decimal_2_0= RULE_INT
+                    	    // InternalMLRegression.g:1116:5: (lv_decimal_2_0= RULE_INT )
+                    	    // InternalMLRegression.g:1117:6: lv_decimal_2_0= RULE_INT
                     	    {
-                    	    lv_decimal_2_0=(Token)match(input,RULE_INT,FOLLOW_19); 
+                    	    lv_decimal_2_0=(Token)match(input,RULE_INT,FOLLOW_20); 
 
                     	    						newLeafNode(lv_decimal_2_0, grammarAccess.getNumberValueAccess().getDecimalINTTerminalRuleCall_1_1_0());
                     	    					
@@ -2677,7 +2858,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop6;
+                    	    break loop8;
                         }
                     } while (true);
 
@@ -2710,7 +2891,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntegerValue"
-    // InternalMLRegression.g:1088:1: entryRuleIntegerValue returns [EObject current=null] : iv_ruleIntegerValue= ruleIntegerValue EOF ;
+    // InternalMLRegression.g:1138:1: entryRuleIntegerValue returns [EObject current=null] : iv_ruleIntegerValue= ruleIntegerValue EOF ;
     public final EObject entryRuleIntegerValue() throws RecognitionException {
         EObject current = null;
 
@@ -2718,8 +2899,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:1088:53: (iv_ruleIntegerValue= ruleIntegerValue EOF )
-            // InternalMLRegression.g:1089:2: iv_ruleIntegerValue= ruleIntegerValue EOF
+            // InternalMLRegression.g:1138:53: (iv_ruleIntegerValue= ruleIntegerValue EOF )
+            // InternalMLRegression.g:1139:2: iv_ruleIntegerValue= ruleIntegerValue EOF
             {
              newCompositeNode(grammarAccess.getIntegerValueRule()); 
             pushFollow(FOLLOW_1);
@@ -2746,7 +2927,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntegerValue"
-    // InternalMLRegression.g:1095:1: ruleIntegerValue returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    // InternalMLRegression.g:1145:1: ruleIntegerValue returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
     public final EObject ruleIntegerValue() throws RecognitionException {
         EObject current = null;
 
@@ -2756,14 +2937,14 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:1101:2: ( ( (lv_value_0_0= RULE_INT ) ) )
-            // InternalMLRegression.g:1102:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalMLRegression.g:1151:2: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // InternalMLRegression.g:1152:2: ( (lv_value_0_0= RULE_INT ) )
             {
-            // InternalMLRegression.g:1102:2: ( (lv_value_0_0= RULE_INT ) )
-            // InternalMLRegression.g:1103:3: (lv_value_0_0= RULE_INT )
+            // InternalMLRegression.g:1152:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalMLRegression.g:1153:3: (lv_value_0_0= RULE_INT )
             {
-            // InternalMLRegression.g:1103:3: (lv_value_0_0= RULE_INT )
-            // InternalMLRegression.g:1104:4: lv_value_0_0= RULE_INT
+            // InternalMLRegression.g:1153:3: (lv_value_0_0= RULE_INT )
+            // InternalMLRegression.g:1154:4: lv_value_0_0= RULE_INT
             {
             lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2805,7 +2986,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePercentValue"
-    // InternalMLRegression.g:1123:1: entryRulePercentValue returns [EObject current=null] : iv_rulePercentValue= rulePercentValue EOF ;
+    // InternalMLRegression.g:1173:1: entryRulePercentValue returns [EObject current=null] : iv_rulePercentValue= rulePercentValue EOF ;
     public final EObject entryRulePercentValue() throws RecognitionException {
         EObject current = null;
 
@@ -2813,8 +2994,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:1123:53: (iv_rulePercentValue= rulePercentValue EOF )
-            // InternalMLRegression.g:1124:2: iv_rulePercentValue= rulePercentValue EOF
+            // InternalMLRegression.g:1173:53: (iv_rulePercentValue= rulePercentValue EOF )
+            // InternalMLRegression.g:1174:2: iv_rulePercentValue= rulePercentValue EOF
             {
              newCompositeNode(grammarAccess.getPercentValueRule()); 
             pushFollow(FOLLOW_1);
@@ -2841,7 +3022,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePercentValue"
-    // InternalMLRegression.g:1130:1: rulePercentValue returns [EObject current=null] : (this_NumberValue_0= ruleNumberValue otherlv_1= '%' ) ;
+    // InternalMLRegression.g:1180:1: rulePercentValue returns [EObject current=null] : (this_NumberValue_0= ruleNumberValue otherlv_1= '%' ) ;
     public final EObject rulePercentValue() throws RecognitionException {
         EObject current = null;
 
@@ -2853,16 +3034,16 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:1136:2: ( (this_NumberValue_0= ruleNumberValue otherlv_1= '%' ) )
-            // InternalMLRegression.g:1137:2: (this_NumberValue_0= ruleNumberValue otherlv_1= '%' )
+            // InternalMLRegression.g:1186:2: ( (this_NumberValue_0= ruleNumberValue otherlv_1= '%' ) )
+            // InternalMLRegression.g:1187:2: (this_NumberValue_0= ruleNumberValue otherlv_1= '%' )
             {
-            // InternalMLRegression.g:1137:2: (this_NumberValue_0= ruleNumberValue otherlv_1= '%' )
-            // InternalMLRegression.g:1138:3: this_NumberValue_0= ruleNumberValue otherlv_1= '%'
+            // InternalMLRegression.g:1187:2: (this_NumberValue_0= ruleNumberValue otherlv_1= '%' )
+            // InternalMLRegression.g:1188:3: this_NumberValue_0= ruleNumberValue otherlv_1= '%'
             {
 
             			newCompositeNode(grammarAccess.getPercentValueAccess().getNumberValueParserRuleCall_0());
             		
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             this_NumberValue_0=ruleNumberValue();
 
             state._fsp--;
@@ -2871,7 +3052,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
             			current = this_NumberValue_0;
             			afterParserOrEnumRuleCall();
             		
-            otherlv_1=(Token)match(input,28,FOLLOW_2); 
+            otherlv_1=(Token)match(input,30,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPercentValueAccess().getPercentSignKeyword_1());
             		
@@ -2898,7 +3079,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanValue"
-    // InternalMLRegression.g:1154:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
+    // InternalMLRegression.g:1204:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
     public final EObject entryRuleBooleanValue() throws RecognitionException {
         EObject current = null;
 
@@ -2906,8 +3087,8 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMLRegression.g:1154:53: (iv_ruleBooleanValue= ruleBooleanValue EOF )
-            // InternalMLRegression.g:1155:2: iv_ruleBooleanValue= ruleBooleanValue EOF
+            // InternalMLRegression.g:1204:53: (iv_ruleBooleanValue= ruleBooleanValue EOF )
+            // InternalMLRegression.g:1205:2: iv_ruleBooleanValue= ruleBooleanValue EOF
             {
              newCompositeNode(grammarAccess.getBooleanValueRule()); 
             pushFollow(FOLLOW_1);
@@ -2934,7 +3115,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanValue"
-    // InternalMLRegression.g:1161:1: ruleBooleanValue returns [EObject current=null] : ( ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) ) ) ;
+    // InternalMLRegression.g:1211:1: ruleBooleanValue returns [EObject current=null] : ( ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) ) ) ;
     public final EObject ruleBooleanValue() throws RecognitionException {
         EObject current = null;
 
@@ -2945,36 +3126,36 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:1167:2: ( ( ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) ) ) )
-            // InternalMLRegression.g:1168:2: ( ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) ) )
+            // InternalMLRegression.g:1217:2: ( ( ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) ) ) )
+            // InternalMLRegression.g:1218:2: ( ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) ) )
             {
-            // InternalMLRegression.g:1168:2: ( ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) ) )
-            // InternalMLRegression.g:1169:3: ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) )
+            // InternalMLRegression.g:1218:2: ( ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) ) )
+            // InternalMLRegression.g:1219:3: ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) )
             {
-            // InternalMLRegression.g:1169:3: ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) )
-            // InternalMLRegression.g:1170:4: (lv_value_0_1= 'false' | lv_value_0_2= 'true' )
+            // InternalMLRegression.g:1219:3: ( (lv_value_0_1= 'false' | lv_value_0_2= 'true' ) )
+            // InternalMLRegression.g:1220:4: (lv_value_0_1= 'false' | lv_value_0_2= 'true' )
             {
-            // InternalMLRegression.g:1170:4: (lv_value_0_1= 'false' | lv_value_0_2= 'true' )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalMLRegression.g:1220:4: (lv_value_0_1= 'false' | lv_value_0_2= 'true' )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA8_0==29) ) {
-                alt8=1;
+            if ( (LA10_0==31) ) {
+                alt10=1;
             }
-            else if ( (LA8_0==30) ) {
-                alt8=2;
+            else if ( (LA10_0==32) ) {
+                alt10=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
-            switch (alt8) {
+            switch (alt10) {
                 case 1 :
-                    // InternalMLRegression.g:1171:5: lv_value_0_1= 'false'
+                    // InternalMLRegression.g:1221:5: lv_value_0_1= 'false'
                     {
-                    lv_value_0_1=(Token)match(input,29,FOLLOW_2); 
+                    lv_value_0_1=(Token)match(input,31,FOLLOW_2); 
 
                     					newLeafNode(lv_value_0_1, grammarAccess.getBooleanValueAccess().getValueFalseKeyword_0_0());
                     				
@@ -2988,9 +3169,9 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMLRegression.g:1182:5: lv_value_0_2= 'true'
+                    // InternalMLRegression.g:1232:5: lv_value_0_2= 'true'
                     {
-                    lv_value_0_2=(Token)match(input,30,FOLLOW_2); 
+                    lv_value_0_2=(Token)match(input,32,FOLLOW_2); 
 
                     					newLeafNode(lv_value_0_2, grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_1());
                     				
@@ -3033,20 +3214,20 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA5 dfa5 = new DFA5(this);
+    protected DFA7 dfa7 = new DFA7(this);
     static final String dfa_1s = "\6\uffff";
     static final String dfa_2s = "\1\uffff\2\3\2\uffff\1\3";
-    static final String dfa_3s = "\1\6\1\15\1\6\2\uffff\1\6";
-    static final String dfa_4s = "\1\6\2\34\2\uffff\1\34";
+    static final String dfa_3s = "\1\5\1\15\1\5\2\uffff\1\5";
+    static final String dfa_4s = "\1\5\2\36\2\uffff\1\36";
     static final String dfa_5s = "\3\uffff\1\1\1\2\1\uffff";
     static final String dfa_6s = "\6\uffff}>";
     static final String[] dfa_7s = {
             "\1\1",
-            "\1\3\2\uffff\1\3\12\uffff\1\2\1\4",
-            "\1\5\6\uffff\1\3\2\uffff\1\3\13\uffff\1\4",
+            "\1\3\2\uffff\1\3\14\uffff\1\2\1\4",
+            "\1\5\7\uffff\1\3\2\uffff\1\3\15\uffff\1\4",
             "",
             "",
-            "\1\5\6\uffff\1\3\2\uffff\1\3\13\uffff\1\4"
+            "\1\5\7\uffff\1\3\2\uffff\1\3\15\uffff\1\4"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -3057,11 +3238,11 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA5 extends DFA {
+    class DFA7 extends DFA {
 
-        public DFA5(BaseRecognizer recognizer) {
+        public DFA7(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 5;
+            this.decisionNumber = 7;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -3071,7 +3252,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "1005:2: (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue )";
+            return "1055:2: (this_NumberValue_0= ruleNumberValue | this_PercentValue_1= rulePercentValue )";
         }
     }
  
@@ -3082,19 +3263,20 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000040800L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000007000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000001C000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000012000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000003200000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000810000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000040000000L});
 
 }

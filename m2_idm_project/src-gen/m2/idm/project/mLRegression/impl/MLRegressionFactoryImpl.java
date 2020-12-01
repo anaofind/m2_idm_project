@@ -77,6 +77,8 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
       case MLRegressionPackage.ALGO: return createAlgo();
       case MLRegressionPackage.ALGO_ML: return createAlgoML();
       case MLRegressionPackage.LINE_REGRESS: return createLineRegress();
+      case MLRegressionPackage.DECISION_TREE_REGRESSOR: return createDecisionTreeRegressor();
+      case MLRegressionPackage.SVR: return createSVR();
       case MLRegressionPackage.TYPE_VALUE: return createTypeValue();
       case MLRegressionPackage.STRING_VALUE: return createStringValue();
       case MLRegressionPackage.NUMERIC_VALUE: return createNumericValue();
@@ -231,6 +233,30 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
   {
     LineRegressImpl lineRegress = new LineRegressImpl();
     return lineRegress;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DecisionTreeRegressor createDecisionTreeRegressor()
+  {
+    DecisionTreeRegressorImpl decisionTreeRegressor = new DecisionTreeRegressorImpl();
+    return decisionTreeRegressor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SVR createSVR()
+  {
+    SVRImpl svr = new SVRImpl();
+    return svr;
   }
 
   /**

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.TargetVarImpl#getVarTar <em>Var Tar</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.TargetVarImpl#getVar <em>Var</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class TargetVarImpl extends MinimalEObjectImpl.Container implements TargetVar
 {
   /**
-   * The cached value of the '{@link #getVarTar() <em>Var Tar</em>}' containment reference.
+   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarTar()
+   * @see #getVar()
    * @generated
    * @ordered
    */
-  protected StringValue varTar;
+  protected StringValue var;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +68,9 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
    * @generated
    */
   @Override
-  public StringValue getVarTar()
+  public StringValue getVar()
   {
-    return varTar;
+    return var;
   }
 
   /**
@@ -78,13 +78,13 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVarTar(StringValue newVarTar, NotificationChain msgs)
+  public NotificationChain basicSetVar(StringValue newVar, NotificationChain msgs)
   {
-    StringValue oldVarTar = varTar;
-    varTar = newVarTar;
+    StringValue oldVar = var;
+    var = newVar;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TARGET_VAR__VAR_TAR, oldVarTar, newVarTar);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TARGET_VAR__VAR, oldVar, newVar);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
    * @generated
    */
   @Override
-  public void setVarTar(StringValue newVarTar)
+  public void setVar(StringValue newVar)
   {
-    if (newVarTar != varTar)
+    if (newVar != var)
     {
       NotificationChain msgs = null;
-      if (varTar != null)
-        msgs = ((InternalEObject)varTar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TARGET_VAR__VAR_TAR, null, msgs);
-      if (newVarTar != null)
-        msgs = ((InternalEObject)newVarTar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TARGET_VAR__VAR_TAR, null, msgs);
-      msgs = basicSetVarTar(newVarTar, msgs);
+      if (var != null)
+        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TARGET_VAR__VAR, null, msgs);
+      if (newVar != null)
+        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.TARGET_VAR__VAR, null, msgs);
+      msgs = basicSetVar(newVar, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TARGET_VAR__VAR_TAR, newVarTar, newVarTar));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.TARGET_VAR__VAR, newVar, newVar));
   }
 
   /**
@@ -122,8 +122,8 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
-        return basicSetVarTar(null, msgs);
+      case MLRegressionPackage.TARGET_VAR__VAR:
+        return basicSetVar(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +138,8 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
-        return getVarTar();
+      case MLRegressionPackage.TARGET_VAR__VAR:
+        return getVar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +154,8 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
-        setVarTar((StringValue)newValue);
+      case MLRegressionPackage.TARGET_VAR__VAR:
+        setVar((StringValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +171,8 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
-        setVarTar((StringValue)null);
+      case MLRegressionPackage.TARGET_VAR__VAR:
+        setVar((StringValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,8 +188,8 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__VAR_TAR:
-        return varTar != null;
+      case MLRegressionPackage.TARGET_VAR__VAR:
+        return var != null;
     }
     return super.eIsSet(featureID);
   }

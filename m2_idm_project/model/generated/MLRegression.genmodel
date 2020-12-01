@@ -33,21 +33,23 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Variables/targets"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//ListePredictiveVar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//ListePredictiveVar/varPred"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//ListePredictiveVar/predVar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//ListePredictiveVar/vars"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//TargetVar">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//TargetVar/varTar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//TargetVar/var"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Algo">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Algo/algo"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//AlgoML"/>
     <genClasses ecoreClass="MLRegression.ecore#//LineRegress">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/x1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/y1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/x2"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/y2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//DecisionTreeRegressor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//DecisionTreeRegressor/rand"/>
+    </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//SVR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//SVR/param"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//TypeValue"/>
     <genClasses ecoreClass="MLRegression.ecore#//StringValue">

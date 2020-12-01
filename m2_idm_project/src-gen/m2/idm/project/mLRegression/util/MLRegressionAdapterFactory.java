@@ -136,6 +136,16 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createLineRegressAdapter();
       }
       @Override
+      public Adapter caseDecisionTreeRegressor(DecisionTreeRegressor object)
+      {
+        return createDecisionTreeRegressorAdapter();
+      }
+      @Override
+      public Adapter caseSVR(SVR object)
+      {
+        return createSVRAdapter();
+      }
+      @Override
       public Adapter caseTypeValue(TypeValue object)
       {
         return createTypeValueAdapter();
@@ -368,6 +378,36 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLineRegressAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.DecisionTreeRegressor <em>Decision Tree Regressor</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.DecisionTreeRegressor
+   * @generated
+   */
+  public Adapter createDecisionTreeRegressorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.SVR <em>SVR</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.SVR
+   * @generated
+   */
+  public Adapter createSVRAdapter()
   {
     return null;
   }

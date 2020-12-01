@@ -160,6 +160,22 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MLRegressionPackage.DECISION_TREE_REGRESSOR:
+      {
+        DecisionTreeRegressor decisionTreeRegressor = (DecisionTreeRegressor)theEObject;
+        T result = caseDecisionTreeRegressor(decisionTreeRegressor);
+        if (result == null) result = caseAlgoML(decisionTreeRegressor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MLRegressionPackage.SVR:
+      {
+        SVR svr = (SVR)theEObject;
+        T result = caseSVR(svr);
+        if (result == null) result = caseAlgoML(svr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MLRegressionPackage.TYPE_VALUE:
       {
         TypeValue typeValue = (TypeValue)theEObject;
@@ -409,6 +425,38 @@ public class MLRegressionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLineRegress(LineRegress object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Decision Tree Regressor</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Decision Tree Regressor</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDecisionTreeRegressor(DecisionTreeRegressor object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SVR</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SVR</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSVR(SVR object)
   {
     return null;
   }

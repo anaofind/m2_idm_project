@@ -3,6 +3,7 @@
  */
 package m2.idm.project.mLRegression;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,10 +14,7 @@ package m2.idm.project.mLRegression;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.LineRegress#getX1 <em>X1</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.LineRegress#getY1 <em>Y1</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.LineRegress#getX2 <em>X2</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.LineRegress#getY2 <em>Y2</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.LineRegress#getColumns <em>Columns</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress()
@@ -26,91 +24,15 @@ package m2.idm.project.mLRegression;
 public interface LineRegress extends AlgoML
 {
   /**
-   * Returns the value of the '<em><b>X1</b></em>' attribute.
+   * Returns the value of the '<em><b>Columns</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>X1</em>' attribute.
-   * @see #setX1(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_X1()
-   * @model
+   * @return the value of the '<em>Columns</em>' attribute list.
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_Columns()
+   * @model unique="false"
    * @generated
    */
-  String getX1();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.LineRegress#getX1 <em>X1</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>X1</em>' attribute.
-   * @see #getX1()
-   * @generated
-   */
-  void setX1(String value);
-
-  /**
-   * Returns the value of the '<em><b>Y1</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Y1</em>' attribute.
-   * @see #setY1(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_Y1()
-   * @model
-   * @generated
-   */
-  String getY1();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.LineRegress#getY1 <em>Y1</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Y1</em>' attribute.
-   * @see #getY1()
-   * @generated
-   */
-  void setY1(String value);
-
-  /**
-   * Returns the value of the '<em><b>X2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>X2</em>' attribute.
-   * @see #setX2(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_X2()
-   * @model
-   * @generated
-   */
-  String getX2();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.LineRegress#getX2 <em>X2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>X2</em>' attribute.
-   * @see #getX2()
-   * @generated
-   */
-  void setX2(String value);
-
-  /**
-   * Returns the value of the '<em><b>Y2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Y2</em>' attribute.
-   * @see #setY2(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_Y2()
-   * @model
-   * @generated
-   */
-  String getY2();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.LineRegress#getY2 <em>Y2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Y2</em>' attribute.
-   * @see #getY2()
-   * @generated
-   */
-  void setY2(String value);
+  EList<String> getColumns();
 
 } // LineRegress

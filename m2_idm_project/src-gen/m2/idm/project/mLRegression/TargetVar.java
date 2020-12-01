@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.TargetVar#getVarTar <em>Var Tar</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.TargetVar#getVar <em>Var</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVar()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface TargetVar extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Var Tar</b></em>' containment reference.
+   * Returns the value of the '<em><b>Var</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Tar</em>' containment reference.
-   * @see #setVarTar(StringValue)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVar_VarTar()
+   * @return the value of the '<em>Var</em>' containment reference.
+   * @see #setVar(StringValue)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVar_Var()
    * @model containment="true"
    * @generated
    */
-  StringValue getVarTar();
+  StringValue getVar();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.TargetVar#getVarTar <em>Var Tar</em>}' containment reference.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.TargetVar#getVar <em>Var</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Tar</em>' containment reference.
-   * @see #getVarTar()
+   * @param value the new value of the '<em>Var</em>' containment reference.
+   * @see #getVar()
    * @generated
    */
-  void setVarTar(StringValue value);
+  void setVar(StringValue value);
 
 } // TargetVar

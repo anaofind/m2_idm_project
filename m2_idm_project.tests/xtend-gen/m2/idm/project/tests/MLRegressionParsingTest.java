@@ -33,8 +33,8 @@ public class MLRegressionParsingTest {
       		+ "partition : 80%, 20%;\r\n"
       		+ "predictive_vars : \"predict1\",\"predict2\";\r\n"
       		+ "target_var : \"target\";\r\n"
-      		+ "calculate : min_error;\r\n"
-      		+ "algorithm : line_regress (x,40,d,30);");
+      		+ "calculate : min_square_error;\r\n"
+      		+ "algorithm : line_regress(\"column\", \"column2\");");
       _builder.newLine();
       final MLRegression result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);

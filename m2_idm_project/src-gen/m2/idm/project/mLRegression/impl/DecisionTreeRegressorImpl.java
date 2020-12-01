@@ -3,50 +3,56 @@
  */
 package m2.idm.project.mLRegression.impl;
 
-import java.util.Collection;
-
-import m2.idm.project.mLRegression.ListePredictiveVar;
+import m2.idm.project.mLRegression.DecisionTreeRegressor;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Liste Predictive Var</b></em>'.
+ * An implementation of the model object '<em><b>Decision Tree Regressor</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.ListePredictiveVarImpl#getVars <em>Vars</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl#getRand <em>Rand</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container implements ListePredictiveVar
+public class DecisionTreeRegressorImpl extends AlgoMLImpl implements DecisionTreeRegressor
 {
   /**
-   * The cached value of the '{@link #getVars() <em>Vars</em>}' attribute list.
+   * The default value of the '{@link #getRand() <em>Rand</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVars()
+   * @see #getRand()
    * @generated
    * @ordered
    */
-  protected EList<String> vars;
+  protected static final int RAND_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getRand() <em>Rand</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRand()
+   * @generated
+   * @ordered
+   */
+  protected int rand = RAND_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ListePredictiveVarImpl()
+  protected DecisionTreeRegressorImpl()
   {
     super();
   }
@@ -59,7 +65,7 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.LISTE_PREDICTIVE_VAR;
+    return MLRegressionPackage.Literals.DECISION_TREE_REGRESSOR;
   }
 
   /**
@@ -68,13 +74,23 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public EList<String> getVars()
+  public int getRand()
   {
-    if (vars == null)
-    {
-      vars = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS);
-    }
-    return vars;
+    return rand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRand(int newRand)
+  {
+    int oldRand = rand;
+    rand = newRand;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.DECISION_TREE_REGRESSOR__RAND, oldRand, rand));
   }
 
   /**
@@ -87,8 +103,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS:
-        return getVars();
+      case MLRegressionPackage.DECISION_TREE_REGRESSOR__RAND:
+        return getRand();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -98,15 +114,13 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS:
-        getVars().clear();
-        getVars().addAll((Collection<? extends String>)newValue);
+      case MLRegressionPackage.DECISION_TREE_REGRESSOR__RAND:
+        setRand((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,8 +136,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS:
-        getVars().clear();
+      case MLRegressionPackage.DECISION_TREE_REGRESSOR__RAND:
+        setRand(RAND_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -139,8 +153,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS:
-        return vars != null && !vars.isEmpty();
+      case MLRegressionPackage.DECISION_TREE_REGRESSOR__RAND:
+        return rand != RAND_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -156,10 +170,10 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (vars: ");
-    result.append(vars);
+    result.append(" (rand: ");
+    result.append(rand);
     result.append(')');
     return result.toString();
   }
 
-} //ListePredictiveVarImpl
+} //DecisionTreeRegressorImpl

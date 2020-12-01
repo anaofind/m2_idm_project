@@ -9,6 +9,7 @@ import m2.idm.project.mLRegression.BooleanValue;
 import m2.idm.project.mLRegression.Calculate;
 import m2.idm.project.mLRegression.CrossValidation;
 import m2.idm.project.mLRegression.Dataset;
+import m2.idm.project.mLRegression.DecisionTreeRegressor;
 import m2.idm.project.mLRegression.EvaluationType;
 import m2.idm.project.mLRegression.IntegerValue;
 import m2.idm.project.mLRegression.LineRegress;
@@ -123,6 +124,20 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   private EClass lineRegressEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass decisionTreeRegressorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass svrEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -473,20 +488,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getListePredictiveVar_VarPred()
+  public EAttribute getListePredictiveVar_Vars()
   {
     return (EAttribute)listePredictiveVarEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getListePredictiveVar_PredVar()
-  {
-    return (EAttribute)listePredictiveVarEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -506,7 +510,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getTargetVar_VarTar()
+  public EReference getTargetVar_Var()
   {
     return (EReference)targetVarEClass.getEStructuralFeatures().get(0);
   }
@@ -561,7 +565,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getLineRegress_X1()
+  public EAttribute getLineRegress_Columns()
   {
     return (EAttribute)lineRegressEClass.getEStructuralFeatures().get(0);
   }
@@ -572,9 +576,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getLineRegress_Y1()
+  public EClass getDecisionTreeRegressor()
   {
-    return (EAttribute)lineRegressEClass.getEStructuralFeatures().get(1);
+    return decisionTreeRegressorEClass;
   }
 
   /**
@@ -583,9 +587,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getLineRegress_X2()
+  public EAttribute getDecisionTreeRegressor_Rand()
   {
-    return (EAttribute)lineRegressEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)decisionTreeRegressorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -594,9 +598,20 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getLineRegress_Y2()
+  public EClass getSVR()
   {
-    return (EAttribute)lineRegressEClass.getEStructuralFeatures().get(3);
+    return svrEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSVR_Param()
+  {
+    return (EAttribute)svrEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -790,11 +805,10 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     createEReference(variablesEClass, VARIABLES__TARGETS);
 
     listePredictiveVarEClass = createEClass(LISTE_PREDICTIVE_VAR);
-    createEAttribute(listePredictiveVarEClass, LISTE_PREDICTIVE_VAR__VAR_PRED);
-    createEAttribute(listePredictiveVarEClass, LISTE_PREDICTIVE_VAR__PRED_VAR);
+    createEAttribute(listePredictiveVarEClass, LISTE_PREDICTIVE_VAR__VARS);
 
     targetVarEClass = createEClass(TARGET_VAR);
-    createEReference(targetVarEClass, TARGET_VAR__VAR_TAR);
+    createEReference(targetVarEClass, TARGET_VAR__VAR);
 
     algoEClass = createEClass(ALGO);
     createEReference(algoEClass, ALGO__ALGO);
@@ -802,10 +816,13 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     algoMLEClass = createEClass(ALGO_ML);
 
     lineRegressEClass = createEClass(LINE_REGRESS);
-    createEAttribute(lineRegressEClass, LINE_REGRESS__X1);
-    createEAttribute(lineRegressEClass, LINE_REGRESS__Y1);
-    createEAttribute(lineRegressEClass, LINE_REGRESS__X2);
-    createEAttribute(lineRegressEClass, LINE_REGRESS__Y2);
+    createEAttribute(lineRegressEClass, LINE_REGRESS__COLUMNS);
+
+    decisionTreeRegressorEClass = createEClass(DECISION_TREE_REGRESSOR);
+    createEAttribute(decisionTreeRegressorEClass, DECISION_TREE_REGRESSOR__RAND);
+
+    svrEClass = createEClass(SVR);
+    createEAttribute(svrEClass, SVR__PARAM);
 
     typeValueEClass = createEClass(TYPE_VALUE);
 
@@ -859,6 +876,8 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     partitionEClass.getESuperTypes().add(this.getEvaluationType());
     crossValidationEClass.getESuperTypes().add(this.getEvaluationType());
     lineRegressEClass.getESuperTypes().add(this.getAlgoML());
+    decisionTreeRegressorEClass.getESuperTypes().add(this.getAlgoML());
+    svrEClass.getESuperTypes().add(this.getAlgoML());
     stringValueEClass.getESuperTypes().add(this.getTypeValue());
     numericValueEClass.getESuperTypes().add(this.getTypeValue());
     numberValueEClass.getESuperTypes().add(this.getNumericValue());
@@ -896,11 +915,10 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     initEReference(getVariables_Targets(), this.getTargetVar(), null, "targets", null, 0, 1, Variables.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listePredictiveVarEClass, ListePredictiveVar.class, "ListePredictiveVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getListePredictiveVar_VarPred(), ecorePackage.getEString(), "varPred", null, 0, 1, ListePredictiveVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getListePredictiveVar_PredVar(), ecorePackage.getEString(), "predVar", null, 0, -1, ListePredictiveVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getListePredictiveVar_Vars(), ecorePackage.getEString(), "vars", null, 0, -1, ListePredictiveVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(targetVarEClass, TargetVar.class, "TargetVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTargetVar_VarTar(), this.getStringValue(), null, "varTar", null, 0, 1, TargetVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTargetVar_Var(), this.getStringValue(), null, "var", null, 0, 1, TargetVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(algoEClass, Algo.class, "Algo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAlgo_Algo(), this.getAlgoML(), null, "algo", null, 0, 1, Algo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -908,10 +926,13 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     initEClass(algoMLEClass, AlgoML.class, "AlgoML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(lineRegressEClass, LineRegress.class, "LineRegress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLineRegress_X1(), ecorePackage.getEString(), "x1", null, 0, 1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLineRegress_Y1(), ecorePackage.getEString(), "y1", null, 0, 1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLineRegress_X2(), ecorePackage.getEString(), "x2", null, 0, 1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLineRegress_Y2(), ecorePackage.getEString(), "y2", null, 0, 1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLineRegress_Columns(), ecorePackage.getEString(), "columns", null, 0, -1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(decisionTreeRegressorEClass, DecisionTreeRegressor.class, "DecisionTreeRegressor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDecisionTreeRegressor_Rand(), ecorePackage.getEInt(), "rand", null, 0, 1, DecisionTreeRegressor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(svrEClass, m2.idm.project.mLRegression.SVR.class, "SVR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSVR_Param(), ecorePackage.getEString(), "param", null, 0, 1, m2.idm.project.mLRegression.SVR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeValueEClass, TypeValue.class, "TypeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

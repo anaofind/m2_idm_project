@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.ListePredictiveVar#getVarPred <em>Var Pred</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.ListePredictiveVar#getPredVar <em>Pred Var</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.ListePredictiveVar#getVars <em>Vars</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar()
@@ -27,37 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface ListePredictiveVar extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Var Pred</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Pred</em>' attribute.
-   * @see #setVarPred(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar_VarPred()
-   * @model
-   * @generated
-   */
-  String getVarPred();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.ListePredictiveVar#getVarPred <em>Var Pred</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Pred</em>' attribute.
-   * @see #getVarPred()
-   * @generated
-   */
-  void setVarPred(String value);
-
-  /**
-   * Returns the value of the '<em><b>Pred Var</b></em>' attribute list.
+   * Returns the value of the '<em><b>Vars</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pred Var</em>' attribute list.
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar_PredVar()
+   * @return the value of the '<em>Vars</em>' attribute list.
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar_Vars()
    * @model unique="false"
    * @generated
    */
-  EList<String> getPredVar();
+  EList<String> getVars();
 
 } // ListePredictiveVar
