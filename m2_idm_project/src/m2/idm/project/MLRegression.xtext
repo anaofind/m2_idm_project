@@ -16,7 +16,7 @@ Calculate :
 ;
 
 CalculateType :
-	type=MinError | type=MinSquaredError | type=SumsSquaredError
+	MinError | MinSquaredError | SumsSquaredError
 ;
 
 Dataset:
@@ -25,7 +25,7 @@ Dataset:
 
 
 EvaluationType :
-	type=Partition | type=CrossValidation
+	Partition | CrossValidation
 ;
 
 Partition : 
@@ -55,7 +55,7 @@ Algo :
 ;
 
 AlgoType : 
-    type=LineRegress | type=SVR | type=DecisionTreeRegressor
+    LineRegress | SVR | DecisionTreeRegressor
 ;
 
 LineRegress :
@@ -89,7 +89,7 @@ SumsSquaredError :
 
 
 TypeValue:
-	type=StringValue | type=NumericValue | type=PercentValue | type=BooleanValue
+	StringValue | NumericValue | PercentValue | BooleanValue
 ;
 
 StringValue: 
@@ -97,7 +97,7 @@ StringValue:
 ;
 
 NumericValue:
-	type=NumberValue | type=PercentValue
+	NumberValue | PercentValue
 ;
 
 NumberValue:
