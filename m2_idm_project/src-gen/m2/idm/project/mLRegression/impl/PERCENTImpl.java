@@ -4,27 +4,25 @@
 package m2.idm.project.mLRegression.impl;
 
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.PercentValue;
+import m2.idm.project.mLRegression.PERCENT;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Percent Value</b></em>'.
+ * An implementation of the model object '<em><b>PERCENT</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class PercentValueImpl extends MinimalEObjectImpl.Container implements PercentValue
+public class PERCENTImpl extends NumericValueImpl implements PERCENT
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PercentValueImpl()
+  protected PERCENTImpl()
   {
     super();
   }
@@ -37,7 +35,7 @@ public class PercentValueImpl extends MinimalEObjectImpl.Container implements Pe
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.PERCENT_VALUE;
+    return MLRegressionPackage.Literals.PERCENT;
   }
 
-} //PercentValueImpl
+} //PERCENTImpl

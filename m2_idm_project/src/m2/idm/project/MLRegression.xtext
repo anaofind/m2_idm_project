@@ -4,51 +4,48 @@ generate mLRegression "http://www.idm.m2/project/MLRegression"
 
 MLRegression:
 	dataset=Dataset
+	(vars=Variables) ?
 	evaluation=EvaluationType
-    (vars=Variables) ?
-    calculate=Calculate
     algo=Algo
-;
-
-
-Calculate :
-	'calculate' ':' calculateType=CalculateType ';'
-;
-
-CalculateType :
-	MinError | MinSquaredError | SumsSquaredError
+    calculate=Calculate
 ;
 
 Dataset:
-	'import' data=StringValue ';'
+	'import' data=STRING (separator=STRING)?  ';'
 ;
-
 
 EvaluationType :
 	Partition | CrossValidation
 ;
 
 Partition : 
-    'partition' ':' train=NumericValue ',' test=NumericValue ';'
+    'partition' ':' train=INT ',' test=INT ';'
 ;
 
 CrossValidation :
-    'cross_validation' ':' k=IntegerValue ';'
+    'cross_validation' '(' c=INT ',' randomState=INT ')' ';'
 ;
-
 
 Variables: 
 	predictives=ListePredictiveVar targets=TargetVar 
 ;
 
 ListePredictiveVar : 
-    'predictive_vars' ':' vars+=STRING(','vars+=STRING)* ';'
+    'predictive_vars' ':' predVar+=STRING(','predVar+=STRING)* ';'
 ;
 
- 
 TargetVar : 
-    'target_vars' ':' vars+=STRING(','vars+=STRING)* ';'
+    'target_vars' ':' targetVar+=STRING(','targetVar+=STRING)* ';'
 ;
+
+Calculate :
+	'calculate' ':' calculateType=CalculateType ';'
+;
+
+CalculateType :
+	MeanAbsoluteError | MeanSquaredError | MedianAbsoluteError
+;
+
 
 Algo :
 	'algorithm' ':' algo=AlgoType ';'
@@ -59,7 +56,8 @@ AlgoType :
 ;
 
 LineRegress :
-    'line_regress' '('columns+=STRING (',' columns+=STRING)* ')'
+    'line_regress()' ','
+    leftSidePredict=ID '=' 'predict' '()'
 ;
 
 DecisionTreeRegressor : 
@@ -71,45 +69,31 @@ SVR :
 ;
 
 
-MinError : 
-	'min_error'
+MeanAbsoluteError :
+	'mean_absolute_error' '()'
 ;
-
  
 
-MinSquaredError :
-	'min_square_error' 
-;
-
- 
-
-SumsSquaredError : 
-	'sums_square_error'
+MeanSquaredError :
+	'mean_square_error' '()'
 ;
 
 
-TypeValue:
-	StringValue | NumericValue | PercentValue | BooleanValue
+MedianAbsoluteError : 
+	'median_absolute_error' '()'
 ;
 
-StringValue: 
-	value=STRING
-;
 
 NumericValue:
-	NumberValue | PercentValue
+	FLOAT | PERCENT
 ;
 
-NumberValue:
-	value=INT ('.' (decimal+=INT)*)?
+FLOAT:
+	value=INT ('.' decimal=INT)?
 ;
 
-IntegerValue:
-	value=INT
-;
-
-PercentValue:
-	NumberValue '%'
+PERCENT:
+	FLOAT '%'
 ;
 
 BooleanValue :

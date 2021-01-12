@@ -27,24 +27,24 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDatasetAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cDatasetDatasetParserRuleCall_0_0 = (RuleCall)cDatasetAssignment_0.eContents().get(0);
-		private final Assignment cEvaluationAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cEvaluationEvaluationTypeParserRuleCall_1_0 = (RuleCall)cEvaluationAssignment_1.eContents().get(0);
-		private final Assignment cVarsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cVarsVariablesParserRuleCall_2_0 = (RuleCall)cVarsAssignment_2.eContents().get(0);
-		private final Assignment cCalculateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCalculateCalculateParserRuleCall_3_0 = (RuleCall)cCalculateAssignment_3.eContents().get(0);
-		private final Assignment cAlgoAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cAlgoAlgoParserRuleCall_4_0 = (RuleCall)cAlgoAssignment_4.eContents().get(0);
+		private final Assignment cVarsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVarsVariablesParserRuleCall_1_0 = (RuleCall)cVarsAssignment_1.eContents().get(0);
+		private final Assignment cEvaluationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cEvaluationEvaluationTypeParserRuleCall_2_0 = (RuleCall)cEvaluationAssignment_2.eContents().get(0);
+		private final Assignment cAlgoAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAlgoAlgoParserRuleCall_3_0 = (RuleCall)cAlgoAssignment_3.eContents().get(0);
+		private final Assignment cCalculateAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCalculateCalculateParserRuleCall_4_0 = (RuleCall)cCalculateAssignment_4.eContents().get(0);
 		
 		//MLRegression:
 		//	dataset=Dataset
-		//	evaluation=EvaluationType
 		//	vars=Variables?
-		//	calculate=Calculate
-		//	algo=Algo;
+		//	evaluation=EvaluationType
+		//	algo=Algo
+		//	calculate=Calculate;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//dataset=Dataset evaluation=EvaluationType vars=Variables? calculate=Calculate algo=Algo
+		//dataset=Dataset vars=Variables? evaluation=EvaluationType algo=Algo calculate=Calculate
 		public Group getGroup() { return cGroup; }
 		
 		//dataset=Dataset
@@ -53,29 +53,294 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		//Dataset
 		public RuleCall getDatasetDatasetParserRuleCall_0_0() { return cDatasetDatasetParserRuleCall_0_0; }
 		
-		//evaluation=EvaluationType
-		public Assignment getEvaluationAssignment_1() { return cEvaluationAssignment_1; }
-		
-		//EvaluationType
-		public RuleCall getEvaluationEvaluationTypeParserRuleCall_1_0() { return cEvaluationEvaluationTypeParserRuleCall_1_0; }
-		
 		//vars=Variables?
-		public Assignment getVarsAssignment_2() { return cVarsAssignment_2; }
+		public Assignment getVarsAssignment_1() { return cVarsAssignment_1; }
 		
 		//Variables
-		public RuleCall getVarsVariablesParserRuleCall_2_0() { return cVarsVariablesParserRuleCall_2_0; }
+		public RuleCall getVarsVariablesParserRuleCall_1_0() { return cVarsVariablesParserRuleCall_1_0; }
 		
-		//calculate=Calculate
-		public Assignment getCalculateAssignment_3() { return cCalculateAssignment_3; }
+		//evaluation=EvaluationType
+		public Assignment getEvaluationAssignment_2() { return cEvaluationAssignment_2; }
 		
-		//Calculate
-		public RuleCall getCalculateCalculateParserRuleCall_3_0() { return cCalculateCalculateParserRuleCall_3_0; }
+		//EvaluationType
+		public RuleCall getEvaluationEvaluationTypeParserRuleCall_2_0() { return cEvaluationEvaluationTypeParserRuleCall_2_0; }
 		
 		//algo=Algo
-		public Assignment getAlgoAssignment_4() { return cAlgoAssignment_4; }
+		public Assignment getAlgoAssignment_3() { return cAlgoAssignment_3; }
 		
 		//Algo
-		public RuleCall getAlgoAlgoParserRuleCall_4_0() { return cAlgoAlgoParserRuleCall_4_0; }
+		public RuleCall getAlgoAlgoParserRuleCall_3_0() { return cAlgoAlgoParserRuleCall_3_0; }
+		
+		//calculate=Calculate
+		public Assignment getCalculateAssignment_4() { return cCalculateAssignment_4; }
+		
+		//Calculate
+		public RuleCall getCalculateCalculateParserRuleCall_4_0() { return cCalculateCalculateParserRuleCall_4_0; }
+	}
+	public class DatasetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Dataset");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cDataAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDataSTRINGTerminalRuleCall_1_0 = (RuleCall)cDataAssignment_1.eContents().get(0);
+		private final Assignment cSeparatorAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSeparatorSTRINGTerminalRuleCall_2_0 = (RuleCall)cSeparatorAssignment_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Dataset:
+		//	'import' data=STRING separator=STRING? ';';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'import' data=STRING separator=STRING? ';'
+		public Group getGroup() { return cGroup; }
+		
+		//'import'
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+		
+		//data=STRING
+		public Assignment getDataAssignment_1() { return cDataAssignment_1; }
+		
+		//STRING
+		public RuleCall getDataSTRINGTerminalRuleCall_1_0() { return cDataSTRINGTerminalRuleCall_1_0; }
+		
+		//separator=STRING?
+		public Assignment getSeparatorAssignment_2() { return cSeparatorAssignment_2; }
+		
+		//STRING
+		public RuleCall getSeparatorSTRINGTerminalRuleCall_2_0() { return cSeparatorSTRINGTerminalRuleCall_2_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
+	public class EvaluationTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.EvaluationType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPartitionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cCrossValidationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//EvaluationType:
+		//	Partition | CrossValidation;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Partition | CrossValidation
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Partition
+		public RuleCall getPartitionParserRuleCall_0() { return cPartitionParserRuleCall_0; }
+		
+		//CrossValidation
+		public RuleCall getCrossValidationParserRuleCall_1() { return cCrossValidationParserRuleCall_1; }
+	}
+	public class PartitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Partition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPartitionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTrainAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTrainINTTerminalRuleCall_2_0 = (RuleCall)cTrainAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTestAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTestINTTerminalRuleCall_4_0 = (RuleCall)cTestAssignment_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Partition:
+		//	'partition' ':' train=INT ',' test=INT ';';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'partition' ':' train=INT ',' test=INT ';'
+		public Group getGroup() { return cGroup; }
+		
+		//'partition'
+		public Keyword getPartitionKeyword_0() { return cPartitionKeyword_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//train=INT
+		public Assignment getTrainAssignment_2() { return cTrainAssignment_2; }
+		
+		//INT
+		public RuleCall getTrainINTTerminalRuleCall_2_0() { return cTrainINTTerminalRuleCall_2_0; }
+		
+		//','
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		
+		//test=INT
+		public Assignment getTestAssignment_4() { return cTestAssignment_4; }
+		
+		//INT
+		public RuleCall getTestINTTerminalRuleCall_4_0() { return cTestINTTerminalRuleCall_4_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
+	}
+	public class CrossValidationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.CrossValidation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCross_validationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cCAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCINTTerminalRuleCall_2_0 = (RuleCall)cCAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRandomStateAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRandomStateINTTerminalRuleCall_4_0 = (RuleCall)cRandomStateAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//CrossValidation:
+		//	'cross_validation' '(' c=INT ',' randomState=INT ')' ';';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'cross_validation' '(' c=INT ',' randomState=INT ')' ';'
+		public Group getGroup() { return cGroup; }
+		
+		//'cross_validation'
+		public Keyword getCross_validationKeyword_0() { return cCross_validationKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//c=INT
+		public Assignment getCAssignment_2() { return cCAssignment_2; }
+		
+		//INT
+		public RuleCall getCINTTerminalRuleCall_2_0() { return cCINTTerminalRuleCall_2_0; }
+		
+		//','
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		
+		//randomState=INT
+		public Assignment getRandomStateAssignment_4() { return cRandomStateAssignment_4; }
+		
+		//INT
+		public RuleCall getRandomStateINTTerminalRuleCall_4_0() { return cRandomStateINTTerminalRuleCall_4_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+	}
+	public class VariablesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Variables");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPredictivesAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPredictivesListePredictiveVarParserRuleCall_0_0 = (RuleCall)cPredictivesAssignment_0.eContents().get(0);
+		private final Assignment cTargetsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTargetsTargetVarParserRuleCall_1_0 = (RuleCall)cTargetsAssignment_1.eContents().get(0);
+		
+		//Variables:
+		//	predictives=ListePredictiveVar targets=TargetVar;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//predictives=ListePredictiveVar targets=TargetVar
+		public Group getGroup() { return cGroup; }
+		
+		//predictives=ListePredictiveVar
+		public Assignment getPredictivesAssignment_0() { return cPredictivesAssignment_0; }
+		
+		//ListePredictiveVar
+		public RuleCall getPredictivesListePredictiveVarParserRuleCall_0_0() { return cPredictivesListePredictiveVarParserRuleCall_0_0; }
+		
+		//targets=TargetVar
+		public Assignment getTargetsAssignment_1() { return cTargetsAssignment_1; }
+		
+		//TargetVar
+		public RuleCall getTargetsTargetVarParserRuleCall_1_0() { return cTargetsTargetVarParserRuleCall_1_0; }
+	}
+	public class ListePredictiveVarElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.ListePredictiveVar");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPredictive_varsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cPredVarAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPredVarSTRINGTerminalRuleCall_2_0 = (RuleCall)cPredVarAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cPredVarAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cPredVarSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cPredVarAssignment_3_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//ListePredictiveVar:
+		//	'predictive_vars' ':' predVar+=STRING (',' predVar+=STRING)* ';';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'predictive_vars' ':' predVar+=STRING (',' predVar+=STRING)* ';'
+		public Group getGroup() { return cGroup; }
+		
+		//'predictive_vars'
+		public Keyword getPredictive_varsKeyword_0() { return cPredictive_varsKeyword_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//predVar+=STRING
+		public Assignment getPredVarAssignment_2() { return cPredVarAssignment_2; }
+		
+		//STRING
+		public RuleCall getPredVarSTRINGTerminalRuleCall_2_0() { return cPredVarSTRINGTerminalRuleCall_2_0; }
+		
+		//(',' predVar+=STRING)*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//','
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//predVar+=STRING
+		public Assignment getPredVarAssignment_3_1() { return cPredVarAssignment_3_1; }
+		
+		//STRING
+		public RuleCall getPredVarSTRINGTerminalRuleCall_3_1_0() { return cPredVarSTRINGTerminalRuleCall_3_1_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+	public class TargetVarElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.TargetVar");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTarget_varsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTargetVarAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetVarSTRINGTerminalRuleCall_2_0 = (RuleCall)cTargetVarAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetVarAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTargetVarSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cTargetVarAssignment_3_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//TargetVar:
+		//	'target_vars' ':' targetVar+=STRING (',' targetVar+=STRING)* ';';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'target_vars' ':' targetVar+=STRING (',' targetVar+=STRING)* ';'
+		public Group getGroup() { return cGroup; }
+		
+		//'target_vars'
+		public Keyword getTarget_varsKeyword_0() { return cTarget_varsKeyword_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//targetVar+=STRING
+		public Assignment getTargetVarAssignment_2() { return cTargetVarAssignment_2; }
+		
+		//STRING
+		public RuleCall getTargetVarSTRINGTerminalRuleCall_2_0() { return cTargetVarSTRINGTerminalRuleCall_2_0; }
+		
+		//(',' targetVar+=STRING)*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//','
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//targetVar+=STRING
+		public Assignment getTargetVarAssignment_3_1() { return cTargetVarAssignment_3_1; }
+		
+		//STRING
+		public RuleCall getTargetVarSTRINGTerminalRuleCall_3_1_0() { return cTargetVarSTRINGTerminalRuleCall_3_1_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 	public class CalculateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Calculate");
@@ -111,286 +376,25 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	public class CalculateTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.CalculateType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cTypeMinErrorParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cTypeMinSquaredErrorParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		private final Assignment cTypeAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cTypeSumsSquaredErrorParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cMeanAbsoluteErrorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMeanSquaredErrorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMedianAbsoluteErrorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//CalculateType:
-		//	type=MinError | type=MinSquaredError | type=SumsSquaredError;
+		//	MeanAbsoluteError | MeanSquaredError | MedianAbsoluteError;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=MinError | type=MinSquaredError | type=SumsSquaredError
+		//MeanAbsoluteError | MeanSquaredError | MedianAbsoluteError
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//type=MinError
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		//MeanAbsoluteError
+		public RuleCall getMeanAbsoluteErrorParserRuleCall_0() { return cMeanAbsoluteErrorParserRuleCall_0; }
 		
-		//MinError
-		public RuleCall getTypeMinErrorParserRuleCall_0_0() { return cTypeMinErrorParserRuleCall_0_0; }
+		//MeanSquaredError
+		public RuleCall getMeanSquaredErrorParserRuleCall_1() { return cMeanSquaredErrorParserRuleCall_1; }
 		
-		//type=MinSquaredError
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
-		
-		//MinSquaredError
-		public RuleCall getTypeMinSquaredErrorParserRuleCall_1_0() { return cTypeMinSquaredErrorParserRuleCall_1_0; }
-		
-		//type=SumsSquaredError
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
-		
-		//SumsSquaredError
-		public RuleCall getTypeSumsSquaredErrorParserRuleCall_2_0() { return cTypeSumsSquaredErrorParserRuleCall_2_0; }
-	}
-	public class DatasetElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Dataset");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDataAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDataStringValueParserRuleCall_1_0 = (RuleCall)cDataAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//Dataset:
-		//	'import' data=StringValue ';';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'import' data=StringValue ';'
-		public Group getGroup() { return cGroup; }
-		
-		//'import'
-		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
-		
-		//data=StringValue
-		public Assignment getDataAssignment_1() { return cDataAssignment_1; }
-		
-		//StringValue
-		public RuleCall getDataStringValueParserRuleCall_1_0() { return cDataStringValueParserRuleCall_1_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
-	}
-	public class EvaluationTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.EvaluationType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cTypePartitionParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cTypeCrossValidationParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		
-		//EvaluationType:
-		//	type=Partition | type=CrossValidation;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//type=Partition | type=CrossValidation
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//type=Partition
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
-		
-		//Partition
-		public RuleCall getTypePartitionParserRuleCall_0_0() { return cTypePartitionParserRuleCall_0_0; }
-		
-		//type=CrossValidation
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
-		
-		//CrossValidation
-		public RuleCall getTypeCrossValidationParserRuleCall_1_0() { return cTypeCrossValidationParserRuleCall_1_0; }
-	}
-	public class PartitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Partition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPartitionKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTrainAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTrainNumericValueParserRuleCall_2_0 = (RuleCall)cTrainAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTestAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTestNumericValueParserRuleCall_4_0 = (RuleCall)cTestAssignment_4.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//Partition:
-		//	'partition' ':' train=NumericValue ',' test=NumericValue ';';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'partition' ':' train=NumericValue ',' test=NumericValue ';'
-		public Group getGroup() { return cGroup; }
-		
-		//'partition'
-		public Keyword getPartitionKeyword_0() { return cPartitionKeyword_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//train=NumericValue
-		public Assignment getTrainAssignment_2() { return cTrainAssignment_2; }
-		
-		//NumericValue
-		public RuleCall getTrainNumericValueParserRuleCall_2_0() { return cTrainNumericValueParserRuleCall_2_0; }
-		
-		//','
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-		
-		//test=NumericValue
-		public Assignment getTestAssignment_4() { return cTestAssignment_4; }
-		
-		//NumericValue
-		public RuleCall getTestNumericValueParserRuleCall_4_0() { return cTestNumericValueParserRuleCall_4_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
-	}
-	public class CrossValidationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.CrossValidation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCross_validationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cKAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cKIntegerValueParserRuleCall_2_0 = (RuleCall)cKAssignment_2.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//CrossValidation:
-		//	'cross_validation' ':' k=IntegerValue ';';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'cross_validation' ':' k=IntegerValue ';'
-		public Group getGroup() { return cGroup; }
-		
-		//'cross_validation'
-		public Keyword getCross_validationKeyword_0() { return cCross_validationKeyword_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//k=IntegerValue
-		public Assignment getKAssignment_2() { return cKAssignment_2; }
-		
-		//IntegerValue
-		public RuleCall getKIntegerValueParserRuleCall_2_0() { return cKIntegerValueParserRuleCall_2_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
-	}
-	public class VariablesElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Variables");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPredictivesAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPredictivesListePredictiveVarParserRuleCall_0_0 = (RuleCall)cPredictivesAssignment_0.eContents().get(0);
-		private final Assignment cTargetsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTargetsTargetVarParserRuleCall_1_0 = (RuleCall)cTargetsAssignment_1.eContents().get(0);
-		
-		//Variables:
-		//	predictives=ListePredictiveVar targets=TargetVar;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//predictives=ListePredictiveVar targets=TargetVar
-		public Group getGroup() { return cGroup; }
-		
-		//predictives=ListePredictiveVar
-		public Assignment getPredictivesAssignment_0() { return cPredictivesAssignment_0; }
-		
-		//ListePredictiveVar
-		public RuleCall getPredictivesListePredictiveVarParserRuleCall_0_0() { return cPredictivesListePredictiveVarParserRuleCall_0_0; }
-		
-		//targets=TargetVar
-		public Assignment getTargetsAssignment_1() { return cTargetsAssignment_1; }
-		
-		//TargetVar
-		public RuleCall getTargetsTargetVarParserRuleCall_1_0() { return cTargetsTargetVarParserRuleCall_1_0; }
-	}
-	public class ListePredictiveVarElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.ListePredictiveVar");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPredictive_varsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cVarsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cVarsSTRINGTerminalRuleCall_2_0 = (RuleCall)cVarsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cVarsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cVarsSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cVarsAssignment_3_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//ListePredictiveVar:
-		//	'predictive_vars' ':' vars+=STRING (',' vars+=STRING)* ';';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'predictive_vars' ':' vars+=STRING (',' vars+=STRING)* ';'
-		public Group getGroup() { return cGroup; }
-		
-		//'predictive_vars'
-		public Keyword getPredictive_varsKeyword_0() { return cPredictive_varsKeyword_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//vars+=STRING
-		public Assignment getVarsAssignment_2() { return cVarsAssignment_2; }
-		
-		//STRING
-		public RuleCall getVarsSTRINGTerminalRuleCall_2_0() { return cVarsSTRINGTerminalRuleCall_2_0; }
-		
-		//(',' vars+=STRING)*
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//','
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-		
-		//vars+=STRING
-		public Assignment getVarsAssignment_3_1() { return cVarsAssignment_3_1; }
-		
-		//STRING
-		public RuleCall getVarsSTRINGTerminalRuleCall_3_1_0() { return cVarsSTRINGTerminalRuleCall_3_1_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
-	}
-	public class TargetVarElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.TargetVar");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTarget_varsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cVarsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cVarsSTRINGTerminalRuleCall_2_0 = (RuleCall)cVarsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cVarsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cVarsSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cVarsAssignment_3_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//TargetVar:
-		//	'target_vars' ':' vars+=STRING (',' vars+=STRING)* ';';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'target_vars' ':' vars+=STRING (',' vars+=STRING)* ';'
-		public Group getGroup() { return cGroup; }
-		
-		//'target_vars'
-		public Keyword getTarget_varsKeyword_0() { return cTarget_varsKeyword_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//vars+=STRING
-		public Assignment getVarsAssignment_2() { return cVarsAssignment_2; }
-		
-		//STRING
-		public RuleCall getVarsSTRINGTerminalRuleCall_2_0() { return cVarsSTRINGTerminalRuleCall_2_0; }
-		
-		//(',' vars+=STRING)*
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//','
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-		
-		//vars+=STRING
-		public Assignment getVarsAssignment_3_1() { return cVarsAssignment_3_1; }
-		
-		//STRING
-		public RuleCall getVarsSTRINGTerminalRuleCall_3_1_0() { return cVarsSTRINGTerminalRuleCall_3_1_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		//MedianAbsoluteError
+		public RuleCall getMedianAbsoluteErrorParserRuleCall_2() { return cMedianAbsoluteErrorParserRuleCall_2; }
 	}
 	public class AlgoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Algo");
@@ -426,84 +430,65 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	public class AlgoTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.AlgoType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cTypeLineRegressParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cTypeSVRParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		private final Assignment cTypeAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cTypeDecisionTreeRegressorParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cLineRegressParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSVRParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cDecisionTreeRegressorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AlgoType:
-		//	type=LineRegress | type=SVR | type=DecisionTreeRegressor;
+		//	LineRegress | SVR | DecisionTreeRegressor;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=LineRegress | type=SVR | type=DecisionTreeRegressor
+		//LineRegress | SVR | DecisionTreeRegressor
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//type=LineRegress
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
-		
 		//LineRegress
-		public RuleCall getTypeLineRegressParserRuleCall_0_0() { return cTypeLineRegressParserRuleCall_0_0; }
-		
-		//type=SVR
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		public RuleCall getLineRegressParserRuleCall_0() { return cLineRegressParserRuleCall_0; }
 		
 		//SVR
-		public RuleCall getTypeSVRParserRuleCall_1_0() { return cTypeSVRParserRuleCall_1_0; }
-		
-		//type=DecisionTreeRegressor
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		public RuleCall getSVRParserRuleCall_1() { return cSVRParserRuleCall_1; }
 		
 		//DecisionTreeRegressor
-		public RuleCall getTypeDecisionTreeRegressorParserRuleCall_2_0() { return cTypeDecisionTreeRegressorParserRuleCall_2_0; }
+		public RuleCall getDecisionTreeRegressorParserRuleCall_2() { return cDecisionTreeRegressorParserRuleCall_2; }
 	}
 	public class LineRegressElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.LineRegress");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLine_regressKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cColumnsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cColumnsSTRINGTerminalRuleCall_2_0 = (RuleCall)cColumnsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cColumnsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cColumnsSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cColumnsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cLeftSidePredictAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLeftSidePredictIDTerminalRuleCall_2_0 = (RuleCall)cLeftSidePredictAssignment_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cPredictKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftParenthesisRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//LineRegress:
-		//	'line_regress' '(' columns+=STRING (',' columns+=STRING)* ')';
+		//	'line_regress()' ','
+		//	leftSidePredict=ID '=' 'predict' '()';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'line_regress' '(' columns+=STRING (',' columns+=STRING)* ')'
+		//'line_regress()' ',' leftSidePredict=ID '=' 'predict' '()'
 		public Group getGroup() { return cGroup; }
 		
-		//'line_regress'
+		//'line_regress()'
 		public Keyword getLine_regressKeyword_0() { return cLine_regressKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//columns+=STRING
-		public Assignment getColumnsAssignment_2() { return cColumnsAssignment_2; }
-		
-		//STRING
-		public RuleCall getColumnsSTRINGTerminalRuleCall_2_0() { return cColumnsSTRINGTerminalRuleCall_2_0; }
-		
-		//(',' columns+=STRING)*
-		public Group getGroup_3() { return cGroup_3; }
-		
 		//','
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		public Keyword getCommaKeyword_1() { return cCommaKeyword_1; }
 		
-		//columns+=STRING
-		public Assignment getColumnsAssignment_3_1() { return cColumnsAssignment_3_1; }
+		//leftSidePredict=ID
+		public Assignment getLeftSidePredictAssignment_2() { return cLeftSidePredictAssignment_2; }
 		
-		//STRING
-		public RuleCall getColumnsSTRINGTerminalRuleCall_3_1_0() { return cColumnsSTRINGTerminalRuleCall_3_1_0; }
+		//ID
+		public RuleCall getLeftSidePredictIDTerminalRuleCall_2_0() { return cLeftSidePredictIDTerminalRuleCall_2_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		//'='
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		
+		//'predict'
+		public Keyword getPredictKeyword_4() { return cPredictKeyword_4; }
+		
+		//'()'
+		public Keyword getLeftParenthesisRightParenthesisKeyword_5() { return cLeftParenthesisRightParenthesisKeyword_5; }
 	}
 	public class DecisionTreeRegressorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.DecisionTreeRegressor");
@@ -567,126 +552,84 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
-	public class MinErrorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MinError");
-		private final Keyword cMin_errorKeyword = (Keyword)rule.eContents().get(1);
+	public class MeanAbsoluteErrorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MeanAbsoluteError");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMean_absolute_errorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisRightParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//MinError:
-		//	'min_error';
+		//MeanAbsoluteError:
+		//	'mean_absolute_error' '()';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'min_error'
-		public Keyword getMin_errorKeyword() { return cMin_errorKeyword; }
+		//'mean_absolute_error' '()'
+		public Group getGroup() { return cGroup; }
+		
+		//'mean_absolute_error'
+		public Keyword getMean_absolute_errorKeyword_0() { return cMean_absolute_errorKeyword_0; }
+		
+		//'()'
+		public Keyword getLeftParenthesisRightParenthesisKeyword_1() { return cLeftParenthesisRightParenthesisKeyword_1; }
 	}
-	public class MinSquaredErrorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MinSquaredError");
-		private final Keyword cMin_square_errorKeyword = (Keyword)rule.eContents().get(1);
+	public class MeanSquaredErrorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MeanSquaredError");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMean_square_errorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisRightParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//MinSquaredError:
-		//	'min_square_error';
+		//MeanSquaredError:
+		//	'mean_square_error' '()';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'min_square_error'
-		public Keyword getMin_square_errorKeyword() { return cMin_square_errorKeyword; }
+		//'mean_square_error' '()'
+		public Group getGroup() { return cGroup; }
+		
+		//'mean_square_error'
+		public Keyword getMean_square_errorKeyword_0() { return cMean_square_errorKeyword_0; }
+		
+		//'()'
+		public Keyword getLeftParenthesisRightParenthesisKeyword_1() { return cLeftParenthesisRightParenthesisKeyword_1; }
 	}
-	public class SumsSquaredErrorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.SumsSquaredError");
-		private final Keyword cSums_square_errorKeyword = (Keyword)rule.eContents().get(1);
+	public class MedianAbsoluteErrorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MedianAbsoluteError");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMedian_absolute_errorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisRightParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//SumsSquaredError:
-		//	'sums_square_error';
+		//MedianAbsoluteError:
+		//	'median_absolute_error' '()';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'sums_square_error'
-		public Keyword getSums_square_errorKeyword() { return cSums_square_errorKeyword; }
-	}
-	public class TypeValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.TypeValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cTypeStringValueParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cTypeNumericValueParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		private final Assignment cTypeAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cTypePercentValueParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Assignment cTypeAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cTypeBooleanValueParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		//'median_absolute_error' '()'
+		public Group getGroup() { return cGroup; }
 		
-		//TypeValue:
-		//	type=StringValue | type=NumericValue | type=PercentValue | type=BooleanValue;
-		@Override public ParserRule getRule() { return rule; }
+		//'median_absolute_error'
+		public Keyword getMedian_absolute_errorKeyword_0() { return cMedian_absolute_errorKeyword_0; }
 		
-		//type=StringValue | type=NumericValue | type=PercentValue | type=BooleanValue
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//type=StringValue
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
-		
-		//StringValue
-		public RuleCall getTypeStringValueParserRuleCall_0_0() { return cTypeStringValueParserRuleCall_0_0; }
-		
-		//type=NumericValue
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
-		
-		//NumericValue
-		public RuleCall getTypeNumericValueParserRuleCall_1_0() { return cTypeNumericValueParserRuleCall_1_0; }
-		
-		//type=PercentValue
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
-		
-		//PercentValue
-		public RuleCall getTypePercentValueParserRuleCall_2_0() { return cTypePercentValueParserRuleCall_2_0; }
-		
-		//type=BooleanValue
-		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
-		
-		//BooleanValue
-		public RuleCall getTypeBooleanValueParserRuleCall_3_0() { return cTypeBooleanValueParserRuleCall_3_0; }
-	}
-	public class StringValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.StringValue");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-		
-		//StringValue:
-		//	value=STRING;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//value=STRING
-		public Assignment getValueAssignment() { return cValueAssignment; }
-		
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
+		//'()'
+		public Keyword getLeftParenthesisRightParenthesisKeyword_1() { return cLeftParenthesisRightParenthesisKeyword_1; }
 	}
 	public class NumericValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.NumericValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cTypeNumberValueParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cTypePercentValueParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final RuleCall cFLOATParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPERCENTParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//NumericValue:
-		//	type=NumberValue | type=PercentValue;
+		//	FLOAT | PERCENT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=NumberValue | type=PercentValue
+		//FLOAT | PERCENT
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//type=NumberValue
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		//FLOAT
+		public RuleCall getFLOATParserRuleCall_0() { return cFLOATParserRuleCall_0; }
 		
-		//NumberValue
-		public RuleCall getTypeNumberValueParserRuleCall_0_0() { return cTypeNumberValueParserRuleCall_0_0; }
-		
-		//type=PercentValue
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
-		
-		//PercentValue
-		public RuleCall getTypePercentValueParserRuleCall_1_0() { return cTypePercentValueParserRuleCall_1_0; }
+		//PERCENT
+		public RuleCall getPERCENTParserRuleCall_1() { return cPERCENTParserRuleCall_1; }
 	}
-	public class NumberValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.NumberValue");
+	public class FLOATElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.FLOAT");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cValueAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cValueINTTerminalRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
@@ -695,11 +638,11 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final Assignment cDecimalAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cDecimalINTTerminalRuleCall_1_1_0 = (RuleCall)cDecimalAssignment_1_1.eContents().get(0);
 		
-		//NumberValue:
-		//	value=INT ('.' decimal+=INT*)?;
+		//FLOAT:
+		//	value=INT ('.' decimal=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=INT ('.' decimal+=INT*)?
+		//value=INT ('.' decimal=INT)?
 		public Group getGroup() { return cGroup; }
 		
 		//value=INT
@@ -708,48 +651,33 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_0_0() { return cValueINTTerminalRuleCall_0_0; }
 		
-		//('.' decimal+=INT*)?
+		//('.' decimal=INT)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 		
-		//decimal+=INT*
+		//decimal=INT
 		public Assignment getDecimalAssignment_1_1() { return cDecimalAssignment_1_1; }
 		
 		//INT
 		public RuleCall getDecimalINTTerminalRuleCall_1_1_0() { return cDecimalINTTerminalRuleCall_1_1_0; }
 	}
-	public class IntegerValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.IntegerValue");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-		
-		//IntegerValue:
-		//	value=INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//value=INT
-		public Assignment getValueAssignment() { return cValueAssignment; }
-		
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
-	}
-	public class PercentValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.PercentValue");
+	public class PERCENTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.PERCENT");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cNumberValueParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cFLOATParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cPercentSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//PercentValue:
-		//	NumberValue '%';
+		//PERCENT:
+		//	FLOAT '%';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NumberValue '%'
+		//FLOAT '%'
 		public Group getGroup() { return cGroup; }
 		
-		//NumberValue
-		public RuleCall getNumberValueParserRuleCall_0() { return cNumberValueParserRuleCall_0; }
+		//FLOAT
+		public RuleCall getFLOATParserRuleCall_0() { return cFLOATParserRuleCall_0; }
 		
 		//'%'
 		public Keyword getPercentSignKeyword_1() { return cPercentSignKeyword_1; }
@@ -780,8 +708,6 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	
 	
 	private final MLRegressionElements pMLRegression;
-	private final CalculateElements pCalculate;
-	private final CalculateTypeElements pCalculateType;
 	private final DatasetElements pDataset;
 	private final EvaluationTypeElements pEvaluationType;
 	private final PartitionElements pPartition;
@@ -789,20 +715,19 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	private final VariablesElements pVariables;
 	private final ListePredictiveVarElements pListePredictiveVar;
 	private final TargetVarElements pTargetVar;
+	private final CalculateElements pCalculate;
+	private final CalculateTypeElements pCalculateType;
 	private final AlgoElements pAlgo;
 	private final AlgoTypeElements pAlgoType;
 	private final LineRegressElements pLineRegress;
 	private final DecisionTreeRegressorElements pDecisionTreeRegressor;
 	private final SVRElements pSVR;
-	private final MinErrorElements pMinError;
-	private final MinSquaredErrorElements pMinSquaredError;
-	private final SumsSquaredErrorElements pSumsSquaredError;
-	private final TypeValueElements pTypeValue;
-	private final StringValueElements pStringValue;
+	private final MeanAbsoluteErrorElements pMeanAbsoluteError;
+	private final MeanSquaredErrorElements pMeanSquaredError;
+	private final MedianAbsoluteErrorElements pMedianAbsoluteError;
 	private final NumericValueElements pNumericValue;
-	private final NumberValueElements pNumberValue;
-	private final IntegerValueElements pIntegerValue;
-	private final PercentValueElements pPercentValue;
+	private final FLOATElements pFLOAT;
+	private final PERCENTElements pPERCENT;
 	private final BooleanValueElements pBooleanValue;
 	
 	private final Grammar grammar;
@@ -815,8 +740,6 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pMLRegression = new MLRegressionElements();
-		this.pCalculate = new CalculateElements();
-		this.pCalculateType = new CalculateTypeElements();
 		this.pDataset = new DatasetElements();
 		this.pEvaluationType = new EvaluationTypeElements();
 		this.pPartition = new PartitionElements();
@@ -824,20 +747,19 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		this.pVariables = new VariablesElements();
 		this.pListePredictiveVar = new ListePredictiveVarElements();
 		this.pTargetVar = new TargetVarElements();
+		this.pCalculate = new CalculateElements();
+		this.pCalculateType = new CalculateTypeElements();
 		this.pAlgo = new AlgoElements();
 		this.pAlgoType = new AlgoTypeElements();
 		this.pLineRegress = new LineRegressElements();
 		this.pDecisionTreeRegressor = new DecisionTreeRegressorElements();
 		this.pSVR = new SVRElements();
-		this.pMinError = new MinErrorElements();
-		this.pMinSquaredError = new MinSquaredErrorElements();
-		this.pSumsSquaredError = new SumsSquaredErrorElements();
-		this.pTypeValue = new TypeValueElements();
-		this.pStringValue = new StringValueElements();
+		this.pMeanAbsoluteError = new MeanAbsoluteErrorElements();
+		this.pMeanSquaredError = new MeanSquaredErrorElements();
+		this.pMedianAbsoluteError = new MedianAbsoluteErrorElements();
 		this.pNumericValue = new NumericValueElements();
-		this.pNumberValue = new NumberValueElements();
-		this.pIntegerValue = new IntegerValueElements();
-		this.pPercentValue = new PercentValueElements();
+		this.pFLOAT = new FLOATElements();
+		this.pPERCENT = new PERCENTElements();
 		this.pBooleanValue = new BooleanValueElements();
 	}
 	
@@ -870,10 +792,10 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	
 	//MLRegression:
 	//	dataset=Dataset
-	//	evaluation=EvaluationType
 	//	vars=Variables?
-	//	calculate=Calculate
-	//	algo=Algo;
+	//	evaluation=EvaluationType
+	//	algo=Algo
+	//	calculate=Calculate;
 	public MLRegressionElements getMLRegressionAccess() {
 		return pMLRegression;
 	}
@@ -882,28 +804,8 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		return getMLRegressionAccess().getRule();
 	}
 	
-	//Calculate:
-	//	'calculate' ':' calculateType=CalculateType ';';
-	public CalculateElements getCalculateAccess() {
-		return pCalculate;
-	}
-	
-	public ParserRule getCalculateRule() {
-		return getCalculateAccess().getRule();
-	}
-	
-	//CalculateType:
-	//	type=MinError | type=MinSquaredError | type=SumsSquaredError;
-	public CalculateTypeElements getCalculateTypeAccess() {
-		return pCalculateType;
-	}
-	
-	public ParserRule getCalculateTypeRule() {
-		return getCalculateTypeAccess().getRule();
-	}
-	
 	//Dataset:
-	//	'import' data=StringValue ';';
+	//	'import' data=STRING separator=STRING? ';';
 	public DatasetElements getDatasetAccess() {
 		return pDataset;
 	}
@@ -913,7 +815,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//EvaluationType:
-	//	type=Partition | type=CrossValidation;
+	//	Partition | CrossValidation;
 	public EvaluationTypeElements getEvaluationTypeAccess() {
 		return pEvaluationType;
 	}
@@ -923,7 +825,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//Partition:
-	//	'partition' ':' train=NumericValue ',' test=NumericValue ';';
+	//	'partition' ':' train=INT ',' test=INT ';';
 	public PartitionElements getPartitionAccess() {
 		return pPartition;
 	}
@@ -933,7 +835,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//CrossValidation:
-	//	'cross_validation' ':' k=IntegerValue ';';
+	//	'cross_validation' '(' c=INT ',' randomState=INT ')' ';';
 	public CrossValidationElements getCrossValidationAccess() {
 		return pCrossValidation;
 	}
@@ -953,7 +855,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//ListePredictiveVar:
-	//	'predictive_vars' ':' vars+=STRING (',' vars+=STRING)* ';';
+	//	'predictive_vars' ':' predVar+=STRING (',' predVar+=STRING)* ';';
 	public ListePredictiveVarElements getListePredictiveVarAccess() {
 		return pListePredictiveVar;
 	}
@@ -963,13 +865,33 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//TargetVar:
-	//	'target_vars' ':' vars+=STRING (',' vars+=STRING)* ';';
+	//	'target_vars' ':' targetVar+=STRING (',' targetVar+=STRING)* ';';
 	public TargetVarElements getTargetVarAccess() {
 		return pTargetVar;
 	}
 	
 	public ParserRule getTargetVarRule() {
 		return getTargetVarAccess().getRule();
+	}
+	
+	//Calculate:
+	//	'calculate' ':' calculateType=CalculateType ';';
+	public CalculateElements getCalculateAccess() {
+		return pCalculate;
+	}
+	
+	public ParserRule getCalculateRule() {
+		return getCalculateAccess().getRule();
+	}
+	
+	//CalculateType:
+	//	MeanAbsoluteError | MeanSquaredError | MedianAbsoluteError;
+	public CalculateTypeElements getCalculateTypeAccess() {
+		return pCalculateType;
+	}
+	
+	public ParserRule getCalculateTypeRule() {
+		return getCalculateTypeAccess().getRule();
 	}
 	
 	//Algo:
@@ -983,7 +905,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//AlgoType:
-	//	type=LineRegress | type=SVR | type=DecisionTreeRegressor;
+	//	LineRegress | SVR | DecisionTreeRegressor;
 	public AlgoTypeElements getAlgoTypeAccess() {
 		return pAlgoType;
 	}
@@ -993,7 +915,8 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//LineRegress:
-	//	'line_regress' '(' columns+=STRING (',' columns+=STRING)* ')';
+	//	'line_regress()' ','
+	//	leftSidePredict=ID '=' 'predict' '()';
 	public LineRegressElements getLineRegressAccess() {
 		return pLineRegress;
 	}
@@ -1022,58 +945,38 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		return getSVRAccess().getRule();
 	}
 	
-	//MinError:
-	//	'min_error';
-	public MinErrorElements getMinErrorAccess() {
-		return pMinError;
+	//MeanAbsoluteError:
+	//	'mean_absolute_error' '()';
+	public MeanAbsoluteErrorElements getMeanAbsoluteErrorAccess() {
+		return pMeanAbsoluteError;
 	}
 	
-	public ParserRule getMinErrorRule() {
-		return getMinErrorAccess().getRule();
+	public ParserRule getMeanAbsoluteErrorRule() {
+		return getMeanAbsoluteErrorAccess().getRule();
 	}
 	
-	//MinSquaredError:
-	//	'min_square_error';
-	public MinSquaredErrorElements getMinSquaredErrorAccess() {
-		return pMinSquaredError;
+	//MeanSquaredError:
+	//	'mean_square_error' '()';
+	public MeanSquaredErrorElements getMeanSquaredErrorAccess() {
+		return pMeanSquaredError;
 	}
 	
-	public ParserRule getMinSquaredErrorRule() {
-		return getMinSquaredErrorAccess().getRule();
+	public ParserRule getMeanSquaredErrorRule() {
+		return getMeanSquaredErrorAccess().getRule();
 	}
 	
-	//SumsSquaredError:
-	//	'sums_square_error';
-	public SumsSquaredErrorElements getSumsSquaredErrorAccess() {
-		return pSumsSquaredError;
+	//MedianAbsoluteError:
+	//	'median_absolute_error' '()';
+	public MedianAbsoluteErrorElements getMedianAbsoluteErrorAccess() {
+		return pMedianAbsoluteError;
 	}
 	
-	public ParserRule getSumsSquaredErrorRule() {
-		return getSumsSquaredErrorAccess().getRule();
-	}
-	
-	//TypeValue:
-	//	type=StringValue | type=NumericValue | type=PercentValue | type=BooleanValue;
-	public TypeValueElements getTypeValueAccess() {
-		return pTypeValue;
-	}
-	
-	public ParserRule getTypeValueRule() {
-		return getTypeValueAccess().getRule();
-	}
-	
-	//StringValue:
-	//	value=STRING;
-	public StringValueElements getStringValueAccess() {
-		return pStringValue;
-	}
-	
-	public ParserRule getStringValueRule() {
-		return getStringValueAccess().getRule();
+	public ParserRule getMedianAbsoluteErrorRule() {
+		return getMedianAbsoluteErrorAccess().getRule();
 	}
 	
 	//NumericValue:
-	//	type=NumberValue | type=PercentValue;
+	//	FLOAT | PERCENT;
 	public NumericValueElements getNumericValueAccess() {
 		return pNumericValue;
 	}
@@ -1082,34 +985,24 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		return getNumericValueAccess().getRule();
 	}
 	
-	//NumberValue:
-	//	value=INT ('.' decimal+=INT*)?;
-	public NumberValueElements getNumberValueAccess() {
-		return pNumberValue;
+	//FLOAT:
+	//	value=INT ('.' decimal=INT)?;
+	public FLOATElements getFLOATAccess() {
+		return pFLOAT;
 	}
 	
-	public ParserRule getNumberValueRule() {
-		return getNumberValueAccess().getRule();
+	public ParserRule getFLOATRule() {
+		return getFLOATAccess().getRule();
 	}
 	
-	//IntegerValue:
-	//	value=INT;
-	public IntegerValueElements getIntegerValueAccess() {
-		return pIntegerValue;
+	//PERCENT:
+	//	FLOAT '%';
+	public PERCENTElements getPERCENTAccess() {
+		return pPERCENT;
 	}
 	
-	public ParserRule getIntegerValueRule() {
-		return getIntegerValueAccess().getRule();
-	}
-	
-	//PercentValue:
-	//	NumberValue '%';
-	public PercentValueElements getPercentValueAccess() {
-		return pPercentValue;
-	}
-	
-	public ParserRule getPercentValueRule() {
-		return getPercentValueAccess().getRule();
+	public ParserRule getPERCENTRule() {
+		return getPERCENTAccess().getRule();
 	}
 	
 	//BooleanValue:

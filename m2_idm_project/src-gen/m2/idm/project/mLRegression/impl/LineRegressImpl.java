@@ -3,18 +3,14 @@
  */
 package m2.idm.project.mLRegression.impl;
 
-import java.util.Collection;
-
 import m2.idm.project.mLRegression.LineRegress;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,22 +20,32 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.LineRegressImpl#getColumns <em>Columns</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.LineRegressImpl#getLeftSidePredict <em>Left Side Predict</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LineRegressImpl extends MinimalEObjectImpl.Container implements LineRegress
+public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
 {
   /**
-   * The cached value of the '{@link #getColumns() <em>Columns</em>}' attribute list.
+   * The default value of the '{@link #getLeftSidePredict() <em>Left Side Predict</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getColumns()
+   * @see #getLeftSidePredict()
    * @generated
    * @ordered
    */
-  protected EList<String> columns;
+  protected static final String LEFT_SIDE_PREDICT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLeftSidePredict() <em>Left Side Predict</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLeftSidePredict()
+   * @generated
+   * @ordered
+   */
+  protected String leftSidePredict = LEFT_SIDE_PREDICT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +74,23 @@ public class LineRegressImpl extends MinimalEObjectImpl.Container implements Lin
    * @generated
    */
   @Override
-  public EList<String> getColumns()
+  public String getLeftSidePredict()
   {
-    if (columns == null)
-    {
-      columns = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.LINE_REGRESS__COLUMNS);
-    }
-    return columns;
+    return leftSidePredict;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLeftSidePredict(String newLeftSidePredict)
+  {
+    String oldLeftSidePredict = leftSidePredict;
+    leftSidePredict = newLeftSidePredict;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT, oldLeftSidePredict, leftSidePredict));
   }
 
   /**
@@ -87,8 +103,8 @@ public class LineRegressImpl extends MinimalEObjectImpl.Container implements Lin
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LINE_REGRESS__COLUMNS:
-        return getColumns();
+      case MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT:
+        return getLeftSidePredict();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -98,15 +114,13 @@ public class LineRegressImpl extends MinimalEObjectImpl.Container implements Lin
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LINE_REGRESS__COLUMNS:
-        getColumns().clear();
-        getColumns().addAll((Collection<? extends String>)newValue);
+      case MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT:
+        setLeftSidePredict((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,8 +136,8 @@ public class LineRegressImpl extends MinimalEObjectImpl.Container implements Lin
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LINE_REGRESS__COLUMNS:
-        getColumns().clear();
+      case MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT:
+        setLeftSidePredict(LEFT_SIDE_PREDICT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -139,8 +153,8 @@ public class LineRegressImpl extends MinimalEObjectImpl.Container implements Lin
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LINE_REGRESS__COLUMNS:
-        return columns != null && !columns.isEmpty();
+      case MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT:
+        return LEFT_SIDE_PREDICT_EDEFAULT == null ? leftSidePredict != null : !LEFT_SIDE_PREDICT_EDEFAULT.equals(leftSidePredict);
     }
     return super.eIsSet(featureID);
   }
@@ -156,8 +170,8 @@ public class LineRegressImpl extends MinimalEObjectImpl.Container implements Lin
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (columns: ");
-    result.append(columns);
+    result.append(" (leftSidePredict: ");
+    result.append(leftSidePredict);
     result.append(')');
     return result.toString();
   }

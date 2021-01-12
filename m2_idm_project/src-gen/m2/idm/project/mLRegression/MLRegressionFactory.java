@@ -33,24 +33,6 @@ public interface MLRegressionFactory extends EFactory
   MLRegression createMLRegression();
 
   /**
-   * Returns a new object of class '<em>Calculate</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Calculate</em>'.
-   * @generated
-   */
-  Calculate createCalculate();
-
-  /**
-   * Returns a new object of class '<em>Calculate Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Calculate Type</em>'.
-   * @generated
-   */
-  CalculateType createCalculateType();
-
-  /**
    * Returns a new object of class '<em>Dataset</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,6 +96,15 @@ public interface MLRegressionFactory extends EFactory
   TargetVar createTargetVar();
 
   /**
+   * Returns a new object of class '<em>Calculate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Calculate</em>'.
+   * @generated
+   */
+  Calculate createCalculate();
+
+  /**
    * Returns a new object of class '<em>Algo</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -159,24 +150,6 @@ public interface MLRegressionFactory extends EFactory
   SVR createSVR();
 
   /**
-   * Returns a new object of class '<em>Type Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Value</em>'.
-   * @generated
-   */
-  TypeValue createTypeValue();
-
-  /**
-   * Returns a new object of class '<em>String Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>String Value</em>'.
-   * @generated
-   */
-  StringValue createStringValue();
-
-  /**
    * Returns a new object of class '<em>Numeric Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -186,31 +159,22 @@ public interface MLRegressionFactory extends EFactory
   NumericValue createNumericValue();
 
   /**
-   * Returns a new object of class '<em>Number Value</em>'.
+   * Returns a new object of class '<em>FLOAT</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Value</em>'.
+   * @return a new object of class '<em>FLOAT</em>'.
    * @generated
    */
-  NumberValue createNumberValue();
+  FLOAT createFLOAT();
 
   /**
-   * Returns a new object of class '<em>Integer Value</em>'.
+   * Returns a new object of class '<em>PERCENT</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Integer Value</em>'.
+   * @return a new object of class '<em>PERCENT</em>'.
    * @generated
    */
-  IntegerValue createIntegerValue();
-
-  /**
-   * Returns a new object of class '<em>Percent Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Percent Value</em>'.
-   * @generated
-   */
-  PercentValue createPercentValue();
+  PERCENT createPERCENT();
 
   /**
    * Returns a new object of class '<em>Boolean Value</em>'.

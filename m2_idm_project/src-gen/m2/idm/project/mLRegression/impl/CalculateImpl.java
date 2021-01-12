@@ -4,14 +4,11 @@
 package m2.idm.project.mLRegression.impl;
 
 import m2.idm.project.mLRegression.Calculate;
-import m2.idm.project.mLRegression.CalculateType;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -32,14 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class CalculateImpl extends MinimalEObjectImpl.Container implements Calculate
 {
   /**
-   * The cached value of the '{@link #getCalculateType() <em>Calculate Type</em>}' containment reference.
+   * The default value of the '{@link #getCalculateType() <em>Calculate Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCalculateType()
    * @generated
    * @ordered
    */
-  protected CalculateType calculateType;
+  protected static final String CALCULATE_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCalculateType() <em>Calculate Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCalculateType()
+   * @generated
+   * @ordered
+   */
+  protected String calculateType = CALCULATE_TYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +75,7 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
    * @generated
    */
   @Override
-  public CalculateType getCalculateType()
+  public String getCalculateType()
   {
     return calculateType;
   }
@@ -78,54 +85,13 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCalculateType(CalculateType newCalculateType, NotificationChain msgs)
+  @Override
+  public void setCalculateType(String newCalculateType)
   {
-    CalculateType oldCalculateType = calculateType;
+    String oldCalculateType = calculateType;
     calculateType = newCalculateType;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CALCULATE__CALCULATE_TYPE, oldCalculateType, newCalculateType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCalculateType(CalculateType newCalculateType)
-  {
-    if (newCalculateType != calculateType)
-    {
-      NotificationChain msgs = null;
-      if (calculateType != null)
-        msgs = ((InternalEObject)calculateType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.CALCULATE__CALCULATE_TYPE, null, msgs);
-      if (newCalculateType != null)
-        msgs = ((InternalEObject)newCalculateType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.CALCULATE__CALCULATE_TYPE, null, msgs);
-      msgs = basicSetCalculateType(newCalculateType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CALCULATE__CALCULATE_TYPE, newCalculateType, newCalculateType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        return basicSetCalculateType(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CALCULATE__CALCULATE_TYPE, oldCalculateType, calculateType));
   }
 
   /**
@@ -155,7 +121,7 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
     switch (featureID)
     {
       case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        setCalculateType((CalculateType)newValue);
+        setCalculateType((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,7 +138,7 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
     switch (featureID)
     {
       case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        setCalculateType((CalculateType)null);
+        setCalculateType(CALCULATE_TYPE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -189,9 +155,26 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
     switch (featureID)
     {
       case MLRegressionPackage.CALCULATE__CALCULATE_TYPE:
-        return calculateType != null;
+        return CALCULATE_TYPE_EDEFAULT == null ? calculateType != null : !CALCULATE_TYPE_EDEFAULT.equals(calculateType);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (calculateType: ");
+    result.append(calculateType);
+    result.append(')');
+    return result.toString();
   }
 
 } //CalculateImpl

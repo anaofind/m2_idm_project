@@ -5,13 +5,10 @@ package m2.idm.project.mLRegression.impl;
 
 import m2.idm.project.mLRegression.Dataset;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.StringValue;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -25,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link m2.idm.project.mLRegression.impl.DatasetImpl#getData <em>Data</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.DatasetImpl#getSeparator <em>Separator</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +30,44 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
 {
   /**
-   * The cached value of the '{@link #getData() <em>Data</em>}' containment reference.
+   * The default value of the '{@link #getData() <em>Data</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getData()
    * @generated
    * @ordered
    */
-  protected StringValue data;
+  protected static final String DATA_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getData() <em>Data</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getData()
+   * @generated
+   * @ordered
+   */
+  protected String data = DATA_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSeparator() <em>Separator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSeparator()
+   * @generated
+   * @ordered
+   */
+  protected static final String SEPARATOR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSeparator() <em>Separator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSeparator()
+   * @generated
+   * @ordered
+   */
+  protected String separator = SEPARATOR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +96,7 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
    * @generated
    */
   @Override
-  public StringValue getData()
+  public String getData()
   {
     return data;
   }
@@ -78,16 +106,13 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetData(StringValue newData, NotificationChain msgs)
+  @Override
+  public void setData(String newData)
   {
-    StringValue oldData = data;
+    String oldData = data;
     data = newData;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.DATASET__DATA, oldData, newData);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.DATASET__DATA, oldData, data));
   }
 
   /**
@@ -96,20 +121,9 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
    * @generated
    */
   @Override
-  public void setData(StringValue newData)
+  public String getSeparator()
   {
-    if (newData != data)
-    {
-      NotificationChain msgs = null;
-      if (data != null)
-        msgs = ((InternalEObject)data).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.DATASET__DATA, null, msgs);
-      if (newData != null)
-        msgs = ((InternalEObject)newData).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.DATASET__DATA, null, msgs);
-      msgs = basicSetData(newData, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.DATASET__DATA, newData, newData));
+    return separator;
   }
 
   /**
@@ -118,14 +132,12 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setSeparator(String newSeparator)
   {
-    switch (featureID)
-    {
-      case MLRegressionPackage.DATASET__DATA:
-        return basicSetData(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldSeparator = separator;
+    separator = newSeparator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.DATASET__SEPARATOR, oldSeparator, separator));
   }
 
   /**
@@ -140,6 +152,8 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
     {
       case MLRegressionPackage.DATASET__DATA:
         return getData();
+      case MLRegressionPackage.DATASET__SEPARATOR:
+        return getSeparator();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,7 +169,10 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
     switch (featureID)
     {
       case MLRegressionPackage.DATASET__DATA:
-        setData((StringValue)newValue);
+        setData((String)newValue);
+        return;
+      case MLRegressionPackage.DATASET__SEPARATOR:
+        setSeparator((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,7 +189,10 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
     switch (featureID)
     {
       case MLRegressionPackage.DATASET__DATA:
-        setData((StringValue)null);
+        setData(DATA_EDEFAULT);
+        return;
+      case MLRegressionPackage.DATASET__SEPARATOR:
+        setSeparator(SEPARATOR_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -189,9 +209,30 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
     switch (featureID)
     {
       case MLRegressionPackage.DATASET__DATA:
-        return data != null;
+        return DATA_EDEFAULT == null ? data != null : !DATA_EDEFAULT.equals(data);
+      case MLRegressionPackage.DATASET__SEPARATOR:
+        return SEPARATOR_EDEFAULT == null ? separator != null : !SEPARATOR_EDEFAULT.equals(separator);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (data: ");
+    result.append(data);
+    result.append(", separator: ");
+    result.append(separator);
+    result.append(')');
+    return result.toString();
   }
 
 } //DatasetImpl

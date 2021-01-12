@@ -10,12 +10,6 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Numeric Value</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link m2.idm.project.mLRegression.NumericValue#getType <em>Type</em>}</li>
- * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getNumericValue()
  * @model
@@ -23,26 +17,4 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface NumericValue extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(PercentValue)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getNumericValue_Type()
-   * @model containment="true"
-   * @generated
-   */
-  PercentValue getType();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.NumericValue#getType <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' containment reference.
-   * @see #getType()
-   * @generated
-   */
-  void setType(PercentValue value);
-
 } // NumericValue

@@ -7,24 +7,18 @@ import m2.idm.project.mLRegression.Algo;
 import m2.idm.project.mLRegression.AlgoType;
 import m2.idm.project.mLRegression.BooleanValue;
 import m2.idm.project.mLRegression.Calculate;
-import m2.idm.project.mLRegression.CalculateType;
 import m2.idm.project.mLRegression.CrossValidation;
 import m2.idm.project.mLRegression.Dataset;
 import m2.idm.project.mLRegression.DecisionTreeRegressor;
 import m2.idm.project.mLRegression.EvaluationType;
-import m2.idm.project.mLRegression.IntegerValue;
 import m2.idm.project.mLRegression.LineRegress;
 import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionFactory;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.NumberValue;
 import m2.idm.project.mLRegression.NumericValue;
 import m2.idm.project.mLRegression.Partition;
-import m2.idm.project.mLRegression.PercentValue;
-import m2.idm.project.mLRegression.StringValue;
 import m2.idm.project.mLRegression.TargetVar;
-import m2.idm.project.mLRegression.TypeValue;
 import m2.idm.project.mLRegression.Variables;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -48,20 +42,6 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   private EClass mlRegressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass calculateEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass calculateTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,6 +97,13 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass calculateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass algoEClass = null;
 
   /**
@@ -152,20 +139,6 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass typeValueEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass stringValueEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass numericValueEClass = null;
 
   /**
@@ -173,21 +146,14 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass numberValueEClass = null;
+  private EClass floatEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass integerValueEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass percentValueEClass = null;
+  private EClass percentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -287,7 +253,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getMLRegression_Evaluation()
+  public EReference getMLRegression_Vars()
   {
     return (EReference)mlRegressionEClass.getEStructuralFeatures().get(1);
   }
@@ -298,7 +264,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getMLRegression_Vars()
+  public EReference getMLRegression_Evaluation()
   {
     return (EReference)mlRegressionEClass.getEStructuralFeatures().get(2);
   }
@@ -309,7 +275,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getMLRegression_Calculate()
+  public EReference getMLRegression_Algo()
   {
     return (EReference)mlRegressionEClass.getEStructuralFeatures().get(3);
   }
@@ -320,53 +286,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getMLRegression_Algo()
+  public EReference getMLRegression_Calculate()
   {
     return (EReference)mlRegressionEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getCalculate()
-  {
-    return calculateEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getCalculate_CalculateType()
-  {
-    return (EReference)calculateEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getCalculateType()
-  {
-    return calculateTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getCalculateType_Type()
-  {
-    return (EAttribute)calculateTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -386,9 +308,20 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getDataset_Data()
+  public EAttribute getDataset_Data()
   {
-    return (EReference)datasetEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)datasetEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDataset_Separator()
+  {
+    return (EAttribute)datasetEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -408,17 +341,6 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getEvaluationType_Type()
-  {
-    return (EReference)evaluationTypeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getPartition()
   {
     return partitionEClass;
@@ -430,9 +352,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getPartition_Train()
+  public EAttribute getPartition_Train()
   {
-    return (EReference)partitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)partitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -441,9 +363,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getPartition_Test()
+  public EAttribute getPartition_Test()
   {
-    return (EReference)partitionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)partitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -463,9 +385,20 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getCrossValidation_K()
+  public EAttribute getCrossValidation_C()
   {
-    return (EReference)crossValidationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)crossValidationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCrossValidation_RandomState()
+  {
+    return (EAttribute)crossValidationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -518,7 +451,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getListePredictiveVar_Vars()
+  public EAttribute getListePredictiveVar_PredVar()
   {
     return (EAttribute)listePredictiveVarEClass.getEStructuralFeatures().get(0);
   }
@@ -540,9 +473,31 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getTargetVar_Vars()
+  public EAttribute getTargetVar_TargetVar()
   {
     return (EAttribute)targetVarEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCalculate()
+  {
+    return calculateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCalculate_CalculateType()
+  {
+    return (EAttribute)calculateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -584,17 +539,6 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getAlgoType_Type()
-  {
-    return (EReference)algoTypeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getLineRegress()
   {
     return lineRegressEClass;
@@ -606,7 +550,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getLineRegress_Columns()
+  public EAttribute getLineRegress_LeftSidePredict()
   {
     return (EAttribute)lineRegressEClass.getEStructuralFeatures().get(0);
   }
@@ -661,50 +605,6 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EClass getTypeValue()
-  {
-    return typeValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getTypeValue_Type()
-  {
-    return (EReference)typeValueEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getStringValue()
-  {
-    return stringValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getStringValue_Value()
-  {
-    return (EAttribute)stringValueEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getNumericValue()
   {
     return numericValueEClass;
@@ -716,9 +616,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getNumericValue_Type()
+  public EClass getFLOAT()
   {
-    return (EReference)numericValueEClass.getEStructuralFeatures().get(0);
+    return floatEClass;
   }
 
   /**
@@ -727,9 +627,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EClass getNumberValue()
+  public EAttribute getFLOAT_Value()
   {
-    return numberValueEClass;
+    return (EAttribute)floatEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -738,9 +638,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getNumberValue_Value()
+  public EAttribute getFLOAT_Decimal()
   {
-    return (EAttribute)numberValueEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)floatEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -749,42 +649,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getNumberValue_Decimal()
+  public EClass getPERCENT()
   {
-    return (EAttribute)numberValueEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getIntegerValue()
-  {
-    return integerValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getIntegerValue_Value()
-  {
-    return (EAttribute)integerValueEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPercentValue()
-  {
-    return percentValueEClass;
+    return percentEClass;
   }
 
   /**
@@ -842,48 +709,45 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     // Create classes and their features
     mlRegressionEClass = createEClass(ML_REGRESSION);
     createEReference(mlRegressionEClass, ML_REGRESSION__DATASET);
-    createEReference(mlRegressionEClass, ML_REGRESSION__EVALUATION);
     createEReference(mlRegressionEClass, ML_REGRESSION__VARS);
-    createEReference(mlRegressionEClass, ML_REGRESSION__CALCULATE);
+    createEReference(mlRegressionEClass, ML_REGRESSION__EVALUATION);
     createEReference(mlRegressionEClass, ML_REGRESSION__ALGO);
-
-    calculateEClass = createEClass(CALCULATE);
-    createEReference(calculateEClass, CALCULATE__CALCULATE_TYPE);
-
-    calculateTypeEClass = createEClass(CALCULATE_TYPE);
-    createEAttribute(calculateTypeEClass, CALCULATE_TYPE__TYPE);
+    createEReference(mlRegressionEClass, ML_REGRESSION__CALCULATE);
 
     datasetEClass = createEClass(DATASET);
-    createEReference(datasetEClass, DATASET__DATA);
+    createEAttribute(datasetEClass, DATASET__DATA);
+    createEAttribute(datasetEClass, DATASET__SEPARATOR);
 
     evaluationTypeEClass = createEClass(EVALUATION_TYPE);
-    createEReference(evaluationTypeEClass, EVALUATION_TYPE__TYPE);
 
     partitionEClass = createEClass(PARTITION);
-    createEReference(partitionEClass, PARTITION__TRAIN);
-    createEReference(partitionEClass, PARTITION__TEST);
+    createEAttribute(partitionEClass, PARTITION__TRAIN);
+    createEAttribute(partitionEClass, PARTITION__TEST);
 
     crossValidationEClass = createEClass(CROSS_VALIDATION);
-    createEReference(crossValidationEClass, CROSS_VALIDATION__K);
+    createEAttribute(crossValidationEClass, CROSS_VALIDATION__C);
+    createEAttribute(crossValidationEClass, CROSS_VALIDATION__RANDOM_STATE);
 
     variablesEClass = createEClass(VARIABLES);
     createEReference(variablesEClass, VARIABLES__PREDICTIVES);
     createEReference(variablesEClass, VARIABLES__TARGETS);
 
     listePredictiveVarEClass = createEClass(LISTE_PREDICTIVE_VAR);
-    createEAttribute(listePredictiveVarEClass, LISTE_PREDICTIVE_VAR__VARS);
+    createEAttribute(listePredictiveVarEClass, LISTE_PREDICTIVE_VAR__PRED_VAR);
 
     targetVarEClass = createEClass(TARGET_VAR);
-    createEAttribute(targetVarEClass, TARGET_VAR__VARS);
+    createEAttribute(targetVarEClass, TARGET_VAR__TARGET_VAR);
+
+    calculateEClass = createEClass(CALCULATE);
+    createEAttribute(calculateEClass, CALCULATE__CALCULATE_TYPE);
 
     algoEClass = createEClass(ALGO);
     createEReference(algoEClass, ALGO__ALGO);
 
     algoTypeEClass = createEClass(ALGO_TYPE);
-    createEReference(algoTypeEClass, ALGO_TYPE__TYPE);
 
     lineRegressEClass = createEClass(LINE_REGRESS);
-    createEAttribute(lineRegressEClass, LINE_REGRESS__COLUMNS);
+    createEAttribute(lineRegressEClass, LINE_REGRESS__LEFT_SIDE_PREDICT);
 
     decisionTreeRegressorEClass = createEClass(DECISION_TREE_REGRESSOR);
     createEAttribute(decisionTreeRegressorEClass, DECISION_TREE_REGRESSOR__RAND);
@@ -891,23 +755,13 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     svrEClass = createEClass(SVR);
     createEAttribute(svrEClass, SVR__PARAM);
 
-    typeValueEClass = createEClass(TYPE_VALUE);
-    createEReference(typeValueEClass, TYPE_VALUE__TYPE);
-
-    stringValueEClass = createEClass(STRING_VALUE);
-    createEAttribute(stringValueEClass, STRING_VALUE__VALUE);
-
     numericValueEClass = createEClass(NUMERIC_VALUE);
-    createEReference(numericValueEClass, NUMERIC_VALUE__TYPE);
 
-    numberValueEClass = createEClass(NUMBER_VALUE);
-    createEAttribute(numberValueEClass, NUMBER_VALUE__VALUE);
-    createEAttribute(numberValueEClass, NUMBER_VALUE__DECIMAL);
+    floatEClass = createEClass(FLOAT);
+    createEAttribute(floatEClass, FLOAT__VALUE);
+    createEAttribute(floatEClass, FLOAT__DECIMAL);
 
-    integerValueEClass = createEClass(INTEGER_VALUE);
-    createEAttribute(integerValueEClass, INTEGER_VALUE__VALUE);
-
-    percentValueEClass = createEClass(PERCENT_VALUE);
+    percentEClass = createEClass(PERCENT);
 
     booleanValueEClass = createEClass(BOOLEAN_VALUE);
     createEAttribute(booleanValueEClass, BOOLEAN_VALUE__VALUE);
@@ -942,53 +796,57 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    numberValueEClass.getESuperTypes().add(this.getPercentValue());
+    partitionEClass.getESuperTypes().add(this.getEvaluationType());
+    crossValidationEClass.getESuperTypes().add(this.getEvaluationType());
+    lineRegressEClass.getESuperTypes().add(this.getAlgoType());
+    decisionTreeRegressorEClass.getESuperTypes().add(this.getAlgoType());
+    svrEClass.getESuperTypes().add(this.getAlgoType());
+    floatEClass.getESuperTypes().add(this.getNumericValue());
+    floatEClass.getESuperTypes().add(this.getPERCENT());
+    percentEClass.getESuperTypes().add(this.getNumericValue());
 
     // Initialize classes and features; add operations and parameters
     initEClass(mlRegressionEClass, MLRegression.class, "MLRegression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMLRegression_Dataset(), this.getDataset(), null, "dataset", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMLRegression_Evaluation(), this.getEvaluationType(), null, "evaluation", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMLRegression_Vars(), this.getVariables(), null, "vars", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMLRegression_Calculate(), this.getCalculate(), null, "calculate", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMLRegression_Evaluation(), this.getEvaluationType(), null, "evaluation", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMLRegression_Algo(), this.getAlgo(), null, "algo", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(calculateEClass, Calculate.class, "Calculate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCalculate_CalculateType(), this.getCalculateType(), null, "calculateType", null, 0, 1, Calculate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(calculateTypeEClass, CalculateType.class, "CalculateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCalculateType_Type(), ecorePackage.getEString(), "type", null, 0, 1, CalculateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMLRegression_Calculate(), this.getCalculate(), null, "calculate", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(datasetEClass, Dataset.class, "Dataset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataset_Data(), this.getStringValue(), null, "data", null, 0, 1, Dataset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDataset_Data(), ecorePackage.getEString(), "data", null, 0, 1, Dataset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDataset_Separator(), ecorePackage.getEString(), "separator", null, 0, 1, Dataset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(evaluationTypeEClass, EvaluationType.class, "EvaluationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEvaluationType_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, EvaluationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(partitionEClass, Partition.class, "Partition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPartition_Train(), this.getNumericValue(), null, "train", null, 0, 1, Partition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPartition_Test(), this.getNumericValue(), null, "test", null, 0, 1, Partition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPartition_Train(), ecorePackage.getEInt(), "train", null, 0, 1, Partition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPartition_Test(), ecorePackage.getEInt(), "test", null, 0, 1, Partition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(crossValidationEClass, CrossValidation.class, "CrossValidation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCrossValidation_K(), this.getIntegerValue(), null, "k", null, 0, 1, CrossValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCrossValidation_C(), ecorePackage.getEInt(), "c", null, 0, 1, CrossValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCrossValidation_RandomState(), ecorePackage.getEInt(), "randomState", null, 0, 1, CrossValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variablesEClass, Variables.class, "Variables", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariables_Predictives(), this.getListePredictiveVar(), null, "predictives", null, 0, 1, Variables.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariables_Targets(), this.getTargetVar(), null, "targets", null, 0, 1, Variables.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listePredictiveVarEClass, ListePredictiveVar.class, "ListePredictiveVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getListePredictiveVar_Vars(), ecorePackage.getEString(), "vars", null, 0, -1, ListePredictiveVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getListePredictiveVar_PredVar(), ecorePackage.getEString(), "predVar", null, 0, -1, ListePredictiveVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(targetVarEClass, TargetVar.class, "TargetVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTargetVar_Vars(), ecorePackage.getEString(), "vars", null, 0, -1, TargetVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTargetVar_TargetVar(), ecorePackage.getEString(), "targetVar", null, 0, -1, TargetVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(calculateEClass, Calculate.class, "Calculate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCalculate_CalculateType(), ecorePackage.getEString(), "calculateType", null, 0, 1, Calculate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(algoEClass, Algo.class, "Algo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAlgo_Algo(), this.getAlgoType(), null, "algo", null, 0, 1, Algo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(algoTypeEClass, AlgoType.class, "AlgoType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAlgoType_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, AlgoType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lineRegressEClass, LineRegress.class, "LineRegress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLineRegress_Columns(), ecorePackage.getEString(), "columns", null, 0, -1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLineRegress_LeftSidePredict(), ecorePackage.getEString(), "leftSidePredict", null, 0, 1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(decisionTreeRegressorEClass, DecisionTreeRegressor.class, "DecisionTreeRegressor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDecisionTreeRegressor_Rand(), ecorePackage.getEInt(), "rand", null, 0, 1, DecisionTreeRegressor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -996,23 +854,13 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     initEClass(svrEClass, m2.idm.project.mLRegression.SVR.class, "SVR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSVR_Param(), ecorePackage.getEString(), "param", null, 0, 1, m2.idm.project.mLRegression.SVR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(typeValueEClass, TypeValue.class, "TypeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTypeValue_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, TypeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(numericValueEClass, NumericValue.class, "NumericValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNumericValue_Type(), this.getPercentValue(), null, "type", null, 0, 1, NumericValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(numberValueEClass, NumberValue.class, "NumberValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNumberValue_Value(), ecorePackage.getEInt(), "value", null, 0, 1, NumberValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNumberValue_Decimal(), ecorePackage.getEInt(), "decimal", null, 0, -1, NumberValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(floatEClass, m2.idm.project.mLRegression.FLOAT.class, "FLOAT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFLOAT_Value(), ecorePackage.getEInt(), "value", null, 0, 1, m2.idm.project.mLRegression.FLOAT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFLOAT_Decimal(), ecorePackage.getEInt(), "decimal", null, 0, 1, m2.idm.project.mLRegression.FLOAT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(integerValueEClass, IntegerValue.class, "IntegerValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntegerValue_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(percentValueEClass, PercentValue.class, "PercentValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(percentEClass, m2.idm.project.mLRegression.PERCENT.class, "PERCENT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(booleanValueEClass, BooleanValue.class, "BooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBooleanValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

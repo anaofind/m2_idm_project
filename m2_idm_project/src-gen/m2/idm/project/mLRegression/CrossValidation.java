@@ -3,7 +3,6 @@
  */
 package m2.idm.project.mLRegression;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,35 +13,58 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.CrossValidation#getK <em>K</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.CrossValidation#getC <em>C</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.CrossValidation#getRandomState <em>Random State</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getCrossValidation()
  * @model
  * @generated
  */
-public interface CrossValidation extends EObject
+public interface CrossValidation extends EvaluationType
 {
   /**
-   * Returns the value of the '<em><b>K</b></em>' containment reference.
+   * Returns the value of the '<em><b>C</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>K</em>' containment reference.
-   * @see #setK(IntegerValue)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getCrossValidation_K()
-   * @model containment="true"
+   * @return the value of the '<em>C</em>' attribute.
+   * @see #setC(int)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getCrossValidation_C()
+   * @model
    * @generated
    */
-  IntegerValue getK();
+  int getC();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.CrossValidation#getK <em>K</em>}' containment reference.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.CrossValidation#getC <em>C</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>K</em>' containment reference.
-   * @see #getK()
+   * @param value the new value of the '<em>C</em>' attribute.
+   * @see #getC()
    * @generated
    */
-  void setK(IntegerValue value);
+  void setC(int value);
+
+  /**
+   * Returns the value of the '<em><b>Random State</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Random State</em>' attribute.
+   * @see #setRandomState(int)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getCrossValidation_RandomState()
+   * @model
+   * @generated
+   */
+  int getRandomState();
+
+  /**
+   * Sets the value of the '{@link m2.idm.project.mLRegression.CrossValidation#getRandomState <em>Random State</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Random State</em>' attribute.
+   * @see #getRandomState()
+   * @generated
+   */
+  void setRandomState(int value);
 
 } // CrossValidation

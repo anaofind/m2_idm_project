@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link m2.idm.project.mLRegression.Dataset#getData <em>Data</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.Dataset#getSeparator <em>Separator</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getDataset()
@@ -24,25 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface Dataset extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Data</b></em>' containment reference.
+   * Returns the value of the '<em><b>Data</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Data</em>' containment reference.
-   * @see #setData(StringValue)
+   * @return the value of the '<em>Data</em>' attribute.
+   * @see #setData(String)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getDataset_Data()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  StringValue getData();
+  String getData();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Dataset#getData <em>Data</em>}' containment reference.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Dataset#getData <em>Data</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Data</em>' containment reference.
+   * @param value the new value of the '<em>Data</em>' attribute.
    * @see #getData()
    * @generated
    */
-  void setData(StringValue value);
+  void setData(String value);
+
+  /**
+   * Returns the value of the '<em><b>Separator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Separator</em>' attribute.
+   * @see #setSeparator(String)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getDataset_Separator()
+   * @model
+   * @generated
+   */
+  String getSeparator();
+
+  /**
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Dataset#getSeparator <em>Separator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Separator</em>' attribute.
+   * @see #getSeparator()
+   * @generated
+   */
+  void setSeparator(String value);
 
 } // Dataset

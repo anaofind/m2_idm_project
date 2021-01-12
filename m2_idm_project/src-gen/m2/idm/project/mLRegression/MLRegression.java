@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link m2.idm.project.mLRegression.MLRegression#getDataset <em>Dataset</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.MLRegression#getEvaluation <em>Evaluation</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.MLRegression#getVars <em>Vars</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.MLRegression#getCalculate <em>Calculate</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.MLRegression#getEvaluation <em>Evaluation</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.MLRegression#getAlgo <em>Algo</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.MLRegression#getCalculate <em>Calculate</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression()
@@ -50,28 +50,6 @@ public interface MLRegression extends EObject
   void setDataset(Dataset value);
 
   /**
-   * Returns the value of the '<em><b>Evaluation</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Evaluation</em>' containment reference.
-   * @see #setEvaluation(EvaluationType)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_Evaluation()
-   * @model containment="true"
-   * @generated
-   */
-  EvaluationType getEvaluation();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getEvaluation <em>Evaluation</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Evaluation</em>' containment reference.
-   * @see #getEvaluation()
-   * @generated
-   */
-  void setEvaluation(EvaluationType value);
-
-  /**
    * Returns the value of the '<em><b>Vars</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,26 +72,26 @@ public interface MLRegression extends EObject
   void setVars(Variables value);
 
   /**
-   * Returns the value of the '<em><b>Calculate</b></em>' containment reference.
+   * Returns the value of the '<em><b>Evaluation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Calculate</em>' containment reference.
-   * @see #setCalculate(Calculate)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_Calculate()
+   * @return the value of the '<em>Evaluation</em>' containment reference.
+   * @see #setEvaluation(EvaluationType)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_Evaluation()
    * @model containment="true"
    * @generated
    */
-  Calculate getCalculate();
+  EvaluationType getEvaluation();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getCalculate <em>Calculate</em>}' containment reference.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getEvaluation <em>Evaluation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Calculate</em>' containment reference.
-   * @see #getCalculate()
+   * @param value the new value of the '<em>Evaluation</em>' containment reference.
+   * @see #getEvaluation()
    * @generated
    */
-  void setCalculate(Calculate value);
+  void setEvaluation(EvaluationType value);
 
   /**
    * Returns the value of the '<em><b>Algo</b></em>' containment reference.
@@ -136,5 +114,27 @@ public interface MLRegression extends EObject
    * @generated
    */
   void setAlgo(Algo value);
+
+  /**
+   * Returns the value of the '<em><b>Calculate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Calculate</em>' containment reference.
+   * @see #setCalculate(Calculate)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_Calculate()
+   * @model containment="true"
+   * @generated
+   */
+  Calculate getCalculate();
+
+  /**
+   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getCalculate <em>Calculate</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Calculate</em>' containment reference.
+   * @see #getCalculate()
+   * @generated
+   */
+  void setCalculate(Calculate value);
 
 } // MLRegression

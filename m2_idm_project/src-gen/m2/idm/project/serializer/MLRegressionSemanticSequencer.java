@@ -6,26 +6,19 @@ package m2.idm.project.serializer;
 import com.google.inject.Inject;
 import java.util.Set;
 import m2.idm.project.mLRegression.Algo;
-import m2.idm.project.mLRegression.AlgoType;
 import m2.idm.project.mLRegression.BooleanValue;
 import m2.idm.project.mLRegression.Calculate;
-import m2.idm.project.mLRegression.CalculateType;
 import m2.idm.project.mLRegression.CrossValidation;
 import m2.idm.project.mLRegression.Dataset;
 import m2.idm.project.mLRegression.DecisionTreeRegressor;
-import m2.idm.project.mLRegression.EvaluationType;
-import m2.idm.project.mLRegression.IntegerValue;
+import m2.idm.project.mLRegression.FLOAT;
 import m2.idm.project.mLRegression.LineRegress;
 import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.NumberValue;
-import m2.idm.project.mLRegression.NumericValue;
 import m2.idm.project.mLRegression.Partition;
 import m2.idm.project.mLRegression.SVR;
-import m2.idm.project.mLRegression.StringValue;
 import m2.idm.project.mLRegression.TargetVar;
-import m2.idm.project.mLRegression.TypeValue;
 import m2.idm.project.mLRegression.Variables;
 import m2.idm.project.services.MLRegressionGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -55,17 +48,11 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MLRegressionPackage.ALGO:
 				sequence_Algo(context, (Algo) semanticObject); 
 				return; 
-			case MLRegressionPackage.ALGO_TYPE:
-				sequence_AlgoType(context, (AlgoType) semanticObject); 
-				return; 
 			case MLRegressionPackage.BOOLEAN_VALUE:
 				sequence_BooleanValue(context, (BooleanValue) semanticObject); 
 				return; 
 			case MLRegressionPackage.CALCULATE:
 				sequence_Calculate(context, (Calculate) semanticObject); 
-				return; 
-			case MLRegressionPackage.CALCULATE_TYPE:
-				sequence_CalculateType(context, (CalculateType) semanticObject); 
 				return; 
 			case MLRegressionPackage.CROSS_VALIDATION:
 				sequence_CrossValidation(context, (CrossValidation) semanticObject); 
@@ -76,11 +63,8 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MLRegressionPackage.DECISION_TREE_REGRESSOR:
 				sequence_DecisionTreeRegressor(context, (DecisionTreeRegressor) semanticObject); 
 				return; 
-			case MLRegressionPackage.EVALUATION_TYPE:
-				sequence_EvaluationType(context, (EvaluationType) semanticObject); 
-				return; 
-			case MLRegressionPackage.INTEGER_VALUE:
-				sequence_IntegerValue(context, (IntegerValue) semanticObject); 
+			case MLRegressionPackage.FLOAT:
+				sequence_FLOAT(context, (FLOAT) semanticObject); 
 				return; 
 			case MLRegressionPackage.LINE_REGRESS:
 				sequence_LineRegress(context, (LineRegress) semanticObject); 
@@ -91,26 +75,14 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MLRegressionPackage.ML_REGRESSION:
 				sequence_MLRegression(context, (MLRegression) semanticObject); 
 				return; 
-			case MLRegressionPackage.NUMBER_VALUE:
-				sequence_NumberValue(context, (NumberValue) semanticObject); 
-				return; 
-			case MLRegressionPackage.NUMERIC_VALUE:
-				sequence_NumericValue(context, (NumericValue) semanticObject); 
-				return; 
 			case MLRegressionPackage.PARTITION:
 				sequence_Partition(context, (Partition) semanticObject); 
 				return; 
 			case MLRegressionPackage.SVR:
 				sequence_SVR(context, (SVR) semanticObject); 
 				return; 
-			case MLRegressionPackage.STRING_VALUE:
-				sequence_StringValue(context, (StringValue) semanticObject); 
-				return; 
 			case MLRegressionPackage.TARGET_VAR:
 				sequence_TargetVar(context, (TargetVar) semanticObject); 
-				return; 
-			case MLRegressionPackage.TYPE_VALUE:
-				sequence_TypeValue(context, (TypeValue) semanticObject); 
 				return; 
 			case MLRegressionPackage.VARIABLES:
 				sequence_Variables(context, (Variables) semanticObject); 
@@ -119,18 +91,6 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Contexts:
-	 *     AlgoType returns AlgoType
-	 *
-	 * Constraint:
-	 *     (type=LineRegress | type=SVR | type=DecisionTreeRegressor)
-	 */
-	protected void sequence_AlgoType(ISerializationContext context, AlgoType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Contexts:
@@ -164,18 +124,6 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     CalculateType returns CalculateType
-	 *
-	 * Constraint:
-	 *     (type=MinError | type=MinSquaredError | type=SumsSquaredError)
-	 */
-	protected void sequence_CalculateType(ISerializationContext context, CalculateType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Calculate returns Calculate
 	 *
 	 * Constraint:
@@ -194,18 +142,22 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
+	 *     EvaluationType returns CrossValidation
 	 *     CrossValidation returns CrossValidation
 	 *
 	 * Constraint:
-	 *     k=IntegerValue
+	 *     (c=INT randomState=INT)
 	 */
 	protected void sequence_CrossValidation(ISerializationContext context, CrossValidation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__K) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__K));
+			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__C) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__C));
+			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__RANDOM_STATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__RANDOM_STATE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCrossValidationAccess().getKIntegerValueParserRuleCall_2_0(), semanticObject.getK());
+		feeder.accept(grammarAccess.getCrossValidationAccess().getCINTTerminalRuleCall_2_0(), semanticObject.getC());
+		feeder.accept(grammarAccess.getCrossValidationAccess().getRandomStateINTTerminalRuleCall_4_0(), semanticObject.getRandomState());
 		feeder.finish();
 	}
 	
@@ -215,21 +167,16 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Dataset returns Dataset
 	 *
 	 * Constraint:
-	 *     data=StringValue
+	 *     (data=STRING separator=STRING?)
 	 */
 	protected void sequence_Dataset(ISerializationContext context, Dataset semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.DATASET__DATA) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.DATASET__DATA));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDatasetAccess().getDataStringValueParserRuleCall_1_0(), semanticObject.getData());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     AlgoType returns DecisionTreeRegressor
 	 *     DecisionTreeRegressor returns DecisionTreeRegressor
 	 *
 	 * Constraint:
@@ -248,43 +195,34 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     EvaluationType returns EvaluationType
+	 *     NumericValue returns FLOAT
+	 *     FLOAT returns FLOAT
+	 *     PERCENT returns FLOAT
 	 *
 	 * Constraint:
-	 *     (type=Partition | type=CrossValidation)
+	 *     (value=INT decimal=INT?)
 	 */
-	protected void sequence_EvaluationType(ISerializationContext context, EvaluationType semanticObject) {
+	protected void sequence_FLOAT(ISerializationContext context, FLOAT semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     IntegerValue returns IntegerValue
-	 *
-	 * Constraint:
-	 *     value=INT
-	 */
-	protected void sequence_IntegerValue(ISerializationContext context, IntegerValue semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.INTEGER_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.INTEGER_VALUE__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIntegerValueAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
+	 *     AlgoType returns LineRegress
 	 *     LineRegress returns LineRegress
 	 *
 	 * Constraint:
-	 *     (columns+=STRING columns+=STRING*)
+	 *     leftSidePredict=ID
 	 */
 	protected void sequence_LineRegress(ISerializationContext context, LineRegress semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.LINE_REGRESS__LEFT_SIDE_PREDICT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.LINE_REGRESS__LEFT_SIDE_PREDICT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLineRegressAccess().getLeftSidePredictIDTerminalRuleCall_2_0(), semanticObject.getLeftSidePredict());
+		feeder.finish();
 	}
 	
 	
@@ -293,7 +231,7 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     ListePredictiveVar returns ListePredictiveVar
 	 *
 	 * Constraint:
-	 *     (vars+=STRING vars+=STRING*)
+	 *     (predVar+=STRING predVar+=STRING*)
 	 */
 	protected void sequence_ListePredictiveVar(ISerializationContext context, ListePredictiveVar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -305,7 +243,7 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     MLRegression returns MLRegression
 	 *
 	 * Constraint:
-	 *     (dataset=Dataset evaluation=EvaluationType vars=Variables? calculate=Calculate algo=Algo)
+	 *     (dataset=Dataset vars=Variables? evaluation=EvaluationType algo=Algo calculate=Calculate)
 	 */
 	protected void sequence_MLRegression(ISerializationContext context, MLRegression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -314,35 +252,11 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     NumberValue returns NumberValue
-	 *     PercentValue returns NumberValue
-	 *
-	 * Constraint:
-	 *     (value=INT decimal+=INT*)
-	 */
-	protected void sequence_NumberValue(ISerializationContext context, NumberValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     NumericValue returns NumericValue
-	 *
-	 * Constraint:
-	 *     (type=NumberValue | type=PercentValue)
-	 */
-	protected void sequence_NumericValue(ISerializationContext context, NumericValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
+	 *     EvaluationType returns Partition
 	 *     Partition returns Partition
 	 *
 	 * Constraint:
-	 *     (train=NumericValue test=NumericValue)
+	 *     (train=INT test=INT)
 	 */
 	protected void sequence_Partition(ISerializationContext context, Partition semanticObject) {
 		if (errorAcceptor != null) {
@@ -352,14 +266,15 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.PARTITION__TEST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPartitionAccess().getTrainNumericValueParserRuleCall_2_0(), semanticObject.getTrain());
-		feeder.accept(grammarAccess.getPartitionAccess().getTestNumericValueParserRuleCall_4_0(), semanticObject.getTest());
+		feeder.accept(grammarAccess.getPartitionAccess().getTrainINTTerminalRuleCall_2_0(), semanticObject.getTrain());
+		feeder.accept(grammarAccess.getPartitionAccess().getTestINTTerminalRuleCall_4_0(), semanticObject.getTest());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     AlgoType returns SVR
 	 *     SVR returns SVR
 	 *
 	 * Constraint:
@@ -378,42 +293,12 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     StringValue returns StringValue
-	 *
-	 * Constraint:
-	 *     value=STRING
-	 */
-	protected void sequence_StringValue(ISerializationContext context, StringValue semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.STRING_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.STRING_VALUE__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     TargetVar returns TargetVar
 	 *
 	 * Constraint:
-	 *     (vars+=STRING vars+=STRING*)
+	 *     (targetVar+=STRING targetVar+=STRING*)
 	 */
 	protected void sequence_TargetVar(ISerializationContext context, TargetVar semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     TypeValue returns TypeValue
-	 *
-	 * Constraint:
-	 *     (type=StringValue | type=NumericValue | type=PercentValue | type=BooleanValue)
-	 */
-	protected void sequence_TypeValue(ISerializationContext context, TypeValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

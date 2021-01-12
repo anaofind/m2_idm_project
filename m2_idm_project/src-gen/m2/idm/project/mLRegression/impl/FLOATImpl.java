@@ -3,7 +3,7 @@
  */
 package m2.idm.project.mLRegression.impl;
 
-import m2.idm.project.mLRegression.IntegerValue;
+import m2.idm.project.mLRegression.FLOAT;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -11,22 +11,22 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Integer Value</b></em>'.
+ * An implementation of the model object '<em><b>FLOAT</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.IntegerValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.FLOATImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.FLOATImpl#getDecimal <em>Decimal</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IntegerValueImpl extends MinimalEObjectImpl.Container implements IntegerValue
+public class FLOATImpl extends NumericValueImpl implements FLOAT
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -49,11 +49,31 @@ public class IntegerValueImpl extends MinimalEObjectImpl.Container implements In
   protected int value = VALUE_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getDecimal() <em>Decimal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDecimal()
+   * @generated
+   * @ordered
+   */
+  protected static final int DECIMAL_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getDecimal() <em>Decimal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDecimal()
+   * @generated
+   * @ordered
+   */
+  protected int decimal = DECIMAL_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IntegerValueImpl()
+  protected FLOATImpl()
   {
     super();
   }
@@ -66,7 +86,7 @@ public class IntegerValueImpl extends MinimalEObjectImpl.Container implements In
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.INTEGER_VALUE;
+    return MLRegressionPackage.Literals.FLOAT;
   }
 
   /**
@@ -91,7 +111,32 @@ public class IntegerValueImpl extends MinimalEObjectImpl.Container implements In
     int oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.INTEGER_VALUE__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.FLOAT__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getDecimal()
+  {
+    return decimal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDecimal(int newDecimal)
+  {
+    int oldDecimal = decimal;
+    decimal = newDecimal;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.FLOAT__DECIMAL, oldDecimal, decimal));
   }
 
   /**
@@ -104,8 +149,10 @@ public class IntegerValueImpl extends MinimalEObjectImpl.Container implements In
   {
     switch (featureID)
     {
-      case MLRegressionPackage.INTEGER_VALUE__VALUE:
+      case MLRegressionPackage.FLOAT__VALUE:
         return getValue();
+      case MLRegressionPackage.FLOAT__DECIMAL:
+        return getDecimal();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +167,11 @@ public class IntegerValueImpl extends MinimalEObjectImpl.Container implements In
   {
     switch (featureID)
     {
-      case MLRegressionPackage.INTEGER_VALUE__VALUE:
+      case MLRegressionPackage.FLOAT__VALUE:
         setValue((Integer)newValue);
+        return;
+      case MLRegressionPackage.FLOAT__DECIMAL:
+        setDecimal((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +187,11 @@ public class IntegerValueImpl extends MinimalEObjectImpl.Container implements In
   {
     switch (featureID)
     {
-      case MLRegressionPackage.INTEGER_VALUE__VALUE:
+      case MLRegressionPackage.FLOAT__VALUE:
         setValue(VALUE_EDEFAULT);
+        return;
+      case MLRegressionPackage.FLOAT__DECIMAL:
+        setDecimal(DECIMAL_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +207,10 @@ public class IntegerValueImpl extends MinimalEObjectImpl.Container implements In
   {
     switch (featureID)
     {
-      case MLRegressionPackage.INTEGER_VALUE__VALUE:
+      case MLRegressionPackage.FLOAT__VALUE:
         return value != VALUE_EDEFAULT;
+      case MLRegressionPackage.FLOAT__DECIMAL:
+        return decimal != DECIMAL_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -173,8 +228,10 @@ public class IntegerValueImpl extends MinimalEObjectImpl.Container implements In
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (value: ");
     result.append(value);
+    result.append(", decimal: ");
+    result.append(decimal);
     result.append(')');
     return result.toString();
   }
 
-} //IntegerValueImpl
+} //FLOATImpl

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.ListePredictiveVar#getVars <em>Vars</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.ListePredictiveVar#getPredVar <em>Pred Var</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface ListePredictiveVar extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Vars</b></em>' attribute list.
+   * Returns the value of the '<em><b>Pred Var</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Vars</em>' attribute list.
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar_Vars()
+   * @return the value of the '<em>Pred Var</em>' attribute list.
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar_PredVar()
    * @model unique="false"
    * @generated
    */
-  EList<String> getVars();
+  EList<String> getPredVar();
 
 } // ListePredictiveVar

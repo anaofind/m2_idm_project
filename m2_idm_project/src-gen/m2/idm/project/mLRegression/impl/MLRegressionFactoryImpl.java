@@ -66,8 +66,6 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
     switch (eClass.getClassifierID())
     {
       case MLRegressionPackage.ML_REGRESSION: return createMLRegression();
-      case MLRegressionPackage.CALCULATE: return createCalculate();
-      case MLRegressionPackage.CALCULATE_TYPE: return createCalculateType();
       case MLRegressionPackage.DATASET: return createDataset();
       case MLRegressionPackage.EVALUATION_TYPE: return createEvaluationType();
       case MLRegressionPackage.PARTITION: return createPartition();
@@ -75,17 +73,15 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
       case MLRegressionPackage.VARIABLES: return createVariables();
       case MLRegressionPackage.LISTE_PREDICTIVE_VAR: return createListePredictiveVar();
       case MLRegressionPackage.TARGET_VAR: return createTargetVar();
+      case MLRegressionPackage.CALCULATE: return createCalculate();
       case MLRegressionPackage.ALGO: return createAlgo();
       case MLRegressionPackage.ALGO_TYPE: return createAlgoType();
       case MLRegressionPackage.LINE_REGRESS: return createLineRegress();
       case MLRegressionPackage.DECISION_TREE_REGRESSOR: return createDecisionTreeRegressor();
       case MLRegressionPackage.SVR: return createSVR();
-      case MLRegressionPackage.TYPE_VALUE: return createTypeValue();
-      case MLRegressionPackage.STRING_VALUE: return createStringValue();
       case MLRegressionPackage.NUMERIC_VALUE: return createNumericValue();
-      case MLRegressionPackage.NUMBER_VALUE: return createNumberValue();
-      case MLRegressionPackage.INTEGER_VALUE: return createIntegerValue();
-      case MLRegressionPackage.PERCENT_VALUE: return createPercentValue();
+      case MLRegressionPackage.FLOAT: return createFLOAT();
+      case MLRegressionPackage.PERCENT: return createPERCENT();
       case MLRegressionPackage.BOOLEAN_VALUE: return createBooleanValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -102,30 +98,6 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
   {
     MLRegressionImpl mlRegression = new MLRegressionImpl();
     return mlRegression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Calculate createCalculate()
-  {
-    CalculateImpl calculate = new CalculateImpl();
-    return calculate;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public CalculateType createCalculateType()
-  {
-    CalculateTypeImpl calculateType = new CalculateTypeImpl();
-    return calculateType;
   }
 
   /**
@@ -218,6 +190,18 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
+  public Calculate createCalculate()
+  {
+    CalculateImpl calculate = new CalculateImpl();
+    return calculate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Algo createAlgo()
   {
     AlgoImpl algo = new AlgoImpl();
@@ -278,30 +262,6 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public TypeValue createTypeValue()
-  {
-    TypeValueImpl typeValue = new TypeValueImpl();
-    return typeValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public StringValue createStringValue()
-  {
-    StringValueImpl stringValue = new StringValueImpl();
-    return stringValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NumericValue createNumericValue()
   {
     NumericValueImpl numericValue = new NumericValueImpl();
@@ -314,10 +274,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public NumberValue createNumberValue()
+  public FLOAT createFLOAT()
   {
-    NumberValueImpl numberValue = new NumberValueImpl();
-    return numberValue;
+    FLOATImpl float_ = new FLOATImpl();
+    return float_;
   }
 
   /**
@@ -326,22 +286,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public IntegerValue createIntegerValue()
+  public PERCENT createPERCENT()
   {
-    IntegerValueImpl integerValue = new IntegerValueImpl();
-    return integerValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PercentValue createPercentValue()
-  {
-    PercentValueImpl percentValue = new PercentValueImpl();
-    return percentValue;
+    PERCENTImpl percent = new PERCENTImpl();
+    return percent;
   }
 
   /**

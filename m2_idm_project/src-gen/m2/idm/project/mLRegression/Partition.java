@@ -3,7 +3,6 @@
  */
 package m2.idm.project.mLRegression;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,50 +21,50 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Partition extends EObject
+public interface Partition extends EvaluationType
 {
   /**
-   * Returns the value of the '<em><b>Train</b></em>' containment reference.
+   * Returns the value of the '<em><b>Train</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Train</em>' containment reference.
-   * @see #setTrain(NumericValue)
+   * @return the value of the '<em>Train</em>' attribute.
+   * @see #setTrain(int)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getPartition_Train()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  NumericValue getTrain();
+  int getTrain();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Partition#getTrain <em>Train</em>}' containment reference.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Partition#getTrain <em>Train</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Train</em>' containment reference.
+   * @param value the new value of the '<em>Train</em>' attribute.
    * @see #getTrain()
    * @generated
    */
-  void setTrain(NumericValue value);
+  void setTrain(int value);
 
   /**
-   * Returns the value of the '<em><b>Test</b></em>' containment reference.
+   * Returns the value of the '<em><b>Test</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Test</em>' containment reference.
-   * @see #setTest(NumericValue)
+   * @return the value of the '<em>Test</em>' attribute.
+   * @see #setTest(int)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getPartition_Test()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  NumericValue getTest();
+  int getTest();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Partition#getTest <em>Test</em>}' containment reference.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Partition#getTest <em>Test</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Test</em>' containment reference.
+   * @param value the new value of the '<em>Test</em>' attribute.
    * @see #getTest()
    * @generated
    */
-  void setTest(NumericValue value);
+  void setTest(int value);
 
 } // Partition

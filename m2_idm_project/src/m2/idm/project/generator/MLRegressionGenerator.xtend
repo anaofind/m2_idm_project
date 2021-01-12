@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import m2.idm.project.mLRegression.MLRegression
 
 /**
  * Generates code from your model files on save.
@@ -16,32 +17,17 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class MLRegressionGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		
-		if (this.ressourceAccepted(resource)) {
-			fsa.generateFile("test", "good");	
-		} else {
-			fsa.generateFile("test", "error");
+		val generator = new GeneratorPythonCode();
+		val mlregression = resource.allContents.toIterable.filter(typeof(MLRegression)).head;
+		val code = generator.generate(mlregression);
+		if (code !== null) {
+			fsa.generateFile("test.py", code);	
 		}
-		
 		
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
-	}
-	
-	
-	def boolean ressourceAccepted(Resource resource) {
-		val contents = resource.getAllContents();
-		var nbContents = 0;
-		while (contents.hasNext()) {
-			nbContents++;
-		}
-		if (nbContents == 6) {
-			return true;
-		}
-		return false;
-	}
-	
+	}	
 }

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.ListePredictiveVarImpl#getVars <em>Vars</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.ListePredictiveVarImpl#getPredVar <em>Pred Var</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container implements ListePredictiveVar
 {
   /**
-   * The cached value of the '{@link #getVars() <em>Vars</em>}' attribute list.
+   * The cached value of the '{@link #getPredVar() <em>Pred Var</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVars()
+   * @see #getPredVar()
    * @generated
    * @ordered
    */
-  protected EList<String> vars;
+  protected EList<String> predVar;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +68,13 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public EList<String> getVars()
+  public EList<String> getPredVar()
   {
-    if (vars == null)
+    if (predVar == null)
     {
-      vars = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS);
+      predVar = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR);
     }
-    return vars;
+    return predVar;
   }
 
   /**
@@ -87,8 +87,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS:
-        return getVars();
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
+        return getPredVar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -104,9 +104,9 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS:
-        getVars().clear();
-        getVars().addAll((Collection<? extends String>)newValue);
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
+        getPredVar().clear();
+        getPredVar().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,8 +122,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS:
-        getVars().clear();
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
+        getPredVar().clear();
         return;
     }
     super.eUnset(featureID);
@@ -139,8 +139,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__VARS:
-        return vars != null && !vars.isEmpty();
+      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
+        return predVar != null && !predVar.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -156,8 +156,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (vars: ");
-    result.append(vars);
+    result.append(" (predVar: ");
+    result.append(predVar);
     result.append(')');
     return result.toString();
   }

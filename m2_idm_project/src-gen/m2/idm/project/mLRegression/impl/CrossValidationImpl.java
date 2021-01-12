@@ -4,17 +4,13 @@
 package m2.idm.project.mLRegression.impl;
 
 import m2.idm.project.mLRegression.CrossValidation;
-import m2.idm.project.mLRegression.IntegerValue;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,22 +20,53 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.CrossValidationImpl#getK <em>K</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.CrossValidationImpl#getC <em>C</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.CrossValidationImpl#getRandomState <em>Random State</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CrossValidationImpl extends MinimalEObjectImpl.Container implements CrossValidation
+public class CrossValidationImpl extends EvaluationTypeImpl implements CrossValidation
 {
   /**
-   * The cached value of the '{@link #getK() <em>K</em>}' containment reference.
+   * The default value of the '{@link #getC() <em>C</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getK()
+   * @see #getC()
    * @generated
    * @ordered
    */
-  protected IntegerValue k;
+  protected static final int C_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getC() <em>C</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getC()
+   * @generated
+   * @ordered
+   */
+  protected int c = C_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getRandomState() <em>Random State</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRandomState()
+   * @generated
+   * @ordered
+   */
+  protected static final int RANDOM_STATE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getRandomState() <em>Random State</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRandomState()
+   * @generated
+   * @ordered
+   */
+  protected int randomState = RANDOM_STATE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +95,9 @@ public class CrossValidationImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public IntegerValue getK()
+  public int getC()
   {
-    return k;
+    return c;
   }
 
   /**
@@ -78,16 +105,13 @@ public class CrossValidationImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetK(IntegerValue newK, NotificationChain msgs)
+  @Override
+  public void setC(int newC)
   {
-    IntegerValue oldK = k;
-    k = newK;
+    int oldC = c;
+    c = newC;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__K, oldK, newK);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__C, oldC, c));
   }
 
   /**
@@ -96,20 +120,9 @@ public class CrossValidationImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setK(IntegerValue newK)
+  public int getRandomState()
   {
-    if (newK != k)
-    {
-      NotificationChain msgs = null;
-      if (k != null)
-        msgs = ((InternalEObject)k).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.CROSS_VALIDATION__K, null, msgs);
-      if (newK != null)
-        msgs = ((InternalEObject)newK).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.CROSS_VALIDATION__K, null, msgs);
-      msgs = basicSetK(newK, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__K, newK, newK));
+    return randomState;
   }
 
   /**
@@ -118,14 +131,12 @@ public class CrossValidationImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setRandomState(int newRandomState)
   {
-    switch (featureID)
-    {
-      case MLRegressionPackage.CROSS_VALIDATION__K:
-        return basicSetK(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    int oldRandomState = randomState;
+    randomState = newRandomState;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE, oldRandomState, randomState));
   }
 
   /**
@@ -138,8 +149,10 @@ public class CrossValidationImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CROSS_VALIDATION__K:
-        return getK();
+      case MLRegressionPackage.CROSS_VALIDATION__C:
+        return getC();
+      case MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE:
+        return getRandomState();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +167,11 @@ public class CrossValidationImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CROSS_VALIDATION__K:
-        setK((IntegerValue)newValue);
+      case MLRegressionPackage.CROSS_VALIDATION__C:
+        setC((Integer)newValue);
+        return;
+      case MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE:
+        setRandomState((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +187,11 @@ public class CrossValidationImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CROSS_VALIDATION__K:
-        setK((IntegerValue)null);
+      case MLRegressionPackage.CROSS_VALIDATION__C:
+        setC(C_EDEFAULT);
+        return;
+      case MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE:
+        setRandomState(RANDOM_STATE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +207,31 @@ public class CrossValidationImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CROSS_VALIDATION__K:
-        return k != null;
+      case MLRegressionPackage.CROSS_VALIDATION__C:
+        return c != C_EDEFAULT;
+      case MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE:
+        return randomState != RANDOM_STATE_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (c: ");
+    result.append(c);
+    result.append(", randomState: ");
+    result.append(randomState);
+    result.append(')');
+    return result.toString();
   }
 
 } //CrossValidationImpl

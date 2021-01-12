@@ -3,9 +3,6 @@
  */
 package m2.idm.project.mLRegression;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,25 +13,35 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.LineRegress#getColumns <em>Columns</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.LineRegress#getLeftSidePredict <em>Left Side Predict</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress()
  * @model
  * @generated
  */
-public interface LineRegress extends EObject
+public interface LineRegress extends AlgoType
 {
   /**
-   * Returns the value of the '<em><b>Columns</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Left Side Predict</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Columns</em>' attribute list.
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_Columns()
-   * @model unique="false"
+   * @return the value of the '<em>Left Side Predict</em>' attribute.
+   * @see #setLeftSidePredict(String)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_LeftSidePredict()
+   * @model
    * @generated
    */
-  EList<String> getColumns();
+  String getLeftSidePredict();
+
+  /**
+   * Sets the value of the '{@link m2.idm.project.mLRegression.LineRegress#getLeftSidePredict <em>Left Side Predict</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Left Side Predict</em>' attribute.
+   * @see #getLeftSidePredict()
+   * @generated
+   */
+  void setLeftSidePredict(String value);
 
 } // LineRegress

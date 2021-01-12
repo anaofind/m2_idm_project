@@ -81,16 +81,6 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createMLRegressionAdapter();
       }
       @Override
-      public Adapter caseCalculate(Calculate object)
-      {
-        return createCalculateAdapter();
-      }
-      @Override
-      public Adapter caseCalculateType(CalculateType object)
-      {
-        return createCalculateTypeAdapter();
-      }
-      @Override
       public Adapter caseDataset(Dataset object)
       {
         return createDatasetAdapter();
@@ -126,6 +116,11 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createTargetVarAdapter();
       }
       @Override
+      public Adapter caseCalculate(Calculate object)
+      {
+        return createCalculateAdapter();
+      }
+      @Override
       public Adapter caseAlgo(Algo object)
       {
         return createAlgoAdapter();
@@ -151,34 +146,19 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
         return createSVRAdapter();
       }
       @Override
-      public Adapter caseTypeValue(TypeValue object)
-      {
-        return createTypeValueAdapter();
-      }
-      @Override
-      public Adapter caseStringValue(StringValue object)
-      {
-        return createStringValueAdapter();
-      }
-      @Override
       public Adapter caseNumericValue(NumericValue object)
       {
         return createNumericValueAdapter();
       }
       @Override
-      public Adapter caseNumberValue(NumberValue object)
+      public Adapter caseFLOAT(FLOAT object)
       {
-        return createNumberValueAdapter();
+        return createFLOATAdapter();
       }
       @Override
-      public Adapter caseIntegerValue(IntegerValue object)
+      public Adapter casePERCENT(PERCENT object)
       {
-        return createIntegerValueAdapter();
-      }
-      @Override
-      public Adapter casePercentValue(PercentValue object)
-      {
-        return createPercentValueAdapter();
+        return createPERCENTAdapter();
       }
       @Override
       public Adapter caseBooleanValue(BooleanValue object)
@@ -218,36 +198,6 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMLRegressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Calculate <em>Calculate</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see m2.idm.project.mLRegression.Calculate
-   * @generated
-   */
-  public Adapter createCalculateAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.CalculateType <em>Calculate Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see m2.idm.project.mLRegression.CalculateType
-   * @generated
-   */
-  public Adapter createCalculateTypeAdapter()
   {
     return null;
   }
@@ -358,6 +308,21 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Calculate <em>Calculate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see m2.idm.project.mLRegression.Calculate
+   * @generated
+   */
+  public Adapter createCalculateAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.Algo <em>Algo</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -433,36 +398,6 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.TypeValue <em>Type Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see m2.idm.project.mLRegression.TypeValue
-   * @generated
-   */
-  public Adapter createTypeValueAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.StringValue <em>String Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see m2.idm.project.mLRegression.StringValue
-   * @generated
-   */
-  public Adapter createStringValueAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.NumericValue <em>Numeric Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -478,46 +413,31 @@ public class MLRegressionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.NumberValue <em>Number Value</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.FLOAT <em>FLOAT</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.NumberValue
+   * @see m2.idm.project.mLRegression.FLOAT
    * @generated
    */
-  public Adapter createNumberValueAdapter()
+  public Adapter createFLOATAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.IntegerValue <em>Integer Value</em>}'.
+   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.PERCENT <em>PERCENT</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see m2.idm.project.mLRegression.IntegerValue
+   * @see m2.idm.project.mLRegression.PERCENT
    * @generated
    */
-  public Adapter createIntegerValueAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link m2.idm.project.mLRegression.PercentValue <em>Percent Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see m2.idm.project.mLRegression.PercentValue
-   * @generated
-   */
-  public Adapter createPercentValueAdapter()
+  public Adapter createPERCENTAdapter()
   {
     return null;
   }

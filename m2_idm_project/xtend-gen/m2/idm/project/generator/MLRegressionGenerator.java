@@ -3,12 +3,16 @@
  */
 package m2.idm.project.generator;
 
-import org.eclipse.emf.common.util.TreeIterator;
+import com.google.common.collect.Iterables;
+import m2.idm.project.generator.GeneratorPythonCode;
+import m2.idm.project.mLRegression.MLRegression;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -19,23 +23,11 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class MLRegressionGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    boolean _ressourceAccepted = this.ressourceAccepted(resource);
-    if (_ressourceAccepted) {
-      fsa.generateFile("test", "good");
-    } else {
-      fsa.generateFile("test", "error");
+    final GeneratorPythonCode generator = new GeneratorPythonCode();
+    final MLRegression mlregression = IterableExtensions.<MLRegression>head(Iterables.<MLRegression>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), MLRegression.class));
+    final String code = generator.generate(mlregression);
+    if ((code != null)) {
+      fsa.generateFile("test.py", code);
     }
-  }
-  
-  public boolean ressourceAccepted(final Resource resource) {
-    final TreeIterator<EObject> contents = resource.getAllContents();
-    int nbContents = 0;
-    while (contents.hasNext()) {
-      nbContents++;
-    }
-    if ((nbContents == 6)) {
-      return true;
-    }
-    return false;
   }
 }
