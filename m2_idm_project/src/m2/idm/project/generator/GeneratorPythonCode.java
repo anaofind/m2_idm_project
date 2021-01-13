@@ -116,12 +116,27 @@ public class GeneratorPythonCode {
 		//this.codeOrdonne.add(code);*/
 
 		//garde la valeur des repartitions pour génération future du code
-		this.testPercent = Double.valueOf(((Partition)evalT).getTest())/100;
+		NumericValue testValue = ((Partition)evalT).getTest();
+		this.testPercent = this.getNumberValue(testValue);
+		//this.testPercent = Double.valueOf(((Partition)evalT).getTest())/100;
 		
 		//partition des variables connue donc on peut split
 		String codePartition = this.Xtrain + "," + this.Xtest  + "," + this.Ytrain + "," + this.Ytest + "=" + "train_test_split" + "("
 				+ this.predVar + "," + this.targetVar + "," + "test_size" + "=" + this.testPercent + ")";
 		this.codeOrdonne.add(codePartition);
+	}
+	
+	private double getNumberValue(NumericValue numeric) {
+		double value = 0;
+		if (numeric instanceof FLOAT) {
+			int i = ((FLOAT) numeric).getValue();
+			int d = ((FLOAT) numeric).getDecimal();
+			value = i + ((double)d/(Math.pow(10, String.valueOf(d).length())));
+		} else {
+			double f = this.getNumberValue(((PERCENT) numeric).getFloat());
+			value = f/100;
+		}
+		return value;
 	}
 
 	//Todo
@@ -185,24 +200,17 @@ public class GeneratorPythonCode {
 	}
 
 	private void generateAlgoCode(Algo algoToApply) {
-		if(algoToApply.getAlgo() instanceof LineRegress) {
-			this.generateLRCode(algoToApply.getAlgo());
-		} else if(algoToApply.getAlgo() instanceof SVR) {
-			this.generateSVRCode(algoToApply.getAlgo());
-		} else if(algoToApply.getAlgo() instanceof DecisionTreeRegressor) {
-			this.generateDTRCode(algoToApply.getAlgo());
-		}
-	}
-
-	private void generateLRCode(AlgoType toApply) {
 		String importNP = "import numpy as np";
 		this.codeOrdonne.add(0, importNP);
-		String importPart = "from sklearn import linear_model";
-		this.codeOrdonne.add(0, importPart);
-
-		//Creation d'un objet regressor
-		String codeObjetReg = this.algoVar + "=" + "linear_model.LinearRegression" + "(" + ")";
-		this.codeOrdonne.add(codeObjetReg);
+		
+		AlgoType algoType = algoToApply.getAlgo();
+		if(algoType instanceof LineRegress) {
+			this.generateLRCode(algoType);
+		} else if(algoType instanceof SVR) {
+			this.generateSVRCode(algoType);
+		} else if(algoType instanceof DecisionTreeRegressor) {
+			this.generateDTRCode(algoType);
+		}
 		
 		if (! this.isCrosssValidation) {
 			//fit code
@@ -210,14 +218,29 @@ public class GeneratorPythonCode {
 			this.codeOrdonne.add(fitCode);
 
 			//predict code generation
-			this.YPred = ((LineRegress)toApply).getLeftSidePredict();
-			String predictCode = ((LineRegress)toApply).getLeftSidePredict() + "=" + this.algoVar + ".predict" + "(" + this.Xtest + ")";
+			this.YPred = algoToApply.getLeftSidePredict();
+			String predictCode = this.YPred + "=" + this.algoVar + ".predict" + "(" + this.Xtest + ")";
 			this.codeOrdonne.add(predictCode);	
 		}
+		
+	}
+
+	private void generateLRCode(AlgoType toApply) {
+		String importPart = "from sklearn import linear_model";
+		this.codeOrdonne.add(0, importPart);
+
+		//Creation d'un objet regressor
+		String codeObjetReg = this.algoVar + "=" + "linear_model.LinearRegression" + "(" + ")";
+		this.codeOrdonne.add(codeObjetReg);
 	}
 
 	private void generateDTRCode(AlgoType toApply) {
+		String importPart = "from sklearn.tree import DecisionTreeRegressor";
+		this.codeOrdonne.add(0, importPart);
 
+		//Creation d'un objet regressor
+		String codeObjetReg = this.algoVar + "=" + "DecisionTreeRegressor" + "(" + ")";
+		this.codeOrdonne.add(codeObjetReg);
 	}
 
 	private void generateSVRCode(AlgoType toApply) {

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link m2.idm.project.mLRegression.impl.AlgoImpl#getAlgo <em>Algo</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.AlgoImpl#getLeftSidePredict <em>Left Side Predict</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,6 +41,26 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
    * @ordered
    */
   protected AlgoType algo;
+
+  /**
+   * The default value of the '{@link #getLeftSidePredict() <em>Left Side Predict</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLeftSidePredict()
+   * @generated
+   * @ordered
+   */
+  protected static final String LEFT_SIDE_PREDICT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLeftSidePredict() <em>Left Side Predict</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLeftSidePredict()
+   * @generated
+   * @ordered
+   */
+  protected String leftSidePredict = LEFT_SIDE_PREDICT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,6 +139,31 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
    * @generated
    */
   @Override
+  public String getLeftSidePredict()
+  {
+    return leftSidePredict;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLeftSidePredict(String newLeftSidePredict)
+  {
+    String oldLeftSidePredict = leftSidePredict;
+    leftSidePredict = newLeftSidePredict;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ALGO__LEFT_SIDE_PREDICT, oldLeftSidePredict, leftSidePredict));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -140,6 +186,8 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
     {
       case MLRegressionPackage.ALGO__ALGO:
         return getAlgo();
+      case MLRegressionPackage.ALGO__LEFT_SIDE_PREDICT:
+        return getLeftSidePredict();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -156,6 +204,9 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
     {
       case MLRegressionPackage.ALGO__ALGO:
         setAlgo((AlgoType)newValue);
+        return;
+      case MLRegressionPackage.ALGO__LEFT_SIDE_PREDICT:
+        setLeftSidePredict((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -174,6 +225,9 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
       case MLRegressionPackage.ALGO__ALGO:
         setAlgo((AlgoType)null);
         return;
+      case MLRegressionPackage.ALGO__LEFT_SIDE_PREDICT:
+        setLeftSidePredict(LEFT_SIDE_PREDICT_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -190,8 +244,27 @@ public class AlgoImpl extends MinimalEObjectImpl.Container implements Algo
     {
       case MLRegressionPackage.ALGO__ALGO:
         return algo != null;
+      case MLRegressionPackage.ALGO__LEFT_SIDE_PREDICT:
+        return LEFT_SIDE_PREDICT_EDEFAULT == null ? leftSidePredict != null : !LEFT_SIDE_PREDICT_EDEFAULT.equals(leftSidePredict);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (leftSidePredict: ");
+    result.append(leftSidePredict);
+    result.append(')');
+    return result.toString();
   }
 
 } //AlgoImpl

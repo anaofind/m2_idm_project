@@ -60,8 +60,7 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMLRegressionAccess().getCalculateAssignment_4(), "rule__MLRegression__CalculateAssignment_4");
 			builder.put(grammarAccess.getDatasetAccess().getDataPathAssignment_1(), "rule__Dataset__DataPathAssignment_1");
 			builder.put(grammarAccess.getDatasetAccess().getSeparatorAssignment_2(), "rule__Dataset__SeparatorAssignment_2");
-			builder.put(grammarAccess.getPartitionAccess().getTrainAssignment_2(), "rule__Partition__TrainAssignment_2");
-			builder.put(grammarAccess.getPartitionAccess().getTestAssignment_4(), "rule__Partition__TestAssignment_4");
+			builder.put(grammarAccess.getPartitionAccess().getTestAssignment_2(), "rule__Partition__TestAssignment_2");
 			builder.put(grammarAccess.getCrossValidationAccess().getKAssignment_2(), "rule__CrossValidation__KAssignment_2");
 			builder.put(grammarAccess.getVariablesAccess().getPredictivesAssignment_0(), "rule__Variables__PredictivesAssignment_0");
 			builder.put(grammarAccess.getVariablesAccess().getTargetsAssignment_1(), "rule__Variables__TargetsAssignment_1");
@@ -71,11 +70,13 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTargetVarAccess().getTargetVarAssignment_3_1(), "rule__TargetVar__TargetVarAssignment_3_1");
 			builder.put(grammarAccess.getCalculateAccess().getCalculateTypeAssignment_2(), "rule__Calculate__CalculateTypeAssignment_2");
 			builder.put(grammarAccess.getAlgoAccess().getAlgoAssignment_2(), "rule__Algo__AlgoAssignment_2");
-			builder.put(grammarAccess.getLineRegressAccess().getLeftSidePredictAssignment_2(), "rule__LineRegress__LeftSidePredictAssignment_2");
+			builder.put(grammarAccess.getAlgoAccess().getLeftSidePredictAssignment_4(), "rule__Algo__LeftSidePredictAssignment_4");
+			builder.put(grammarAccess.getLineRegressAccess().getRandAssignment_2(), "rule__LineRegress__RandAssignment_2");
 			builder.put(grammarAccess.getDecisionTreeRegressorAccess().getRandAssignment_2(), "rule__DecisionTreeRegressor__RandAssignment_2");
 			builder.put(grammarAccess.getSVRAccess().getParamAssignment_2(), "rule__SVR__ParamAssignment_2");
 			builder.put(grammarAccess.getFLOATAccess().getValueAssignment_0(), "rule__FLOAT__ValueAssignment_0");
 			builder.put(grammarAccess.getFLOATAccess().getDecimalAssignment_1_1(), "rule__FLOAT__DecimalAssignment_1_1");
+			builder.put(grammarAccess.getPERCENTAccess().getFloatAssignment_0(), "rule__PERCENT__FloatAssignment_0");
 			builder.put(grammarAccess.getBooleanValueAccess().getValueAssignment(), "rule__BooleanValue__ValueAssignment");
 		}
 	}

@@ -188,22 +188,13 @@ public interface MLRegressionPackage extends EPackage
   int PARTITION = 3;
 
   /**
-   * The feature id for the '<em><b>Train</b></em>' attribute.
+   * The feature id for the '<em><b>Test</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARTITION__TRAIN = EVALUATION_TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Test</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARTITION__TEST = EVALUATION_TYPE_FEATURE_COUNT + 1;
+  int PARTITION__TEST = EVALUATION_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Partition</em>' class.
@@ -212,7 +203,7 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARTITION_FEATURE_COUNT = EVALUATION_TYPE_FEATURE_COUNT + 2;
+  int PARTITION_FEATURE_COUNT = EVALUATION_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.CrossValidationImpl <em>Cross Validation</em>}' class.
@@ -383,13 +374,22 @@ public interface MLRegressionPackage extends EPackage
   int ALGO__ALGO = 0;
 
   /**
+   * The feature id for the '<em><b>Left Side Predict</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALGO__LEFT_SIDE_PREDICT = 1;
+
+  /**
    * The number of structural features of the '<em>Algo</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ALGO_FEATURE_COUNT = 1;
+  int ALGO_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.AlgoTypeImpl <em>Algo Type</em>}' class.
@@ -421,13 +421,13 @@ public interface MLRegressionPackage extends EPackage
   int LINE_REGRESS = 11;
 
   /**
-   * The feature id for the '<em><b>Left Side Predict</b></em>' attribute.
+   * The feature id for the '<em><b>Rand</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINE_REGRESS__LEFT_SIDE_PREDICT = ALGO_TYPE_FEATURE_COUNT + 0;
+  int LINE_REGRESS__RAND = ALGO_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Line Regress</em>' class.
@@ -561,13 +561,22 @@ public interface MLRegressionPackage extends EPackage
   int PERCENT = 16;
 
   /**
+   * The feature id for the '<em><b>Float</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PERCENT__FLOAT = NUMERIC_VALUE_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>PERCENT</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PERCENT_FEATURE_COUNT = NUMERIC_VALUE_FEATURE_COUNT + 0;
+  int PERCENT_FEATURE_COUNT = NUMERIC_VALUE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
@@ -716,26 +725,15 @@ public interface MLRegressionPackage extends EPackage
   EClass getPartition();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Partition#getTrain <em>Train</em>}'.
+   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.Partition#getTest <em>Test</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Train</em>'.
-   * @see m2.idm.project.mLRegression.Partition#getTrain()
-   * @see #getPartition()
-   * @generated
-   */
-  EAttribute getPartition_Train();
-
-  /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Partition#getTest <em>Test</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Test</em>'.
+   * @return the meta object for the containment reference '<em>Test</em>'.
    * @see m2.idm.project.mLRegression.Partition#getTest()
    * @see #getPartition()
    * @generated
    */
-  EAttribute getPartition_Test();
+  EReference getPartition_Test();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.CrossValidation <em>Cross Validation</em>}'.
@@ -875,6 +873,17 @@ public interface MLRegressionPackage extends EPackage
   EReference getAlgo_Algo();
 
   /**
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Algo#getLeftSidePredict <em>Left Side Predict</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Left Side Predict</em>'.
+   * @see m2.idm.project.mLRegression.Algo#getLeftSidePredict()
+   * @see #getAlgo()
+   * @generated
+   */
+  EAttribute getAlgo_LeftSidePredict();
+
+  /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.AlgoType <em>Algo Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -895,15 +904,15 @@ public interface MLRegressionPackage extends EPackage
   EClass getLineRegress();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.LineRegress#getLeftSidePredict <em>Left Side Predict</em>}'.
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.LineRegress#getRand <em>Rand</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Left Side Predict</em>'.
-   * @see m2.idm.project.mLRegression.LineRegress#getLeftSidePredict()
+   * @return the meta object for the attribute '<em>Rand</em>'.
+   * @see m2.idm.project.mLRegression.LineRegress#getRand()
    * @see #getLineRegress()
    * @generated
    */
-  EAttribute getLineRegress_LeftSidePredict();
+  EAttribute getLineRegress_Rand();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.DecisionTreeRegressor <em>Decision Tree Regressor</em>}'.
@@ -998,6 +1007,17 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    */
   EClass getPERCENT();
+
+  /**
+   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.PERCENT#getFloat <em>Float</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Float</em>'.
+   * @see m2.idm.project.mLRegression.PERCENT#getFloat()
+   * @see #getPERCENT()
+   * @generated
+   */
+  EReference getPERCENT_Float();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.BooleanValue <em>Boolean Value</em>}'.
@@ -1140,20 +1160,12 @@ public interface MLRegressionPackage extends EPackage
     EClass PARTITION = eINSTANCE.getPartition();
 
     /**
-     * The meta object literal for the '<em><b>Train</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Test</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PARTITION__TRAIN = eINSTANCE.getPartition_Train();
-
-    /**
-     * The meta object literal for the '<em><b>Test</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PARTITION__TEST = eINSTANCE.getPartition_Test();
+    EReference PARTITION__TEST = eINSTANCE.getPartition_Test();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.CrossValidationImpl <em>Cross Validation</em>}' class.
@@ -1272,6 +1284,14 @@ public interface MLRegressionPackage extends EPackage
     EReference ALGO__ALGO = eINSTANCE.getAlgo_Algo();
 
     /**
+     * The meta object literal for the '<em><b>Left Side Predict</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALGO__LEFT_SIDE_PREDICT = eINSTANCE.getAlgo_LeftSidePredict();
+
+    /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.AlgoTypeImpl <em>Algo Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1292,12 +1312,12 @@ public interface MLRegressionPackage extends EPackage
     EClass LINE_REGRESS = eINSTANCE.getLineRegress();
 
     /**
-     * The meta object literal for the '<em><b>Left Side Predict</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Rand</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINE_REGRESS__LEFT_SIDE_PREDICT = eINSTANCE.getLineRegress_LeftSidePredict();
+    EAttribute LINE_REGRESS__RAND = eINSTANCE.getLineRegress_Rand();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl <em>Decision Tree Regressor</em>}' class.
@@ -1380,6 +1400,14 @@ public interface MLRegressionPackage extends EPackage
      * @generated
      */
     EClass PERCENT = eINSTANCE.getPERCENT();
+
+    /**
+     * The meta object literal for the '<em><b>Float</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PERCENT__FLOAT = eINSTANCE.getPERCENT_Float();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.BooleanValueImpl <em>Boolean Value</em>}' class.

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.LineRegressImpl#getLeftSidePredict <em>Left Side Predict</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.LineRegressImpl#getRand <em>Rand</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
 {
   /**
-   * The default value of the '{@link #getLeftSidePredict() <em>Left Side Predict</em>}' attribute.
+   * The default value of the '{@link #getRand() <em>Rand</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLeftSidePredict()
+   * @see #getRand()
    * @generated
    * @ordered
    */
-  protected static final String LEFT_SIDE_PREDICT_EDEFAULT = null;
+  protected static final int RAND_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getLeftSidePredict() <em>Left Side Predict</em>}' attribute.
+   * The cached value of the '{@link #getRand() <em>Rand</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLeftSidePredict()
+   * @see #getRand()
    * @generated
    * @ordered
    */
-  protected String leftSidePredict = LEFT_SIDE_PREDICT_EDEFAULT;
+  protected int rand = RAND_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
    * @generated
    */
   @Override
-  public String getLeftSidePredict()
+  public int getRand()
   {
-    return leftSidePredict;
+    return rand;
   }
 
   /**
@@ -85,12 +85,12 @@ public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
    * @generated
    */
   @Override
-  public void setLeftSidePredict(String newLeftSidePredict)
+  public void setRand(int newRand)
   {
-    String oldLeftSidePredict = leftSidePredict;
-    leftSidePredict = newLeftSidePredict;
+    int oldRand = rand;
+    rand = newRand;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT, oldLeftSidePredict, leftSidePredict));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.LINE_REGRESS__RAND, oldRand, rand));
   }
 
   /**
@@ -103,8 +103,8 @@ public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT:
-        return getLeftSidePredict();
+      case MLRegressionPackage.LINE_REGRESS__RAND:
+        return getRand();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +119,8 @@ public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT:
-        setLeftSidePredict((String)newValue);
+      case MLRegressionPackage.LINE_REGRESS__RAND:
+        setRand((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT:
-        setLeftSidePredict(LEFT_SIDE_PREDICT_EDEFAULT);
+      case MLRegressionPackage.LINE_REGRESS__RAND:
+        setRand(RAND_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,8 +153,8 @@ public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LINE_REGRESS__LEFT_SIDE_PREDICT:
-        return LEFT_SIDE_PREDICT_EDEFAULT == null ? leftSidePredict != null : !LEFT_SIDE_PREDICT_EDEFAULT.equals(leftSidePredict);
+      case MLRegressionPackage.LINE_REGRESS__RAND:
+        return rand != RAND_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -170,8 +170,8 @@ public class LineRegressImpl extends AlgoTypeImpl implements LineRegress
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (leftSidePredict: ");
-    result.append(leftSidePredict);
+    result.append(" (rand: ");
+    result.append(rand);
     result.append(')');
     return result.toString();
   }

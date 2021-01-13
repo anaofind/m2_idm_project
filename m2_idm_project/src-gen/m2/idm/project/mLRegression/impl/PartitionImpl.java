@@ -4,11 +4,14 @@
 package m2.idm.project.mLRegression.impl;
 
 import m2.idm.project.mLRegression.MLRegressionPackage;
+import m2.idm.project.mLRegression.NumericValue;
 import m2.idm.project.mLRegression.Partition;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -20,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.PartitionImpl#getTrain <em>Train</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.impl.PartitionImpl#getTest <em>Test</em>}</li>
  * </ul>
  *
@@ -29,44 +31,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class PartitionImpl extends EvaluationTypeImpl implements Partition
 {
   /**
-   * The default value of the '{@link #getTrain() <em>Train</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTrain()
-   * @generated
-   * @ordered
-   */
-  protected static final int TRAIN_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getTrain() <em>Train</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTrain()
-   * @generated
-   * @ordered
-   */
-  protected int train = TRAIN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getTest() <em>Test</em>}' attribute.
+   * The cached value of the '{@link #getTest() <em>Test</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTest()
    * @generated
    * @ordered
    */
-  protected static final int TEST_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getTest() <em>Test</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTest()
-   * @generated
-   * @ordered
-   */
-  protected int test = TEST_EDEFAULT;
+  protected NumericValue test;
 
   /**
    * <!-- begin-user-doc -->
@@ -95,32 +67,7 @@ public class PartitionImpl extends EvaluationTypeImpl implements Partition
    * @generated
    */
   @Override
-  public int getTrain()
-  {
-    return train;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setTrain(int newTrain)
-  {
-    int oldTrain = train;
-    train = newTrain;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.PARTITION__TRAIN, oldTrain, train));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int getTest()
+  public NumericValue getTest()
   {
     return test;
   }
@@ -130,13 +77,54 @@ public class PartitionImpl extends EvaluationTypeImpl implements Partition
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setTest(int newTest)
+  public NotificationChain basicSetTest(NumericValue newTest, NotificationChain msgs)
   {
-    int oldTest = test;
+    NumericValue oldTest = test;
     test = newTest;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.PARTITION__TEST, oldTest, test));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.PARTITION__TEST, oldTest, newTest);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTest(NumericValue newTest)
+  {
+    if (newTest != test)
+    {
+      NotificationChain msgs = null;
+      if (test != null)
+        msgs = ((InternalEObject)test).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.PARTITION__TEST, null, msgs);
+      if (newTest != null)
+        msgs = ((InternalEObject)newTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.PARTITION__TEST, null, msgs);
+      msgs = basicSetTest(newTest, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.PARTITION__TEST, newTest, newTest));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MLRegressionPackage.PARTITION__TEST:
+        return basicSetTest(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -149,8 +137,6 @@ public class PartitionImpl extends EvaluationTypeImpl implements Partition
   {
     switch (featureID)
     {
-      case MLRegressionPackage.PARTITION__TRAIN:
-        return getTrain();
       case MLRegressionPackage.PARTITION__TEST:
         return getTest();
     }
@@ -167,11 +153,8 @@ public class PartitionImpl extends EvaluationTypeImpl implements Partition
   {
     switch (featureID)
     {
-      case MLRegressionPackage.PARTITION__TRAIN:
-        setTrain((Integer)newValue);
-        return;
       case MLRegressionPackage.PARTITION__TEST:
-        setTest((Integer)newValue);
+        setTest((NumericValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,11 +170,8 @@ public class PartitionImpl extends EvaluationTypeImpl implements Partition
   {
     switch (featureID)
     {
-      case MLRegressionPackage.PARTITION__TRAIN:
-        setTrain(TRAIN_EDEFAULT);
-        return;
       case MLRegressionPackage.PARTITION__TEST:
-        setTest(TEST_EDEFAULT);
+        setTest((NumericValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -207,31 +187,10 @@ public class PartitionImpl extends EvaluationTypeImpl implements Partition
   {
     switch (featureID)
     {
-      case MLRegressionPackage.PARTITION__TRAIN:
-        return train != TRAIN_EDEFAULT;
       case MLRegressionPackage.PARTITION__TEST:
-        return test != TEST_EDEFAULT;
+        return test != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (train: ");
-    result.append(train);
-    result.append(", test: ");
-    result.append(test);
-    result.append(')');
-    return result.toString();
   }
 
 } //PartitionImpl

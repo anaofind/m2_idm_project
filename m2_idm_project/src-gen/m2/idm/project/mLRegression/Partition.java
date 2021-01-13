@@ -13,7 +13,6 @@ package m2.idm.project.mLRegression;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.Partition#getTrain <em>Train</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.Partition#getTest <em>Test</em>}</li>
  * </ul>
  *
@@ -24,47 +23,25 @@ package m2.idm.project.mLRegression;
 public interface Partition extends EvaluationType
 {
   /**
-   * Returns the value of the '<em><b>Train</b></em>' attribute.
+   * Returns the value of the '<em><b>Test</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Train</em>' attribute.
-   * @see #setTrain(int)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getPartition_Train()
-   * @model
-   * @generated
-   */
-  int getTrain();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Partition#getTrain <em>Train</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Train</em>' attribute.
-   * @see #getTrain()
-   * @generated
-   */
-  void setTrain(int value);
-
-  /**
-   * Returns the value of the '<em><b>Test</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Test</em>' attribute.
-   * @see #setTest(int)
+   * @return the value of the '<em>Test</em>' containment reference.
+   * @see #setTest(NumericValue)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getPartition_Test()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getTest();
+  NumericValue getTest();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Partition#getTest <em>Test</em>}' attribute.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Partition#getTest <em>Test</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Test</em>' attribute.
+   * @param value the new value of the '<em>Test</em>' containment reference.
    * @see #getTest()
    * @generated
    */
-  void setTest(int value);
+  void setTest(NumericValue value);
 
 } // Partition

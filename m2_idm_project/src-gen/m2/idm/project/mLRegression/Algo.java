@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.Algo#getLeftSidePredict <em>Left Side Predict</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getAlgo()
@@ -44,5 +45,27 @@ public interface Algo extends EObject
    * @generated
    */
   void setAlgo(AlgoType value);
+
+  /**
+   * Returns the value of the '<em><b>Left Side Predict</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Left Side Predict</em>' attribute.
+   * @see #setLeftSidePredict(String)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getAlgo_LeftSidePredict()
+   * @model
+   * @generated
+   */
+  String getLeftSidePredict();
+
+  /**
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Algo#getLeftSidePredict <em>Left Side Predict</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Left Side Predict</em>' attribute.
+   * @see #getLeftSidePredict()
+   * @generated
+   */
+  void setLeftSidePredict(String value);
 
 } // Algo

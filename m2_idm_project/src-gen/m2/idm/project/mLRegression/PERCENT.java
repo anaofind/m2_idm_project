@@ -9,6 +9,12 @@ package m2.idm.project.mLRegression;
  * A representation of the model object '<em><b>PERCENT</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link m2.idm.project.mLRegression.PERCENT#getFloat <em>Float</em>}</li>
+ * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getPERCENT()
  * @model
@@ -16,4 +22,26 @@ package m2.idm.project.mLRegression;
  */
 public interface PERCENT extends NumericValue
 {
+  /**
+   * Returns the value of the '<em><b>Float</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Float</em>' containment reference.
+   * @see #setFloat(FLOAT)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getPERCENT_Float()
+   * @model containment="true"
+   * @generated
+   */
+  FLOAT getFloat();
+
+  /**
+   * Sets the value of the '{@link m2.idm.project.mLRegression.PERCENT#getFloat <em>Float</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Float</em>' containment reference.
+   * @see #getFloat()
+   * @generated
+   */
+  void setFloat(FLOAT value);
+
 } // PERCENT

@@ -3,20 +3,43 @@
  */
 package m2.idm.project.mLRegression.impl;
 
+import m2.idm.project.mLRegression.FLOAT;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 import m2.idm.project.mLRegression.PERCENT;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>PERCENT</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link m2.idm.project.mLRegression.impl.PERCENTImpl#getFloat <em>Float</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class PERCENTImpl extends NumericValueImpl implements PERCENT
 {
+  /**
+   * The cached value of the '{@link #getFloat() <em>Float</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFloat()
+   * @generated
+   * @ordered
+   */
+  protected FLOAT float_;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +59,138 @@ public class PERCENTImpl extends NumericValueImpl implements PERCENT
   protected EClass eStaticClass()
   {
     return MLRegressionPackage.Literals.PERCENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FLOAT getFloat()
+  {
+    return float_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFloat(FLOAT newFloat, NotificationChain msgs)
+  {
+    FLOAT oldFloat = float_;
+    float_ = newFloat;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.PERCENT__FLOAT, oldFloat, newFloat);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFloat(FLOAT newFloat)
+  {
+    if (newFloat != float_)
+    {
+      NotificationChain msgs = null;
+      if (float_ != null)
+        msgs = ((InternalEObject)float_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.PERCENT__FLOAT, null, msgs);
+      if (newFloat != null)
+        msgs = ((InternalEObject)newFloat).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.PERCENT__FLOAT, null, msgs);
+      msgs = basicSetFloat(newFloat, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.PERCENT__FLOAT, newFloat, newFloat));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MLRegressionPackage.PERCENT__FLOAT:
+        return basicSetFloat(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case MLRegressionPackage.PERCENT__FLOAT:
+        return getFloat();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case MLRegressionPackage.PERCENT__FLOAT:
+        setFloat((FLOAT)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case MLRegressionPackage.PERCENT__FLOAT:
+        setFloat((FLOAT)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case MLRegressionPackage.PERCENT__FLOAT:
+        return float_ != null;
+    }
+    return super.eIsSet(featureID);
   }
 
 } //PERCENTImpl

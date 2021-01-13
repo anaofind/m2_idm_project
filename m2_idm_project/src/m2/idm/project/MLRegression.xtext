@@ -19,7 +19,7 @@ EvaluationType :
 ;
 
 Partition : 
-    'partition' ':' train=INT ',' test=INT ';'
+    'partition' ':' test=NumericValue ';'
 ;
 
 CrossValidation :
@@ -48,7 +48,7 @@ CalculateType :
 
 
 Algo :
-	'algorithm' ':' algo=AlgoType ';'
+	'algorithm' ':' algo=AlgoType ',' leftSidePredict=ID '=' 'predict' '()' ';'
 ;
 
 AlgoType : 
@@ -56,8 +56,7 @@ AlgoType :
 ;
 
 LineRegress :
-    'line_regress()' ','
-    leftSidePredict=ID '=' 'predict' '()'
+    'line_regress' '(' rand=INT ')'
 ;
 
 DecisionTreeRegressor : 
@@ -93,7 +92,7 @@ FLOAT:
 ;
 
 PERCENT:
-	FLOAT '%'
+	float=FLOAT '%'
 ;
 
 BooleanValue :

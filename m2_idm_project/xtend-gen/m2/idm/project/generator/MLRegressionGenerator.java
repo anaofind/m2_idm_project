@@ -26,8 +26,9 @@ public class MLRegressionGenerator extends AbstractGenerator {
     final GeneratorPythonCode generator = new GeneratorPythonCode();
     final MLRegression mlregression = IterableExtensions.<MLRegression>head(Iterables.<MLRegression>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), MLRegression.class));
     final String code = generator.generate(mlregression);
+    final String file = resource.getURI().lastSegment().replace(".mlreg", ".py");
     if ((code != null)) {
-      fsa.generateFile("test.py", code);
+      fsa.generateFile(file.toString(), code);
     }
   }
 }

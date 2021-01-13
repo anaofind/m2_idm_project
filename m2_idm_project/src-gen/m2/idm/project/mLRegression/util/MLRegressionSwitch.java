@@ -187,7 +187,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
       {
         FLOAT float_ = (FLOAT)theEObject;
         T result = caseFLOAT(float_);
-        if (result == null) result = casePERCENT(float_);
         if (result == null) result = caseNumericValue(float_);
         if (result == null) result = defaultCase(theEObject);
         return result;

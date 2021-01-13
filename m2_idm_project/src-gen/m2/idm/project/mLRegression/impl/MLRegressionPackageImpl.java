@@ -352,20 +352,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getPartition_Train()
+  public EReference getPartition_Test()
   {
-    return (EAttribute)partitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPartition_Test()
-  {
-    return (EAttribute)partitionEClass.getEStructuralFeatures().get(1);
+    return (EReference)partitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -517,6 +506,17 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
+  public EAttribute getAlgo_LeftSidePredict()
+  {
+    return (EAttribute)algoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAlgoType()
   {
     return algoTypeEClass;
@@ -539,7 +539,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getLineRegress_LeftSidePredict()
+  public EAttribute getLineRegress_Rand()
   {
     return (EAttribute)lineRegressEClass.getEStructuralFeatures().get(0);
   }
@@ -649,6 +649,17 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
+  public EReference getPERCENT_Float()
+  {
+    return (EReference)percentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getBooleanValue()
   {
     return booleanValueEClass;
@@ -710,8 +721,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     evaluationTypeEClass = createEClass(EVALUATION_TYPE);
 
     partitionEClass = createEClass(PARTITION);
-    createEAttribute(partitionEClass, PARTITION__TRAIN);
-    createEAttribute(partitionEClass, PARTITION__TEST);
+    createEReference(partitionEClass, PARTITION__TEST);
 
     crossValidationEClass = createEClass(CROSS_VALIDATION);
     createEAttribute(crossValidationEClass, CROSS_VALIDATION__K);
@@ -731,11 +741,12 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
 
     algoEClass = createEClass(ALGO);
     createEReference(algoEClass, ALGO__ALGO);
+    createEAttribute(algoEClass, ALGO__LEFT_SIDE_PREDICT);
 
     algoTypeEClass = createEClass(ALGO_TYPE);
 
     lineRegressEClass = createEClass(LINE_REGRESS);
-    createEAttribute(lineRegressEClass, LINE_REGRESS__LEFT_SIDE_PREDICT);
+    createEAttribute(lineRegressEClass, LINE_REGRESS__RAND);
 
     decisionTreeRegressorEClass = createEClass(DECISION_TREE_REGRESSOR);
     createEAttribute(decisionTreeRegressorEClass, DECISION_TREE_REGRESSOR__RAND);
@@ -750,6 +761,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     createEAttribute(floatEClass, FLOAT__DECIMAL);
 
     percentEClass = createEClass(PERCENT);
+    createEReference(percentEClass, PERCENT__FLOAT);
 
     booleanValueEClass = createEClass(BOOLEAN_VALUE);
     createEAttribute(booleanValueEClass, BOOLEAN_VALUE__VALUE);
@@ -790,7 +802,6 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     decisionTreeRegressorEClass.getESuperTypes().add(this.getAlgoType());
     svrEClass.getESuperTypes().add(this.getAlgoType());
     floatEClass.getESuperTypes().add(this.getNumericValue());
-    floatEClass.getESuperTypes().add(this.getPERCENT());
     percentEClass.getESuperTypes().add(this.getNumericValue());
 
     // Initialize classes and features; add operations and parameters
@@ -808,8 +819,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     initEClass(evaluationTypeEClass, EvaluationType.class, "EvaluationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(partitionEClass, Partition.class, "Partition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPartition_Train(), ecorePackage.getEInt(), "train", null, 0, 1, Partition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPartition_Test(), ecorePackage.getEInt(), "test", null, 0, 1, Partition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPartition_Test(), this.getNumericValue(), null, "test", null, 0, 1, Partition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(crossValidationEClass, CrossValidation.class, "CrossValidation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCrossValidation_K(), ecorePackage.getEInt(), "k", null, 0, 1, CrossValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -829,11 +839,12 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
 
     initEClass(algoEClass, Algo.class, "Algo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAlgo_Algo(), this.getAlgoType(), null, "algo", null, 0, 1, Algo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAlgo_LeftSidePredict(), ecorePackage.getEString(), "leftSidePredict", null, 0, 1, Algo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(algoTypeEClass, AlgoType.class, "AlgoType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(lineRegressEClass, LineRegress.class, "LineRegress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLineRegress_LeftSidePredict(), ecorePackage.getEString(), "leftSidePredict", null, 0, 1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLineRegress_Rand(), ecorePackage.getEInt(), "rand", null, 0, 1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(decisionTreeRegressorEClass, DecisionTreeRegressor.class, "DecisionTreeRegressor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDecisionTreeRegressor_Rand(), ecorePackage.getEInt(), "rand", null, 0, 1, DecisionTreeRegressor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -848,6 +859,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     initEAttribute(getFLOAT_Decimal(), ecorePackage.getEInt(), "decimal", null, 0, 1, m2.idm.project.mLRegression.FLOAT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(percentEClass, m2.idm.project.mLRegression.PERCENT.class, "PERCENT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPERCENT_Float(), this.getFLOAT(), null, "float", null, 0, 1, m2.idm.project.mLRegression.PERCENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanValueEClass, BooleanValue.class, "BooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBooleanValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

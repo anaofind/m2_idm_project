@@ -13,7 +13,7 @@ package m2.idm.project.mLRegression;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.LineRegress#getLeftSidePredict <em>Left Side Predict</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.LineRegress#getRand <em>Rand</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress()
@@ -23,25 +23,25 @@ package m2.idm.project.mLRegression;
 public interface LineRegress extends AlgoType
 {
   /**
-   * Returns the value of the '<em><b>Left Side Predict</b></em>' attribute.
+   * Returns the value of the '<em><b>Rand</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Left Side Predict</em>' attribute.
-   * @see #setLeftSidePredict(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_LeftSidePredict()
+   * @return the value of the '<em>Rand</em>' attribute.
+   * @see #setRand(int)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getLineRegress_Rand()
    * @model
    * @generated
    */
-  String getLeftSidePredict();
+  int getRand();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.LineRegress#getLeftSidePredict <em>Left Side Predict</em>}' attribute.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.LineRegress#getRand <em>Rand</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Left Side Predict</em>' attribute.
-   * @see #getLeftSidePredict()
+   * @param value the new value of the '<em>Rand</em>' attribute.
+   * @see #getRand()
    * @generated
    */
-  void setLeftSidePredict(String value);
+  void setRand(int value);
 
 } // LineRegress

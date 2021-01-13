@@ -16,6 +16,7 @@ import m2.idm.project.mLRegression.LineRegress;
 import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionPackage;
+import m2.idm.project.mLRegression.PERCENT;
 import m2.idm.project.mLRegression.Partition;
 import m2.idm.project.mLRegression.SVR;
 import m2.idm.project.mLRegression.TargetVar;
@@ -75,6 +76,9 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MLRegressionPackage.ML_REGRESSION:
 				sequence_MLRegression(context, (MLRegression) semanticObject); 
 				return; 
+			case MLRegressionPackage.PERCENT:
+				sequence_PERCENT(context, (PERCENT) semanticObject); 
+				return; 
 			case MLRegressionPackage.PARTITION:
 				sequence_Partition(context, (Partition) semanticObject); 
 				return; 
@@ -97,15 +101,18 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Algo returns Algo
 	 *
 	 * Constraint:
-	 *     algo=AlgoType
+	 *     (algo=AlgoType leftSidePredict=ID)
 	 */
 	protected void sequence_Algo(ISerializationContext context, Algo semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.ALGO__ALGO) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.ALGO__ALGO));
+			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.ALGO__LEFT_SIDE_PREDICT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.ALGO__LEFT_SIDE_PREDICT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAlgoAccess().getAlgoAlgoTypeParserRuleCall_2_0(), semanticObject.getAlgo());
+		feeder.accept(grammarAccess.getAlgoAccess().getLeftSidePredictIDTerminalRuleCall_4_0(), semanticObject.getLeftSidePredict());
 		feeder.finish();
 	}
 	
@@ -194,7 +201,6 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 * Contexts:
 	 *     NumericValue returns FLOAT
 	 *     FLOAT returns FLOAT
-	 *     PERCENT returns FLOAT
 	 *
 	 * Constraint:
 	 *     (value=INT decimal=INT?)
@@ -210,15 +216,15 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     LineRegress returns LineRegress
 	 *
 	 * Constraint:
-	 *     leftSidePredict=ID
+	 *     rand=INT
 	 */
 	protected void sequence_LineRegress(ISerializationContext context, LineRegress semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.LINE_REGRESS__LEFT_SIDE_PREDICT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.LINE_REGRESS__LEFT_SIDE_PREDICT));
+			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.LINE_REGRESS__RAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.LINE_REGRESS__RAND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLineRegressAccess().getLeftSidePredictIDTerminalRuleCall_2_0(), semanticObject.getLeftSidePredict());
+		feeder.accept(grammarAccess.getLineRegressAccess().getRandINTTerminalRuleCall_2_0(), semanticObject.getRand());
 		feeder.finish();
 	}
 	
@@ -249,22 +255,38 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
+	 *     NumericValue returns PERCENT
+	 *     PERCENT returns PERCENT
+	 *
+	 * Constraint:
+	 *     float=FLOAT
+	 */
+	protected void sequence_PERCENT(ISerializationContext context, PERCENT semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.PERCENT__FLOAT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.PERCENT__FLOAT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPERCENTAccess().getFloatFLOATParserRuleCall_0_0(), semanticObject.getFloat());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     EvaluationType returns Partition
 	 *     Partition returns Partition
 	 *
 	 * Constraint:
-	 *     (train=INT test=INT)
+	 *     test=NumericValue
 	 */
 	protected void sequence_Partition(ISerializationContext context, Partition semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.PARTITION__TRAIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.PARTITION__TRAIN));
 			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.PARTITION__TEST) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.PARTITION__TEST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPartitionAccess().getTrainINTTerminalRuleCall_2_0(), semanticObject.getTrain());
-		feeder.accept(grammarAccess.getPartitionAccess().getTestINTTerminalRuleCall_4_0(), semanticObject.getTest());
+		feeder.accept(grammarAccess.getPartitionAccess().getTestNumericValueParserRuleCall_2_0(), semanticObject.getTest());
 		feeder.finish();
 	}
 	

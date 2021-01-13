@@ -299,47 +299,26 @@ rulePartition returns [EObject current=null]
 		}
 		(
 			(
-				lv_train_2_0=RULE_INT
 				{
-					newLeafNode(lv_train_2_0, grammarAccess.getPartitionAccess().getTrainINTTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getPartitionAccess().getTestNumericValueParserRuleCall_2_0());
 				}
+				lv_test_2_0=ruleNumericValue
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPartitionRule());
+						$current = createModelElementForParent(grammarAccess.getPartitionRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"train",
-						lv_train_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_3=','
-		{
-			newLeafNode(otherlv_3, grammarAccess.getPartitionAccess().getCommaKeyword_3());
-		}
-		(
-			(
-				lv_test_4_0=RULE_INT
-				{
-					newLeafNode(lv_test_4_0, grammarAccess.getPartitionAccess().getTestINTTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPartitionRule());
-					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"test",
-						lv_test_4_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						lv_test_2_0,
+						"m2.idm.project.MLRegression.NumericValue");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5=';'
+		otherlv_3=';'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getPartitionAccess().getSemicolonKeyword_5());
+			newLeafNode(otherlv_3, grammarAccess.getPartitionAccess().getSemicolonKeyword_3());
 		}
 	)
 ;
@@ -744,9 +723,43 @@ ruleAlgo returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=';'
+		otherlv_3=','
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAlgoAccess().getSemicolonKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getAlgoAccess().getCommaKeyword_3());
+		}
+		(
+			(
+				lv_leftSidePredict_4_0=RULE_ID
+				{
+					newLeafNode(lv_leftSidePredict_4_0, grammarAccess.getAlgoAccess().getLeftSidePredictIDTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAlgoRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"leftSidePredict",
+						lv_leftSidePredict_4_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_5='='
+		{
+			newLeafNode(otherlv_5, grammarAccess.getAlgoAccess().getEqualsSignKeyword_5());
+		}
+		otherlv_6='predict'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getAlgoAccess().getPredictKeyword_6());
+		}
+		otherlv_7='()'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getAlgoAccess().getLeftParenthesisRightParenthesisKeyword_7());
+		}
+		otherlv_8=';'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getAlgoAccess().getSemicolonKeyword_8());
 		}
 	)
 ;
@@ -812,19 +825,19 @@ ruleLineRegress returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='line_regress()'
+		otherlv_0='line_regress'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getLineRegressAccess().getLine_regressKeyword_0());
 		}
-		otherlv_1=','
+		otherlv_1='('
 		{
-			newLeafNode(otherlv_1, grammarAccess.getLineRegressAccess().getCommaKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getLineRegressAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
-				lv_leftSidePredict_2_0=RULE_ID
+				lv_rand_2_0=RULE_INT
 				{
-					newLeafNode(lv_leftSidePredict_2_0, grammarAccess.getLineRegressAccess().getLeftSidePredictIDTerminalRuleCall_2_0());
+					newLeafNode(lv_rand_2_0, grammarAccess.getLineRegressAccess().getRandINTTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -832,23 +845,15 @@ ruleLineRegress returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"leftSidePredict",
-						lv_leftSidePredict_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"rand",
+						lv_rand_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_3='='
+		otherlv_3=')'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getLineRegressAccess().getEqualsSignKeyword_3());
-		}
-		otherlv_4='predict'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getLineRegressAccess().getPredictKeyword_4());
-		}
-		otherlv_5='()'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getLineRegressAccess().getLeftParenthesisRightParenthesisKeyword_5());
+			newLeafNode(otherlv_3, grammarAccess.getLineRegressAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;
@@ -1017,6 +1022,42 @@ ruleMedianAbsoluteError returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
 	}
 ;
 
+// Entry rule entryRuleNumericValue
+entryRuleNumericValue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNumericValueRule()); }
+	iv_ruleNumericValue=ruleNumericValue
+	{ $current=$iv_ruleNumericValue.current; }
+	EOF;
+
+// Rule NumericValue
+ruleNumericValue returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getNumericValueAccess().getFLOATParserRuleCall_0());
+		}
+		this_FLOAT_0=ruleFLOAT
+		{
+			$current = $this_FLOAT_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getNumericValueAccess().getPERCENTParserRuleCall_1());
+		}
+		this_PERCENT_1=rulePERCENT
+		{
+			$current = $this_PERCENT_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleFLOAT
 entryRuleFLOAT returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getFLOATRule()); }
@@ -1094,14 +1135,25 @@ rulePERCENT returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getPERCENTAccess().getFLOATParserRuleCall_0());
-		}
-		this_FLOAT_0=ruleFLOAT
-		{
-			$current = $this_FLOAT_0.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPERCENTAccess().getFloatFLOATParserRuleCall_0_0());
+				}
+				lv_float_0_0=ruleFLOAT
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPERCENTRule());
+					}
+					set(
+						$current,
+						"float",
+						lv_float_0_0,
+						"m2.idm.project.MLRegression.FLOAT");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_1='%'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getPERCENTAccess().getPercentSignKeyword_1());

@@ -20,8 +20,9 @@ class MLRegressionGenerator extends AbstractGenerator {
 		val generator = new GeneratorPythonCode();
 		val mlregression = resource.allContents.toIterable.filter(typeof(MLRegression)).head;
 		val code = generator.generate(mlregression);
+		val file = resource.URI.lastSegment.replace('.mlreg', '.py');
 		if (code !== null) {
-			fsa.generateFile("test.py", code);	
+			fsa.generateFile(file.toString(), code);	
 		}
 		
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 

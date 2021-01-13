@@ -21,7 +21,7 @@ package m2.idm.project.mLRegression;
  * @model
  * @generated
  */
-public interface FLOAT extends NumericValue, PERCENT
+public interface FLOAT extends NumericValue
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

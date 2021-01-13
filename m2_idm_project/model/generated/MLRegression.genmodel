@@ -19,8 +19,7 @@
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//EvaluationType"/>
     <genClasses ecoreClass="MLRegression.ecore#//Partition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Partition/train"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Partition/test"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Partition/test"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//CrossValidation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//CrossValidation/k"/>
@@ -40,10 +39,11 @@
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Algo">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Algo/algo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Algo/leftSidePredict"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//AlgoType"/>
     <genClasses ecoreClass="MLRegression.ecore#//LineRegress">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/leftSidePredict"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/rand"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//DecisionTreeRegressor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//DecisionTreeRegressor/rand"/>
@@ -56,7 +56,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//FLOAT/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//FLOAT/decimal"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//PERCENT"/>
+    <genClasses ecoreClass="MLRegression.ecore#//PERCENT">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//PERCENT/float"/>
+    </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//BooleanValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//BooleanValue/value"/>
     </genClasses>
