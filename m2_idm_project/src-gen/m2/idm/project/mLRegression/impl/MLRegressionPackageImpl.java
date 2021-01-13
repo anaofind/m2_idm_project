@@ -308,7 +308,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getDataset_Data()
+  public EAttribute getDataset_DataPath()
   {
     return (EAttribute)datasetEClass.getEStructuralFeatures().get(0);
   }
@@ -385,20 +385,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EAttribute getCrossValidation_C()
+  public EAttribute getCrossValidation_K()
   {
     return (EAttribute)crossValidationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getCrossValidation_RandomState()
-  {
-    return (EAttribute)crossValidationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -715,7 +704,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     createEReference(mlRegressionEClass, ML_REGRESSION__CALCULATE);
 
     datasetEClass = createEClass(DATASET);
-    createEAttribute(datasetEClass, DATASET__DATA);
+    createEAttribute(datasetEClass, DATASET__DATA_PATH);
     createEAttribute(datasetEClass, DATASET__SEPARATOR);
 
     evaluationTypeEClass = createEClass(EVALUATION_TYPE);
@@ -725,8 +714,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     createEAttribute(partitionEClass, PARTITION__TEST);
 
     crossValidationEClass = createEClass(CROSS_VALIDATION);
-    createEAttribute(crossValidationEClass, CROSS_VALIDATION__C);
-    createEAttribute(crossValidationEClass, CROSS_VALIDATION__RANDOM_STATE);
+    createEAttribute(crossValidationEClass, CROSS_VALIDATION__K);
 
     variablesEClass = createEClass(VARIABLES);
     createEReference(variablesEClass, VARIABLES__PREDICTIVES);
@@ -814,7 +802,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     initEReference(getMLRegression_Calculate(), this.getCalculate(), null, "calculate", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(datasetEClass, Dataset.class, "Dataset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDataset_Data(), ecorePackage.getEString(), "data", null, 0, 1, Dataset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDataset_DataPath(), ecorePackage.getEString(), "dataPath", null, 0, 1, Dataset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDataset_Separator(), ecorePackage.getEString(), "separator", null, 0, 1, Dataset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(evaluationTypeEClass, EvaluationType.class, "EvaluationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -824,8 +812,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     initEAttribute(getPartition_Test(), ecorePackage.getEInt(), "test", null, 0, 1, Partition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(crossValidationEClass, CrossValidation.class, "CrossValidation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCrossValidation_C(), ecorePackage.getEInt(), "c", null, 0, 1, CrossValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCrossValidation_RandomState(), ecorePackage.getEInt(), "randomState", null, 0, 1, CrossValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCrossValidation_K(), ecorePackage.getEInt(), "k", null, 0, 1, CrossValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variablesEClass, Variables.class, "Variables", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariables_Predictives(), this.getListePredictiveVar(), null, "predictives", null, 0, 1, Variables.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

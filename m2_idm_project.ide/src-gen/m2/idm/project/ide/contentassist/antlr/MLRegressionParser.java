@@ -50,9 +50,6 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLineRegressAccess().getGroup(), "rule__LineRegress__Group__0");
 			builder.put(grammarAccess.getDecisionTreeRegressorAccess().getGroup(), "rule__DecisionTreeRegressor__Group__0");
 			builder.put(grammarAccess.getSVRAccess().getGroup(), "rule__SVR__Group__0");
-			builder.put(grammarAccess.getMeanAbsoluteErrorAccess().getGroup(), "rule__MeanAbsoluteError__Group__0");
-			builder.put(grammarAccess.getMeanSquaredErrorAccess().getGroup(), "rule__MeanSquaredError__Group__0");
-			builder.put(grammarAccess.getMedianAbsoluteErrorAccess().getGroup(), "rule__MedianAbsoluteError__Group__0");
 			builder.put(grammarAccess.getFLOATAccess().getGroup(), "rule__FLOAT__Group__0");
 			builder.put(grammarAccess.getFLOATAccess().getGroup_1(), "rule__FLOAT__Group_1__0");
 			builder.put(grammarAccess.getPERCENTAccess().getGroup(), "rule__PERCENT__Group__0");
@@ -61,12 +58,11 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMLRegressionAccess().getEvaluationAssignment_2(), "rule__MLRegression__EvaluationAssignment_2");
 			builder.put(grammarAccess.getMLRegressionAccess().getAlgoAssignment_3(), "rule__MLRegression__AlgoAssignment_3");
 			builder.put(grammarAccess.getMLRegressionAccess().getCalculateAssignment_4(), "rule__MLRegression__CalculateAssignment_4");
-			builder.put(grammarAccess.getDatasetAccess().getDataAssignment_1(), "rule__Dataset__DataAssignment_1");
+			builder.put(grammarAccess.getDatasetAccess().getDataPathAssignment_1(), "rule__Dataset__DataPathAssignment_1");
 			builder.put(grammarAccess.getDatasetAccess().getSeparatorAssignment_2(), "rule__Dataset__SeparatorAssignment_2");
 			builder.put(grammarAccess.getPartitionAccess().getTrainAssignment_2(), "rule__Partition__TrainAssignment_2");
 			builder.put(grammarAccess.getPartitionAccess().getTestAssignment_4(), "rule__Partition__TestAssignment_4");
-			builder.put(grammarAccess.getCrossValidationAccess().getCAssignment_2(), "rule__CrossValidation__CAssignment_2");
-			builder.put(grammarAccess.getCrossValidationAccess().getRandomStateAssignment_4(), "rule__CrossValidation__RandomStateAssignment_4");
+			builder.put(grammarAccess.getCrossValidationAccess().getKAssignment_2(), "rule__CrossValidation__KAssignment_2");
 			builder.put(grammarAccess.getVariablesAccess().getPredictivesAssignment_0(), "rule__Variables__PredictivesAssignment_0");
 			builder.put(grammarAccess.getVariablesAccess().getTargetsAssignment_1(), "rule__Variables__TargetsAssignment_1");
 			builder.put(grammarAccess.getListePredictiveVarAccess().getPredVarAssignment_2(), "rule__ListePredictiveVar__PredVarAssignment_2");

@@ -146,18 +146,15 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     CrossValidation returns CrossValidation
 	 *
 	 * Constraint:
-	 *     (c=INT randomState=INT)
+	 *     k=INT
 	 */
 	protected void sequence_CrossValidation(ISerializationContext context, CrossValidation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__C) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__C));
-			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__RANDOM_STATE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__RANDOM_STATE));
+			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__K) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.CROSS_VALIDATION__K));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCrossValidationAccess().getCINTTerminalRuleCall_2_0(), semanticObject.getC());
-		feeder.accept(grammarAccess.getCrossValidationAccess().getRandomStateINTTerminalRuleCall_4_0(), semanticObject.getRandomState());
+		feeder.accept(grammarAccess.getCrossValidationAccess().getKINTTerminalRuleCall_2_0(), semanticObject.getK());
 		feeder.finish();
 	}
 	
@@ -167,7 +164,7 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Dataset returns Dataset
 	 *
 	 * Constraint:
-	 *     (data=STRING separator=STRING?)
+	 *     (dataPath=STRING separator=STRING?)
 	 */
 	protected void sequence_Dataset(ISerializationContext context, Dataset semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

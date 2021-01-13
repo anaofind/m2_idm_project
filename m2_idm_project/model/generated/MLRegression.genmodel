@@ -14,7 +14,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/calculate"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Dataset">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Dataset/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Dataset/dataPath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Dataset/separator"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//EvaluationType"/>
@@ -23,8 +23,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Partition/test"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//CrossValidation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//CrossValidation/c"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//CrossValidation/randomState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//CrossValidation/k"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Variables">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Variables/predictives"/>

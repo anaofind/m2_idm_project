@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.Dataset#getData <em>Data</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.Dataset#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.Dataset#getSeparator <em>Separator</em>}</li>
  * </ul>
  *
@@ -25,26 +25,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Dataset extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Data</b></em>' attribute.
+   * Returns the value of the '<em><b>Data Path</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Data</em>' attribute.
-   * @see #setData(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getDataset_Data()
+   * @return the value of the '<em>Data Path</em>' attribute.
+   * @see #setDataPath(String)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getDataset_DataPath()
    * @model
    * @generated
    */
-  String getData();
+  String getDataPath();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Dataset#getData <em>Data</em>}' attribute.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Dataset#getDataPath <em>Data Path</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Data</em>' attribute.
-   * @see #getData()
+   * @param value the new value of the '<em>Data Path</em>' attribute.
+   * @see #getDataPath()
    * @generated
    */
-  void setData(String value);
+  void setDataPath(String value);
 
   /**
    * Returns the value of the '<em><b>Separator</b></em>' attribute.

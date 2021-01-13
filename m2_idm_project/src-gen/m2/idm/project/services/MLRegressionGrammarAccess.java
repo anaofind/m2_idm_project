@@ -81,27 +81,27 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Dataset");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDataAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDataSTRINGTerminalRuleCall_1_0 = (RuleCall)cDataAssignment_1.eContents().get(0);
+		private final Assignment cDataPathAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDataPathSTRINGTerminalRuleCall_1_0 = (RuleCall)cDataPathAssignment_1.eContents().get(0);
 		private final Assignment cSeparatorAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cSeparatorSTRINGTerminalRuleCall_2_0 = (RuleCall)cSeparatorAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Dataset:
-		//	'import' data=STRING separator=STRING? ';';
+		//	'import' dataPath=STRING separator=STRING? ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'import' data=STRING separator=STRING? ';'
+		//'import' dataPath=STRING separator=STRING? ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 		
-		//data=STRING
-		public Assignment getDataAssignment_1() { return cDataAssignment_1; }
+		//dataPath=STRING
+		public Assignment getDataPathAssignment_1() { return cDataPathAssignment_1; }
 		
 		//STRING
-		public RuleCall getDataSTRINGTerminalRuleCall_1_0() { return cDataSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getDataPathSTRINGTerminalRuleCall_1_0() { return cDataPathSTRINGTerminalRuleCall_1_0; }
 		
 		//separator=STRING?
 		public Assignment getSeparatorAssignment_2() { return cSeparatorAssignment_2; }
@@ -179,19 +179,16 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCross_validationKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cCAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCINTTerminalRuleCall_2_0 = (RuleCall)cCAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cRandomStateAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cRandomStateINTTerminalRuleCall_4_0 = (RuleCall)cRandomStateAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cKAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cKINTTerminalRuleCall_2_0 = (RuleCall)cKAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//CrossValidation:
-		//	'cross_validation' '(' c=INT ',' randomState=INT ')' ';';
+		//	'cross_validation' '(' k=INT ')' ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'cross_validation' '(' c=INT ',' randomState=INT ')' ';'
+		//'cross_validation' '(' k=INT ')' ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'cross_validation'
@@ -200,26 +197,17 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//c=INT
-		public Assignment getCAssignment_2() { return cCAssignment_2; }
+		//k=INT
+		public Assignment getKAssignment_2() { return cKAssignment_2; }
 		
 		//INT
-		public RuleCall getCINTTerminalRuleCall_2_0() { return cCINTTerminalRuleCall_2_0; }
-		
-		//','
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-		
-		//randomState=INT
-		public Assignment getRandomStateAssignment_4() { return cRandomStateAssignment_4; }
-		
-		//INT
-		public RuleCall getRandomStateINTTerminalRuleCall_4_0() { return cRandomStateINTTerminalRuleCall_4_0; }
+		public RuleCall getKINTTerminalRuleCall_2_0() { return cKINTTerminalRuleCall_2_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 	public class VariablesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Variables");
@@ -554,60 +542,36 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	public class MeanAbsoluteErrorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MeanAbsoluteError");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMean_absolute_errorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisRightParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cMean_absolute_errorKeyword = (Keyword)rule.eContents().get(1);
 		
 		//MeanAbsoluteError:
-		//	'mean_absolute_error' '()';
+		//	'mean_absolute_error';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'mean_absolute_error' '()'
-		public Group getGroup() { return cGroup; }
-		
 		//'mean_absolute_error'
-		public Keyword getMean_absolute_errorKeyword_0() { return cMean_absolute_errorKeyword_0; }
-		
-		//'()'
-		public Keyword getLeftParenthesisRightParenthesisKeyword_1() { return cLeftParenthesisRightParenthesisKeyword_1; }
+		public Keyword getMean_absolute_errorKeyword() { return cMean_absolute_errorKeyword; }
 	}
 	public class MeanSquaredErrorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MeanSquaredError");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMean_square_errorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisRightParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cMean_squared_errorKeyword = (Keyword)rule.eContents().get(1);
 		
 		//MeanSquaredError:
-		//	'mean_square_error' '()';
+		//	'mean_squared_error';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'mean_square_error' '()'
-		public Group getGroup() { return cGroup; }
-		
-		//'mean_square_error'
-		public Keyword getMean_square_errorKeyword_0() { return cMean_square_errorKeyword_0; }
-		
-		//'()'
-		public Keyword getLeftParenthesisRightParenthesisKeyword_1() { return cLeftParenthesisRightParenthesisKeyword_1; }
+		//'mean_squared_error'
+		public Keyword getMean_squared_errorKeyword() { return cMean_squared_errorKeyword; }
 	}
 	public class MedianAbsoluteErrorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MedianAbsoluteError");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMedian_absolute_errorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisRightParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cMedian_absolute_errorKeyword = (Keyword)rule.eContents().get(1);
 		
 		//MedianAbsoluteError:
-		//	'median_absolute_error' '()';
+		//	'median_absolute_error';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'median_absolute_error' '()'
-		public Group getGroup() { return cGroup; }
-		
 		//'median_absolute_error'
-		public Keyword getMedian_absolute_errorKeyword_0() { return cMedian_absolute_errorKeyword_0; }
-		
-		//'()'
-		public Keyword getLeftParenthesisRightParenthesisKeyword_1() { return cLeftParenthesisRightParenthesisKeyword_1; }
+		public Keyword getMedian_absolute_errorKeyword() { return cMedian_absolute_errorKeyword; }
 	}
 	public class NumericValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.NumericValue");
@@ -805,7 +769,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//Dataset:
-	//	'import' data=STRING separator=STRING? ';';
+	//	'import' dataPath=STRING separator=STRING? ';';
 	public DatasetElements getDatasetAccess() {
 		return pDataset;
 	}
@@ -835,7 +799,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//CrossValidation:
-	//	'cross_validation' '(' c=INT ',' randomState=INT ')' ';';
+	//	'cross_validation' '(' k=INT ')' ';';
 	public CrossValidationElements getCrossValidationAccess() {
 		return pCrossValidation;
 	}
@@ -946,7 +910,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//MeanAbsoluteError:
-	//	'mean_absolute_error' '()';
+	//	'mean_absolute_error';
 	public MeanAbsoluteErrorElements getMeanAbsoluteErrorAccess() {
 		return pMeanAbsoluteError;
 	}
@@ -956,7 +920,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//MeanSquaredError:
-	//	'mean_square_error' '()';
+	//	'mean_squared_error';
 	public MeanSquaredErrorElements getMeanSquaredErrorAccess() {
 		return pMeanSquaredError;
 	}
@@ -966,7 +930,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//MedianAbsoluteError:
-	//	'median_absolute_error' '()';
+	//	'median_absolute_error';
 	public MedianAbsoluteErrorElements getMedianAbsoluteErrorAccess() {
 		return pMedianAbsoluteError;
 	}

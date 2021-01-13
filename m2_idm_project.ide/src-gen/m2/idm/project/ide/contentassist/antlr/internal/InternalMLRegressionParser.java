@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMLRegressionParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "';'", "'partition'", "':'", "','", "'cross_validation'", "'('", "')'", "'predictive_vars'", "'target_vars'", "'calculate'", "'algorithm'", "'line_regress()'", "'='", "'predict'", "'()'", "'decision_tree_regressor'", "'svr'", "'mean_absolute_error'", "'mean_square_error'", "'median_absolute_error'", "'.'", "'%'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'mean_absolute_error'", "'mean_squared_error'", "'median_absolute_error'", "'import'", "';'", "'partition'", "':'", "','", "'cross_validation'", "'('", "')'", "'predictive_vars'", "'target_vars'", "'calculate'", "'algorithm'", "'line_regress()'", "'='", "'predict'", "'()'", "'decision_tree_regressor'", "'svr'", "'.'", "'%'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -1277,31 +1277,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "ruleMeanAbsoluteError"
-    // InternalMLRegression.g:437:1: ruleMeanAbsoluteError : ( ( rule__MeanAbsoluteError__Group__0 ) ) ;
+    // InternalMLRegression.g:437:1: ruleMeanAbsoluteError : ( 'mean_absolute_error' ) ;
     public final void ruleMeanAbsoluteError() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:441:2: ( ( ( rule__MeanAbsoluteError__Group__0 ) ) )
-            // InternalMLRegression.g:442:2: ( ( rule__MeanAbsoluteError__Group__0 ) )
+            // InternalMLRegression.g:441:2: ( ( 'mean_absolute_error' ) )
+            // InternalMLRegression.g:442:2: ( 'mean_absolute_error' )
             {
-            // InternalMLRegression.g:442:2: ( ( rule__MeanAbsoluteError__Group__0 ) )
-            // InternalMLRegression.g:443:3: ( rule__MeanAbsoluteError__Group__0 )
+            // InternalMLRegression.g:442:2: ( 'mean_absolute_error' )
+            // InternalMLRegression.g:443:3: 'mean_absolute_error'
             {
-             before(grammarAccess.getMeanAbsoluteErrorAccess().getGroup()); 
-            // InternalMLRegression.g:444:3: ( rule__MeanAbsoluteError__Group__0 )
-            // InternalMLRegression.g:444:4: rule__MeanAbsoluteError__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__MeanAbsoluteError__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getMeanAbsoluteErrorAccess().getGroup()); 
+             before(grammarAccess.getMeanAbsoluteErrorAccess().getMean_absolute_errorKeyword()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getMeanAbsoluteErrorAccess().getMean_absolute_errorKeyword()); 
 
             }
 
@@ -1354,31 +1344,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "ruleMeanSquaredError"
-    // InternalMLRegression.g:462:1: ruleMeanSquaredError : ( ( rule__MeanSquaredError__Group__0 ) ) ;
+    // InternalMLRegression.g:462:1: ruleMeanSquaredError : ( 'mean_squared_error' ) ;
     public final void ruleMeanSquaredError() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:466:2: ( ( ( rule__MeanSquaredError__Group__0 ) ) )
-            // InternalMLRegression.g:467:2: ( ( rule__MeanSquaredError__Group__0 ) )
+            // InternalMLRegression.g:466:2: ( ( 'mean_squared_error' ) )
+            // InternalMLRegression.g:467:2: ( 'mean_squared_error' )
             {
-            // InternalMLRegression.g:467:2: ( ( rule__MeanSquaredError__Group__0 ) )
-            // InternalMLRegression.g:468:3: ( rule__MeanSquaredError__Group__0 )
+            // InternalMLRegression.g:467:2: ( 'mean_squared_error' )
+            // InternalMLRegression.g:468:3: 'mean_squared_error'
             {
-             before(grammarAccess.getMeanSquaredErrorAccess().getGroup()); 
-            // InternalMLRegression.g:469:3: ( rule__MeanSquaredError__Group__0 )
-            // InternalMLRegression.g:469:4: rule__MeanSquaredError__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__MeanSquaredError__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getMeanSquaredErrorAccess().getGroup()); 
+             before(grammarAccess.getMeanSquaredErrorAccess().getMean_squared_errorKeyword()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getMeanSquaredErrorAccess().getMean_squared_errorKeyword()); 
 
             }
 
@@ -1431,31 +1411,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "ruleMedianAbsoluteError"
-    // InternalMLRegression.g:487:1: ruleMedianAbsoluteError : ( ( rule__MedianAbsoluteError__Group__0 ) ) ;
+    // InternalMLRegression.g:487:1: ruleMedianAbsoluteError : ( 'median_absolute_error' ) ;
     public final void ruleMedianAbsoluteError() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:491:2: ( ( ( rule__MedianAbsoluteError__Group__0 ) ) )
-            // InternalMLRegression.g:492:2: ( ( rule__MedianAbsoluteError__Group__0 ) )
+            // InternalMLRegression.g:491:2: ( ( 'median_absolute_error' ) )
+            // InternalMLRegression.g:492:2: ( 'median_absolute_error' )
             {
-            // InternalMLRegression.g:492:2: ( ( rule__MedianAbsoluteError__Group__0 ) )
-            // InternalMLRegression.g:493:3: ( rule__MedianAbsoluteError__Group__0 )
+            // InternalMLRegression.g:492:2: ( 'median_absolute_error' )
+            // InternalMLRegression.g:493:3: 'median_absolute_error'
             {
-             before(grammarAccess.getMedianAbsoluteErrorAccess().getGroup()); 
-            // InternalMLRegression.g:494:3: ( rule__MedianAbsoluteError__Group__0 )
-            // InternalMLRegression.g:494:4: rule__MedianAbsoluteError__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__MedianAbsoluteError__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getMedianAbsoluteErrorAccess().getGroup()); 
+             before(grammarAccess.getMedianAbsoluteErrorAccess().getMedian_absolute_errorKeyword()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getMedianAbsoluteErrorAccess().getMedian_absolute_errorKeyword()); 
 
             }
 
@@ -1642,10 +1612,10 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==13) ) {
+            if ( (LA1_0==16) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==16) ) {
+            else if ( (LA1_0==19) ) {
                 alt1=2;
             }
             else {
@@ -1720,17 +1690,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:577:1: ( ( ruleMeanAbsoluteError ) | ( ruleMeanSquaredError ) | ( ruleMedianAbsoluteError ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 29:
+            case 11:
                 {
                 alt2=1;
                 }
                 break;
-            case 30:
+            case 12:
                 {
                 alt2=2;
                 }
                 break;
-            case 31:
+            case 13:
                 {
                 alt2=3;
                 }
@@ -1827,17 +1797,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:604:1: ( ( ruleLineRegress ) | ( ruleSVR ) | ( ruleDecisionTreeRegressor ) )
             int alt3=3;
             switch ( input.LA(1) ) {
-            case 23:
+            case 26:
                 {
                 alt3=1;
                 }
                 break;
-            case 28:
+            case 31:
                 {
                 alt3=2;
                 }
                 break;
-            case 27:
+            case 30:
                 {
                 alt3=3;
                 }
@@ -2065,7 +2035,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==19) ) {
+            if ( (LA4_0==22) ) {
                 alt4=1;
             }
             switch (alt4) {
@@ -2407,7 +2377,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:780:2: 'import'
             {
              before(grammarAccess.getDatasetAccess().getImportKeyword_0()); 
-            match(input,11,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getDatasetAccess().getImportKeyword_0()); 
 
             }
@@ -2469,31 +2439,31 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Dataset__Group__1__Impl"
-    // InternalMLRegression.g:801:1: rule__Dataset__Group__1__Impl : ( ( rule__Dataset__DataAssignment_1 ) ) ;
+    // InternalMLRegression.g:801:1: rule__Dataset__Group__1__Impl : ( ( rule__Dataset__DataPathAssignment_1 ) ) ;
     public final void rule__Dataset__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:805:1: ( ( ( rule__Dataset__DataAssignment_1 ) ) )
-            // InternalMLRegression.g:806:1: ( ( rule__Dataset__DataAssignment_1 ) )
+            // InternalMLRegression.g:805:1: ( ( ( rule__Dataset__DataPathAssignment_1 ) ) )
+            // InternalMLRegression.g:806:1: ( ( rule__Dataset__DataPathAssignment_1 ) )
             {
-            // InternalMLRegression.g:806:1: ( ( rule__Dataset__DataAssignment_1 ) )
-            // InternalMLRegression.g:807:2: ( rule__Dataset__DataAssignment_1 )
+            // InternalMLRegression.g:806:1: ( ( rule__Dataset__DataPathAssignment_1 ) )
+            // InternalMLRegression.g:807:2: ( rule__Dataset__DataPathAssignment_1 )
             {
-             before(grammarAccess.getDatasetAccess().getDataAssignment_1()); 
-            // InternalMLRegression.g:808:2: ( rule__Dataset__DataAssignment_1 )
-            // InternalMLRegression.g:808:3: rule__Dataset__DataAssignment_1
+             before(grammarAccess.getDatasetAccess().getDataPathAssignment_1()); 
+            // InternalMLRegression.g:808:2: ( rule__Dataset__DataPathAssignment_1 )
+            // InternalMLRegression.g:808:3: rule__Dataset__DataPathAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Dataset__DataAssignment_1();
+            rule__Dataset__DataPathAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDatasetAccess().getDataAssignment_1()); 
+             after(grammarAccess.getDatasetAccess().getDataPathAssignment_1()); 
 
             }
 
@@ -2658,7 +2628,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:860:2: ';'
             {
              before(grammarAccess.getDatasetAccess().getSemicolonKeyword_3()); 
-            match(input,12,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getDatasetAccess().getSemicolonKeyword_3()); 
 
             }
@@ -2733,7 +2703,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:888:2: 'partition'
             {
              before(grammarAccess.getPartitionAccess().getPartitionKeyword_0()); 
-            match(input,13,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getPartitionAccess().getPartitionKeyword_0()); 
 
             }
@@ -2808,7 +2778,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:915:2: ':'
             {
              before(grammarAccess.getPartitionAccess().getColonKeyword_1()); 
-            match(input,14,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getPartitionAccess().getColonKeyword_1()); 
 
             }
@@ -2968,7 +2938,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:969:2: ','
             {
              before(grammarAccess.getPartitionAccess().getCommaKeyword_3()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getPartitionAccess().getCommaKeyword_3()); 
 
             }
@@ -3123,7 +3093,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:1022:2: ';'
             {
              before(grammarAccess.getPartitionAccess().getSemicolonKeyword_5()); 
-            match(input,12,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getPartitionAccess().getSemicolonKeyword_5()); 
 
             }
@@ -3198,7 +3168,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:1050:2: 'cross_validation'
             {
              before(grammarAccess.getCrossValidationAccess().getCross_validationKeyword_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getCrossValidationAccess().getCross_validationKeyword_0()); 
 
             }
@@ -3273,7 +3243,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:1077:2: '('
             {
              before(grammarAccess.getCrossValidationAccess().getLeftParenthesisKeyword_1()); 
-            match(input,17,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getCrossValidationAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -3306,7 +3276,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:1090:1: ( rule__CrossValidation__Group__2__Impl rule__CrossValidation__Group__3 )
             // InternalMLRegression.g:1091:2: rule__CrossValidation__Group__2__Impl rule__CrossValidation__Group__3
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_13);
             rule__CrossValidation__Group__2__Impl();
 
             state._fsp--;
@@ -3335,31 +3305,31 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__CrossValidation__Group__2__Impl"
-    // InternalMLRegression.g:1098:1: rule__CrossValidation__Group__2__Impl : ( ( rule__CrossValidation__CAssignment_2 ) ) ;
+    // InternalMLRegression.g:1098:1: rule__CrossValidation__Group__2__Impl : ( ( rule__CrossValidation__KAssignment_2 ) ) ;
     public final void rule__CrossValidation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1102:1: ( ( ( rule__CrossValidation__CAssignment_2 ) ) )
-            // InternalMLRegression.g:1103:1: ( ( rule__CrossValidation__CAssignment_2 ) )
+            // InternalMLRegression.g:1102:1: ( ( ( rule__CrossValidation__KAssignment_2 ) ) )
+            // InternalMLRegression.g:1103:1: ( ( rule__CrossValidation__KAssignment_2 ) )
             {
-            // InternalMLRegression.g:1103:1: ( ( rule__CrossValidation__CAssignment_2 ) )
-            // InternalMLRegression.g:1104:2: ( rule__CrossValidation__CAssignment_2 )
+            // InternalMLRegression.g:1103:1: ( ( rule__CrossValidation__KAssignment_2 ) )
+            // InternalMLRegression.g:1104:2: ( rule__CrossValidation__KAssignment_2 )
             {
-             before(grammarAccess.getCrossValidationAccess().getCAssignment_2()); 
-            // InternalMLRegression.g:1105:2: ( rule__CrossValidation__CAssignment_2 )
-            // InternalMLRegression.g:1105:3: rule__CrossValidation__CAssignment_2
+             before(grammarAccess.getCrossValidationAccess().getKAssignment_2()); 
+            // InternalMLRegression.g:1105:2: ( rule__CrossValidation__KAssignment_2 )
+            // InternalMLRegression.g:1105:3: rule__CrossValidation__KAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__CrossValidation__CAssignment_2();
+            rule__CrossValidation__KAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCrossValidationAccess().getCAssignment_2()); 
+             after(grammarAccess.getCrossValidationAccess().getKAssignment_2()); 
 
             }
 
@@ -3391,7 +3361,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             // InternalMLRegression.g:1117:1: ( rule__CrossValidation__Group__3__Impl rule__CrossValidation__Group__4 )
             // InternalMLRegression.g:1118:2: rule__CrossValidation__Group__3__Impl rule__CrossValidation__Group__4
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_11);
             rule__CrossValidation__Group__3__Impl();
 
             state._fsp--;
@@ -3420,21 +3390,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__CrossValidation__Group__3__Impl"
-    // InternalMLRegression.g:1125:1: rule__CrossValidation__Group__3__Impl : ( ',' ) ;
+    // InternalMLRegression.g:1125:1: rule__CrossValidation__Group__3__Impl : ( ')' ) ;
     public final void rule__CrossValidation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1129:1: ( ( ',' ) )
-            // InternalMLRegression.g:1130:1: ( ',' )
+            // InternalMLRegression.g:1129:1: ( ( ')' ) )
+            // InternalMLRegression.g:1130:1: ( ')' )
             {
-            // InternalMLRegression.g:1130:1: ( ',' )
-            // InternalMLRegression.g:1131:2: ','
+            // InternalMLRegression.g:1130:1: ( ')' )
+            // InternalMLRegression.g:1131:2: ')'
             {
-             before(grammarAccess.getCrossValidationAccess().getCommaKeyword_3()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getCrossValidationAccess().getCommaKeyword_3()); 
+             before(grammarAccess.getCrossValidationAccess().getRightParenthesisKeyword_3()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getCrossValidationAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -3457,22 +3427,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__CrossValidation__Group__4"
-    // InternalMLRegression.g:1140:1: rule__CrossValidation__Group__4 : rule__CrossValidation__Group__4__Impl rule__CrossValidation__Group__5 ;
+    // InternalMLRegression.g:1140:1: rule__CrossValidation__Group__4 : rule__CrossValidation__Group__4__Impl ;
     public final void rule__CrossValidation__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1144:1: ( rule__CrossValidation__Group__4__Impl rule__CrossValidation__Group__5 )
-            // InternalMLRegression.g:1145:2: rule__CrossValidation__Group__4__Impl rule__CrossValidation__Group__5
+            // InternalMLRegression.g:1144:1: ( rule__CrossValidation__Group__4__Impl )
+            // InternalMLRegression.g:1145:2: rule__CrossValidation__Group__4__Impl
             {
-            pushFollow(FOLLOW_13);
-            rule__CrossValidation__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__CrossValidation__Group__5();
+            rule__CrossValidation__Group__4__Impl();
 
             state._fsp--;
 
@@ -3495,31 +3460,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__CrossValidation__Group__4__Impl"
-    // InternalMLRegression.g:1152:1: rule__CrossValidation__Group__4__Impl : ( ( rule__CrossValidation__RandomStateAssignment_4 ) ) ;
+    // InternalMLRegression.g:1151:1: rule__CrossValidation__Group__4__Impl : ( ';' ) ;
     public final void rule__CrossValidation__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1156:1: ( ( ( rule__CrossValidation__RandomStateAssignment_4 ) ) )
-            // InternalMLRegression.g:1157:1: ( ( rule__CrossValidation__RandomStateAssignment_4 ) )
+            // InternalMLRegression.g:1155:1: ( ( ';' ) )
+            // InternalMLRegression.g:1156:1: ( ';' )
             {
-            // InternalMLRegression.g:1157:1: ( ( rule__CrossValidation__RandomStateAssignment_4 ) )
-            // InternalMLRegression.g:1158:2: ( rule__CrossValidation__RandomStateAssignment_4 )
+            // InternalMLRegression.g:1156:1: ( ';' )
+            // InternalMLRegression.g:1157:2: ';'
             {
-             before(grammarAccess.getCrossValidationAccess().getRandomStateAssignment_4()); 
-            // InternalMLRegression.g:1159:2: ( rule__CrossValidation__RandomStateAssignment_4 )
-            // InternalMLRegression.g:1159:3: rule__CrossValidation__RandomStateAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__CrossValidation__RandomStateAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getCrossValidationAccess().getRandomStateAssignment_4()); 
+             before(grammarAccess.getCrossValidationAccess().getSemicolonKeyword_4()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getCrossValidationAccess().getSemicolonKeyword_4()); 
 
             }
 
@@ -3541,160 +3496,15 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__CrossValidation__Group__4__Impl"
 
 
-    // $ANTLR start "rule__CrossValidation__Group__5"
-    // InternalMLRegression.g:1167:1: rule__CrossValidation__Group__5 : rule__CrossValidation__Group__5__Impl rule__CrossValidation__Group__6 ;
-    public final void rule__CrossValidation__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:1171:1: ( rule__CrossValidation__Group__5__Impl rule__CrossValidation__Group__6 )
-            // InternalMLRegression.g:1172:2: rule__CrossValidation__Group__5__Impl rule__CrossValidation__Group__6
-            {
-            pushFollow(FOLLOW_11);
-            rule__CrossValidation__Group__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__CrossValidation__Group__6();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CrossValidation__Group__5"
-
-
-    // $ANTLR start "rule__CrossValidation__Group__5__Impl"
-    // InternalMLRegression.g:1179:1: rule__CrossValidation__Group__5__Impl : ( ')' ) ;
-    public final void rule__CrossValidation__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:1183:1: ( ( ')' ) )
-            // InternalMLRegression.g:1184:1: ( ')' )
-            {
-            // InternalMLRegression.g:1184:1: ( ')' )
-            // InternalMLRegression.g:1185:2: ')'
-            {
-             before(grammarAccess.getCrossValidationAccess().getRightParenthesisKeyword_5()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getCrossValidationAccess().getRightParenthesisKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CrossValidation__Group__5__Impl"
-
-
-    // $ANTLR start "rule__CrossValidation__Group__6"
-    // InternalMLRegression.g:1194:1: rule__CrossValidation__Group__6 : rule__CrossValidation__Group__6__Impl ;
-    public final void rule__CrossValidation__Group__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:1198:1: ( rule__CrossValidation__Group__6__Impl )
-            // InternalMLRegression.g:1199:2: rule__CrossValidation__Group__6__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__CrossValidation__Group__6__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CrossValidation__Group__6"
-
-
-    // $ANTLR start "rule__CrossValidation__Group__6__Impl"
-    // InternalMLRegression.g:1205:1: rule__CrossValidation__Group__6__Impl : ( ';' ) ;
-    public final void rule__CrossValidation__Group__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:1209:1: ( ( ';' ) )
-            // InternalMLRegression.g:1210:1: ( ';' )
-            {
-            // InternalMLRegression.g:1210:1: ( ';' )
-            // InternalMLRegression.g:1211:2: ';'
-            {
-             before(grammarAccess.getCrossValidationAccess().getSemicolonKeyword_6()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getCrossValidationAccess().getSemicolonKeyword_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CrossValidation__Group__6__Impl"
-
-
     // $ANTLR start "rule__Variables__Group__0"
-    // InternalMLRegression.g:1221:1: rule__Variables__Group__0 : rule__Variables__Group__0__Impl rule__Variables__Group__1 ;
+    // InternalMLRegression.g:1167:1: rule__Variables__Group__0 : rule__Variables__Group__0__Impl rule__Variables__Group__1 ;
     public final void rule__Variables__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1225:1: ( rule__Variables__Group__0__Impl rule__Variables__Group__1 )
-            // InternalMLRegression.g:1226:2: rule__Variables__Group__0__Impl rule__Variables__Group__1
+            // InternalMLRegression.g:1171:1: ( rule__Variables__Group__0__Impl rule__Variables__Group__1 )
+            // InternalMLRegression.g:1172:2: rule__Variables__Group__0__Impl rule__Variables__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__Variables__Group__0__Impl();
@@ -3725,21 +3535,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Variables__Group__0__Impl"
-    // InternalMLRegression.g:1233:1: rule__Variables__Group__0__Impl : ( ( rule__Variables__PredictivesAssignment_0 ) ) ;
+    // InternalMLRegression.g:1179:1: rule__Variables__Group__0__Impl : ( ( rule__Variables__PredictivesAssignment_0 ) ) ;
     public final void rule__Variables__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1237:1: ( ( ( rule__Variables__PredictivesAssignment_0 ) ) )
-            // InternalMLRegression.g:1238:1: ( ( rule__Variables__PredictivesAssignment_0 ) )
+            // InternalMLRegression.g:1183:1: ( ( ( rule__Variables__PredictivesAssignment_0 ) ) )
+            // InternalMLRegression.g:1184:1: ( ( rule__Variables__PredictivesAssignment_0 ) )
             {
-            // InternalMLRegression.g:1238:1: ( ( rule__Variables__PredictivesAssignment_0 ) )
-            // InternalMLRegression.g:1239:2: ( rule__Variables__PredictivesAssignment_0 )
+            // InternalMLRegression.g:1184:1: ( ( rule__Variables__PredictivesAssignment_0 ) )
+            // InternalMLRegression.g:1185:2: ( rule__Variables__PredictivesAssignment_0 )
             {
              before(grammarAccess.getVariablesAccess().getPredictivesAssignment_0()); 
-            // InternalMLRegression.g:1240:2: ( rule__Variables__PredictivesAssignment_0 )
-            // InternalMLRegression.g:1240:3: rule__Variables__PredictivesAssignment_0
+            // InternalMLRegression.g:1186:2: ( rule__Variables__PredictivesAssignment_0 )
+            // InternalMLRegression.g:1186:3: rule__Variables__PredictivesAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Variables__PredictivesAssignment_0();
@@ -3772,14 +3582,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Variables__Group__1"
-    // InternalMLRegression.g:1248:1: rule__Variables__Group__1 : rule__Variables__Group__1__Impl ;
+    // InternalMLRegression.g:1194:1: rule__Variables__Group__1 : rule__Variables__Group__1__Impl ;
     public final void rule__Variables__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1252:1: ( rule__Variables__Group__1__Impl )
-            // InternalMLRegression.g:1253:2: rule__Variables__Group__1__Impl
+            // InternalMLRegression.g:1198:1: ( rule__Variables__Group__1__Impl )
+            // InternalMLRegression.g:1199:2: rule__Variables__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Variables__Group__1__Impl();
@@ -3805,21 +3615,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Variables__Group__1__Impl"
-    // InternalMLRegression.g:1259:1: rule__Variables__Group__1__Impl : ( ( rule__Variables__TargetsAssignment_1 ) ) ;
+    // InternalMLRegression.g:1205:1: rule__Variables__Group__1__Impl : ( ( rule__Variables__TargetsAssignment_1 ) ) ;
     public final void rule__Variables__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1263:1: ( ( ( rule__Variables__TargetsAssignment_1 ) ) )
-            // InternalMLRegression.g:1264:1: ( ( rule__Variables__TargetsAssignment_1 ) )
+            // InternalMLRegression.g:1209:1: ( ( ( rule__Variables__TargetsAssignment_1 ) ) )
+            // InternalMLRegression.g:1210:1: ( ( rule__Variables__TargetsAssignment_1 ) )
             {
-            // InternalMLRegression.g:1264:1: ( ( rule__Variables__TargetsAssignment_1 ) )
-            // InternalMLRegression.g:1265:2: ( rule__Variables__TargetsAssignment_1 )
+            // InternalMLRegression.g:1210:1: ( ( rule__Variables__TargetsAssignment_1 ) )
+            // InternalMLRegression.g:1211:2: ( rule__Variables__TargetsAssignment_1 )
             {
              before(grammarAccess.getVariablesAccess().getTargetsAssignment_1()); 
-            // InternalMLRegression.g:1266:2: ( rule__Variables__TargetsAssignment_1 )
-            // InternalMLRegression.g:1266:3: rule__Variables__TargetsAssignment_1
+            // InternalMLRegression.g:1212:2: ( rule__Variables__TargetsAssignment_1 )
+            // InternalMLRegression.g:1212:3: rule__Variables__TargetsAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Variables__TargetsAssignment_1();
@@ -3852,14 +3662,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__0"
-    // InternalMLRegression.g:1275:1: rule__ListePredictiveVar__Group__0 : rule__ListePredictiveVar__Group__0__Impl rule__ListePredictiveVar__Group__1 ;
+    // InternalMLRegression.g:1221:1: rule__ListePredictiveVar__Group__0 : rule__ListePredictiveVar__Group__0__Impl rule__ListePredictiveVar__Group__1 ;
     public final void rule__ListePredictiveVar__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1279:1: ( rule__ListePredictiveVar__Group__0__Impl rule__ListePredictiveVar__Group__1 )
-            // InternalMLRegression.g:1280:2: rule__ListePredictiveVar__Group__0__Impl rule__ListePredictiveVar__Group__1
+            // InternalMLRegression.g:1225:1: ( rule__ListePredictiveVar__Group__0__Impl rule__ListePredictiveVar__Group__1 )
+            // InternalMLRegression.g:1226:2: rule__ListePredictiveVar__Group__0__Impl rule__ListePredictiveVar__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__ListePredictiveVar__Group__0__Impl();
@@ -3890,20 +3700,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__0__Impl"
-    // InternalMLRegression.g:1287:1: rule__ListePredictiveVar__Group__0__Impl : ( 'predictive_vars' ) ;
+    // InternalMLRegression.g:1233:1: rule__ListePredictiveVar__Group__0__Impl : ( 'predictive_vars' ) ;
     public final void rule__ListePredictiveVar__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1291:1: ( ( 'predictive_vars' ) )
-            // InternalMLRegression.g:1292:1: ( 'predictive_vars' )
+            // InternalMLRegression.g:1237:1: ( ( 'predictive_vars' ) )
+            // InternalMLRegression.g:1238:1: ( 'predictive_vars' )
             {
-            // InternalMLRegression.g:1292:1: ( 'predictive_vars' )
-            // InternalMLRegression.g:1293:2: 'predictive_vars'
+            // InternalMLRegression.g:1238:1: ( 'predictive_vars' )
+            // InternalMLRegression.g:1239:2: 'predictive_vars'
             {
              before(grammarAccess.getListePredictiveVarAccess().getPredictive_varsKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getListePredictiveVarAccess().getPredictive_varsKeyword_0()); 
 
             }
@@ -3927,14 +3737,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__1"
-    // InternalMLRegression.g:1302:1: rule__ListePredictiveVar__Group__1 : rule__ListePredictiveVar__Group__1__Impl rule__ListePredictiveVar__Group__2 ;
+    // InternalMLRegression.g:1248:1: rule__ListePredictiveVar__Group__1 : rule__ListePredictiveVar__Group__1__Impl rule__ListePredictiveVar__Group__2 ;
     public final void rule__ListePredictiveVar__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1306:1: ( rule__ListePredictiveVar__Group__1__Impl rule__ListePredictiveVar__Group__2 )
-            // InternalMLRegression.g:1307:2: rule__ListePredictiveVar__Group__1__Impl rule__ListePredictiveVar__Group__2
+            // InternalMLRegression.g:1252:1: ( rule__ListePredictiveVar__Group__1__Impl rule__ListePredictiveVar__Group__2 )
+            // InternalMLRegression.g:1253:2: rule__ListePredictiveVar__Group__1__Impl rule__ListePredictiveVar__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__ListePredictiveVar__Group__1__Impl();
@@ -3965,20 +3775,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__1__Impl"
-    // InternalMLRegression.g:1314:1: rule__ListePredictiveVar__Group__1__Impl : ( ':' ) ;
+    // InternalMLRegression.g:1260:1: rule__ListePredictiveVar__Group__1__Impl : ( ':' ) ;
     public final void rule__ListePredictiveVar__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1318:1: ( ( ':' ) )
-            // InternalMLRegression.g:1319:1: ( ':' )
+            // InternalMLRegression.g:1264:1: ( ( ':' ) )
+            // InternalMLRegression.g:1265:1: ( ':' )
             {
-            // InternalMLRegression.g:1319:1: ( ':' )
-            // InternalMLRegression.g:1320:2: ':'
+            // InternalMLRegression.g:1265:1: ( ':' )
+            // InternalMLRegression.g:1266:2: ':'
             {
              before(grammarAccess.getListePredictiveVarAccess().getColonKeyword_1()); 
-            match(input,14,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getListePredictiveVarAccess().getColonKeyword_1()); 
 
             }
@@ -4002,14 +3812,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__2"
-    // InternalMLRegression.g:1329:1: rule__ListePredictiveVar__Group__2 : rule__ListePredictiveVar__Group__2__Impl rule__ListePredictiveVar__Group__3 ;
+    // InternalMLRegression.g:1275:1: rule__ListePredictiveVar__Group__2 : rule__ListePredictiveVar__Group__2__Impl rule__ListePredictiveVar__Group__3 ;
     public final void rule__ListePredictiveVar__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1333:1: ( rule__ListePredictiveVar__Group__2__Impl rule__ListePredictiveVar__Group__3 )
-            // InternalMLRegression.g:1334:2: rule__ListePredictiveVar__Group__2__Impl rule__ListePredictiveVar__Group__3
+            // InternalMLRegression.g:1279:1: ( rule__ListePredictiveVar__Group__2__Impl rule__ListePredictiveVar__Group__3 )
+            // InternalMLRegression.g:1280:2: rule__ListePredictiveVar__Group__2__Impl rule__ListePredictiveVar__Group__3
             {
             pushFollow(FOLLOW_15);
             rule__ListePredictiveVar__Group__2__Impl();
@@ -4040,21 +3850,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__2__Impl"
-    // InternalMLRegression.g:1341:1: rule__ListePredictiveVar__Group__2__Impl : ( ( rule__ListePredictiveVar__PredVarAssignment_2 ) ) ;
+    // InternalMLRegression.g:1287:1: rule__ListePredictiveVar__Group__2__Impl : ( ( rule__ListePredictiveVar__PredVarAssignment_2 ) ) ;
     public final void rule__ListePredictiveVar__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1345:1: ( ( ( rule__ListePredictiveVar__PredVarAssignment_2 ) ) )
-            // InternalMLRegression.g:1346:1: ( ( rule__ListePredictiveVar__PredVarAssignment_2 ) )
+            // InternalMLRegression.g:1291:1: ( ( ( rule__ListePredictiveVar__PredVarAssignment_2 ) ) )
+            // InternalMLRegression.g:1292:1: ( ( rule__ListePredictiveVar__PredVarAssignment_2 ) )
             {
-            // InternalMLRegression.g:1346:1: ( ( rule__ListePredictiveVar__PredVarAssignment_2 ) )
-            // InternalMLRegression.g:1347:2: ( rule__ListePredictiveVar__PredVarAssignment_2 )
+            // InternalMLRegression.g:1292:1: ( ( rule__ListePredictiveVar__PredVarAssignment_2 ) )
+            // InternalMLRegression.g:1293:2: ( rule__ListePredictiveVar__PredVarAssignment_2 )
             {
              before(grammarAccess.getListePredictiveVarAccess().getPredVarAssignment_2()); 
-            // InternalMLRegression.g:1348:2: ( rule__ListePredictiveVar__PredVarAssignment_2 )
-            // InternalMLRegression.g:1348:3: rule__ListePredictiveVar__PredVarAssignment_2
+            // InternalMLRegression.g:1294:2: ( rule__ListePredictiveVar__PredVarAssignment_2 )
+            // InternalMLRegression.g:1294:3: rule__ListePredictiveVar__PredVarAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ListePredictiveVar__PredVarAssignment_2();
@@ -4087,14 +3897,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__3"
-    // InternalMLRegression.g:1356:1: rule__ListePredictiveVar__Group__3 : rule__ListePredictiveVar__Group__3__Impl rule__ListePredictiveVar__Group__4 ;
+    // InternalMLRegression.g:1302:1: rule__ListePredictiveVar__Group__3 : rule__ListePredictiveVar__Group__3__Impl rule__ListePredictiveVar__Group__4 ;
     public final void rule__ListePredictiveVar__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1360:1: ( rule__ListePredictiveVar__Group__3__Impl rule__ListePredictiveVar__Group__4 )
-            // InternalMLRegression.g:1361:2: rule__ListePredictiveVar__Group__3__Impl rule__ListePredictiveVar__Group__4
+            // InternalMLRegression.g:1306:1: ( rule__ListePredictiveVar__Group__3__Impl rule__ListePredictiveVar__Group__4 )
+            // InternalMLRegression.g:1307:2: rule__ListePredictiveVar__Group__3__Impl rule__ListePredictiveVar__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__ListePredictiveVar__Group__3__Impl();
@@ -4125,33 +3935,33 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__3__Impl"
-    // InternalMLRegression.g:1368:1: rule__ListePredictiveVar__Group__3__Impl : ( ( rule__ListePredictiveVar__Group_3__0 )* ) ;
+    // InternalMLRegression.g:1314:1: rule__ListePredictiveVar__Group__3__Impl : ( ( rule__ListePredictiveVar__Group_3__0 )* ) ;
     public final void rule__ListePredictiveVar__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1372:1: ( ( ( rule__ListePredictiveVar__Group_3__0 )* ) )
-            // InternalMLRegression.g:1373:1: ( ( rule__ListePredictiveVar__Group_3__0 )* )
+            // InternalMLRegression.g:1318:1: ( ( ( rule__ListePredictiveVar__Group_3__0 )* ) )
+            // InternalMLRegression.g:1319:1: ( ( rule__ListePredictiveVar__Group_3__0 )* )
             {
-            // InternalMLRegression.g:1373:1: ( ( rule__ListePredictiveVar__Group_3__0 )* )
-            // InternalMLRegression.g:1374:2: ( rule__ListePredictiveVar__Group_3__0 )*
+            // InternalMLRegression.g:1319:1: ( ( rule__ListePredictiveVar__Group_3__0 )* )
+            // InternalMLRegression.g:1320:2: ( rule__ListePredictiveVar__Group_3__0 )*
             {
              before(grammarAccess.getListePredictiveVarAccess().getGroup_3()); 
-            // InternalMLRegression.g:1375:2: ( rule__ListePredictiveVar__Group_3__0 )*
+            // InternalMLRegression.g:1321:2: ( rule__ListePredictiveVar__Group_3__0 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==15) ) {
+                if ( (LA6_0==18) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalMLRegression.g:1375:3: rule__ListePredictiveVar__Group_3__0
+            	    // InternalMLRegression.g:1321:3: rule__ListePredictiveVar__Group_3__0
             	    {
             	    pushFollow(FOLLOW_16);
             	    rule__ListePredictiveVar__Group_3__0();
@@ -4190,14 +4000,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__4"
-    // InternalMLRegression.g:1383:1: rule__ListePredictiveVar__Group__4 : rule__ListePredictiveVar__Group__4__Impl ;
+    // InternalMLRegression.g:1329:1: rule__ListePredictiveVar__Group__4 : rule__ListePredictiveVar__Group__4__Impl ;
     public final void rule__ListePredictiveVar__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1387:1: ( rule__ListePredictiveVar__Group__4__Impl )
-            // InternalMLRegression.g:1388:2: rule__ListePredictiveVar__Group__4__Impl
+            // InternalMLRegression.g:1333:1: ( rule__ListePredictiveVar__Group__4__Impl )
+            // InternalMLRegression.g:1334:2: rule__ListePredictiveVar__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ListePredictiveVar__Group__4__Impl();
@@ -4223,20 +4033,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group__4__Impl"
-    // InternalMLRegression.g:1394:1: rule__ListePredictiveVar__Group__4__Impl : ( ';' ) ;
+    // InternalMLRegression.g:1340:1: rule__ListePredictiveVar__Group__4__Impl : ( ';' ) ;
     public final void rule__ListePredictiveVar__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1398:1: ( ( ';' ) )
-            // InternalMLRegression.g:1399:1: ( ';' )
+            // InternalMLRegression.g:1344:1: ( ( ';' ) )
+            // InternalMLRegression.g:1345:1: ( ';' )
             {
-            // InternalMLRegression.g:1399:1: ( ';' )
-            // InternalMLRegression.g:1400:2: ';'
+            // InternalMLRegression.g:1345:1: ( ';' )
+            // InternalMLRegression.g:1346:2: ';'
             {
              before(grammarAccess.getListePredictiveVarAccess().getSemicolonKeyword_4()); 
-            match(input,12,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getListePredictiveVarAccess().getSemicolonKeyword_4()); 
 
             }
@@ -4260,14 +4070,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group_3__0"
-    // InternalMLRegression.g:1410:1: rule__ListePredictiveVar__Group_3__0 : rule__ListePredictiveVar__Group_3__0__Impl rule__ListePredictiveVar__Group_3__1 ;
+    // InternalMLRegression.g:1356:1: rule__ListePredictiveVar__Group_3__0 : rule__ListePredictiveVar__Group_3__0__Impl rule__ListePredictiveVar__Group_3__1 ;
     public final void rule__ListePredictiveVar__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1414:1: ( rule__ListePredictiveVar__Group_3__0__Impl rule__ListePredictiveVar__Group_3__1 )
-            // InternalMLRegression.g:1415:2: rule__ListePredictiveVar__Group_3__0__Impl rule__ListePredictiveVar__Group_3__1
+            // InternalMLRegression.g:1360:1: ( rule__ListePredictiveVar__Group_3__0__Impl rule__ListePredictiveVar__Group_3__1 )
+            // InternalMLRegression.g:1361:2: rule__ListePredictiveVar__Group_3__0__Impl rule__ListePredictiveVar__Group_3__1
             {
             pushFollow(FOLLOW_6);
             rule__ListePredictiveVar__Group_3__0__Impl();
@@ -4298,20 +4108,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group_3__0__Impl"
-    // InternalMLRegression.g:1422:1: rule__ListePredictiveVar__Group_3__0__Impl : ( ',' ) ;
+    // InternalMLRegression.g:1368:1: rule__ListePredictiveVar__Group_3__0__Impl : ( ',' ) ;
     public final void rule__ListePredictiveVar__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1426:1: ( ( ',' ) )
-            // InternalMLRegression.g:1427:1: ( ',' )
+            // InternalMLRegression.g:1372:1: ( ( ',' ) )
+            // InternalMLRegression.g:1373:1: ( ',' )
             {
-            // InternalMLRegression.g:1427:1: ( ',' )
-            // InternalMLRegression.g:1428:2: ','
+            // InternalMLRegression.g:1373:1: ( ',' )
+            // InternalMLRegression.g:1374:2: ','
             {
              before(grammarAccess.getListePredictiveVarAccess().getCommaKeyword_3_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getListePredictiveVarAccess().getCommaKeyword_3_0()); 
 
             }
@@ -4335,14 +4145,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group_3__1"
-    // InternalMLRegression.g:1437:1: rule__ListePredictiveVar__Group_3__1 : rule__ListePredictiveVar__Group_3__1__Impl ;
+    // InternalMLRegression.g:1383:1: rule__ListePredictiveVar__Group_3__1 : rule__ListePredictiveVar__Group_3__1__Impl ;
     public final void rule__ListePredictiveVar__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1441:1: ( rule__ListePredictiveVar__Group_3__1__Impl )
-            // InternalMLRegression.g:1442:2: rule__ListePredictiveVar__Group_3__1__Impl
+            // InternalMLRegression.g:1387:1: ( rule__ListePredictiveVar__Group_3__1__Impl )
+            // InternalMLRegression.g:1388:2: rule__ListePredictiveVar__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ListePredictiveVar__Group_3__1__Impl();
@@ -4368,21 +4178,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__Group_3__1__Impl"
-    // InternalMLRegression.g:1448:1: rule__ListePredictiveVar__Group_3__1__Impl : ( ( rule__ListePredictiveVar__PredVarAssignment_3_1 ) ) ;
+    // InternalMLRegression.g:1394:1: rule__ListePredictiveVar__Group_3__1__Impl : ( ( rule__ListePredictiveVar__PredVarAssignment_3_1 ) ) ;
     public final void rule__ListePredictiveVar__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1452:1: ( ( ( rule__ListePredictiveVar__PredVarAssignment_3_1 ) ) )
-            // InternalMLRegression.g:1453:1: ( ( rule__ListePredictiveVar__PredVarAssignment_3_1 ) )
+            // InternalMLRegression.g:1398:1: ( ( ( rule__ListePredictiveVar__PredVarAssignment_3_1 ) ) )
+            // InternalMLRegression.g:1399:1: ( ( rule__ListePredictiveVar__PredVarAssignment_3_1 ) )
             {
-            // InternalMLRegression.g:1453:1: ( ( rule__ListePredictiveVar__PredVarAssignment_3_1 ) )
-            // InternalMLRegression.g:1454:2: ( rule__ListePredictiveVar__PredVarAssignment_3_1 )
+            // InternalMLRegression.g:1399:1: ( ( rule__ListePredictiveVar__PredVarAssignment_3_1 ) )
+            // InternalMLRegression.g:1400:2: ( rule__ListePredictiveVar__PredVarAssignment_3_1 )
             {
              before(grammarAccess.getListePredictiveVarAccess().getPredVarAssignment_3_1()); 
-            // InternalMLRegression.g:1455:2: ( rule__ListePredictiveVar__PredVarAssignment_3_1 )
-            // InternalMLRegression.g:1455:3: rule__ListePredictiveVar__PredVarAssignment_3_1
+            // InternalMLRegression.g:1401:2: ( rule__ListePredictiveVar__PredVarAssignment_3_1 )
+            // InternalMLRegression.g:1401:3: rule__ListePredictiveVar__PredVarAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__ListePredictiveVar__PredVarAssignment_3_1();
@@ -4415,14 +4225,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__0"
-    // InternalMLRegression.g:1464:1: rule__TargetVar__Group__0 : rule__TargetVar__Group__0__Impl rule__TargetVar__Group__1 ;
+    // InternalMLRegression.g:1410:1: rule__TargetVar__Group__0 : rule__TargetVar__Group__0__Impl rule__TargetVar__Group__1 ;
     public final void rule__TargetVar__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1468:1: ( rule__TargetVar__Group__0__Impl rule__TargetVar__Group__1 )
-            // InternalMLRegression.g:1469:2: rule__TargetVar__Group__0__Impl rule__TargetVar__Group__1
+            // InternalMLRegression.g:1414:1: ( rule__TargetVar__Group__0__Impl rule__TargetVar__Group__1 )
+            // InternalMLRegression.g:1415:2: rule__TargetVar__Group__0__Impl rule__TargetVar__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__TargetVar__Group__0__Impl();
@@ -4453,20 +4263,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__0__Impl"
-    // InternalMLRegression.g:1476:1: rule__TargetVar__Group__0__Impl : ( 'target_vars' ) ;
+    // InternalMLRegression.g:1422:1: rule__TargetVar__Group__0__Impl : ( 'target_vars' ) ;
     public final void rule__TargetVar__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1480:1: ( ( 'target_vars' ) )
-            // InternalMLRegression.g:1481:1: ( 'target_vars' )
+            // InternalMLRegression.g:1426:1: ( ( 'target_vars' ) )
+            // InternalMLRegression.g:1427:1: ( 'target_vars' )
             {
-            // InternalMLRegression.g:1481:1: ( 'target_vars' )
-            // InternalMLRegression.g:1482:2: 'target_vars'
+            // InternalMLRegression.g:1427:1: ( 'target_vars' )
+            // InternalMLRegression.g:1428:2: 'target_vars'
             {
              before(grammarAccess.getTargetVarAccess().getTarget_varsKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getTargetVarAccess().getTarget_varsKeyword_0()); 
 
             }
@@ -4490,14 +4300,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__1"
-    // InternalMLRegression.g:1491:1: rule__TargetVar__Group__1 : rule__TargetVar__Group__1__Impl rule__TargetVar__Group__2 ;
+    // InternalMLRegression.g:1437:1: rule__TargetVar__Group__1 : rule__TargetVar__Group__1__Impl rule__TargetVar__Group__2 ;
     public final void rule__TargetVar__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1495:1: ( rule__TargetVar__Group__1__Impl rule__TargetVar__Group__2 )
-            // InternalMLRegression.g:1496:2: rule__TargetVar__Group__1__Impl rule__TargetVar__Group__2
+            // InternalMLRegression.g:1441:1: ( rule__TargetVar__Group__1__Impl rule__TargetVar__Group__2 )
+            // InternalMLRegression.g:1442:2: rule__TargetVar__Group__1__Impl rule__TargetVar__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__TargetVar__Group__1__Impl();
@@ -4528,20 +4338,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__1__Impl"
-    // InternalMLRegression.g:1503:1: rule__TargetVar__Group__1__Impl : ( ':' ) ;
+    // InternalMLRegression.g:1449:1: rule__TargetVar__Group__1__Impl : ( ':' ) ;
     public final void rule__TargetVar__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1507:1: ( ( ':' ) )
-            // InternalMLRegression.g:1508:1: ( ':' )
+            // InternalMLRegression.g:1453:1: ( ( ':' ) )
+            // InternalMLRegression.g:1454:1: ( ':' )
             {
-            // InternalMLRegression.g:1508:1: ( ':' )
-            // InternalMLRegression.g:1509:2: ':'
+            // InternalMLRegression.g:1454:1: ( ':' )
+            // InternalMLRegression.g:1455:2: ':'
             {
              before(grammarAccess.getTargetVarAccess().getColonKeyword_1()); 
-            match(input,14,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getTargetVarAccess().getColonKeyword_1()); 
 
             }
@@ -4565,14 +4375,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__2"
-    // InternalMLRegression.g:1518:1: rule__TargetVar__Group__2 : rule__TargetVar__Group__2__Impl rule__TargetVar__Group__3 ;
+    // InternalMLRegression.g:1464:1: rule__TargetVar__Group__2 : rule__TargetVar__Group__2__Impl rule__TargetVar__Group__3 ;
     public final void rule__TargetVar__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1522:1: ( rule__TargetVar__Group__2__Impl rule__TargetVar__Group__3 )
-            // InternalMLRegression.g:1523:2: rule__TargetVar__Group__2__Impl rule__TargetVar__Group__3
+            // InternalMLRegression.g:1468:1: ( rule__TargetVar__Group__2__Impl rule__TargetVar__Group__3 )
+            // InternalMLRegression.g:1469:2: rule__TargetVar__Group__2__Impl rule__TargetVar__Group__3
             {
             pushFollow(FOLLOW_15);
             rule__TargetVar__Group__2__Impl();
@@ -4603,21 +4413,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__2__Impl"
-    // InternalMLRegression.g:1530:1: rule__TargetVar__Group__2__Impl : ( ( rule__TargetVar__TargetVarAssignment_2 ) ) ;
+    // InternalMLRegression.g:1476:1: rule__TargetVar__Group__2__Impl : ( ( rule__TargetVar__TargetVarAssignment_2 ) ) ;
     public final void rule__TargetVar__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1534:1: ( ( ( rule__TargetVar__TargetVarAssignment_2 ) ) )
-            // InternalMLRegression.g:1535:1: ( ( rule__TargetVar__TargetVarAssignment_2 ) )
+            // InternalMLRegression.g:1480:1: ( ( ( rule__TargetVar__TargetVarAssignment_2 ) ) )
+            // InternalMLRegression.g:1481:1: ( ( rule__TargetVar__TargetVarAssignment_2 ) )
             {
-            // InternalMLRegression.g:1535:1: ( ( rule__TargetVar__TargetVarAssignment_2 ) )
-            // InternalMLRegression.g:1536:2: ( rule__TargetVar__TargetVarAssignment_2 )
+            // InternalMLRegression.g:1481:1: ( ( rule__TargetVar__TargetVarAssignment_2 ) )
+            // InternalMLRegression.g:1482:2: ( rule__TargetVar__TargetVarAssignment_2 )
             {
              before(grammarAccess.getTargetVarAccess().getTargetVarAssignment_2()); 
-            // InternalMLRegression.g:1537:2: ( rule__TargetVar__TargetVarAssignment_2 )
-            // InternalMLRegression.g:1537:3: rule__TargetVar__TargetVarAssignment_2
+            // InternalMLRegression.g:1483:2: ( rule__TargetVar__TargetVarAssignment_2 )
+            // InternalMLRegression.g:1483:3: rule__TargetVar__TargetVarAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__TargetVar__TargetVarAssignment_2();
@@ -4650,14 +4460,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__3"
-    // InternalMLRegression.g:1545:1: rule__TargetVar__Group__3 : rule__TargetVar__Group__3__Impl rule__TargetVar__Group__4 ;
+    // InternalMLRegression.g:1491:1: rule__TargetVar__Group__3 : rule__TargetVar__Group__3__Impl rule__TargetVar__Group__4 ;
     public final void rule__TargetVar__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1549:1: ( rule__TargetVar__Group__3__Impl rule__TargetVar__Group__4 )
-            // InternalMLRegression.g:1550:2: rule__TargetVar__Group__3__Impl rule__TargetVar__Group__4
+            // InternalMLRegression.g:1495:1: ( rule__TargetVar__Group__3__Impl rule__TargetVar__Group__4 )
+            // InternalMLRegression.g:1496:2: rule__TargetVar__Group__3__Impl rule__TargetVar__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__TargetVar__Group__3__Impl();
@@ -4688,33 +4498,33 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__3__Impl"
-    // InternalMLRegression.g:1557:1: rule__TargetVar__Group__3__Impl : ( ( rule__TargetVar__Group_3__0 )* ) ;
+    // InternalMLRegression.g:1503:1: rule__TargetVar__Group__3__Impl : ( ( rule__TargetVar__Group_3__0 )* ) ;
     public final void rule__TargetVar__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1561:1: ( ( ( rule__TargetVar__Group_3__0 )* ) )
-            // InternalMLRegression.g:1562:1: ( ( rule__TargetVar__Group_3__0 )* )
+            // InternalMLRegression.g:1507:1: ( ( ( rule__TargetVar__Group_3__0 )* ) )
+            // InternalMLRegression.g:1508:1: ( ( rule__TargetVar__Group_3__0 )* )
             {
-            // InternalMLRegression.g:1562:1: ( ( rule__TargetVar__Group_3__0 )* )
-            // InternalMLRegression.g:1563:2: ( rule__TargetVar__Group_3__0 )*
+            // InternalMLRegression.g:1508:1: ( ( rule__TargetVar__Group_3__0 )* )
+            // InternalMLRegression.g:1509:2: ( rule__TargetVar__Group_3__0 )*
             {
              before(grammarAccess.getTargetVarAccess().getGroup_3()); 
-            // InternalMLRegression.g:1564:2: ( rule__TargetVar__Group_3__0 )*
+            // InternalMLRegression.g:1510:2: ( rule__TargetVar__Group_3__0 )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==15) ) {
+                if ( (LA7_0==18) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalMLRegression.g:1564:3: rule__TargetVar__Group_3__0
+            	    // InternalMLRegression.g:1510:3: rule__TargetVar__Group_3__0
             	    {
             	    pushFollow(FOLLOW_16);
             	    rule__TargetVar__Group_3__0();
@@ -4753,14 +4563,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__4"
-    // InternalMLRegression.g:1572:1: rule__TargetVar__Group__4 : rule__TargetVar__Group__4__Impl ;
+    // InternalMLRegression.g:1518:1: rule__TargetVar__Group__4 : rule__TargetVar__Group__4__Impl ;
     public final void rule__TargetVar__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1576:1: ( rule__TargetVar__Group__4__Impl )
-            // InternalMLRegression.g:1577:2: rule__TargetVar__Group__4__Impl
+            // InternalMLRegression.g:1522:1: ( rule__TargetVar__Group__4__Impl )
+            // InternalMLRegression.g:1523:2: rule__TargetVar__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TargetVar__Group__4__Impl();
@@ -4786,20 +4596,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group__4__Impl"
-    // InternalMLRegression.g:1583:1: rule__TargetVar__Group__4__Impl : ( ';' ) ;
+    // InternalMLRegression.g:1529:1: rule__TargetVar__Group__4__Impl : ( ';' ) ;
     public final void rule__TargetVar__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1587:1: ( ( ';' ) )
-            // InternalMLRegression.g:1588:1: ( ';' )
+            // InternalMLRegression.g:1533:1: ( ( ';' ) )
+            // InternalMLRegression.g:1534:1: ( ';' )
             {
-            // InternalMLRegression.g:1588:1: ( ';' )
-            // InternalMLRegression.g:1589:2: ';'
+            // InternalMLRegression.g:1534:1: ( ';' )
+            // InternalMLRegression.g:1535:2: ';'
             {
              before(grammarAccess.getTargetVarAccess().getSemicolonKeyword_4()); 
-            match(input,12,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getTargetVarAccess().getSemicolonKeyword_4()); 
 
             }
@@ -4823,14 +4633,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group_3__0"
-    // InternalMLRegression.g:1599:1: rule__TargetVar__Group_3__0 : rule__TargetVar__Group_3__0__Impl rule__TargetVar__Group_3__1 ;
+    // InternalMLRegression.g:1545:1: rule__TargetVar__Group_3__0 : rule__TargetVar__Group_3__0__Impl rule__TargetVar__Group_3__1 ;
     public final void rule__TargetVar__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1603:1: ( rule__TargetVar__Group_3__0__Impl rule__TargetVar__Group_3__1 )
-            // InternalMLRegression.g:1604:2: rule__TargetVar__Group_3__0__Impl rule__TargetVar__Group_3__1
+            // InternalMLRegression.g:1549:1: ( rule__TargetVar__Group_3__0__Impl rule__TargetVar__Group_3__1 )
+            // InternalMLRegression.g:1550:2: rule__TargetVar__Group_3__0__Impl rule__TargetVar__Group_3__1
             {
             pushFollow(FOLLOW_6);
             rule__TargetVar__Group_3__0__Impl();
@@ -4861,20 +4671,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group_3__0__Impl"
-    // InternalMLRegression.g:1611:1: rule__TargetVar__Group_3__0__Impl : ( ',' ) ;
+    // InternalMLRegression.g:1557:1: rule__TargetVar__Group_3__0__Impl : ( ',' ) ;
     public final void rule__TargetVar__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1615:1: ( ( ',' ) )
-            // InternalMLRegression.g:1616:1: ( ',' )
+            // InternalMLRegression.g:1561:1: ( ( ',' ) )
+            // InternalMLRegression.g:1562:1: ( ',' )
             {
-            // InternalMLRegression.g:1616:1: ( ',' )
-            // InternalMLRegression.g:1617:2: ','
+            // InternalMLRegression.g:1562:1: ( ',' )
+            // InternalMLRegression.g:1563:2: ','
             {
              before(grammarAccess.getTargetVarAccess().getCommaKeyword_3_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getTargetVarAccess().getCommaKeyword_3_0()); 
 
             }
@@ -4898,14 +4708,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group_3__1"
-    // InternalMLRegression.g:1626:1: rule__TargetVar__Group_3__1 : rule__TargetVar__Group_3__1__Impl ;
+    // InternalMLRegression.g:1572:1: rule__TargetVar__Group_3__1 : rule__TargetVar__Group_3__1__Impl ;
     public final void rule__TargetVar__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1630:1: ( rule__TargetVar__Group_3__1__Impl )
-            // InternalMLRegression.g:1631:2: rule__TargetVar__Group_3__1__Impl
+            // InternalMLRegression.g:1576:1: ( rule__TargetVar__Group_3__1__Impl )
+            // InternalMLRegression.g:1577:2: rule__TargetVar__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TargetVar__Group_3__1__Impl();
@@ -4931,21 +4741,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__Group_3__1__Impl"
-    // InternalMLRegression.g:1637:1: rule__TargetVar__Group_3__1__Impl : ( ( rule__TargetVar__TargetVarAssignment_3_1 ) ) ;
+    // InternalMLRegression.g:1583:1: rule__TargetVar__Group_3__1__Impl : ( ( rule__TargetVar__TargetVarAssignment_3_1 ) ) ;
     public final void rule__TargetVar__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1641:1: ( ( ( rule__TargetVar__TargetVarAssignment_3_1 ) ) )
-            // InternalMLRegression.g:1642:1: ( ( rule__TargetVar__TargetVarAssignment_3_1 ) )
+            // InternalMLRegression.g:1587:1: ( ( ( rule__TargetVar__TargetVarAssignment_3_1 ) ) )
+            // InternalMLRegression.g:1588:1: ( ( rule__TargetVar__TargetVarAssignment_3_1 ) )
             {
-            // InternalMLRegression.g:1642:1: ( ( rule__TargetVar__TargetVarAssignment_3_1 ) )
-            // InternalMLRegression.g:1643:2: ( rule__TargetVar__TargetVarAssignment_3_1 )
+            // InternalMLRegression.g:1588:1: ( ( rule__TargetVar__TargetVarAssignment_3_1 ) )
+            // InternalMLRegression.g:1589:2: ( rule__TargetVar__TargetVarAssignment_3_1 )
             {
              before(grammarAccess.getTargetVarAccess().getTargetVarAssignment_3_1()); 
-            // InternalMLRegression.g:1644:2: ( rule__TargetVar__TargetVarAssignment_3_1 )
-            // InternalMLRegression.g:1644:3: rule__TargetVar__TargetVarAssignment_3_1
+            // InternalMLRegression.g:1590:2: ( rule__TargetVar__TargetVarAssignment_3_1 )
+            // InternalMLRegression.g:1590:3: rule__TargetVar__TargetVarAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__TargetVar__TargetVarAssignment_3_1();
@@ -4978,14 +4788,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__Group__0"
-    // InternalMLRegression.g:1653:1: rule__Calculate__Group__0 : rule__Calculate__Group__0__Impl rule__Calculate__Group__1 ;
+    // InternalMLRegression.g:1599:1: rule__Calculate__Group__0 : rule__Calculate__Group__0__Impl rule__Calculate__Group__1 ;
     public final void rule__Calculate__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1657:1: ( rule__Calculate__Group__0__Impl rule__Calculate__Group__1 )
-            // InternalMLRegression.g:1658:2: rule__Calculate__Group__0__Impl rule__Calculate__Group__1
+            // InternalMLRegression.g:1603:1: ( rule__Calculate__Group__0__Impl rule__Calculate__Group__1 )
+            // InternalMLRegression.g:1604:2: rule__Calculate__Group__0__Impl rule__Calculate__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__Calculate__Group__0__Impl();
@@ -5016,20 +4826,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__Group__0__Impl"
-    // InternalMLRegression.g:1665:1: rule__Calculate__Group__0__Impl : ( 'calculate' ) ;
+    // InternalMLRegression.g:1611:1: rule__Calculate__Group__0__Impl : ( 'calculate' ) ;
     public final void rule__Calculate__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1669:1: ( ( 'calculate' ) )
-            // InternalMLRegression.g:1670:1: ( 'calculate' )
+            // InternalMLRegression.g:1615:1: ( ( 'calculate' ) )
+            // InternalMLRegression.g:1616:1: ( 'calculate' )
             {
-            // InternalMLRegression.g:1670:1: ( 'calculate' )
-            // InternalMLRegression.g:1671:2: 'calculate'
+            // InternalMLRegression.g:1616:1: ( 'calculate' )
+            // InternalMLRegression.g:1617:2: 'calculate'
             {
              before(grammarAccess.getCalculateAccess().getCalculateKeyword_0()); 
-            match(input,21,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getCalculateAccess().getCalculateKeyword_0()); 
 
             }
@@ -5053,14 +4863,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__Group__1"
-    // InternalMLRegression.g:1680:1: rule__Calculate__Group__1 : rule__Calculate__Group__1__Impl rule__Calculate__Group__2 ;
+    // InternalMLRegression.g:1626:1: rule__Calculate__Group__1 : rule__Calculate__Group__1__Impl rule__Calculate__Group__2 ;
     public final void rule__Calculate__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1684:1: ( rule__Calculate__Group__1__Impl rule__Calculate__Group__2 )
-            // InternalMLRegression.g:1685:2: rule__Calculate__Group__1__Impl rule__Calculate__Group__2
+            // InternalMLRegression.g:1630:1: ( rule__Calculate__Group__1__Impl rule__Calculate__Group__2 )
+            // InternalMLRegression.g:1631:2: rule__Calculate__Group__1__Impl rule__Calculate__Group__2
             {
             pushFollow(FOLLOW_17);
             rule__Calculate__Group__1__Impl();
@@ -5091,20 +4901,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__Group__1__Impl"
-    // InternalMLRegression.g:1692:1: rule__Calculate__Group__1__Impl : ( ':' ) ;
+    // InternalMLRegression.g:1638:1: rule__Calculate__Group__1__Impl : ( ':' ) ;
     public final void rule__Calculate__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1696:1: ( ( ':' ) )
-            // InternalMLRegression.g:1697:1: ( ':' )
+            // InternalMLRegression.g:1642:1: ( ( ':' ) )
+            // InternalMLRegression.g:1643:1: ( ':' )
             {
-            // InternalMLRegression.g:1697:1: ( ':' )
-            // InternalMLRegression.g:1698:2: ':'
+            // InternalMLRegression.g:1643:1: ( ':' )
+            // InternalMLRegression.g:1644:2: ':'
             {
              before(grammarAccess.getCalculateAccess().getColonKeyword_1()); 
-            match(input,14,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getCalculateAccess().getColonKeyword_1()); 
 
             }
@@ -5128,14 +4938,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__Group__2"
-    // InternalMLRegression.g:1707:1: rule__Calculate__Group__2 : rule__Calculate__Group__2__Impl rule__Calculate__Group__3 ;
+    // InternalMLRegression.g:1653:1: rule__Calculate__Group__2 : rule__Calculate__Group__2__Impl rule__Calculate__Group__3 ;
     public final void rule__Calculate__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1711:1: ( rule__Calculate__Group__2__Impl rule__Calculate__Group__3 )
-            // InternalMLRegression.g:1712:2: rule__Calculate__Group__2__Impl rule__Calculate__Group__3
+            // InternalMLRegression.g:1657:1: ( rule__Calculate__Group__2__Impl rule__Calculate__Group__3 )
+            // InternalMLRegression.g:1658:2: rule__Calculate__Group__2__Impl rule__Calculate__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__Calculate__Group__2__Impl();
@@ -5166,21 +4976,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__Group__2__Impl"
-    // InternalMLRegression.g:1719:1: rule__Calculate__Group__2__Impl : ( ( rule__Calculate__CalculateTypeAssignment_2 ) ) ;
+    // InternalMLRegression.g:1665:1: rule__Calculate__Group__2__Impl : ( ( rule__Calculate__CalculateTypeAssignment_2 ) ) ;
     public final void rule__Calculate__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1723:1: ( ( ( rule__Calculate__CalculateTypeAssignment_2 ) ) )
-            // InternalMLRegression.g:1724:1: ( ( rule__Calculate__CalculateTypeAssignment_2 ) )
+            // InternalMLRegression.g:1669:1: ( ( ( rule__Calculate__CalculateTypeAssignment_2 ) ) )
+            // InternalMLRegression.g:1670:1: ( ( rule__Calculate__CalculateTypeAssignment_2 ) )
             {
-            // InternalMLRegression.g:1724:1: ( ( rule__Calculate__CalculateTypeAssignment_2 ) )
-            // InternalMLRegression.g:1725:2: ( rule__Calculate__CalculateTypeAssignment_2 )
+            // InternalMLRegression.g:1670:1: ( ( rule__Calculate__CalculateTypeAssignment_2 ) )
+            // InternalMLRegression.g:1671:2: ( rule__Calculate__CalculateTypeAssignment_2 )
             {
              before(grammarAccess.getCalculateAccess().getCalculateTypeAssignment_2()); 
-            // InternalMLRegression.g:1726:2: ( rule__Calculate__CalculateTypeAssignment_2 )
-            // InternalMLRegression.g:1726:3: rule__Calculate__CalculateTypeAssignment_2
+            // InternalMLRegression.g:1672:2: ( rule__Calculate__CalculateTypeAssignment_2 )
+            // InternalMLRegression.g:1672:3: rule__Calculate__CalculateTypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Calculate__CalculateTypeAssignment_2();
@@ -5213,14 +5023,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__Group__3"
-    // InternalMLRegression.g:1734:1: rule__Calculate__Group__3 : rule__Calculate__Group__3__Impl ;
+    // InternalMLRegression.g:1680:1: rule__Calculate__Group__3 : rule__Calculate__Group__3__Impl ;
     public final void rule__Calculate__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1738:1: ( rule__Calculate__Group__3__Impl )
-            // InternalMLRegression.g:1739:2: rule__Calculate__Group__3__Impl
+            // InternalMLRegression.g:1684:1: ( rule__Calculate__Group__3__Impl )
+            // InternalMLRegression.g:1685:2: rule__Calculate__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Calculate__Group__3__Impl();
@@ -5246,20 +5056,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__Group__3__Impl"
-    // InternalMLRegression.g:1745:1: rule__Calculate__Group__3__Impl : ( ';' ) ;
+    // InternalMLRegression.g:1691:1: rule__Calculate__Group__3__Impl : ( ';' ) ;
     public final void rule__Calculate__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1749:1: ( ( ';' ) )
-            // InternalMLRegression.g:1750:1: ( ';' )
+            // InternalMLRegression.g:1695:1: ( ( ';' ) )
+            // InternalMLRegression.g:1696:1: ( ';' )
             {
-            // InternalMLRegression.g:1750:1: ( ';' )
-            // InternalMLRegression.g:1751:2: ';'
+            // InternalMLRegression.g:1696:1: ( ';' )
+            // InternalMLRegression.g:1697:2: ';'
             {
              before(grammarAccess.getCalculateAccess().getSemicolonKeyword_3()); 
-            match(input,12,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getCalculateAccess().getSemicolonKeyword_3()); 
 
             }
@@ -5283,14 +5093,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__Group__0"
-    // InternalMLRegression.g:1761:1: rule__Algo__Group__0 : rule__Algo__Group__0__Impl rule__Algo__Group__1 ;
+    // InternalMLRegression.g:1707:1: rule__Algo__Group__0 : rule__Algo__Group__0__Impl rule__Algo__Group__1 ;
     public final void rule__Algo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1765:1: ( rule__Algo__Group__0__Impl rule__Algo__Group__1 )
-            // InternalMLRegression.g:1766:2: rule__Algo__Group__0__Impl rule__Algo__Group__1
+            // InternalMLRegression.g:1711:1: ( rule__Algo__Group__0__Impl rule__Algo__Group__1 )
+            // InternalMLRegression.g:1712:2: rule__Algo__Group__0__Impl rule__Algo__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__Algo__Group__0__Impl();
@@ -5321,20 +5131,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__Group__0__Impl"
-    // InternalMLRegression.g:1773:1: rule__Algo__Group__0__Impl : ( 'algorithm' ) ;
+    // InternalMLRegression.g:1719:1: rule__Algo__Group__0__Impl : ( 'algorithm' ) ;
     public final void rule__Algo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1777:1: ( ( 'algorithm' ) )
-            // InternalMLRegression.g:1778:1: ( 'algorithm' )
+            // InternalMLRegression.g:1723:1: ( ( 'algorithm' ) )
+            // InternalMLRegression.g:1724:1: ( 'algorithm' )
             {
-            // InternalMLRegression.g:1778:1: ( 'algorithm' )
-            // InternalMLRegression.g:1779:2: 'algorithm'
+            // InternalMLRegression.g:1724:1: ( 'algorithm' )
+            // InternalMLRegression.g:1725:2: 'algorithm'
             {
              before(grammarAccess.getAlgoAccess().getAlgorithmKeyword_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getAlgoAccess().getAlgorithmKeyword_0()); 
 
             }
@@ -5358,14 +5168,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__Group__1"
-    // InternalMLRegression.g:1788:1: rule__Algo__Group__1 : rule__Algo__Group__1__Impl rule__Algo__Group__2 ;
+    // InternalMLRegression.g:1734:1: rule__Algo__Group__1 : rule__Algo__Group__1__Impl rule__Algo__Group__2 ;
     public final void rule__Algo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1792:1: ( rule__Algo__Group__1__Impl rule__Algo__Group__2 )
-            // InternalMLRegression.g:1793:2: rule__Algo__Group__1__Impl rule__Algo__Group__2
+            // InternalMLRegression.g:1738:1: ( rule__Algo__Group__1__Impl rule__Algo__Group__2 )
+            // InternalMLRegression.g:1739:2: rule__Algo__Group__1__Impl rule__Algo__Group__2
             {
             pushFollow(FOLLOW_18);
             rule__Algo__Group__1__Impl();
@@ -5396,20 +5206,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__Group__1__Impl"
-    // InternalMLRegression.g:1800:1: rule__Algo__Group__1__Impl : ( ':' ) ;
+    // InternalMLRegression.g:1746:1: rule__Algo__Group__1__Impl : ( ':' ) ;
     public final void rule__Algo__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1804:1: ( ( ':' ) )
-            // InternalMLRegression.g:1805:1: ( ':' )
+            // InternalMLRegression.g:1750:1: ( ( ':' ) )
+            // InternalMLRegression.g:1751:1: ( ':' )
             {
-            // InternalMLRegression.g:1805:1: ( ':' )
-            // InternalMLRegression.g:1806:2: ':'
+            // InternalMLRegression.g:1751:1: ( ':' )
+            // InternalMLRegression.g:1752:2: ':'
             {
              before(grammarAccess.getAlgoAccess().getColonKeyword_1()); 
-            match(input,14,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getAlgoAccess().getColonKeyword_1()); 
 
             }
@@ -5433,14 +5243,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__Group__2"
-    // InternalMLRegression.g:1815:1: rule__Algo__Group__2 : rule__Algo__Group__2__Impl rule__Algo__Group__3 ;
+    // InternalMLRegression.g:1761:1: rule__Algo__Group__2 : rule__Algo__Group__2__Impl rule__Algo__Group__3 ;
     public final void rule__Algo__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1819:1: ( rule__Algo__Group__2__Impl rule__Algo__Group__3 )
-            // InternalMLRegression.g:1820:2: rule__Algo__Group__2__Impl rule__Algo__Group__3
+            // InternalMLRegression.g:1765:1: ( rule__Algo__Group__2__Impl rule__Algo__Group__3 )
+            // InternalMLRegression.g:1766:2: rule__Algo__Group__2__Impl rule__Algo__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__Algo__Group__2__Impl();
@@ -5471,21 +5281,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__Group__2__Impl"
-    // InternalMLRegression.g:1827:1: rule__Algo__Group__2__Impl : ( ( rule__Algo__AlgoAssignment_2 ) ) ;
+    // InternalMLRegression.g:1773:1: rule__Algo__Group__2__Impl : ( ( rule__Algo__AlgoAssignment_2 ) ) ;
     public final void rule__Algo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1831:1: ( ( ( rule__Algo__AlgoAssignment_2 ) ) )
-            // InternalMLRegression.g:1832:1: ( ( rule__Algo__AlgoAssignment_2 ) )
+            // InternalMLRegression.g:1777:1: ( ( ( rule__Algo__AlgoAssignment_2 ) ) )
+            // InternalMLRegression.g:1778:1: ( ( rule__Algo__AlgoAssignment_2 ) )
             {
-            // InternalMLRegression.g:1832:1: ( ( rule__Algo__AlgoAssignment_2 ) )
-            // InternalMLRegression.g:1833:2: ( rule__Algo__AlgoAssignment_2 )
+            // InternalMLRegression.g:1778:1: ( ( rule__Algo__AlgoAssignment_2 ) )
+            // InternalMLRegression.g:1779:2: ( rule__Algo__AlgoAssignment_2 )
             {
              before(grammarAccess.getAlgoAccess().getAlgoAssignment_2()); 
-            // InternalMLRegression.g:1834:2: ( rule__Algo__AlgoAssignment_2 )
-            // InternalMLRegression.g:1834:3: rule__Algo__AlgoAssignment_2
+            // InternalMLRegression.g:1780:2: ( rule__Algo__AlgoAssignment_2 )
+            // InternalMLRegression.g:1780:3: rule__Algo__AlgoAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Algo__AlgoAssignment_2();
@@ -5518,14 +5328,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__Group__3"
-    // InternalMLRegression.g:1842:1: rule__Algo__Group__3 : rule__Algo__Group__3__Impl ;
+    // InternalMLRegression.g:1788:1: rule__Algo__Group__3 : rule__Algo__Group__3__Impl ;
     public final void rule__Algo__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1846:1: ( rule__Algo__Group__3__Impl )
-            // InternalMLRegression.g:1847:2: rule__Algo__Group__3__Impl
+            // InternalMLRegression.g:1792:1: ( rule__Algo__Group__3__Impl )
+            // InternalMLRegression.g:1793:2: rule__Algo__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Algo__Group__3__Impl();
@@ -5551,20 +5361,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__Group__3__Impl"
-    // InternalMLRegression.g:1853:1: rule__Algo__Group__3__Impl : ( ';' ) ;
+    // InternalMLRegression.g:1799:1: rule__Algo__Group__3__Impl : ( ';' ) ;
     public final void rule__Algo__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1857:1: ( ( ';' ) )
-            // InternalMLRegression.g:1858:1: ( ';' )
+            // InternalMLRegression.g:1803:1: ( ( ';' ) )
+            // InternalMLRegression.g:1804:1: ( ';' )
             {
-            // InternalMLRegression.g:1858:1: ( ';' )
-            // InternalMLRegression.g:1859:2: ';'
+            // InternalMLRegression.g:1804:1: ( ';' )
+            // InternalMLRegression.g:1805:2: ';'
             {
              before(grammarAccess.getAlgoAccess().getSemicolonKeyword_3()); 
-            match(input,12,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getAlgoAccess().getSemicolonKeyword_3()); 
 
             }
@@ -5588,14 +5398,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__0"
-    // InternalMLRegression.g:1869:1: rule__LineRegress__Group__0 : rule__LineRegress__Group__0__Impl rule__LineRegress__Group__1 ;
+    // InternalMLRegression.g:1815:1: rule__LineRegress__Group__0 : rule__LineRegress__Group__0__Impl rule__LineRegress__Group__1 ;
     public final void rule__LineRegress__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1873:1: ( rule__LineRegress__Group__0__Impl rule__LineRegress__Group__1 )
-            // InternalMLRegression.g:1874:2: rule__LineRegress__Group__0__Impl rule__LineRegress__Group__1
+            // InternalMLRegression.g:1819:1: ( rule__LineRegress__Group__0__Impl rule__LineRegress__Group__1 )
+            // InternalMLRegression.g:1820:2: rule__LineRegress__Group__0__Impl rule__LineRegress__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__LineRegress__Group__0__Impl();
@@ -5626,20 +5436,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__0__Impl"
-    // InternalMLRegression.g:1881:1: rule__LineRegress__Group__0__Impl : ( 'line_regress()' ) ;
+    // InternalMLRegression.g:1827:1: rule__LineRegress__Group__0__Impl : ( 'line_regress()' ) ;
     public final void rule__LineRegress__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1885:1: ( ( 'line_regress()' ) )
-            // InternalMLRegression.g:1886:1: ( 'line_regress()' )
+            // InternalMLRegression.g:1831:1: ( ( 'line_regress()' ) )
+            // InternalMLRegression.g:1832:1: ( 'line_regress()' )
             {
-            // InternalMLRegression.g:1886:1: ( 'line_regress()' )
-            // InternalMLRegression.g:1887:2: 'line_regress()'
+            // InternalMLRegression.g:1832:1: ( 'line_regress()' )
+            // InternalMLRegression.g:1833:2: 'line_regress()'
             {
              before(grammarAccess.getLineRegressAccess().getLine_regressKeyword_0()); 
-            match(input,23,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getLineRegressAccess().getLine_regressKeyword_0()); 
 
             }
@@ -5663,14 +5473,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__1"
-    // InternalMLRegression.g:1896:1: rule__LineRegress__Group__1 : rule__LineRegress__Group__1__Impl rule__LineRegress__Group__2 ;
+    // InternalMLRegression.g:1842:1: rule__LineRegress__Group__1 : rule__LineRegress__Group__1__Impl rule__LineRegress__Group__2 ;
     public final void rule__LineRegress__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1900:1: ( rule__LineRegress__Group__1__Impl rule__LineRegress__Group__2 )
-            // InternalMLRegression.g:1901:2: rule__LineRegress__Group__1__Impl rule__LineRegress__Group__2
+            // InternalMLRegression.g:1846:1: ( rule__LineRegress__Group__1__Impl rule__LineRegress__Group__2 )
+            // InternalMLRegression.g:1847:2: rule__LineRegress__Group__1__Impl rule__LineRegress__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__LineRegress__Group__1__Impl();
@@ -5701,20 +5511,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__1__Impl"
-    // InternalMLRegression.g:1908:1: rule__LineRegress__Group__1__Impl : ( ',' ) ;
+    // InternalMLRegression.g:1854:1: rule__LineRegress__Group__1__Impl : ( ',' ) ;
     public final void rule__LineRegress__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1912:1: ( ( ',' ) )
-            // InternalMLRegression.g:1913:1: ( ',' )
+            // InternalMLRegression.g:1858:1: ( ( ',' ) )
+            // InternalMLRegression.g:1859:1: ( ',' )
             {
-            // InternalMLRegression.g:1913:1: ( ',' )
-            // InternalMLRegression.g:1914:2: ','
+            // InternalMLRegression.g:1859:1: ( ',' )
+            // InternalMLRegression.g:1860:2: ','
             {
              before(grammarAccess.getLineRegressAccess().getCommaKeyword_1()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getLineRegressAccess().getCommaKeyword_1()); 
 
             }
@@ -5738,14 +5548,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__2"
-    // InternalMLRegression.g:1923:1: rule__LineRegress__Group__2 : rule__LineRegress__Group__2__Impl rule__LineRegress__Group__3 ;
+    // InternalMLRegression.g:1869:1: rule__LineRegress__Group__2 : rule__LineRegress__Group__2__Impl rule__LineRegress__Group__3 ;
     public final void rule__LineRegress__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1927:1: ( rule__LineRegress__Group__2__Impl rule__LineRegress__Group__3 )
-            // InternalMLRegression.g:1928:2: rule__LineRegress__Group__2__Impl rule__LineRegress__Group__3
+            // InternalMLRegression.g:1873:1: ( rule__LineRegress__Group__2__Impl rule__LineRegress__Group__3 )
+            // InternalMLRegression.g:1874:2: rule__LineRegress__Group__2__Impl rule__LineRegress__Group__3
             {
             pushFollow(FOLLOW_20);
             rule__LineRegress__Group__2__Impl();
@@ -5776,21 +5586,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__2__Impl"
-    // InternalMLRegression.g:1935:1: rule__LineRegress__Group__2__Impl : ( ( rule__LineRegress__LeftSidePredictAssignment_2 ) ) ;
+    // InternalMLRegression.g:1881:1: rule__LineRegress__Group__2__Impl : ( ( rule__LineRegress__LeftSidePredictAssignment_2 ) ) ;
     public final void rule__LineRegress__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1939:1: ( ( ( rule__LineRegress__LeftSidePredictAssignment_2 ) ) )
-            // InternalMLRegression.g:1940:1: ( ( rule__LineRegress__LeftSidePredictAssignment_2 ) )
+            // InternalMLRegression.g:1885:1: ( ( ( rule__LineRegress__LeftSidePredictAssignment_2 ) ) )
+            // InternalMLRegression.g:1886:1: ( ( rule__LineRegress__LeftSidePredictAssignment_2 ) )
             {
-            // InternalMLRegression.g:1940:1: ( ( rule__LineRegress__LeftSidePredictAssignment_2 ) )
-            // InternalMLRegression.g:1941:2: ( rule__LineRegress__LeftSidePredictAssignment_2 )
+            // InternalMLRegression.g:1886:1: ( ( rule__LineRegress__LeftSidePredictAssignment_2 ) )
+            // InternalMLRegression.g:1887:2: ( rule__LineRegress__LeftSidePredictAssignment_2 )
             {
              before(grammarAccess.getLineRegressAccess().getLeftSidePredictAssignment_2()); 
-            // InternalMLRegression.g:1942:2: ( rule__LineRegress__LeftSidePredictAssignment_2 )
-            // InternalMLRegression.g:1942:3: rule__LineRegress__LeftSidePredictAssignment_2
+            // InternalMLRegression.g:1888:2: ( rule__LineRegress__LeftSidePredictAssignment_2 )
+            // InternalMLRegression.g:1888:3: rule__LineRegress__LeftSidePredictAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__LineRegress__LeftSidePredictAssignment_2();
@@ -5823,14 +5633,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__3"
-    // InternalMLRegression.g:1950:1: rule__LineRegress__Group__3 : rule__LineRegress__Group__3__Impl rule__LineRegress__Group__4 ;
+    // InternalMLRegression.g:1896:1: rule__LineRegress__Group__3 : rule__LineRegress__Group__3__Impl rule__LineRegress__Group__4 ;
     public final void rule__LineRegress__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1954:1: ( rule__LineRegress__Group__3__Impl rule__LineRegress__Group__4 )
-            // InternalMLRegression.g:1955:2: rule__LineRegress__Group__3__Impl rule__LineRegress__Group__4
+            // InternalMLRegression.g:1900:1: ( rule__LineRegress__Group__3__Impl rule__LineRegress__Group__4 )
+            // InternalMLRegression.g:1901:2: rule__LineRegress__Group__3__Impl rule__LineRegress__Group__4
             {
             pushFollow(FOLLOW_21);
             rule__LineRegress__Group__3__Impl();
@@ -5861,20 +5671,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__3__Impl"
-    // InternalMLRegression.g:1962:1: rule__LineRegress__Group__3__Impl : ( '=' ) ;
+    // InternalMLRegression.g:1908:1: rule__LineRegress__Group__3__Impl : ( '=' ) ;
     public final void rule__LineRegress__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1966:1: ( ( '=' ) )
-            // InternalMLRegression.g:1967:1: ( '=' )
+            // InternalMLRegression.g:1912:1: ( ( '=' ) )
+            // InternalMLRegression.g:1913:1: ( '=' )
             {
-            // InternalMLRegression.g:1967:1: ( '=' )
-            // InternalMLRegression.g:1968:2: '='
+            // InternalMLRegression.g:1913:1: ( '=' )
+            // InternalMLRegression.g:1914:2: '='
             {
              before(grammarAccess.getLineRegressAccess().getEqualsSignKeyword_3()); 
-            match(input,24,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getLineRegressAccess().getEqualsSignKeyword_3()); 
 
             }
@@ -5898,14 +5708,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__4"
-    // InternalMLRegression.g:1977:1: rule__LineRegress__Group__4 : rule__LineRegress__Group__4__Impl rule__LineRegress__Group__5 ;
+    // InternalMLRegression.g:1923:1: rule__LineRegress__Group__4 : rule__LineRegress__Group__4__Impl rule__LineRegress__Group__5 ;
     public final void rule__LineRegress__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1981:1: ( rule__LineRegress__Group__4__Impl rule__LineRegress__Group__5 )
-            // InternalMLRegression.g:1982:2: rule__LineRegress__Group__4__Impl rule__LineRegress__Group__5
+            // InternalMLRegression.g:1927:1: ( rule__LineRegress__Group__4__Impl rule__LineRegress__Group__5 )
+            // InternalMLRegression.g:1928:2: rule__LineRegress__Group__4__Impl rule__LineRegress__Group__5
             {
             pushFollow(FOLLOW_22);
             rule__LineRegress__Group__4__Impl();
@@ -5936,20 +5746,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__4__Impl"
-    // InternalMLRegression.g:1989:1: rule__LineRegress__Group__4__Impl : ( 'predict' ) ;
+    // InternalMLRegression.g:1935:1: rule__LineRegress__Group__4__Impl : ( 'predict' ) ;
     public final void rule__LineRegress__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:1993:1: ( ( 'predict' ) )
-            // InternalMLRegression.g:1994:1: ( 'predict' )
+            // InternalMLRegression.g:1939:1: ( ( 'predict' ) )
+            // InternalMLRegression.g:1940:1: ( 'predict' )
             {
-            // InternalMLRegression.g:1994:1: ( 'predict' )
-            // InternalMLRegression.g:1995:2: 'predict'
+            // InternalMLRegression.g:1940:1: ( 'predict' )
+            // InternalMLRegression.g:1941:2: 'predict'
             {
              before(grammarAccess.getLineRegressAccess().getPredictKeyword_4()); 
-            match(input,25,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getLineRegressAccess().getPredictKeyword_4()); 
 
             }
@@ -5973,14 +5783,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__5"
-    // InternalMLRegression.g:2004:1: rule__LineRegress__Group__5 : rule__LineRegress__Group__5__Impl ;
+    // InternalMLRegression.g:1950:1: rule__LineRegress__Group__5 : rule__LineRegress__Group__5__Impl ;
     public final void rule__LineRegress__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2008:1: ( rule__LineRegress__Group__5__Impl )
-            // InternalMLRegression.g:2009:2: rule__LineRegress__Group__5__Impl
+            // InternalMLRegression.g:1954:1: ( rule__LineRegress__Group__5__Impl )
+            // InternalMLRegression.g:1955:2: rule__LineRegress__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LineRegress__Group__5__Impl();
@@ -6006,20 +5816,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__Group__5__Impl"
-    // InternalMLRegression.g:2015:1: rule__LineRegress__Group__5__Impl : ( '()' ) ;
+    // InternalMLRegression.g:1961:1: rule__LineRegress__Group__5__Impl : ( '()' ) ;
     public final void rule__LineRegress__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2019:1: ( ( '()' ) )
-            // InternalMLRegression.g:2020:1: ( '()' )
+            // InternalMLRegression.g:1965:1: ( ( '()' ) )
+            // InternalMLRegression.g:1966:1: ( '()' )
             {
-            // InternalMLRegression.g:2020:1: ( '()' )
-            // InternalMLRegression.g:2021:2: '()'
+            // InternalMLRegression.g:1966:1: ( '()' )
+            // InternalMLRegression.g:1967:2: '()'
             {
              before(grammarAccess.getLineRegressAccess().getLeftParenthesisRightParenthesisKeyword_5()); 
-            match(input,26,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getLineRegressAccess().getLeftParenthesisRightParenthesisKeyword_5()); 
 
             }
@@ -6043,14 +5853,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__Group__0"
-    // InternalMLRegression.g:2031:1: rule__DecisionTreeRegressor__Group__0 : rule__DecisionTreeRegressor__Group__0__Impl rule__DecisionTreeRegressor__Group__1 ;
+    // InternalMLRegression.g:1977:1: rule__DecisionTreeRegressor__Group__0 : rule__DecisionTreeRegressor__Group__0__Impl rule__DecisionTreeRegressor__Group__1 ;
     public final void rule__DecisionTreeRegressor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2035:1: ( rule__DecisionTreeRegressor__Group__0__Impl rule__DecisionTreeRegressor__Group__1 )
-            // InternalMLRegression.g:2036:2: rule__DecisionTreeRegressor__Group__0__Impl rule__DecisionTreeRegressor__Group__1
+            // InternalMLRegression.g:1981:1: ( rule__DecisionTreeRegressor__Group__0__Impl rule__DecisionTreeRegressor__Group__1 )
+            // InternalMLRegression.g:1982:2: rule__DecisionTreeRegressor__Group__0__Impl rule__DecisionTreeRegressor__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__DecisionTreeRegressor__Group__0__Impl();
@@ -6081,20 +5891,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__Group__0__Impl"
-    // InternalMLRegression.g:2043:1: rule__DecisionTreeRegressor__Group__0__Impl : ( 'decision_tree_regressor' ) ;
+    // InternalMLRegression.g:1989:1: rule__DecisionTreeRegressor__Group__0__Impl : ( 'decision_tree_regressor' ) ;
     public final void rule__DecisionTreeRegressor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2047:1: ( ( 'decision_tree_regressor' ) )
-            // InternalMLRegression.g:2048:1: ( 'decision_tree_regressor' )
+            // InternalMLRegression.g:1993:1: ( ( 'decision_tree_regressor' ) )
+            // InternalMLRegression.g:1994:1: ( 'decision_tree_regressor' )
             {
-            // InternalMLRegression.g:2048:1: ( 'decision_tree_regressor' )
-            // InternalMLRegression.g:2049:2: 'decision_tree_regressor'
+            // InternalMLRegression.g:1994:1: ( 'decision_tree_regressor' )
+            // InternalMLRegression.g:1995:2: 'decision_tree_regressor'
             {
              before(grammarAccess.getDecisionTreeRegressorAccess().getDecision_tree_regressorKeyword_0()); 
-            match(input,27,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getDecisionTreeRegressorAccess().getDecision_tree_regressorKeyword_0()); 
 
             }
@@ -6118,14 +5928,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__Group__1"
-    // InternalMLRegression.g:2058:1: rule__DecisionTreeRegressor__Group__1 : rule__DecisionTreeRegressor__Group__1__Impl rule__DecisionTreeRegressor__Group__2 ;
+    // InternalMLRegression.g:2004:1: rule__DecisionTreeRegressor__Group__1 : rule__DecisionTreeRegressor__Group__1__Impl rule__DecisionTreeRegressor__Group__2 ;
     public final void rule__DecisionTreeRegressor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2062:1: ( rule__DecisionTreeRegressor__Group__1__Impl rule__DecisionTreeRegressor__Group__2 )
-            // InternalMLRegression.g:2063:2: rule__DecisionTreeRegressor__Group__1__Impl rule__DecisionTreeRegressor__Group__2
+            // InternalMLRegression.g:2008:1: ( rule__DecisionTreeRegressor__Group__1__Impl rule__DecisionTreeRegressor__Group__2 )
+            // InternalMLRegression.g:2009:2: rule__DecisionTreeRegressor__Group__1__Impl rule__DecisionTreeRegressor__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__DecisionTreeRegressor__Group__1__Impl();
@@ -6156,20 +5966,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__Group__1__Impl"
-    // InternalMLRegression.g:2070:1: rule__DecisionTreeRegressor__Group__1__Impl : ( '(' ) ;
+    // InternalMLRegression.g:2016:1: rule__DecisionTreeRegressor__Group__1__Impl : ( '(' ) ;
     public final void rule__DecisionTreeRegressor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2074:1: ( ( '(' ) )
-            // InternalMLRegression.g:2075:1: ( '(' )
+            // InternalMLRegression.g:2020:1: ( ( '(' ) )
+            // InternalMLRegression.g:2021:1: ( '(' )
             {
-            // InternalMLRegression.g:2075:1: ( '(' )
-            // InternalMLRegression.g:2076:2: '('
+            // InternalMLRegression.g:2021:1: ( '(' )
+            // InternalMLRegression.g:2022:2: '('
             {
              before(grammarAccess.getDecisionTreeRegressorAccess().getLeftParenthesisKeyword_1()); 
-            match(input,17,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getDecisionTreeRegressorAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -6193,14 +6003,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__Group__2"
-    // InternalMLRegression.g:2085:1: rule__DecisionTreeRegressor__Group__2 : rule__DecisionTreeRegressor__Group__2__Impl rule__DecisionTreeRegressor__Group__3 ;
+    // InternalMLRegression.g:2031:1: rule__DecisionTreeRegressor__Group__2 : rule__DecisionTreeRegressor__Group__2__Impl rule__DecisionTreeRegressor__Group__3 ;
     public final void rule__DecisionTreeRegressor__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2089:1: ( rule__DecisionTreeRegressor__Group__2__Impl rule__DecisionTreeRegressor__Group__3 )
-            // InternalMLRegression.g:2090:2: rule__DecisionTreeRegressor__Group__2__Impl rule__DecisionTreeRegressor__Group__3
+            // InternalMLRegression.g:2035:1: ( rule__DecisionTreeRegressor__Group__2__Impl rule__DecisionTreeRegressor__Group__3 )
+            // InternalMLRegression.g:2036:2: rule__DecisionTreeRegressor__Group__2__Impl rule__DecisionTreeRegressor__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__DecisionTreeRegressor__Group__2__Impl();
@@ -6231,21 +6041,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__Group__2__Impl"
-    // InternalMLRegression.g:2097:1: rule__DecisionTreeRegressor__Group__2__Impl : ( ( rule__DecisionTreeRegressor__RandAssignment_2 ) ) ;
+    // InternalMLRegression.g:2043:1: rule__DecisionTreeRegressor__Group__2__Impl : ( ( rule__DecisionTreeRegressor__RandAssignment_2 ) ) ;
     public final void rule__DecisionTreeRegressor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2101:1: ( ( ( rule__DecisionTreeRegressor__RandAssignment_2 ) ) )
-            // InternalMLRegression.g:2102:1: ( ( rule__DecisionTreeRegressor__RandAssignment_2 ) )
+            // InternalMLRegression.g:2047:1: ( ( ( rule__DecisionTreeRegressor__RandAssignment_2 ) ) )
+            // InternalMLRegression.g:2048:1: ( ( rule__DecisionTreeRegressor__RandAssignment_2 ) )
             {
-            // InternalMLRegression.g:2102:1: ( ( rule__DecisionTreeRegressor__RandAssignment_2 ) )
-            // InternalMLRegression.g:2103:2: ( rule__DecisionTreeRegressor__RandAssignment_2 )
+            // InternalMLRegression.g:2048:1: ( ( rule__DecisionTreeRegressor__RandAssignment_2 ) )
+            // InternalMLRegression.g:2049:2: ( rule__DecisionTreeRegressor__RandAssignment_2 )
             {
              before(grammarAccess.getDecisionTreeRegressorAccess().getRandAssignment_2()); 
-            // InternalMLRegression.g:2104:2: ( rule__DecisionTreeRegressor__RandAssignment_2 )
-            // InternalMLRegression.g:2104:3: rule__DecisionTreeRegressor__RandAssignment_2
+            // InternalMLRegression.g:2050:2: ( rule__DecisionTreeRegressor__RandAssignment_2 )
+            // InternalMLRegression.g:2050:3: rule__DecisionTreeRegressor__RandAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__DecisionTreeRegressor__RandAssignment_2();
@@ -6278,14 +6088,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__Group__3"
-    // InternalMLRegression.g:2112:1: rule__DecisionTreeRegressor__Group__3 : rule__DecisionTreeRegressor__Group__3__Impl ;
+    // InternalMLRegression.g:2058:1: rule__DecisionTreeRegressor__Group__3 : rule__DecisionTreeRegressor__Group__3__Impl ;
     public final void rule__DecisionTreeRegressor__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2116:1: ( rule__DecisionTreeRegressor__Group__3__Impl )
-            // InternalMLRegression.g:2117:2: rule__DecisionTreeRegressor__Group__3__Impl
+            // InternalMLRegression.g:2062:1: ( rule__DecisionTreeRegressor__Group__3__Impl )
+            // InternalMLRegression.g:2063:2: rule__DecisionTreeRegressor__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DecisionTreeRegressor__Group__3__Impl();
@@ -6311,20 +6121,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__Group__3__Impl"
-    // InternalMLRegression.g:2123:1: rule__DecisionTreeRegressor__Group__3__Impl : ( ')' ) ;
+    // InternalMLRegression.g:2069:1: rule__DecisionTreeRegressor__Group__3__Impl : ( ')' ) ;
     public final void rule__DecisionTreeRegressor__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2127:1: ( ( ')' ) )
-            // InternalMLRegression.g:2128:1: ( ')' )
+            // InternalMLRegression.g:2073:1: ( ( ')' ) )
+            // InternalMLRegression.g:2074:1: ( ')' )
             {
-            // InternalMLRegression.g:2128:1: ( ')' )
-            // InternalMLRegression.g:2129:2: ')'
+            // InternalMLRegression.g:2074:1: ( ')' )
+            // InternalMLRegression.g:2075:2: ')'
             {
              before(grammarAccess.getDecisionTreeRegressorAccess().getRightParenthesisKeyword_3()); 
-            match(input,18,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getDecisionTreeRegressorAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -6348,14 +6158,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__Group__0"
-    // InternalMLRegression.g:2139:1: rule__SVR__Group__0 : rule__SVR__Group__0__Impl rule__SVR__Group__1 ;
+    // InternalMLRegression.g:2085:1: rule__SVR__Group__0 : rule__SVR__Group__0__Impl rule__SVR__Group__1 ;
     public final void rule__SVR__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2143:1: ( rule__SVR__Group__0__Impl rule__SVR__Group__1 )
-            // InternalMLRegression.g:2144:2: rule__SVR__Group__0__Impl rule__SVR__Group__1
+            // InternalMLRegression.g:2089:1: ( rule__SVR__Group__0__Impl rule__SVR__Group__1 )
+            // InternalMLRegression.g:2090:2: rule__SVR__Group__0__Impl rule__SVR__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__SVR__Group__0__Impl();
@@ -6386,20 +6196,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__Group__0__Impl"
-    // InternalMLRegression.g:2151:1: rule__SVR__Group__0__Impl : ( 'svr' ) ;
+    // InternalMLRegression.g:2097:1: rule__SVR__Group__0__Impl : ( 'svr' ) ;
     public final void rule__SVR__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2155:1: ( ( 'svr' ) )
-            // InternalMLRegression.g:2156:1: ( 'svr' )
+            // InternalMLRegression.g:2101:1: ( ( 'svr' ) )
+            // InternalMLRegression.g:2102:1: ( 'svr' )
             {
-            // InternalMLRegression.g:2156:1: ( 'svr' )
-            // InternalMLRegression.g:2157:2: 'svr'
+            // InternalMLRegression.g:2102:1: ( 'svr' )
+            // InternalMLRegression.g:2103:2: 'svr'
             {
              before(grammarAccess.getSVRAccess().getSvrKeyword_0()); 
-            match(input,28,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getSVRAccess().getSvrKeyword_0()); 
 
             }
@@ -6423,14 +6233,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__Group__1"
-    // InternalMLRegression.g:2166:1: rule__SVR__Group__1 : rule__SVR__Group__1__Impl rule__SVR__Group__2 ;
+    // InternalMLRegression.g:2112:1: rule__SVR__Group__1 : rule__SVR__Group__1__Impl rule__SVR__Group__2 ;
     public final void rule__SVR__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2170:1: ( rule__SVR__Group__1__Impl rule__SVR__Group__2 )
-            // InternalMLRegression.g:2171:2: rule__SVR__Group__1__Impl rule__SVR__Group__2
+            // InternalMLRegression.g:2116:1: ( rule__SVR__Group__1__Impl rule__SVR__Group__2 )
+            // InternalMLRegression.g:2117:2: rule__SVR__Group__1__Impl rule__SVR__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__SVR__Group__1__Impl();
@@ -6461,20 +6271,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__Group__1__Impl"
-    // InternalMLRegression.g:2178:1: rule__SVR__Group__1__Impl : ( '(' ) ;
+    // InternalMLRegression.g:2124:1: rule__SVR__Group__1__Impl : ( '(' ) ;
     public final void rule__SVR__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2182:1: ( ( '(' ) )
-            // InternalMLRegression.g:2183:1: ( '(' )
+            // InternalMLRegression.g:2128:1: ( ( '(' ) )
+            // InternalMLRegression.g:2129:1: ( '(' )
             {
-            // InternalMLRegression.g:2183:1: ( '(' )
-            // InternalMLRegression.g:2184:2: '('
+            // InternalMLRegression.g:2129:1: ( '(' )
+            // InternalMLRegression.g:2130:2: '('
             {
              before(grammarAccess.getSVRAccess().getLeftParenthesisKeyword_1()); 
-            match(input,17,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getSVRAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -6498,14 +6308,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__Group__2"
-    // InternalMLRegression.g:2193:1: rule__SVR__Group__2 : rule__SVR__Group__2__Impl rule__SVR__Group__3 ;
+    // InternalMLRegression.g:2139:1: rule__SVR__Group__2 : rule__SVR__Group__2__Impl rule__SVR__Group__3 ;
     public final void rule__SVR__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2197:1: ( rule__SVR__Group__2__Impl rule__SVR__Group__3 )
-            // InternalMLRegression.g:2198:2: rule__SVR__Group__2__Impl rule__SVR__Group__3
+            // InternalMLRegression.g:2143:1: ( rule__SVR__Group__2__Impl rule__SVR__Group__3 )
+            // InternalMLRegression.g:2144:2: rule__SVR__Group__2__Impl rule__SVR__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__SVR__Group__2__Impl();
@@ -6536,21 +6346,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__Group__2__Impl"
-    // InternalMLRegression.g:2205:1: rule__SVR__Group__2__Impl : ( ( rule__SVR__ParamAssignment_2 ) ) ;
+    // InternalMLRegression.g:2151:1: rule__SVR__Group__2__Impl : ( ( rule__SVR__ParamAssignment_2 ) ) ;
     public final void rule__SVR__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2209:1: ( ( ( rule__SVR__ParamAssignment_2 ) ) )
-            // InternalMLRegression.g:2210:1: ( ( rule__SVR__ParamAssignment_2 ) )
+            // InternalMLRegression.g:2155:1: ( ( ( rule__SVR__ParamAssignment_2 ) ) )
+            // InternalMLRegression.g:2156:1: ( ( rule__SVR__ParamAssignment_2 ) )
             {
-            // InternalMLRegression.g:2210:1: ( ( rule__SVR__ParamAssignment_2 ) )
-            // InternalMLRegression.g:2211:2: ( rule__SVR__ParamAssignment_2 )
+            // InternalMLRegression.g:2156:1: ( ( rule__SVR__ParamAssignment_2 ) )
+            // InternalMLRegression.g:2157:2: ( rule__SVR__ParamAssignment_2 )
             {
              before(grammarAccess.getSVRAccess().getParamAssignment_2()); 
-            // InternalMLRegression.g:2212:2: ( rule__SVR__ParamAssignment_2 )
-            // InternalMLRegression.g:2212:3: rule__SVR__ParamAssignment_2
+            // InternalMLRegression.g:2158:2: ( rule__SVR__ParamAssignment_2 )
+            // InternalMLRegression.g:2158:3: rule__SVR__ParamAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__SVR__ParamAssignment_2();
@@ -6583,14 +6393,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__Group__3"
-    // InternalMLRegression.g:2220:1: rule__SVR__Group__3 : rule__SVR__Group__3__Impl ;
+    // InternalMLRegression.g:2166:1: rule__SVR__Group__3 : rule__SVR__Group__3__Impl ;
     public final void rule__SVR__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2224:1: ( rule__SVR__Group__3__Impl )
-            // InternalMLRegression.g:2225:2: rule__SVR__Group__3__Impl
+            // InternalMLRegression.g:2170:1: ( rule__SVR__Group__3__Impl )
+            // InternalMLRegression.g:2171:2: rule__SVR__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SVR__Group__3__Impl();
@@ -6616,20 +6426,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__Group__3__Impl"
-    // InternalMLRegression.g:2231:1: rule__SVR__Group__3__Impl : ( ')' ) ;
+    // InternalMLRegression.g:2177:1: rule__SVR__Group__3__Impl : ( ')' ) ;
     public final void rule__SVR__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2235:1: ( ( ')' ) )
-            // InternalMLRegression.g:2236:1: ( ')' )
+            // InternalMLRegression.g:2181:1: ( ( ')' ) )
+            // InternalMLRegression.g:2182:1: ( ')' )
             {
-            // InternalMLRegression.g:2236:1: ( ')' )
-            // InternalMLRegression.g:2237:2: ')'
+            // InternalMLRegression.g:2182:1: ( ')' )
+            // InternalMLRegression.g:2183:2: ')'
             {
              before(grammarAccess.getSVRAccess().getRightParenthesisKeyword_3()); 
-            match(input,18,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getSVRAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -6652,450 +6462,15 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__SVR__Group__3__Impl"
 
 
-    // $ANTLR start "rule__MeanAbsoluteError__Group__0"
-    // InternalMLRegression.g:2247:1: rule__MeanAbsoluteError__Group__0 : rule__MeanAbsoluteError__Group__0__Impl rule__MeanAbsoluteError__Group__1 ;
-    public final void rule__MeanAbsoluteError__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2251:1: ( rule__MeanAbsoluteError__Group__0__Impl rule__MeanAbsoluteError__Group__1 )
-            // InternalMLRegression.g:2252:2: rule__MeanAbsoluteError__Group__0__Impl rule__MeanAbsoluteError__Group__1
-            {
-            pushFollow(FOLLOW_22);
-            rule__MeanAbsoluteError__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__MeanAbsoluteError__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MeanAbsoluteError__Group__0"
-
-
-    // $ANTLR start "rule__MeanAbsoluteError__Group__0__Impl"
-    // InternalMLRegression.g:2259:1: rule__MeanAbsoluteError__Group__0__Impl : ( 'mean_absolute_error' ) ;
-    public final void rule__MeanAbsoluteError__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2263:1: ( ( 'mean_absolute_error' ) )
-            // InternalMLRegression.g:2264:1: ( 'mean_absolute_error' )
-            {
-            // InternalMLRegression.g:2264:1: ( 'mean_absolute_error' )
-            // InternalMLRegression.g:2265:2: 'mean_absolute_error'
-            {
-             before(grammarAccess.getMeanAbsoluteErrorAccess().getMean_absolute_errorKeyword_0()); 
-            match(input,29,FOLLOW_2); 
-             after(grammarAccess.getMeanAbsoluteErrorAccess().getMean_absolute_errorKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MeanAbsoluteError__Group__0__Impl"
-
-
-    // $ANTLR start "rule__MeanAbsoluteError__Group__1"
-    // InternalMLRegression.g:2274:1: rule__MeanAbsoluteError__Group__1 : rule__MeanAbsoluteError__Group__1__Impl ;
-    public final void rule__MeanAbsoluteError__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2278:1: ( rule__MeanAbsoluteError__Group__1__Impl )
-            // InternalMLRegression.g:2279:2: rule__MeanAbsoluteError__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__MeanAbsoluteError__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MeanAbsoluteError__Group__1"
-
-
-    // $ANTLR start "rule__MeanAbsoluteError__Group__1__Impl"
-    // InternalMLRegression.g:2285:1: rule__MeanAbsoluteError__Group__1__Impl : ( '()' ) ;
-    public final void rule__MeanAbsoluteError__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2289:1: ( ( '()' ) )
-            // InternalMLRegression.g:2290:1: ( '()' )
-            {
-            // InternalMLRegression.g:2290:1: ( '()' )
-            // InternalMLRegression.g:2291:2: '()'
-            {
-             before(grammarAccess.getMeanAbsoluteErrorAccess().getLeftParenthesisRightParenthesisKeyword_1()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getMeanAbsoluteErrorAccess().getLeftParenthesisRightParenthesisKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MeanAbsoluteError__Group__1__Impl"
-
-
-    // $ANTLR start "rule__MeanSquaredError__Group__0"
-    // InternalMLRegression.g:2301:1: rule__MeanSquaredError__Group__0 : rule__MeanSquaredError__Group__0__Impl rule__MeanSquaredError__Group__1 ;
-    public final void rule__MeanSquaredError__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2305:1: ( rule__MeanSquaredError__Group__0__Impl rule__MeanSquaredError__Group__1 )
-            // InternalMLRegression.g:2306:2: rule__MeanSquaredError__Group__0__Impl rule__MeanSquaredError__Group__1
-            {
-            pushFollow(FOLLOW_22);
-            rule__MeanSquaredError__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__MeanSquaredError__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MeanSquaredError__Group__0"
-
-
-    // $ANTLR start "rule__MeanSquaredError__Group__0__Impl"
-    // InternalMLRegression.g:2313:1: rule__MeanSquaredError__Group__0__Impl : ( 'mean_square_error' ) ;
-    public final void rule__MeanSquaredError__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2317:1: ( ( 'mean_square_error' ) )
-            // InternalMLRegression.g:2318:1: ( 'mean_square_error' )
-            {
-            // InternalMLRegression.g:2318:1: ( 'mean_square_error' )
-            // InternalMLRegression.g:2319:2: 'mean_square_error'
-            {
-             before(grammarAccess.getMeanSquaredErrorAccess().getMean_square_errorKeyword_0()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getMeanSquaredErrorAccess().getMean_square_errorKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MeanSquaredError__Group__0__Impl"
-
-
-    // $ANTLR start "rule__MeanSquaredError__Group__1"
-    // InternalMLRegression.g:2328:1: rule__MeanSquaredError__Group__1 : rule__MeanSquaredError__Group__1__Impl ;
-    public final void rule__MeanSquaredError__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2332:1: ( rule__MeanSquaredError__Group__1__Impl )
-            // InternalMLRegression.g:2333:2: rule__MeanSquaredError__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__MeanSquaredError__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MeanSquaredError__Group__1"
-
-
-    // $ANTLR start "rule__MeanSquaredError__Group__1__Impl"
-    // InternalMLRegression.g:2339:1: rule__MeanSquaredError__Group__1__Impl : ( '()' ) ;
-    public final void rule__MeanSquaredError__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2343:1: ( ( '()' ) )
-            // InternalMLRegression.g:2344:1: ( '()' )
-            {
-            // InternalMLRegression.g:2344:1: ( '()' )
-            // InternalMLRegression.g:2345:2: '()'
-            {
-             before(grammarAccess.getMeanSquaredErrorAccess().getLeftParenthesisRightParenthesisKeyword_1()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getMeanSquaredErrorAccess().getLeftParenthesisRightParenthesisKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MeanSquaredError__Group__1__Impl"
-
-
-    // $ANTLR start "rule__MedianAbsoluteError__Group__0"
-    // InternalMLRegression.g:2355:1: rule__MedianAbsoluteError__Group__0 : rule__MedianAbsoluteError__Group__0__Impl rule__MedianAbsoluteError__Group__1 ;
-    public final void rule__MedianAbsoluteError__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2359:1: ( rule__MedianAbsoluteError__Group__0__Impl rule__MedianAbsoluteError__Group__1 )
-            // InternalMLRegression.g:2360:2: rule__MedianAbsoluteError__Group__0__Impl rule__MedianAbsoluteError__Group__1
-            {
-            pushFollow(FOLLOW_22);
-            rule__MedianAbsoluteError__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__MedianAbsoluteError__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MedianAbsoluteError__Group__0"
-
-
-    // $ANTLR start "rule__MedianAbsoluteError__Group__0__Impl"
-    // InternalMLRegression.g:2367:1: rule__MedianAbsoluteError__Group__0__Impl : ( 'median_absolute_error' ) ;
-    public final void rule__MedianAbsoluteError__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2371:1: ( ( 'median_absolute_error' ) )
-            // InternalMLRegression.g:2372:1: ( 'median_absolute_error' )
-            {
-            // InternalMLRegression.g:2372:1: ( 'median_absolute_error' )
-            // InternalMLRegression.g:2373:2: 'median_absolute_error'
-            {
-             before(grammarAccess.getMedianAbsoluteErrorAccess().getMedian_absolute_errorKeyword_0()); 
-            match(input,31,FOLLOW_2); 
-             after(grammarAccess.getMedianAbsoluteErrorAccess().getMedian_absolute_errorKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MedianAbsoluteError__Group__0__Impl"
-
-
-    // $ANTLR start "rule__MedianAbsoluteError__Group__1"
-    // InternalMLRegression.g:2382:1: rule__MedianAbsoluteError__Group__1 : rule__MedianAbsoluteError__Group__1__Impl ;
-    public final void rule__MedianAbsoluteError__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2386:1: ( rule__MedianAbsoluteError__Group__1__Impl )
-            // InternalMLRegression.g:2387:2: rule__MedianAbsoluteError__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__MedianAbsoluteError__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MedianAbsoluteError__Group__1"
-
-
-    // $ANTLR start "rule__MedianAbsoluteError__Group__1__Impl"
-    // InternalMLRegression.g:2393:1: rule__MedianAbsoluteError__Group__1__Impl : ( '()' ) ;
-    public final void rule__MedianAbsoluteError__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2397:1: ( ( '()' ) )
-            // InternalMLRegression.g:2398:1: ( '()' )
-            {
-            // InternalMLRegression.g:2398:1: ( '()' )
-            // InternalMLRegression.g:2399:2: '()'
-            {
-             before(grammarAccess.getMedianAbsoluteErrorAccess().getLeftParenthesisRightParenthesisKeyword_1()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getMedianAbsoluteErrorAccess().getLeftParenthesisRightParenthesisKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MedianAbsoluteError__Group__1__Impl"
-
-
     // $ANTLR start "rule__FLOAT__Group__0"
-    // InternalMLRegression.g:2409:1: rule__FLOAT__Group__0 : rule__FLOAT__Group__0__Impl rule__FLOAT__Group__1 ;
+    // InternalMLRegression.g:2193:1: rule__FLOAT__Group__0 : rule__FLOAT__Group__0__Impl rule__FLOAT__Group__1 ;
     public final void rule__FLOAT__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2413:1: ( rule__FLOAT__Group__0__Impl rule__FLOAT__Group__1 )
-            // InternalMLRegression.g:2414:2: rule__FLOAT__Group__0__Impl rule__FLOAT__Group__1
+            // InternalMLRegression.g:2197:1: ( rule__FLOAT__Group__0__Impl rule__FLOAT__Group__1 )
+            // InternalMLRegression.g:2198:2: rule__FLOAT__Group__0__Impl rule__FLOAT__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__FLOAT__Group__0__Impl();
@@ -7126,21 +6501,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__Group__0__Impl"
-    // InternalMLRegression.g:2421:1: rule__FLOAT__Group__0__Impl : ( ( rule__FLOAT__ValueAssignment_0 ) ) ;
+    // InternalMLRegression.g:2205:1: rule__FLOAT__Group__0__Impl : ( ( rule__FLOAT__ValueAssignment_0 ) ) ;
     public final void rule__FLOAT__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2425:1: ( ( ( rule__FLOAT__ValueAssignment_0 ) ) )
-            // InternalMLRegression.g:2426:1: ( ( rule__FLOAT__ValueAssignment_0 ) )
+            // InternalMLRegression.g:2209:1: ( ( ( rule__FLOAT__ValueAssignment_0 ) ) )
+            // InternalMLRegression.g:2210:1: ( ( rule__FLOAT__ValueAssignment_0 ) )
             {
-            // InternalMLRegression.g:2426:1: ( ( rule__FLOAT__ValueAssignment_0 ) )
-            // InternalMLRegression.g:2427:2: ( rule__FLOAT__ValueAssignment_0 )
+            // InternalMLRegression.g:2210:1: ( ( rule__FLOAT__ValueAssignment_0 ) )
+            // InternalMLRegression.g:2211:2: ( rule__FLOAT__ValueAssignment_0 )
             {
              before(grammarAccess.getFLOATAccess().getValueAssignment_0()); 
-            // InternalMLRegression.g:2428:2: ( rule__FLOAT__ValueAssignment_0 )
-            // InternalMLRegression.g:2428:3: rule__FLOAT__ValueAssignment_0
+            // InternalMLRegression.g:2212:2: ( rule__FLOAT__ValueAssignment_0 )
+            // InternalMLRegression.g:2212:3: rule__FLOAT__ValueAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__FLOAT__ValueAssignment_0();
@@ -7173,14 +6548,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__Group__1"
-    // InternalMLRegression.g:2436:1: rule__FLOAT__Group__1 : rule__FLOAT__Group__1__Impl ;
+    // InternalMLRegression.g:2220:1: rule__FLOAT__Group__1 : rule__FLOAT__Group__1__Impl ;
     public final void rule__FLOAT__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2440:1: ( rule__FLOAT__Group__1__Impl )
-            // InternalMLRegression.g:2441:2: rule__FLOAT__Group__1__Impl
+            // InternalMLRegression.g:2224:1: ( rule__FLOAT__Group__1__Impl )
+            // InternalMLRegression.g:2225:2: rule__FLOAT__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FLOAT__Group__1__Impl();
@@ -7206,20 +6581,20 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__Group__1__Impl"
-    // InternalMLRegression.g:2447:1: rule__FLOAT__Group__1__Impl : ( ( rule__FLOAT__Group_1__0 )? ) ;
+    // InternalMLRegression.g:2231:1: rule__FLOAT__Group__1__Impl : ( ( rule__FLOAT__Group_1__0 )? ) ;
     public final void rule__FLOAT__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2451:1: ( ( ( rule__FLOAT__Group_1__0 )? ) )
-            // InternalMLRegression.g:2452:1: ( ( rule__FLOAT__Group_1__0 )? )
+            // InternalMLRegression.g:2235:1: ( ( ( rule__FLOAT__Group_1__0 )? ) )
+            // InternalMLRegression.g:2236:1: ( ( rule__FLOAT__Group_1__0 )? )
             {
-            // InternalMLRegression.g:2452:1: ( ( rule__FLOAT__Group_1__0 )? )
-            // InternalMLRegression.g:2453:2: ( rule__FLOAT__Group_1__0 )?
+            // InternalMLRegression.g:2236:1: ( ( rule__FLOAT__Group_1__0 )? )
+            // InternalMLRegression.g:2237:2: ( rule__FLOAT__Group_1__0 )?
             {
              before(grammarAccess.getFLOATAccess().getGroup_1()); 
-            // InternalMLRegression.g:2454:2: ( rule__FLOAT__Group_1__0 )?
+            // InternalMLRegression.g:2238:2: ( rule__FLOAT__Group_1__0 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -7228,7 +6603,7 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
             }
             switch (alt8) {
                 case 1 :
-                    // InternalMLRegression.g:2454:3: rule__FLOAT__Group_1__0
+                    // InternalMLRegression.g:2238:3: rule__FLOAT__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FLOAT__Group_1__0();
@@ -7264,14 +6639,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__Group_1__0"
-    // InternalMLRegression.g:2463:1: rule__FLOAT__Group_1__0 : rule__FLOAT__Group_1__0__Impl rule__FLOAT__Group_1__1 ;
+    // InternalMLRegression.g:2247:1: rule__FLOAT__Group_1__0 : rule__FLOAT__Group_1__0__Impl rule__FLOAT__Group_1__1 ;
     public final void rule__FLOAT__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2467:1: ( rule__FLOAT__Group_1__0__Impl rule__FLOAT__Group_1__1 )
-            // InternalMLRegression.g:2468:2: rule__FLOAT__Group_1__0__Impl rule__FLOAT__Group_1__1
+            // InternalMLRegression.g:2251:1: ( rule__FLOAT__Group_1__0__Impl rule__FLOAT__Group_1__1 )
+            // InternalMLRegression.g:2252:2: rule__FLOAT__Group_1__0__Impl rule__FLOAT__Group_1__1
             {
             pushFollow(FOLLOW_9);
             rule__FLOAT__Group_1__0__Impl();
@@ -7302,17 +6677,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__Group_1__0__Impl"
-    // InternalMLRegression.g:2475:1: rule__FLOAT__Group_1__0__Impl : ( '.' ) ;
+    // InternalMLRegression.g:2259:1: rule__FLOAT__Group_1__0__Impl : ( '.' ) ;
     public final void rule__FLOAT__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2479:1: ( ( '.' ) )
-            // InternalMLRegression.g:2480:1: ( '.' )
+            // InternalMLRegression.g:2263:1: ( ( '.' ) )
+            // InternalMLRegression.g:2264:1: ( '.' )
             {
-            // InternalMLRegression.g:2480:1: ( '.' )
-            // InternalMLRegression.g:2481:2: '.'
+            // InternalMLRegression.g:2264:1: ( '.' )
+            // InternalMLRegression.g:2265:2: '.'
             {
              before(grammarAccess.getFLOATAccess().getFullStopKeyword_1_0()); 
             match(input,32,FOLLOW_2); 
@@ -7339,14 +6714,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__Group_1__1"
-    // InternalMLRegression.g:2490:1: rule__FLOAT__Group_1__1 : rule__FLOAT__Group_1__1__Impl ;
+    // InternalMLRegression.g:2274:1: rule__FLOAT__Group_1__1 : rule__FLOAT__Group_1__1__Impl ;
     public final void rule__FLOAT__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2494:1: ( rule__FLOAT__Group_1__1__Impl )
-            // InternalMLRegression.g:2495:2: rule__FLOAT__Group_1__1__Impl
+            // InternalMLRegression.g:2278:1: ( rule__FLOAT__Group_1__1__Impl )
+            // InternalMLRegression.g:2279:2: rule__FLOAT__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FLOAT__Group_1__1__Impl();
@@ -7372,21 +6747,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__Group_1__1__Impl"
-    // InternalMLRegression.g:2501:1: rule__FLOAT__Group_1__1__Impl : ( ( rule__FLOAT__DecimalAssignment_1_1 ) ) ;
+    // InternalMLRegression.g:2285:1: rule__FLOAT__Group_1__1__Impl : ( ( rule__FLOAT__DecimalAssignment_1_1 ) ) ;
     public final void rule__FLOAT__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2505:1: ( ( ( rule__FLOAT__DecimalAssignment_1_1 ) ) )
-            // InternalMLRegression.g:2506:1: ( ( rule__FLOAT__DecimalAssignment_1_1 ) )
+            // InternalMLRegression.g:2289:1: ( ( ( rule__FLOAT__DecimalAssignment_1_1 ) ) )
+            // InternalMLRegression.g:2290:1: ( ( rule__FLOAT__DecimalAssignment_1_1 ) )
             {
-            // InternalMLRegression.g:2506:1: ( ( rule__FLOAT__DecimalAssignment_1_1 ) )
-            // InternalMLRegression.g:2507:2: ( rule__FLOAT__DecimalAssignment_1_1 )
+            // InternalMLRegression.g:2290:1: ( ( rule__FLOAT__DecimalAssignment_1_1 ) )
+            // InternalMLRegression.g:2291:2: ( rule__FLOAT__DecimalAssignment_1_1 )
             {
              before(grammarAccess.getFLOATAccess().getDecimalAssignment_1_1()); 
-            // InternalMLRegression.g:2508:2: ( rule__FLOAT__DecimalAssignment_1_1 )
-            // InternalMLRegression.g:2508:3: rule__FLOAT__DecimalAssignment_1_1
+            // InternalMLRegression.g:2292:2: ( rule__FLOAT__DecimalAssignment_1_1 )
+            // InternalMLRegression.g:2292:3: rule__FLOAT__DecimalAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__FLOAT__DecimalAssignment_1_1();
@@ -7419,14 +6794,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__PERCENT__Group__0"
-    // InternalMLRegression.g:2517:1: rule__PERCENT__Group__0 : rule__PERCENT__Group__0__Impl rule__PERCENT__Group__1 ;
+    // InternalMLRegression.g:2301:1: rule__PERCENT__Group__0 : rule__PERCENT__Group__0__Impl rule__PERCENT__Group__1 ;
     public final void rule__PERCENT__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2521:1: ( rule__PERCENT__Group__0__Impl rule__PERCENT__Group__1 )
-            // InternalMLRegression.g:2522:2: rule__PERCENT__Group__0__Impl rule__PERCENT__Group__1
+            // InternalMLRegression.g:2305:1: ( rule__PERCENT__Group__0__Impl rule__PERCENT__Group__1 )
+            // InternalMLRegression.g:2306:2: rule__PERCENT__Group__0__Impl rule__PERCENT__Group__1
             {
             pushFollow(FOLLOW_24);
             rule__PERCENT__Group__0__Impl();
@@ -7457,17 +6832,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__PERCENT__Group__0__Impl"
-    // InternalMLRegression.g:2529:1: rule__PERCENT__Group__0__Impl : ( ruleFLOAT ) ;
+    // InternalMLRegression.g:2313:1: rule__PERCENT__Group__0__Impl : ( ruleFLOAT ) ;
     public final void rule__PERCENT__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2533:1: ( ( ruleFLOAT ) )
-            // InternalMLRegression.g:2534:1: ( ruleFLOAT )
+            // InternalMLRegression.g:2317:1: ( ( ruleFLOAT ) )
+            // InternalMLRegression.g:2318:1: ( ruleFLOAT )
             {
-            // InternalMLRegression.g:2534:1: ( ruleFLOAT )
-            // InternalMLRegression.g:2535:2: ruleFLOAT
+            // InternalMLRegression.g:2318:1: ( ruleFLOAT )
+            // InternalMLRegression.g:2319:2: ruleFLOAT
             {
              before(grammarAccess.getPERCENTAccess().getFLOATParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -7498,14 +6873,14 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__PERCENT__Group__1"
-    // InternalMLRegression.g:2544:1: rule__PERCENT__Group__1 : rule__PERCENT__Group__1__Impl ;
+    // InternalMLRegression.g:2328:1: rule__PERCENT__Group__1 : rule__PERCENT__Group__1__Impl ;
     public final void rule__PERCENT__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2548:1: ( rule__PERCENT__Group__1__Impl )
-            // InternalMLRegression.g:2549:2: rule__PERCENT__Group__1__Impl
+            // InternalMLRegression.g:2332:1: ( rule__PERCENT__Group__1__Impl )
+            // InternalMLRegression.g:2333:2: rule__PERCENT__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PERCENT__Group__1__Impl();
@@ -7531,17 +6906,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__PERCENT__Group__1__Impl"
-    // InternalMLRegression.g:2555:1: rule__PERCENT__Group__1__Impl : ( '%' ) ;
+    // InternalMLRegression.g:2339:1: rule__PERCENT__Group__1__Impl : ( '%' ) ;
     public final void rule__PERCENT__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2559:1: ( ( '%' ) )
-            // InternalMLRegression.g:2560:1: ( '%' )
+            // InternalMLRegression.g:2343:1: ( ( '%' ) )
+            // InternalMLRegression.g:2344:1: ( '%' )
             {
-            // InternalMLRegression.g:2560:1: ( '%' )
-            // InternalMLRegression.g:2561:2: '%'
+            // InternalMLRegression.g:2344:1: ( '%' )
+            // InternalMLRegression.g:2345:2: '%'
             {
              before(grammarAccess.getPERCENTAccess().getPercentSignKeyword_1()); 
             match(input,33,FOLLOW_2); 
@@ -7568,17 +6943,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__MLRegression__DatasetAssignment_0"
-    // InternalMLRegression.g:2571:1: rule__MLRegression__DatasetAssignment_0 : ( ruleDataset ) ;
+    // InternalMLRegression.g:2355:1: rule__MLRegression__DatasetAssignment_0 : ( ruleDataset ) ;
     public final void rule__MLRegression__DatasetAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2575:1: ( ( ruleDataset ) )
-            // InternalMLRegression.g:2576:2: ( ruleDataset )
+            // InternalMLRegression.g:2359:1: ( ( ruleDataset ) )
+            // InternalMLRegression.g:2360:2: ( ruleDataset )
             {
-            // InternalMLRegression.g:2576:2: ( ruleDataset )
-            // InternalMLRegression.g:2577:3: ruleDataset
+            // InternalMLRegression.g:2360:2: ( ruleDataset )
+            // InternalMLRegression.g:2361:3: ruleDataset
             {
              before(grammarAccess.getMLRegressionAccess().getDatasetDatasetParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7609,17 +6984,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__MLRegression__VarsAssignment_1"
-    // InternalMLRegression.g:2586:1: rule__MLRegression__VarsAssignment_1 : ( ruleVariables ) ;
+    // InternalMLRegression.g:2370:1: rule__MLRegression__VarsAssignment_1 : ( ruleVariables ) ;
     public final void rule__MLRegression__VarsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2590:1: ( ( ruleVariables ) )
-            // InternalMLRegression.g:2591:2: ( ruleVariables )
+            // InternalMLRegression.g:2374:1: ( ( ruleVariables ) )
+            // InternalMLRegression.g:2375:2: ( ruleVariables )
             {
-            // InternalMLRegression.g:2591:2: ( ruleVariables )
-            // InternalMLRegression.g:2592:3: ruleVariables
+            // InternalMLRegression.g:2375:2: ( ruleVariables )
+            // InternalMLRegression.g:2376:3: ruleVariables
             {
              before(grammarAccess.getMLRegressionAccess().getVarsVariablesParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7650,17 +7025,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__MLRegression__EvaluationAssignment_2"
-    // InternalMLRegression.g:2601:1: rule__MLRegression__EvaluationAssignment_2 : ( ruleEvaluationType ) ;
+    // InternalMLRegression.g:2385:1: rule__MLRegression__EvaluationAssignment_2 : ( ruleEvaluationType ) ;
     public final void rule__MLRegression__EvaluationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2605:1: ( ( ruleEvaluationType ) )
-            // InternalMLRegression.g:2606:2: ( ruleEvaluationType )
+            // InternalMLRegression.g:2389:1: ( ( ruleEvaluationType ) )
+            // InternalMLRegression.g:2390:2: ( ruleEvaluationType )
             {
-            // InternalMLRegression.g:2606:2: ( ruleEvaluationType )
-            // InternalMLRegression.g:2607:3: ruleEvaluationType
+            // InternalMLRegression.g:2390:2: ( ruleEvaluationType )
+            // InternalMLRegression.g:2391:3: ruleEvaluationType
             {
              before(grammarAccess.getMLRegressionAccess().getEvaluationEvaluationTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7691,17 +7066,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__MLRegression__AlgoAssignment_3"
-    // InternalMLRegression.g:2616:1: rule__MLRegression__AlgoAssignment_3 : ( ruleAlgo ) ;
+    // InternalMLRegression.g:2400:1: rule__MLRegression__AlgoAssignment_3 : ( ruleAlgo ) ;
     public final void rule__MLRegression__AlgoAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2620:1: ( ( ruleAlgo ) )
-            // InternalMLRegression.g:2621:2: ( ruleAlgo )
+            // InternalMLRegression.g:2404:1: ( ( ruleAlgo ) )
+            // InternalMLRegression.g:2405:2: ( ruleAlgo )
             {
-            // InternalMLRegression.g:2621:2: ( ruleAlgo )
-            // InternalMLRegression.g:2622:3: ruleAlgo
+            // InternalMLRegression.g:2405:2: ( ruleAlgo )
+            // InternalMLRegression.g:2406:3: ruleAlgo
             {
              before(grammarAccess.getMLRegressionAccess().getAlgoAlgoParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7732,17 +7107,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__MLRegression__CalculateAssignment_4"
-    // InternalMLRegression.g:2631:1: rule__MLRegression__CalculateAssignment_4 : ( ruleCalculate ) ;
+    // InternalMLRegression.g:2415:1: rule__MLRegression__CalculateAssignment_4 : ( ruleCalculate ) ;
     public final void rule__MLRegression__CalculateAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2635:1: ( ( ruleCalculate ) )
-            // InternalMLRegression.g:2636:2: ( ruleCalculate )
+            // InternalMLRegression.g:2419:1: ( ( ruleCalculate ) )
+            // InternalMLRegression.g:2420:2: ( ruleCalculate )
             {
-            // InternalMLRegression.g:2636:2: ( ruleCalculate )
-            // InternalMLRegression.g:2637:3: ruleCalculate
+            // InternalMLRegression.g:2420:2: ( ruleCalculate )
+            // InternalMLRegression.g:2421:3: ruleCalculate
             {
              before(grammarAccess.getMLRegressionAccess().getCalculateCalculateParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -7772,22 +7147,22 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__MLRegression__CalculateAssignment_4"
 
 
-    // $ANTLR start "rule__Dataset__DataAssignment_1"
-    // InternalMLRegression.g:2646:1: rule__Dataset__DataAssignment_1 : ( RULE_STRING ) ;
-    public final void rule__Dataset__DataAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Dataset__DataPathAssignment_1"
+    // InternalMLRegression.g:2430:1: rule__Dataset__DataPathAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__Dataset__DataPathAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2650:1: ( ( RULE_STRING ) )
-            // InternalMLRegression.g:2651:2: ( RULE_STRING )
+            // InternalMLRegression.g:2434:1: ( ( RULE_STRING ) )
+            // InternalMLRegression.g:2435:2: ( RULE_STRING )
             {
-            // InternalMLRegression.g:2651:2: ( RULE_STRING )
-            // InternalMLRegression.g:2652:3: RULE_STRING
+            // InternalMLRegression.g:2435:2: ( RULE_STRING )
+            // InternalMLRegression.g:2436:3: RULE_STRING
             {
-             before(grammarAccess.getDatasetAccess().getDataSTRINGTerminalRuleCall_1_0()); 
+             before(grammarAccess.getDatasetAccess().getDataPathSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getDatasetAccess().getDataSTRINGTerminalRuleCall_1_0()); 
+             after(grammarAccess.getDatasetAccess().getDataPathSTRINGTerminalRuleCall_1_0()); 
 
             }
 
@@ -7806,21 +7181,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Dataset__DataAssignment_1"
+    // $ANTLR end "rule__Dataset__DataPathAssignment_1"
 
 
     // $ANTLR start "rule__Dataset__SeparatorAssignment_2"
-    // InternalMLRegression.g:2661:1: rule__Dataset__SeparatorAssignment_2 : ( RULE_STRING ) ;
+    // InternalMLRegression.g:2445:1: rule__Dataset__SeparatorAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Dataset__SeparatorAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2665:1: ( ( RULE_STRING ) )
-            // InternalMLRegression.g:2666:2: ( RULE_STRING )
+            // InternalMLRegression.g:2449:1: ( ( RULE_STRING ) )
+            // InternalMLRegression.g:2450:2: ( RULE_STRING )
             {
-            // InternalMLRegression.g:2666:2: ( RULE_STRING )
-            // InternalMLRegression.g:2667:3: RULE_STRING
+            // InternalMLRegression.g:2450:2: ( RULE_STRING )
+            // InternalMLRegression.g:2451:3: RULE_STRING
             {
              before(grammarAccess.getDatasetAccess().getSeparatorSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7847,17 +7222,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Partition__TrainAssignment_2"
-    // InternalMLRegression.g:2676:1: rule__Partition__TrainAssignment_2 : ( RULE_INT ) ;
+    // InternalMLRegression.g:2460:1: rule__Partition__TrainAssignment_2 : ( RULE_INT ) ;
     public final void rule__Partition__TrainAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2680:1: ( ( RULE_INT ) )
-            // InternalMLRegression.g:2681:2: ( RULE_INT )
+            // InternalMLRegression.g:2464:1: ( ( RULE_INT ) )
+            // InternalMLRegression.g:2465:2: ( RULE_INT )
             {
-            // InternalMLRegression.g:2681:2: ( RULE_INT )
-            // InternalMLRegression.g:2682:3: RULE_INT
+            // InternalMLRegression.g:2465:2: ( RULE_INT )
+            // InternalMLRegression.g:2466:3: RULE_INT
             {
              before(grammarAccess.getPartitionAccess().getTrainINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -7884,17 +7259,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Partition__TestAssignment_4"
-    // InternalMLRegression.g:2691:1: rule__Partition__TestAssignment_4 : ( RULE_INT ) ;
+    // InternalMLRegression.g:2475:1: rule__Partition__TestAssignment_4 : ( RULE_INT ) ;
     public final void rule__Partition__TestAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2695:1: ( ( RULE_INT ) )
-            // InternalMLRegression.g:2696:2: ( RULE_INT )
+            // InternalMLRegression.g:2479:1: ( ( RULE_INT ) )
+            // InternalMLRegression.g:2480:2: ( RULE_INT )
             {
-            // InternalMLRegression.g:2696:2: ( RULE_INT )
-            // InternalMLRegression.g:2697:3: RULE_INT
+            // InternalMLRegression.g:2480:2: ( RULE_INT )
+            // InternalMLRegression.g:2481:3: RULE_INT
             {
              before(grammarAccess.getPartitionAccess().getTestINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -7920,22 +7295,22 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Partition__TestAssignment_4"
 
 
-    // $ANTLR start "rule__CrossValidation__CAssignment_2"
-    // InternalMLRegression.g:2706:1: rule__CrossValidation__CAssignment_2 : ( RULE_INT ) ;
-    public final void rule__CrossValidation__CAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__CrossValidation__KAssignment_2"
+    // InternalMLRegression.g:2490:1: rule__CrossValidation__KAssignment_2 : ( RULE_INT ) ;
+    public final void rule__CrossValidation__KAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2710:1: ( ( RULE_INT ) )
-            // InternalMLRegression.g:2711:2: ( RULE_INT )
+            // InternalMLRegression.g:2494:1: ( ( RULE_INT ) )
+            // InternalMLRegression.g:2495:2: ( RULE_INT )
             {
-            // InternalMLRegression.g:2711:2: ( RULE_INT )
-            // InternalMLRegression.g:2712:3: RULE_INT
+            // InternalMLRegression.g:2495:2: ( RULE_INT )
+            // InternalMLRegression.g:2496:3: RULE_INT
             {
-             before(grammarAccess.getCrossValidationAccess().getCINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getCrossValidationAccess().getKINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getCrossValidationAccess().getCINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getCrossValidationAccess().getKINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -7954,58 +7329,21 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__CrossValidation__CAssignment_2"
-
-
-    // $ANTLR start "rule__CrossValidation__RandomStateAssignment_4"
-    // InternalMLRegression.g:2721:1: rule__CrossValidation__RandomStateAssignment_4 : ( RULE_INT ) ;
-    public final void rule__CrossValidation__RandomStateAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalMLRegression.g:2725:1: ( ( RULE_INT ) )
-            // InternalMLRegression.g:2726:2: ( RULE_INT )
-            {
-            // InternalMLRegression.g:2726:2: ( RULE_INT )
-            // InternalMLRegression.g:2727:3: RULE_INT
-            {
-             before(grammarAccess.getCrossValidationAccess().getRandomStateINTTerminalRuleCall_4_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getCrossValidationAccess().getRandomStateINTTerminalRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__CrossValidation__RandomStateAssignment_4"
+    // $ANTLR end "rule__CrossValidation__KAssignment_2"
 
 
     // $ANTLR start "rule__Variables__PredictivesAssignment_0"
-    // InternalMLRegression.g:2736:1: rule__Variables__PredictivesAssignment_0 : ( ruleListePredictiveVar ) ;
+    // InternalMLRegression.g:2505:1: rule__Variables__PredictivesAssignment_0 : ( ruleListePredictiveVar ) ;
     public final void rule__Variables__PredictivesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2740:1: ( ( ruleListePredictiveVar ) )
-            // InternalMLRegression.g:2741:2: ( ruleListePredictiveVar )
+            // InternalMLRegression.g:2509:1: ( ( ruleListePredictiveVar ) )
+            // InternalMLRegression.g:2510:2: ( ruleListePredictiveVar )
             {
-            // InternalMLRegression.g:2741:2: ( ruleListePredictiveVar )
-            // InternalMLRegression.g:2742:3: ruleListePredictiveVar
+            // InternalMLRegression.g:2510:2: ( ruleListePredictiveVar )
+            // InternalMLRegression.g:2511:3: ruleListePredictiveVar
             {
              before(grammarAccess.getVariablesAccess().getPredictivesListePredictiveVarParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -8036,17 +7374,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Variables__TargetsAssignment_1"
-    // InternalMLRegression.g:2751:1: rule__Variables__TargetsAssignment_1 : ( ruleTargetVar ) ;
+    // InternalMLRegression.g:2520:1: rule__Variables__TargetsAssignment_1 : ( ruleTargetVar ) ;
     public final void rule__Variables__TargetsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2755:1: ( ( ruleTargetVar ) )
-            // InternalMLRegression.g:2756:2: ( ruleTargetVar )
+            // InternalMLRegression.g:2524:1: ( ( ruleTargetVar ) )
+            // InternalMLRegression.g:2525:2: ( ruleTargetVar )
             {
-            // InternalMLRegression.g:2756:2: ( ruleTargetVar )
-            // InternalMLRegression.g:2757:3: ruleTargetVar
+            // InternalMLRegression.g:2525:2: ( ruleTargetVar )
+            // InternalMLRegression.g:2526:3: ruleTargetVar
             {
              before(grammarAccess.getVariablesAccess().getTargetsTargetVarParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -8077,17 +7415,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__PredVarAssignment_2"
-    // InternalMLRegression.g:2766:1: rule__ListePredictiveVar__PredVarAssignment_2 : ( RULE_STRING ) ;
+    // InternalMLRegression.g:2535:1: rule__ListePredictiveVar__PredVarAssignment_2 : ( RULE_STRING ) ;
     public final void rule__ListePredictiveVar__PredVarAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2770:1: ( ( RULE_STRING ) )
-            // InternalMLRegression.g:2771:2: ( RULE_STRING )
+            // InternalMLRegression.g:2539:1: ( ( RULE_STRING ) )
+            // InternalMLRegression.g:2540:2: ( RULE_STRING )
             {
-            // InternalMLRegression.g:2771:2: ( RULE_STRING )
-            // InternalMLRegression.g:2772:3: RULE_STRING
+            // InternalMLRegression.g:2540:2: ( RULE_STRING )
+            // InternalMLRegression.g:2541:3: RULE_STRING
             {
              before(grammarAccess.getListePredictiveVarAccess().getPredVarSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8114,17 +7452,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ListePredictiveVar__PredVarAssignment_3_1"
-    // InternalMLRegression.g:2781:1: rule__ListePredictiveVar__PredVarAssignment_3_1 : ( RULE_STRING ) ;
+    // InternalMLRegression.g:2550:1: rule__ListePredictiveVar__PredVarAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__ListePredictiveVar__PredVarAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2785:1: ( ( RULE_STRING ) )
-            // InternalMLRegression.g:2786:2: ( RULE_STRING )
+            // InternalMLRegression.g:2554:1: ( ( RULE_STRING ) )
+            // InternalMLRegression.g:2555:2: ( RULE_STRING )
             {
-            // InternalMLRegression.g:2786:2: ( RULE_STRING )
-            // InternalMLRegression.g:2787:3: RULE_STRING
+            // InternalMLRegression.g:2555:2: ( RULE_STRING )
+            // InternalMLRegression.g:2556:3: RULE_STRING
             {
              before(grammarAccess.getListePredictiveVarAccess().getPredVarSTRINGTerminalRuleCall_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8151,17 +7489,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__TargetVarAssignment_2"
-    // InternalMLRegression.g:2796:1: rule__TargetVar__TargetVarAssignment_2 : ( RULE_STRING ) ;
+    // InternalMLRegression.g:2565:1: rule__TargetVar__TargetVarAssignment_2 : ( RULE_STRING ) ;
     public final void rule__TargetVar__TargetVarAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2800:1: ( ( RULE_STRING ) )
-            // InternalMLRegression.g:2801:2: ( RULE_STRING )
+            // InternalMLRegression.g:2569:1: ( ( RULE_STRING ) )
+            // InternalMLRegression.g:2570:2: ( RULE_STRING )
             {
-            // InternalMLRegression.g:2801:2: ( RULE_STRING )
-            // InternalMLRegression.g:2802:3: RULE_STRING
+            // InternalMLRegression.g:2570:2: ( RULE_STRING )
+            // InternalMLRegression.g:2571:3: RULE_STRING
             {
              before(grammarAccess.getTargetVarAccess().getTargetVarSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8188,17 +7526,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__TargetVar__TargetVarAssignment_3_1"
-    // InternalMLRegression.g:2811:1: rule__TargetVar__TargetVarAssignment_3_1 : ( RULE_STRING ) ;
+    // InternalMLRegression.g:2580:1: rule__TargetVar__TargetVarAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__TargetVar__TargetVarAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2815:1: ( ( RULE_STRING ) )
-            // InternalMLRegression.g:2816:2: ( RULE_STRING )
+            // InternalMLRegression.g:2584:1: ( ( RULE_STRING ) )
+            // InternalMLRegression.g:2585:2: ( RULE_STRING )
             {
-            // InternalMLRegression.g:2816:2: ( RULE_STRING )
-            // InternalMLRegression.g:2817:3: RULE_STRING
+            // InternalMLRegression.g:2585:2: ( RULE_STRING )
+            // InternalMLRegression.g:2586:3: RULE_STRING
             {
              before(grammarAccess.getTargetVarAccess().getTargetVarSTRINGTerminalRuleCall_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8225,17 +7563,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Calculate__CalculateTypeAssignment_2"
-    // InternalMLRegression.g:2826:1: rule__Calculate__CalculateTypeAssignment_2 : ( ruleCalculateType ) ;
+    // InternalMLRegression.g:2595:1: rule__Calculate__CalculateTypeAssignment_2 : ( ruleCalculateType ) ;
     public final void rule__Calculate__CalculateTypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2830:1: ( ( ruleCalculateType ) )
-            // InternalMLRegression.g:2831:2: ( ruleCalculateType )
+            // InternalMLRegression.g:2599:1: ( ( ruleCalculateType ) )
+            // InternalMLRegression.g:2600:2: ( ruleCalculateType )
             {
-            // InternalMLRegression.g:2831:2: ( ruleCalculateType )
-            // InternalMLRegression.g:2832:3: ruleCalculateType
+            // InternalMLRegression.g:2600:2: ( ruleCalculateType )
+            // InternalMLRegression.g:2601:3: ruleCalculateType
             {
              before(grammarAccess.getCalculateAccess().getCalculateTypeCalculateTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -8266,17 +7604,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Algo__AlgoAssignment_2"
-    // InternalMLRegression.g:2841:1: rule__Algo__AlgoAssignment_2 : ( ruleAlgoType ) ;
+    // InternalMLRegression.g:2610:1: rule__Algo__AlgoAssignment_2 : ( ruleAlgoType ) ;
     public final void rule__Algo__AlgoAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2845:1: ( ( ruleAlgoType ) )
-            // InternalMLRegression.g:2846:2: ( ruleAlgoType )
+            // InternalMLRegression.g:2614:1: ( ( ruleAlgoType ) )
+            // InternalMLRegression.g:2615:2: ( ruleAlgoType )
             {
-            // InternalMLRegression.g:2846:2: ( ruleAlgoType )
-            // InternalMLRegression.g:2847:3: ruleAlgoType
+            // InternalMLRegression.g:2615:2: ( ruleAlgoType )
+            // InternalMLRegression.g:2616:3: ruleAlgoType
             {
              before(grammarAccess.getAlgoAccess().getAlgoAlgoTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -8307,17 +7645,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__LineRegress__LeftSidePredictAssignment_2"
-    // InternalMLRegression.g:2856:1: rule__LineRegress__LeftSidePredictAssignment_2 : ( RULE_ID ) ;
+    // InternalMLRegression.g:2625:1: rule__LineRegress__LeftSidePredictAssignment_2 : ( RULE_ID ) ;
     public final void rule__LineRegress__LeftSidePredictAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2860:1: ( ( RULE_ID ) )
-            // InternalMLRegression.g:2861:2: ( RULE_ID )
+            // InternalMLRegression.g:2629:1: ( ( RULE_ID ) )
+            // InternalMLRegression.g:2630:2: ( RULE_ID )
             {
-            // InternalMLRegression.g:2861:2: ( RULE_ID )
-            // InternalMLRegression.g:2862:3: RULE_ID
+            // InternalMLRegression.g:2630:2: ( RULE_ID )
+            // InternalMLRegression.g:2631:3: RULE_ID
             {
              before(grammarAccess.getLineRegressAccess().getLeftSidePredictIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8344,17 +7682,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__DecisionTreeRegressor__RandAssignment_2"
-    // InternalMLRegression.g:2871:1: rule__DecisionTreeRegressor__RandAssignment_2 : ( RULE_INT ) ;
+    // InternalMLRegression.g:2640:1: rule__DecisionTreeRegressor__RandAssignment_2 : ( RULE_INT ) ;
     public final void rule__DecisionTreeRegressor__RandAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2875:1: ( ( RULE_INT ) )
-            // InternalMLRegression.g:2876:2: ( RULE_INT )
+            // InternalMLRegression.g:2644:1: ( ( RULE_INT ) )
+            // InternalMLRegression.g:2645:2: ( RULE_INT )
             {
-            // InternalMLRegression.g:2876:2: ( RULE_INT )
-            // InternalMLRegression.g:2877:3: RULE_INT
+            // InternalMLRegression.g:2645:2: ( RULE_INT )
+            // InternalMLRegression.g:2646:3: RULE_INT
             {
              before(grammarAccess.getDecisionTreeRegressorAccess().getRandINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8381,17 +7719,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SVR__ParamAssignment_2"
-    // InternalMLRegression.g:2886:1: rule__SVR__ParamAssignment_2 : ( RULE_ID ) ;
+    // InternalMLRegression.g:2655:1: rule__SVR__ParamAssignment_2 : ( RULE_ID ) ;
     public final void rule__SVR__ParamAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2890:1: ( ( RULE_ID ) )
-            // InternalMLRegression.g:2891:2: ( RULE_ID )
+            // InternalMLRegression.g:2659:1: ( ( RULE_ID ) )
+            // InternalMLRegression.g:2660:2: ( RULE_ID )
             {
-            // InternalMLRegression.g:2891:2: ( RULE_ID )
-            // InternalMLRegression.g:2892:3: RULE_ID
+            // InternalMLRegression.g:2660:2: ( RULE_ID )
+            // InternalMLRegression.g:2661:3: RULE_ID
             {
              before(grammarAccess.getSVRAccess().getParamIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8418,17 +7756,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__ValueAssignment_0"
-    // InternalMLRegression.g:2901:1: rule__FLOAT__ValueAssignment_0 : ( RULE_INT ) ;
+    // InternalMLRegression.g:2670:1: rule__FLOAT__ValueAssignment_0 : ( RULE_INT ) ;
     public final void rule__FLOAT__ValueAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2905:1: ( ( RULE_INT ) )
-            // InternalMLRegression.g:2906:2: ( RULE_INT )
+            // InternalMLRegression.g:2674:1: ( ( RULE_INT ) )
+            // InternalMLRegression.g:2675:2: ( RULE_INT )
             {
-            // InternalMLRegression.g:2906:2: ( RULE_INT )
-            // InternalMLRegression.g:2907:3: RULE_INT
+            // InternalMLRegression.g:2675:2: ( RULE_INT )
+            // InternalMLRegression.g:2676:3: RULE_INT
             {
              before(grammarAccess.getFLOATAccess().getValueINTTerminalRuleCall_0_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8455,17 +7793,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__FLOAT__DecimalAssignment_1_1"
-    // InternalMLRegression.g:2916:1: rule__FLOAT__DecimalAssignment_1_1 : ( RULE_INT ) ;
+    // InternalMLRegression.g:2685:1: rule__FLOAT__DecimalAssignment_1_1 : ( RULE_INT ) ;
     public final void rule__FLOAT__DecimalAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2920:1: ( ( RULE_INT ) )
-            // InternalMLRegression.g:2921:2: ( RULE_INT )
+            // InternalMLRegression.g:2689:1: ( ( RULE_INT ) )
+            // InternalMLRegression.g:2690:2: ( RULE_INT )
             {
-            // InternalMLRegression.g:2921:2: ( RULE_INT )
-            // InternalMLRegression.g:2922:3: RULE_INT
+            // InternalMLRegression.g:2690:2: ( RULE_INT )
+            // InternalMLRegression.g:2691:3: RULE_INT
             {
              before(grammarAccess.getFLOATAccess().getDecimalINTTerminalRuleCall_1_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8497,26 +7835,26 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000092000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000490000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000001010L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008010L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000009000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000000E0000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000018800000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000003800L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x00000000C4000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000200000000L});
 

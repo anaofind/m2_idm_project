@@ -14,7 +14,7 @@
 'import'=11
 'line_regress()'=23
 'mean_absolute_error'=29
-'mean_square_error'=30
+'mean_squared_error'=30
 'median_absolute_error'=31
 'partition'=13
 'predict'=25

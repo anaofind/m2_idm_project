@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.DatasetImpl#getData <em>Data</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.DatasetImpl#getDataPath <em>Data Path</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.impl.DatasetImpl#getSeparator <em>Separator</em>}</li>
  * </ul>
  *
@@ -30,24 +30,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
 {
   /**
-   * The default value of the '{@link #getData() <em>Data</em>}' attribute.
+   * The default value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getData()
+   * @see #getDataPath()
    * @generated
    * @ordered
    */
-  protected static final String DATA_EDEFAULT = null;
+  protected static final String DATA_PATH_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getData() <em>Data</em>}' attribute.
+   * The cached value of the '{@link #getDataPath() <em>Data Path</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getData()
+   * @see #getDataPath()
    * @generated
    * @ordered
    */
-  protected String data = DATA_EDEFAULT;
+  protected String dataPath = DATA_PATH_EDEFAULT;
 
   /**
    * The default value of the '{@link #getSeparator() <em>Separator</em>}' attribute.
@@ -96,9 +96,9 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
    * @generated
    */
   @Override
-  public String getData()
+  public String getDataPath()
   {
-    return data;
+    return dataPath;
   }
 
   /**
@@ -107,12 +107,12 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
    * @generated
    */
   @Override
-  public void setData(String newData)
+  public void setDataPath(String newDataPath)
   {
-    String oldData = data;
-    data = newData;
+    String oldDataPath = dataPath;
+    dataPath = newDataPath;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.DATASET__DATA, oldData, data));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.DATASET__DATA_PATH, oldDataPath, dataPath));
   }
 
   /**
@@ -150,8 +150,8 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   {
     switch (featureID)
     {
-      case MLRegressionPackage.DATASET__DATA:
-        return getData();
+      case MLRegressionPackage.DATASET__DATA_PATH:
+        return getDataPath();
       case MLRegressionPackage.DATASET__SEPARATOR:
         return getSeparator();
     }
@@ -168,8 +168,8 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   {
     switch (featureID)
     {
-      case MLRegressionPackage.DATASET__DATA:
-        setData((String)newValue);
+      case MLRegressionPackage.DATASET__DATA_PATH:
+        setDataPath((String)newValue);
         return;
       case MLRegressionPackage.DATASET__SEPARATOR:
         setSeparator((String)newValue);
@@ -188,8 +188,8 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   {
     switch (featureID)
     {
-      case MLRegressionPackage.DATASET__DATA:
-        setData(DATA_EDEFAULT);
+      case MLRegressionPackage.DATASET__DATA_PATH:
+        setDataPath(DATA_PATH_EDEFAULT);
         return;
       case MLRegressionPackage.DATASET__SEPARATOR:
         setSeparator(SEPARATOR_EDEFAULT);
@@ -208,8 +208,8 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
   {
     switch (featureID)
     {
-      case MLRegressionPackage.DATASET__DATA:
-        return DATA_EDEFAULT == null ? data != null : !DATA_EDEFAULT.equals(data);
+      case MLRegressionPackage.DATASET__DATA_PATH:
+        return DATA_PATH_EDEFAULT == null ? dataPath != null : !DATA_PATH_EDEFAULT.equals(dataPath);
       case MLRegressionPackage.DATASET__SEPARATOR:
         return SEPARATOR_EDEFAULT == null ? separator != null : !SEPARATOR_EDEFAULT.equals(separator);
     }
@@ -227,8 +227,8 @@ public class DatasetImpl extends MinimalEObjectImpl.Container implements Dataset
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (data: ");
-    result.append(data);
+    result.append(" (dataPath: ");
+    result.append(dataPath);
     result.append(", separator: ");
     result.append(separator);
     result.append(')');

@@ -20,8 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.CrossValidationImpl#getC <em>C</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.impl.CrossValidationImpl#getRandomState <em>Random State</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.CrossValidationImpl#getK <em>K</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,44 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class CrossValidationImpl extends EvaluationTypeImpl implements CrossValidation
 {
   /**
-   * The default value of the '{@link #getC() <em>C</em>}' attribute.
+   * The default value of the '{@link #getK() <em>K</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getC()
+   * @see #getK()
    * @generated
    * @ordered
    */
-  protected static final int C_EDEFAULT = 0;
+  protected static final int K_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getC() <em>C</em>}' attribute.
+   * The cached value of the '{@link #getK() <em>K</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getC()
+   * @see #getK()
    * @generated
    * @ordered
    */
-  protected int c = C_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getRandomState() <em>Random State</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRandomState()
-   * @generated
-   * @ordered
-   */
-  protected static final int RANDOM_STATE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getRandomState() <em>Random State</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRandomState()
-   * @generated
-   * @ordered
-   */
-  protected int randomState = RANDOM_STATE_EDEFAULT;
+  protected int k = K_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -95,9 +74,9 @@ public class CrossValidationImpl extends EvaluationTypeImpl implements CrossVali
    * @generated
    */
   @Override
-  public int getC()
+  public int getK()
   {
-    return c;
+    return k;
   }
 
   /**
@@ -106,37 +85,12 @@ public class CrossValidationImpl extends EvaluationTypeImpl implements CrossVali
    * @generated
    */
   @Override
-  public void setC(int newC)
+  public void setK(int newK)
   {
-    int oldC = c;
-    c = newC;
+    int oldK = k;
+    k = newK;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__C, oldC, c));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int getRandomState()
-  {
-    return randomState;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setRandomState(int newRandomState)
-  {
-    int oldRandomState = randomState;
-    randomState = newRandomState;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE, oldRandomState, randomState));
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.CROSS_VALIDATION__K, oldK, k));
   }
 
   /**
@@ -149,10 +103,8 @@ public class CrossValidationImpl extends EvaluationTypeImpl implements CrossVali
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CROSS_VALIDATION__C:
-        return getC();
-      case MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE:
-        return getRandomState();
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        return getK();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,11 +119,8 @@ public class CrossValidationImpl extends EvaluationTypeImpl implements CrossVali
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CROSS_VALIDATION__C:
-        setC((Integer)newValue);
-        return;
-      case MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE:
-        setRandomState((Integer)newValue);
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        setK((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,11 +136,8 @@ public class CrossValidationImpl extends EvaluationTypeImpl implements CrossVali
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CROSS_VALIDATION__C:
-        setC(C_EDEFAULT);
-        return;
-      case MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE:
-        setRandomState(RANDOM_STATE_EDEFAULT);
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        setK(K_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -207,10 +153,8 @@ public class CrossValidationImpl extends EvaluationTypeImpl implements CrossVali
   {
     switch (featureID)
     {
-      case MLRegressionPackage.CROSS_VALIDATION__C:
-        return c != C_EDEFAULT;
-      case MLRegressionPackage.CROSS_VALIDATION__RANDOM_STATE:
-        return randomState != RANDOM_STATE_EDEFAULT;
+      case MLRegressionPackage.CROSS_VALIDATION__K:
+        return k != K_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -226,10 +170,8 @@ public class CrossValidationImpl extends EvaluationTypeImpl implements CrossVali
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (c: ");
-    result.append(c);
-    result.append(", randomState: ");
-    result.append(randomState);
+    result.append(" (k: ");
+    result.append(k);
     result.append(')');
     return result.toString();
   }

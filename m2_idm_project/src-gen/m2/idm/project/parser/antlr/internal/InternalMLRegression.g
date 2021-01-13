@@ -196,9 +196,9 @@ ruleDataset returns [EObject current=null]
 		}
 		(
 			(
-				lv_data_1_0=RULE_STRING
+				lv_dataPath_1_0=RULE_STRING
 				{
-					newLeafNode(lv_data_1_0, grammarAccess.getDatasetAccess().getDataSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_dataPath_1_0, grammarAccess.getDatasetAccess().getDataPathSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -206,8 +206,8 @@ ruleDataset returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"data",
-						lv_data_1_0,
+						"dataPath",
+						lv_dataPath_1_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -370,9 +370,9 @@ ruleCrossValidation returns [EObject current=null]
 		}
 		(
 			(
-				lv_c_2_0=RULE_INT
+				lv_k_2_0=RULE_INT
 				{
-					newLeafNode(lv_c_2_0, grammarAccess.getCrossValidationAccess().getCINTTerminalRuleCall_2_0());
+					newLeafNode(lv_k_2_0, grammarAccess.getCrossValidationAccess().getKINTTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -380,41 +380,19 @@ ruleCrossValidation returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"c",
-						lv_c_2_0,
+						"k",
+						lv_k_2_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_3=','
+		otherlv_3=')'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getCrossValidationAccess().getCommaKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getCrossValidationAccess().getRightParenthesisKeyword_3());
 		}
-		(
-			(
-				lv_randomState_4_0=RULE_INT
-				{
-					newLeafNode(lv_randomState_4_0, grammarAccess.getCrossValidationAccess().getRandomStateINTTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCrossValidationRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"randomState",
-						lv_randomState_4_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_5=')'
+		otherlv_4=';'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getCrossValidationAccess().getRightParenthesisKeyword_5());
-		}
-		otherlv_6=';'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getCrossValidationAccess().getSemicolonKeyword_6());
+			newLeafNode(otherlv_4, grammarAccess.getCrossValidationAccess().getSemicolonKeyword_4());
 		}
 	)
 ;
@@ -988,18 +966,11 @@ ruleMeanAbsoluteError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeR
 @after {
 	leaveRule();
 }:
-	(
-		kw='mean_absolute_error'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMeanAbsoluteErrorAccess().getMean_absolute_errorKeyword_0());
-		}
-		kw='()'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMeanAbsoluteErrorAccess().getLeftParenthesisRightParenthesisKeyword_1());
-		}
-	)
+	kw='mean_absolute_error'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getMeanAbsoluteErrorAccess().getMean_absolute_errorKeyword());
+	}
 ;
 
 // Entry rule entryRuleMeanSquaredError
@@ -1017,18 +988,11 @@ ruleMeanSquaredError returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRu
 @after {
 	leaveRule();
 }:
-	(
-		kw='mean_square_error'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMeanSquaredErrorAccess().getMean_square_errorKeyword_0());
-		}
-		kw='()'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMeanSquaredErrorAccess().getLeftParenthesisRightParenthesisKeyword_1());
-		}
-	)
+	kw='mean_squared_error'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getMeanSquaredErrorAccess().getMean_squared_errorKeyword());
+	}
 ;
 
 // Entry rule entryRuleMedianAbsoluteError
@@ -1046,18 +1010,11 @@ ruleMedianAbsoluteError returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
 @after {
 	leaveRule();
 }:
-	(
-		kw='median_absolute_error'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMedianAbsoluteErrorAccess().getMedian_absolute_errorKeyword_0());
-		}
-		kw='()'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getMedianAbsoluteErrorAccess().getLeftParenthesisRightParenthesisKeyword_1());
-		}
-	)
+	kw='median_absolute_error'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getMedianAbsoluteErrorAccess().getMedian_absolute_errorKeyword());
+	}
 ;
 
 // Entry rule entryRuleFLOAT

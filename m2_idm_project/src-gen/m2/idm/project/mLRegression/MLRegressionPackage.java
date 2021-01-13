@@ -132,13 +132,13 @@ public interface MLRegressionPackage extends EPackage
   int DATASET = 1;
 
   /**
-   * The feature id for the '<em><b>Data</b></em>' attribute.
+   * The feature id for the '<em><b>Data Path</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATASET__DATA = 0;
+  int DATASET__DATA_PATH = 0;
 
   /**
    * The feature id for the '<em><b>Separator</b></em>' attribute.
@@ -225,22 +225,13 @@ public interface MLRegressionPackage extends EPackage
   int CROSS_VALIDATION = 4;
 
   /**
-   * The feature id for the '<em><b>C</b></em>' attribute.
+   * The feature id for the '<em><b>K</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CROSS_VALIDATION__C = EVALUATION_TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Random State</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CROSS_VALIDATION__RANDOM_STATE = EVALUATION_TYPE_FEATURE_COUNT + 1;
+  int CROSS_VALIDATION__K = EVALUATION_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Cross Validation</em>' class.
@@ -249,7 +240,7 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CROSS_VALIDATION_FEATURE_COUNT = EVALUATION_TYPE_FEATURE_COUNT + 2;
+  int CROSS_VALIDATION_FEATURE_COUNT = EVALUATION_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.VariablesImpl <em>Variables</em>}' class.
@@ -683,15 +674,15 @@ public interface MLRegressionPackage extends EPackage
   EClass getDataset();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Dataset#getData <em>Data</em>}'.
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Dataset#getDataPath <em>Data Path</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Data</em>'.
-   * @see m2.idm.project.mLRegression.Dataset#getData()
+   * @return the meta object for the attribute '<em>Data Path</em>'.
+   * @see m2.idm.project.mLRegression.Dataset#getDataPath()
    * @see #getDataset()
    * @generated
    */
-  EAttribute getDataset_Data();
+  EAttribute getDataset_DataPath();
 
   /**
    * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Dataset#getSeparator <em>Separator</em>}'.
@@ -757,26 +748,15 @@ public interface MLRegressionPackage extends EPackage
   EClass getCrossValidation();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.CrossValidation#getC <em>C</em>}'.
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.CrossValidation#getK <em>K</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>C</em>'.
-   * @see m2.idm.project.mLRegression.CrossValidation#getC()
+   * @return the meta object for the attribute '<em>K</em>'.
+   * @see m2.idm.project.mLRegression.CrossValidation#getK()
    * @see #getCrossValidation()
    * @generated
    */
-  EAttribute getCrossValidation_C();
-
-  /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.CrossValidation#getRandomState <em>Random State</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Random State</em>'.
-   * @see m2.idm.project.mLRegression.CrossValidation#getRandomState()
-   * @see #getCrossValidation()
-   * @generated
-   */
-  EAttribute getCrossValidation_RandomState();
+  EAttribute getCrossValidation_K();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.Variables <em>Variables</em>}'.
@@ -1124,12 +1104,12 @@ public interface MLRegressionPackage extends EPackage
     EClass DATASET = eINSTANCE.getDataset();
 
     /**
-     * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Data Path</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATASET__DATA = eINSTANCE.getDataset_Data();
+    EAttribute DATASET__DATA_PATH = eINSTANCE.getDataset_DataPath();
 
     /**
      * The meta object literal for the '<em><b>Separator</b></em>' attribute feature.
@@ -1186,20 +1166,12 @@ public interface MLRegressionPackage extends EPackage
     EClass CROSS_VALIDATION = eINSTANCE.getCrossValidation();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>K</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CROSS_VALIDATION__C = eINSTANCE.getCrossValidation_C();
-
-    /**
-     * The meta object literal for the '<em><b>Random State</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CROSS_VALIDATION__RANDOM_STATE = eINSTANCE.getCrossValidation_RandomState();
+    EAttribute CROSS_VALIDATION__K = eINSTANCE.getCrossValidation_K();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.VariablesImpl <em>Variables</em>}' class.
