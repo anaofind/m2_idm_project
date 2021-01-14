@@ -145,37 +145,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.ALGO_TYPE:
-      {
-        AlgoType algoType = (AlgoType)theEObject;
-        T result = caseAlgoType(algoType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MLRegressionPackage.LINE_REGRESS:
-      {
-        LineRegress lineRegress = (LineRegress)theEObject;
-        T result = caseLineRegress(lineRegress);
-        if (result == null) result = caseAlgoType(lineRegress);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MLRegressionPackage.DECISION_TREE_REGRESSOR:
-      {
-        DecisionTreeRegressor decisionTreeRegressor = (DecisionTreeRegressor)theEObject;
-        T result = caseDecisionTreeRegressor(decisionTreeRegressor);
-        if (result == null) result = caseAlgoType(decisionTreeRegressor);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MLRegressionPackage.SVR:
-      {
-        SVR svr = (SVR)theEObject;
-        T result = caseSVR(svr);
-        if (result == null) result = caseAlgoType(svr);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MLRegressionPackage.NUMERIC_VALUE:
       {
         NumericValue numericValue = (NumericValue)theEObject;
@@ -366,70 +335,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAlgo(Algo object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Algo Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Algo Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAlgoType(AlgoType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Line Regress</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Line Regress</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLineRegress(LineRegress object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Decision Tree Regressor</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Decision Tree Regressor</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDecisionTreeRegressor(DecisionTreeRegressor object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>SVR</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>SVR</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSVR(SVR object)
   {
     return null;
   }

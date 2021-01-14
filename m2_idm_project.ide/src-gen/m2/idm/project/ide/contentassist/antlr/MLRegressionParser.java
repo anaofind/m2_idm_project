@@ -47,9 +47,6 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTargetVarAccess().getGroup_3(), "rule__TargetVar__Group_3__0");
 			builder.put(grammarAccess.getCalculateAccess().getGroup(), "rule__Calculate__Group__0");
 			builder.put(grammarAccess.getAlgoAccess().getGroup(), "rule__Algo__Group__0");
-			builder.put(grammarAccess.getLineRegressAccess().getGroup(), "rule__LineRegress__Group__0");
-			builder.put(grammarAccess.getDecisionTreeRegressorAccess().getGroup(), "rule__DecisionTreeRegressor__Group__0");
-			builder.put(grammarAccess.getSVRAccess().getGroup(), "rule__SVR__Group__0");
 			builder.put(grammarAccess.getFLOATAccess().getGroup(), "rule__FLOAT__Group__0");
 			builder.put(grammarAccess.getFLOATAccess().getGroup_1(), "rule__FLOAT__Group_1__0");
 			builder.put(grammarAccess.getPERCENTAccess().getGroup(), "rule__PERCENT__Group__0");
@@ -70,10 +67,6 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTargetVarAccess().getTargetVarAssignment_3_1(), "rule__TargetVar__TargetVarAssignment_3_1");
 			builder.put(grammarAccess.getCalculateAccess().getCalculateTypeAssignment_2(), "rule__Calculate__CalculateTypeAssignment_2");
 			builder.put(grammarAccess.getAlgoAccess().getAlgoAssignment_2(), "rule__Algo__AlgoAssignment_2");
-			builder.put(grammarAccess.getAlgoAccess().getLeftSidePredictAssignment_4(), "rule__Algo__LeftSidePredictAssignment_4");
-			builder.put(grammarAccess.getLineRegressAccess().getRandAssignment_2(), "rule__LineRegress__RandAssignment_2");
-			builder.put(grammarAccess.getDecisionTreeRegressorAccess().getRandAssignment_2(), "rule__DecisionTreeRegressor__RandAssignment_2");
-			builder.put(grammarAccess.getSVRAccess().getParamAssignment_2(), "rule__SVR__ParamAssignment_2");
 			builder.put(grammarAccess.getFLOATAccess().getValueAssignment_0(), "rule__FLOAT__ValueAssignment_0");
 			builder.put(grammarAccess.getFLOATAccess().getDecimalAssignment_1_1(), "rule__FLOAT__DecimalAssignment_1_1");
 			builder.put(grammarAccess.getPERCENTAccess().getFloatAssignment_0(), "rule__PERCENT__FloatAssignment_0");

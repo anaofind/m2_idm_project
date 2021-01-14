@@ -43,19 +43,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="calculateType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Algo">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="algo" eType="#//AlgoType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="leftSidePredict" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AlgoType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LineRegress" eSuperTypes="#//AlgoType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DecisionTreeRegressor" eSuperTypes="#//AlgoType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SVR" eSuperTypes="#//AlgoType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumericValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="FLOAT" eSuperTypes="#//NumericValue">

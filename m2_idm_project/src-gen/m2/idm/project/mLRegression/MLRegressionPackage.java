@@ -365,7 +365,7 @@ public interface MLRegressionPackage extends EPackage
   int ALGO = 9;
 
   /**
-   * The feature id for the '<em><b>Algo</b></em>' containment reference.
+   * The feature id for the '<em><b>Algo</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -374,125 +374,13 @@ public interface MLRegressionPackage extends EPackage
   int ALGO__ALGO = 0;
 
   /**
-   * The feature id for the '<em><b>Left Side Predict</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALGO__LEFT_SIDE_PREDICT = 1;
-
-  /**
    * The number of structural features of the '<em>Algo</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ALGO_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.AlgoTypeImpl <em>Algo Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.AlgoTypeImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getAlgoType()
-   * @generated
-   */
-  int ALGO_TYPE = 10;
-
-  /**
-   * The number of structural features of the '<em>Algo Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALGO_TYPE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.LineRegressImpl <em>Line Regress</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.LineRegressImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getLineRegress()
-   * @generated
-   */
-  int LINE_REGRESS = 11;
-
-  /**
-   * The feature id for the '<em><b>Rand</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LINE_REGRESS__RAND = ALGO_TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Line Regress</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LINE_REGRESS_FEATURE_COUNT = ALGO_TYPE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl <em>Decision Tree Regressor</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getDecisionTreeRegressor()
-   * @generated
-   */
-  int DECISION_TREE_REGRESSOR = 12;
-
-  /**
-   * The feature id for the '<em><b>Rand</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECISION_TREE_REGRESSOR__RAND = ALGO_TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Decision Tree Regressor</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECISION_TREE_REGRESSOR_FEATURE_COUNT = ALGO_TYPE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.SVRImpl <em>SVR</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.SVRImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getSVR()
-   * @generated
-   */
-  int SVR = 13;
-
-  /**
-   * The feature id for the '<em><b>Param</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SVR__PARAM = ALGO_TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>SVR</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SVR_FEATURE_COUNT = ALGO_TYPE_FEATURE_COUNT + 1;
+  int ALGO_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.NumericValueImpl <em>Numeric Value</em>}' class.
@@ -502,7 +390,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getNumericValue()
    * @generated
    */
-  int NUMERIC_VALUE = 14;
+  int NUMERIC_VALUE = 10;
 
   /**
    * The number of structural features of the '<em>Numeric Value</em>' class.
@@ -521,7 +409,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getFLOAT()
    * @generated
    */
-  int FLOAT = 15;
+  int FLOAT = 11;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -558,7 +446,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPERCENT()
    * @generated
    */
-  int PERCENT = 16;
+  int PERCENT = 12;
 
   /**
    * The feature id for the '<em><b>Float</b></em>' containment reference.
@@ -586,7 +474,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 17;
+  int BOOLEAN_VALUE = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -862,99 +750,15 @@ public interface MLRegressionPackage extends EPackage
   EClass getAlgo();
 
   /**
-   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}'.
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Algo</em>'.
+   * @return the meta object for the attribute '<em>Algo</em>'.
    * @see m2.idm.project.mLRegression.Algo#getAlgo()
    * @see #getAlgo()
    * @generated
    */
-  EReference getAlgo_Algo();
-
-  /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Algo#getLeftSidePredict <em>Left Side Predict</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Left Side Predict</em>'.
-   * @see m2.idm.project.mLRegression.Algo#getLeftSidePredict()
-   * @see #getAlgo()
-   * @generated
-   */
-  EAttribute getAlgo_LeftSidePredict();
-
-  /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.AlgoType <em>Algo Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Algo Type</em>'.
-   * @see m2.idm.project.mLRegression.AlgoType
-   * @generated
-   */
-  EClass getAlgoType();
-
-  /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.LineRegress <em>Line Regress</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Line Regress</em>'.
-   * @see m2.idm.project.mLRegression.LineRegress
-   * @generated
-   */
-  EClass getLineRegress();
-
-  /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.LineRegress#getRand <em>Rand</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Rand</em>'.
-   * @see m2.idm.project.mLRegression.LineRegress#getRand()
-   * @see #getLineRegress()
-   * @generated
-   */
-  EAttribute getLineRegress_Rand();
-
-  /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.DecisionTreeRegressor <em>Decision Tree Regressor</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Decision Tree Regressor</em>'.
-   * @see m2.idm.project.mLRegression.DecisionTreeRegressor
-   * @generated
-   */
-  EClass getDecisionTreeRegressor();
-
-  /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.DecisionTreeRegressor#getRand <em>Rand</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Rand</em>'.
-   * @see m2.idm.project.mLRegression.DecisionTreeRegressor#getRand()
-   * @see #getDecisionTreeRegressor()
-   * @generated
-   */
-  EAttribute getDecisionTreeRegressor_Rand();
-
-  /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.SVR <em>SVR</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>SVR</em>'.
-   * @see m2.idm.project.mLRegression.SVR
-   * @generated
-   */
-  EClass getSVR();
-
-  /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.SVR#getParam <em>Param</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Param</em>'.
-   * @see m2.idm.project.mLRegression.SVR#getParam()
-   * @see #getSVR()
-   * @generated
-   */
-  EAttribute getSVR_Param();
+  EAttribute getAlgo_Algo();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.NumericValue <em>Numeric Value</em>}'.
@@ -1276,84 +1080,12 @@ public interface MLRegressionPackage extends EPackage
     EClass ALGO = eINSTANCE.getAlgo();
 
     /**
-     * The meta object literal for the '<em><b>Algo</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Algo</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ALGO__ALGO = eINSTANCE.getAlgo_Algo();
-
-    /**
-     * The meta object literal for the '<em><b>Left Side Predict</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ALGO__LEFT_SIDE_PREDICT = eINSTANCE.getAlgo_LeftSidePredict();
-
-    /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.AlgoTypeImpl <em>Algo Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.AlgoTypeImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getAlgoType()
-     * @generated
-     */
-    EClass ALGO_TYPE = eINSTANCE.getAlgoType();
-
-    /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.LineRegressImpl <em>Line Regress</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.LineRegressImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getLineRegress()
-     * @generated
-     */
-    EClass LINE_REGRESS = eINSTANCE.getLineRegress();
-
-    /**
-     * The meta object literal for the '<em><b>Rand</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LINE_REGRESS__RAND = eINSTANCE.getLineRegress_Rand();
-
-    /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl <em>Decision Tree Regressor</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.DecisionTreeRegressorImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getDecisionTreeRegressor()
-     * @generated
-     */
-    EClass DECISION_TREE_REGRESSOR = eINSTANCE.getDecisionTreeRegressor();
-
-    /**
-     * The meta object literal for the '<em><b>Rand</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DECISION_TREE_REGRESSOR__RAND = eINSTANCE.getDecisionTreeRegressor_Rand();
-
-    /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.SVRImpl <em>SVR</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.SVRImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getSVR()
-     * @generated
-     */
-    EClass SVR = eINSTANCE.getSVR();
-
-    /**
-     * The meta object literal for the '<em><b>Param</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SVR__PARAM = eINSTANCE.getSVR_Param();
+    EAttribute ALGO__ALGO = eINSTANCE.getAlgo_Algo();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.NumericValueImpl <em>Numeric Value</em>}' class.

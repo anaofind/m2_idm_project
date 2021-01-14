@@ -166,24 +166,23 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.CrossValidation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCross_validationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cKAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cKINTTerminalRuleCall_2_0 = (RuleCall)cKAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//CrossValidation:
-		//	'cross_validation' '(' k=INT ')' ';';
+		//	'cross_validation' ':' k=INT ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'cross_validation' '(' k=INT ')' ';'
+		//'cross_validation' ':' k=INT ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'cross_validation'
 		public Keyword getCross_validationKeyword_0() { return cCross_validationKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
 		//k=INT
 		public Assignment getKAssignment_2() { return cKAssignment_2; }
@@ -191,11 +190,8 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		//INT
 		public RuleCall getKINTTerminalRuleCall_2_0() { return cKINTTerminalRuleCall_2_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-		
 		//';'
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	public class VariablesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Variables");
@@ -379,19 +375,13 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cAlgoAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cAlgoAlgoTypeParserRuleCall_2_0 = (RuleCall)cAlgoAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cLeftSidePredictAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cLeftSidePredictIDTerminalRuleCall_4_0 = (RuleCall)cLeftSidePredictAssignment_4.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cPredictKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cLeftParenthesisRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Algo:
-		//	'algorithm' ':' algo=AlgoType ',' leftSidePredict=ID '=' 'predict' '()' ';';
+		//	'algorithm' ':' algo=AlgoType ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'algorithm' ':' algo=AlgoType ',' leftSidePredict=ID '=' 'predict' '()' ';'
+		//'algorithm' ':' algo=AlgoType ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'algorithm'
@@ -406,26 +396,8 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		//AlgoType
 		public RuleCall getAlgoAlgoTypeParserRuleCall_2_0() { return cAlgoAlgoTypeParserRuleCall_2_0; }
 		
-		//','
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-		
-		//leftSidePredict=ID
-		public Assignment getLeftSidePredictAssignment_4() { return cLeftSidePredictAssignment_4; }
-		
-		//ID
-		public RuleCall getLeftSidePredictIDTerminalRuleCall_4_0() { return cLeftSidePredictIDTerminalRuleCall_4_0; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_5() { return cEqualsSignKeyword_5; }
-		
-		//'predict'
-		public Keyword getPredictKeyword_6() { return cPredictKeyword_6; }
-		
-		//'()'
-		public Keyword getLeftParenthesisRightParenthesisKeyword_7() { return cLeftParenthesisRightParenthesisKeyword_7; }
-		
 		//';'
-		public Keyword getSemicolonKeyword_8() { return cSemicolonKeyword_8; }
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	public class AlgoTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.AlgoType");
@@ -452,96 +424,36 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	public class LineRegressElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.LineRegress");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLine_regressKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cRandAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRandINTTerminalRuleCall_2_0 = (RuleCall)cRandAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLine_regressKeyword = (Keyword)rule.eContents().get(1);
 		
 		//LineRegress:
-		//	'line_regress' '(' rand=INT ')';
+		//	'line_regress';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'line_regress' '(' rand=INT ')'
-		public Group getGroup() { return cGroup; }
-		
 		//'line_regress'
-		public Keyword getLine_regressKeyword_0() { return cLine_regressKeyword_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//rand=INT
-		public Assignment getRandAssignment_2() { return cRandAssignment_2; }
-		
-		//INT
-		public RuleCall getRandINTTerminalRuleCall_2_0() { return cRandINTTerminalRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getLine_regressKeyword() { return cLine_regressKeyword; }
 	}
 	public class DecisionTreeRegressorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.DecisionTreeRegressor");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDecision_tree_regressorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cRandAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRandINTTerminalRuleCall_2_0 = (RuleCall)cRandAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cDecision_tree_regressorKeyword = (Keyword)rule.eContents().get(1);
 		
 		//DecisionTreeRegressor:
-		//	'decision_tree_regressor' '(' rand=INT ')';
+		//	'decision_tree_regressor';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'decision_tree_regressor' '(' rand=INT ')'
-		public Group getGroup() { return cGroup; }
-		
 		//'decision_tree_regressor'
-		public Keyword getDecision_tree_regressorKeyword_0() { return cDecision_tree_regressorKeyword_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//rand=INT
-		public Assignment getRandAssignment_2() { return cRandAssignment_2; }
-		
-		//INT
-		public RuleCall getRandINTTerminalRuleCall_2_0() { return cRandINTTerminalRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getDecision_tree_regressorKeyword() { return cDecision_tree_regressorKeyword; }
 	}
 	public class SVRElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.SVR");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSvrKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cParamAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParamIDTerminalRuleCall_2_0 = (RuleCall)cParamAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cSvrKeyword = (Keyword)rule.eContents().get(1);
 		
 		//SVR:
-		//	'svr' '(' param=ID ')';
+		//	'svr';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'svr' '(' param=ID ')'
-		public Group getGroup() { return cGroup; }
-		
 		//'svr'
-		public Keyword getSvrKeyword_0() { return cSvrKeyword_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//param=ID
-		public Assignment getParamAssignment_2() { return cParamAssignment_2; }
-		
-		//ID
-		public RuleCall getParamIDTerminalRuleCall_2_0() { return cParamIDTerminalRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getSvrKeyword() { return cSvrKeyword; }
 	}
 	public class MeanAbsoluteErrorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MeanAbsoluteError");
@@ -806,7 +718,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//CrossValidation:
-	//	'cross_validation' '(' k=INT ')' ';';
+	//	'cross_validation' ':' k=INT ';';
 	public CrossValidationElements getCrossValidationAccess() {
 		return pCrossValidation;
 	}
@@ -866,7 +778,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//Algo:
-	//	'algorithm' ':' algo=AlgoType ',' leftSidePredict=ID '=' 'predict' '()' ';';
+	//	'algorithm' ':' algo=AlgoType ';';
 	public AlgoElements getAlgoAccess() {
 		return pAlgo;
 	}
@@ -886,7 +798,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//LineRegress:
-	//	'line_regress' '(' rand=INT ')';
+	//	'line_regress';
 	public LineRegressElements getLineRegressAccess() {
 		return pLineRegress;
 	}
@@ -896,7 +808,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//DecisionTreeRegressor:
-	//	'decision_tree_regressor' '(' rand=INT ')';
+	//	'decision_tree_regressor';
 	public DecisionTreeRegressorElements getDecisionTreeRegressorAccess() {
 		return pDecisionTreeRegressor;
 	}
@@ -906,7 +818,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//SVR:
-	//	'svr' '(' param=ID ')';
+	//	'svr';
 	public SVRElements getSVRAccess() {
 		return pSVR;
 	}

@@ -38,18 +38,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Calculate/calculateType"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Algo">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Algo/algo"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Algo/leftSidePredict"/>
-    </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//AlgoType"/>
-    <genClasses ecoreClass="MLRegression.ecore#//LineRegress">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LineRegress/rand"/>
-    </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//DecisionTreeRegressor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//DecisionTreeRegressor/rand"/>
-    </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//SVR">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//SVR/param"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Algo/algo"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//NumericValue"/>
     <genClasses ecoreClass="MLRegression.ecore#//FLOAT">

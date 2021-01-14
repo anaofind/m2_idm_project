@@ -23,7 +23,7 @@ Partition :
 ;
 
 CrossValidation :
-    'cross_validation' '(' k=INT ')' ';'
+    'cross_validation' ':' k=INT  ';'
 ;
 
 Variables: 
@@ -48,7 +48,7 @@ CalculateType :
 
 
 Algo :
-	'algorithm' ':' algo=AlgoType ',' leftSidePredict=ID '=' 'predict' '()' ';'
+	'algorithm' ':' algo=AlgoType ';'
 ;
 
 AlgoType : 
@@ -56,15 +56,15 @@ AlgoType :
 ;
 
 LineRegress :
-    'line_regress' '(' rand=INT ')'
+    'line_regress'
 ;
 
 DecisionTreeRegressor : 
-    'decision_tree_regressor' '(' rand=INT ')'
+    'decision_tree_regressor'
 ;
  
 SVR : 
-    'svr' '(' param=ID ')'
+    'svr'
 ;
 
 

@@ -343,9 +343,9 @@ ruleCrossValidation returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getCrossValidationAccess().getCross_validationKeyword_0());
 		}
-		otherlv_1='('
+		otherlv_1=':'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getCrossValidationAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getCrossValidationAccess().getColonKeyword_1());
 		}
 		(
 			(
@@ -365,13 +365,9 @@ ruleCrossValidation returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=')'
+		otherlv_3=';'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getCrossValidationAccess().getRightParenthesisKeyword_3());
-		}
-		otherlv_4=';'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getCrossValidationAccess().getSemicolonKeyword_4());
+			newLeafNode(otherlv_3, grammarAccess.getCrossValidationAccess().getSemicolonKeyword_3());
 		}
 	)
 ;
@@ -723,56 +719,22 @@ ruleAlgo returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=','
+		otherlv_3=';'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAlgoAccess().getCommaKeyword_3());
-		}
-		(
-			(
-				lv_leftSidePredict_4_0=RULE_ID
-				{
-					newLeafNode(lv_leftSidePredict_4_0, grammarAccess.getAlgoAccess().getLeftSidePredictIDTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAlgoRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"leftSidePredict",
-						lv_leftSidePredict_4_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_5='='
-		{
-			newLeafNode(otherlv_5, grammarAccess.getAlgoAccess().getEqualsSignKeyword_5());
-		}
-		otherlv_6='predict'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getAlgoAccess().getPredictKeyword_6());
-		}
-		otherlv_7='()'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getAlgoAccess().getLeftParenthesisRightParenthesisKeyword_7());
-		}
-		otherlv_8=';'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getAlgoAccess().getSemicolonKeyword_8());
+			newLeafNode(otherlv_3, grammarAccess.getAlgoAccess().getSemicolonKeyword_3());
 		}
 	)
 ;
 
 // Entry rule entryRuleAlgoType
-entryRuleAlgoType returns [EObject current=null]:
+entryRuleAlgoType returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getAlgoTypeRule()); }
 	iv_ruleAlgoType=ruleAlgoType
-	{ $current=$iv_ruleAlgoType.current; }
+	{ $current=$iv_ruleAlgoType.current.getText(); }
 	EOF;
 
 // Rule AlgoType
-ruleAlgoType returns [EObject current=null]
+ruleAlgoType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
@@ -785,7 +747,9 @@ ruleAlgoType returns [EObject current=null]
 		}
 		this_LineRegress_0=ruleLineRegress
 		{
-			$current = $this_LineRegress_0.current;
+			$current.merge(this_LineRegress_0);
+		}
+		{
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -794,7 +758,9 @@ ruleAlgoType returns [EObject current=null]
 		}
 		this_SVR_1=ruleSVR
 		{
-			$current = $this_SVR_1.current;
+			$current.merge(this_SVR_1);
+		}
+		{
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -803,157 +769,78 @@ ruleAlgoType returns [EObject current=null]
 		}
 		this_DecisionTreeRegressor_2=ruleDecisionTreeRegressor
 		{
-			$current = $this_DecisionTreeRegressor_2.current;
+			$current.merge(this_DecisionTreeRegressor_2);
+		}
+		{
 			afterParserOrEnumRuleCall();
 		}
 	)
 ;
 
 // Entry rule entryRuleLineRegress
-entryRuleLineRegress returns [EObject current=null]:
+entryRuleLineRegress returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getLineRegressRule()); }
 	iv_ruleLineRegress=ruleLineRegress
-	{ $current=$iv_ruleLineRegress.current; }
+	{ $current=$iv_ruleLineRegress.current.getText(); }
 	EOF;
 
 // Rule LineRegress
-ruleLineRegress returns [EObject current=null]
+ruleLineRegress returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	(
-		otherlv_0='line_regress'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getLineRegressAccess().getLine_regressKeyword_0());
-		}
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getLineRegressAccess().getLeftParenthesisKeyword_1());
-		}
-		(
-			(
-				lv_rand_2_0=RULE_INT
-				{
-					newLeafNode(lv_rand_2_0, grammarAccess.getLineRegressAccess().getRandINTTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLineRegressRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"rand",
-						lv_rand_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getLineRegressAccess().getRightParenthesisKeyword_3());
-		}
-	)
+	kw='line_regress'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getLineRegressAccess().getLine_regressKeyword());
+	}
 ;
 
 // Entry rule entryRuleDecisionTreeRegressor
-entryRuleDecisionTreeRegressor returns [EObject current=null]:
+entryRuleDecisionTreeRegressor returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getDecisionTreeRegressorRule()); }
 	iv_ruleDecisionTreeRegressor=ruleDecisionTreeRegressor
-	{ $current=$iv_ruleDecisionTreeRegressor.current; }
+	{ $current=$iv_ruleDecisionTreeRegressor.current.getText(); }
 	EOF;
 
 // Rule DecisionTreeRegressor
-ruleDecisionTreeRegressor returns [EObject current=null]
+ruleDecisionTreeRegressor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	(
-		otherlv_0='decision_tree_regressor'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getDecisionTreeRegressorAccess().getDecision_tree_regressorKeyword_0());
-		}
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDecisionTreeRegressorAccess().getLeftParenthesisKeyword_1());
-		}
-		(
-			(
-				lv_rand_2_0=RULE_INT
-				{
-					newLeafNode(lv_rand_2_0, grammarAccess.getDecisionTreeRegressorAccess().getRandINTTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDecisionTreeRegressorRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"rand",
-						lv_rand_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getDecisionTreeRegressorAccess().getRightParenthesisKeyword_3());
-		}
-	)
+	kw='decision_tree_regressor'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getDecisionTreeRegressorAccess().getDecision_tree_regressorKeyword());
+	}
 ;
 
 // Entry rule entryRuleSVR
-entryRuleSVR returns [EObject current=null]:
+entryRuleSVR returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getSVRRule()); }
 	iv_ruleSVR=ruleSVR
-	{ $current=$iv_ruleSVR.current; }
+	{ $current=$iv_ruleSVR.current.getText(); }
 	EOF;
 
 // Rule SVR
-ruleSVR returns [EObject current=null]
+ruleSVR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	(
-		otherlv_0='svr'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSVRAccess().getSvrKeyword_0());
-		}
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getSVRAccess().getLeftParenthesisKeyword_1());
-		}
-		(
-			(
-				lv_param_2_0=RULE_ID
-				{
-					newLeafNode(lv_param_2_0, grammarAccess.getSVRAccess().getParamIDTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSVRRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"param",
-						lv_param_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getSVRAccess().getRightParenthesisKeyword_3());
-		}
-	)
+	kw='svr'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getSVRAccess().getSvrKeyword());
+	}
 ;
 
 // Entry rule entryRuleMeanAbsoluteError

@@ -4,14 +4,11 @@
 package m2.idm.project.mLRegression.impl;
 
 import m2.idm.project.mLRegression.Algo;
-import m2.idm.project.mLRegression.AlgoType;
 import m2.idm.project.mLRegression.BooleanValue;
 import m2.idm.project.mLRegression.Calculate;
 import m2.idm.project.mLRegression.CrossValidation;
 import m2.idm.project.mLRegression.Dataset;
-import m2.idm.project.mLRegression.DecisionTreeRegressor;
 import m2.idm.project.mLRegression.EvaluationType;
-import m2.idm.project.mLRegression.LineRegress;
 import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionFactory;
@@ -105,34 +102,6 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   private EClass algoEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass algoTypeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass lineRegressEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass decisionTreeRegressorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass svrEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -495,97 +464,9 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
    * @generated
    */
   @Override
-  public EReference getAlgo_Algo()
+  public EAttribute getAlgo_Algo()
   {
-    return (EReference)algoEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getAlgo_LeftSidePredict()
-  {
-    return (EAttribute)algoEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getAlgoType()
-  {
-    return algoTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getLineRegress()
-  {
-    return lineRegressEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getLineRegress_Rand()
-  {
-    return (EAttribute)lineRegressEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getDecisionTreeRegressor()
-  {
-    return decisionTreeRegressorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDecisionTreeRegressor_Rand()
-  {
-    return (EAttribute)decisionTreeRegressorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSVR()
-  {
-    return svrEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSVR_Param()
-  {
-    return (EAttribute)svrEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)algoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -740,19 +621,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     createEAttribute(calculateEClass, CALCULATE__CALCULATE_TYPE);
 
     algoEClass = createEClass(ALGO);
-    createEReference(algoEClass, ALGO__ALGO);
-    createEAttribute(algoEClass, ALGO__LEFT_SIDE_PREDICT);
-
-    algoTypeEClass = createEClass(ALGO_TYPE);
-
-    lineRegressEClass = createEClass(LINE_REGRESS);
-    createEAttribute(lineRegressEClass, LINE_REGRESS__RAND);
-
-    decisionTreeRegressorEClass = createEClass(DECISION_TREE_REGRESSOR);
-    createEAttribute(decisionTreeRegressorEClass, DECISION_TREE_REGRESSOR__RAND);
-
-    svrEClass = createEClass(SVR);
-    createEAttribute(svrEClass, SVR__PARAM);
+    createEAttribute(algoEClass, ALGO__ALGO);
 
     numericValueEClass = createEClass(NUMERIC_VALUE);
 
@@ -798,9 +667,6 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     // Add supertypes to classes
     partitionEClass.getESuperTypes().add(this.getEvaluationType());
     crossValidationEClass.getESuperTypes().add(this.getEvaluationType());
-    lineRegressEClass.getESuperTypes().add(this.getAlgoType());
-    decisionTreeRegressorEClass.getESuperTypes().add(this.getAlgoType());
-    svrEClass.getESuperTypes().add(this.getAlgoType());
     floatEClass.getESuperTypes().add(this.getNumericValue());
     percentEClass.getESuperTypes().add(this.getNumericValue());
 
@@ -838,19 +704,7 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     initEAttribute(getCalculate_CalculateType(), ecorePackage.getEString(), "calculateType", null, 0, 1, Calculate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(algoEClass, Algo.class, "Algo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAlgo_Algo(), this.getAlgoType(), null, "algo", null, 0, 1, Algo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlgo_LeftSidePredict(), ecorePackage.getEString(), "leftSidePredict", null, 0, 1, Algo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(algoTypeEClass, AlgoType.class, "AlgoType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(lineRegressEClass, LineRegress.class, "LineRegress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLineRegress_Rand(), ecorePackage.getEInt(), "rand", null, 0, 1, LineRegress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(decisionTreeRegressorEClass, DecisionTreeRegressor.class, "DecisionTreeRegressor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDecisionTreeRegressor_Rand(), ecorePackage.getEInt(), "rand", null, 0, 1, DecisionTreeRegressor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(svrEClass, m2.idm.project.mLRegression.SVR.class, "SVR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSVR_Param(), ecorePackage.getEString(), "param", null, 0, 1, m2.idm.project.mLRegression.SVR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAlgo_Algo(), ecorePackage.getEString(), "algo", null, 0, 1, Algo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numericValueEClass, NumericValue.class, "NumericValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

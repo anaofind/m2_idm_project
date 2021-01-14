@@ -12,14 +12,14 @@ public class GeneratorPythonCode {
 	private String algoVar = "algo";
 	private String predictiveCols = "predictive_cols", targetCols = "target_cols", 
 			Xtrain = "X_train", Xtest = "X_test", 
-			Ytrain = "Y_train", Ytest = "Y_test", YPred, 
+			Ytrain = "Y_train", Ytest = "Y_test", YPred = "predict", 
 			resVar="res";
 	String ln1 = "leftNumpy1", ln2 = "leftNumpy2"; //ln = leftNumpy
-	
+
 	String predVar = "predVars", targetVar = "targetVars";
 	private boolean isCrosssValidation = false;
 	double testPercent = 0.0;
-	
+
 	/**
 	 * generate python code
 	 * @param ml the ml object
@@ -33,14 +33,14 @@ public class GeneratorPythonCode {
 
 		Variables listVar = ml.getVars();
 		this.generateVarsCode(listVar);
-		
+
 		EvaluationType evalType = ml.getEvaluation();
 		Algo algoToApply = ml.getAlgo();
 		Calculate whatToCalculate = ml.getCalculate();
 		this.generateEvaluationTypeCode(evalType, algoToApply, whatToCalculate);
-		
+
 		this.codeOrdonne.add("print(" + this.resVar  + ")");
-		
+
 		for (String line : this.codeOrdonne) {
 			pythonCode += line + "\n";
 		}
@@ -48,7 +48,7 @@ public class GeneratorPythonCode {
 		//Construct python code from content of the list (codeOrdonne)
 		return pythonCode;
 	}
-	
+
 	private void generateDatasetCode(Dataset ds) {
 		String importPart = "import pandas as pd";
 		this.codeOrdonne.add(0, importPart);
@@ -67,48 +67,55 @@ public class GeneratorPythonCode {
 		String codeColsTarg = "";
 		List<String> predVars;
 		List<String> targVars;
+		
 		if(vars != null) {
 			predVars = vars.getPredictives().getPredVar();
 			targVars = vars.getTargets().getTargetVar();
-			
+
 			codeColsPred = this.predictiveCols  + "=[\"" + predVars.get(0)  + "\"";
 			for (int i = 1; i<predVars.size(); i++) {
 				codeColsPred += ",\"" +predVars.get(i) + "\"";
 
 			}
 			codeColsPred += "]";
-			
+
 			codeColsTarg = this.targetCols  + "=[\"" + targVars.get(0)  + "\"";
 			for (int i = 1; i<targVars.size(); i++) {
 				codeColsTarg += ",\"" +targVars.get(i) + "\"";
 
 			}
 			codeColsTarg += "]";
-			
-			codePred = this.predVar + "=" + this.datasVar + "[" + this.predictiveCols + "]";
-			codeTarget = this.targetVar + "=" + this.datasVar + "[" + this.targetCols + "]";
-			
-			this.codeOrdonne.add(codeColsPred);
-			this.codeOrdonne.add(codeColsTarg);
-			this.codeOrdonne.add(codePred);
-			this.codeOrdonne.add(codeTarget);
-		} else { //repartition non définie on fixe testPercent = 20%
 
+		} else { //repartition non définie on fixe testPercent = 20%
+			String codeListColumns = "cols=" + this.datasVar + "." + "columns.values";
+			this.codeOrdonne.add(codeListColumns);
+			
+			codeColsPred = this.predictiveCols + "=" + "cols[0:(len(cols)-1)]";
+			codeColsTarg = this.targetCols + "=" + "[cols[-1]]";
 		}
+		
+		this.codeOrdonne.add(codeColsPred);
+		this.codeOrdonne.add(codeColsTarg);
+		
+		codePred = this.predVar + "=" + this.datasVar + "[" + this.predictiveCols + "]";
+		codeTarget = this.targetVar + "=" + this.datasVar + "[" + this.targetCols + "]";
+		
+		this.codeOrdonne.add(codeTarget);
+		this.codeOrdonne.add(codePred);
 	}
-	
+
 	private void generateEvaluationTypeCode(EvaluationType evalT, Algo algo, Calculate calculate) {
 		this.isCrosssValidation = (evalT instanceof CrossValidation);
 		if(!isCrosssValidation) {
-			this.generatePartitionCode(evalT);
-			this.generateAlgoCode(algo);
-			this.generateCalculateCode(calculate);
+			this.generatePartitionCode(evalT, algo, calculate);
 		} else {
 			this.generateCrossVCode(evalT, algo, calculate);
 		}
 	}
 
-	private void generatePartitionCode(EvaluationType evalT) {
+	private void generatePartitionCode(EvaluationType evalT, Algo algo, Calculate calculate) {
+		this.generateAlgoCode(algo);
+		
 		String importPart = "from sklearn.model_selection import train_test_split";
 		this.codeOrdonne.add(0, importPart);
 		/*String code = this.trainPart + "," + this.testPart + "=" + "train_test_split" + "("
@@ -119,13 +126,22 @@ public class GeneratorPythonCode {
 		NumericValue testValue = ((Partition)evalT).getTest();
 		this.testPercent = this.getNumberValue(testValue);
 		//this.testPercent = Double.valueOf(((Partition)evalT).getTest())/100;
-		
+
 		//partition des variables connue donc on peut split
 		String codePartition = this.Xtrain + "," + this.Xtest  + "," + this.Ytrain + "," + this.Ytest + "=" + "train_test_split" + "("
 				+ this.predVar + "," + this.targetVar + "," + "test_size" + "=" + this.testPercent + ")";
 		this.codeOrdonne.add(codePartition);
+		
+		//fit code
+		String fitCode = this.algoVar +".fit" + "(" + this.Xtrain + "," + this.Ytrain + ")";
+		this.codeOrdonne.add(fitCode);
+
+		String predictCode = this.YPred + "=" + this.algoVar + ".predict" + "(" + this.Xtest + ")";
+		this.codeOrdonne.add(predictCode);
+		
+		this.generateCalculateCode(calculate);
 	}
-	
+
 	private double getNumberValue(NumericValue numeric) {
 		double value = 0;
 		if (numeric instanceof FLOAT) {
@@ -143,9 +159,9 @@ public class GeneratorPythonCode {
 	private void generateCrossVCode(EvaluationType evalT, Algo algo, Calculate calculate) {
 		this.generateAlgoCode(algo);
 		this.generateCalculateCode(calculate);
-		
+
 		String calculateType = this.getScoringCalculate(calculate);
-		
+
 		CrossValidation crossValidation = (CrossValidation)evalT; 
 		int k = crossValidation.getK();
 		String importSvmCode = "from sklearn import svm";
@@ -177,7 +193,7 @@ public class GeneratorPythonCode {
 			}
 		}
 	}
-	
+
 	private String getScoringCalculate(Calculate calculate) {
 		switch (calculate.getCalculateType()) {
 		case "mean_absolute_error" :
@@ -187,7 +203,7 @@ public class GeneratorPythonCode {
 		case "median_absolute_error" :
 			return "neg_median_absolute_error";
 		}
-		
+
 		return "neg_mean_squared_error";
 	}
 
@@ -202,30 +218,32 @@ public class GeneratorPythonCode {
 	private void generateAlgoCode(Algo algoToApply) {
 		String importNP = "import numpy as np";
 		this.codeOrdonne.add(0, importNP);
-		
-		AlgoType algoType = algoToApply.getAlgo();
-		if(algoType instanceof LineRegress) {
-			this.generateLRCode(algoType);
-		} else if(algoType instanceof SVR) {
-			this.generateSVRCode(algoType);
-		} else if(algoType instanceof DecisionTreeRegressor) {
-			this.generateDTRCode(algoType);
-		}
-		
-		if (! this.isCrosssValidation) {
-			//fit code
-			String fitCode = this.algoVar +".fit" + "(" + this.Xtrain + "," + this.Ytrain + ")";
-			this.codeOrdonne.add(fitCode);
 
-			//predict code generation
-			this.YPred = algoToApply.getLeftSidePredict();
-			String predictCode = this.YPred + "=" + this.algoVar + ".predict" + "(" + this.Xtest + ")";
-			this.codeOrdonne.add(predictCode);	
+		//		AlgoType algoType = algoToApply.getAlgo();
+		//		if(algoType instanceof LineRegress) {
+		//			this.generateLRCode(algoType);
+		//		} else if(algoType instanceof SVR) {
+		//			this.generateSVRCode(algoType);
+		//		} else if(algoType instanceof DecisionTreeRegressor) {
+		//			this.generateDTRCode(algoType);
+		//		}
+
+		String algoType = algoToApply.getAlgo();
+
+		switch (algoType) {
+		case "line_regress" :
+			this.generateLRCode();
+			break;
+		case "decision_tree_regressor" :
+			this.generateDTRCode();
+			break;
+		case "svr": 
+			this.generateSVRCode();
+			break;
 		}
-		
 	}
 
-	private void generateLRCode(AlgoType toApply) {
+	private void generateLRCode() {
 		String importPart = "from sklearn import linear_model";
 		this.codeOrdonne.add(0, importPart);
 
@@ -234,7 +252,7 @@ public class GeneratorPythonCode {
 		this.codeOrdonne.add(codeObjetReg);
 	}
 
-	private void generateDTRCode(AlgoType toApply) {
+	private void generateDTRCode() {
 		String importPart = "from sklearn.tree import DecisionTreeRegressor";
 		this.codeOrdonne.add(0, importPart);
 
@@ -243,7 +261,16 @@ public class GeneratorPythonCode {
 		this.codeOrdonne.add(codeObjetReg);
 	}
 
-	private void generateSVRCode(AlgoType toApply) {
+	private void generateSVRCode() {
+		String importPart = "from sklearn.svm import SVR";
+		this.codeOrdonne.add(0, importPart);
 
+		// conversion de la targetVar en tableau à une dimension
+		String codeConvertTargetVar = this.targetVar + "=" + this.targetVar + ".values.ravel()";
+		this.codeOrdonne.add(codeConvertTargetVar);
+		
+		//Creation d'un objet regressor
+		String codeObjetReg = this.algoVar + "=" + "SVR" + "(" + ")";
+		this.codeOrdonne.add(codeObjetReg);
 	}
 }

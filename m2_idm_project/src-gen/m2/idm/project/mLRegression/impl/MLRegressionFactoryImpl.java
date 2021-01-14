@@ -75,10 +75,6 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
       case MLRegressionPackage.TARGET_VAR: return createTargetVar();
       case MLRegressionPackage.CALCULATE: return createCalculate();
       case MLRegressionPackage.ALGO: return createAlgo();
-      case MLRegressionPackage.ALGO_TYPE: return createAlgoType();
-      case MLRegressionPackage.LINE_REGRESS: return createLineRegress();
-      case MLRegressionPackage.DECISION_TREE_REGRESSOR: return createDecisionTreeRegressor();
-      case MLRegressionPackage.SVR: return createSVR();
       case MLRegressionPackage.NUMERIC_VALUE: return createNumericValue();
       case MLRegressionPackage.FLOAT: return createFLOAT();
       case MLRegressionPackage.PERCENT: return createPERCENT();
@@ -206,54 +202,6 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
   {
     AlgoImpl algo = new AlgoImpl();
     return algo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AlgoType createAlgoType()
-  {
-    AlgoTypeImpl algoType = new AlgoTypeImpl();
-    return algoType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LineRegress createLineRegress()
-  {
-    LineRegressImpl lineRegress = new LineRegressImpl();
-    return lineRegress;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public DecisionTreeRegressor createDecisionTreeRegressor()
-  {
-    DecisionTreeRegressorImpl decisionTreeRegressor = new DecisionTreeRegressorImpl();
-    return decisionTreeRegressor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SVR createSVR()
-  {
-    SVRImpl svr = new SVRImpl();
-    return svr;
   }
 
   /**

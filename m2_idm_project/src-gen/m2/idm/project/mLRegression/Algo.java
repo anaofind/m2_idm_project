@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}</li>
- *   <li>{@link m2.idm.project.mLRegression.Algo#getLeftSidePredict <em>Left Side Predict</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getAlgo()
@@ -25,47 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Algo extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Algo</b></em>' containment reference.
+   * Returns the value of the '<em><b>Algo</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Algo</em>' containment reference.
-   * @see #setAlgo(AlgoType)
+   * @return the value of the '<em>Algo</em>' attribute.
+   * @see #setAlgo(String)
    * @see m2.idm.project.mLRegression.MLRegressionPackage#getAlgo_Algo()
-   * @model containment="true"
-   * @generated
-   */
-  AlgoType getAlgo();
-
-  /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Algo</em>' containment reference.
-   * @see #getAlgo()
-   * @generated
-   */
-  void setAlgo(AlgoType value);
-
-  /**
-   * Returns the value of the '<em><b>Left Side Predict</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Left Side Predict</em>' attribute.
-   * @see #setLeftSidePredict(String)
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getAlgo_LeftSidePredict()
    * @model
    * @generated
    */
-  String getLeftSidePredict();
+  String getAlgo();
 
   /**
-   * Sets the value of the '{@link m2.idm.project.mLRegression.Algo#getLeftSidePredict <em>Left Side Predict</em>}' attribute.
+   * Sets the value of the '{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Left Side Predict</em>' attribute.
-   * @see #getLeftSidePredict()
+   * @param value the new value of the '<em>Algo</em>' attribute.
+   * @see #getAlgo()
    * @generated
    */
-  void setLeftSidePredict(String value);
+  void setAlgo(String value);
 
 } // Algo

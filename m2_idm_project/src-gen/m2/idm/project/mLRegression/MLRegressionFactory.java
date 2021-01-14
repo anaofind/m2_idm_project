@@ -114,42 +114,6 @@ public interface MLRegressionFactory extends EFactory
   Algo createAlgo();
 
   /**
-   * Returns a new object of class '<em>Algo Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Algo Type</em>'.
-   * @generated
-   */
-  AlgoType createAlgoType();
-
-  /**
-   * Returns a new object of class '<em>Line Regress</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Line Regress</em>'.
-   * @generated
-   */
-  LineRegress createLineRegress();
-
-  /**
-   * Returns a new object of class '<em>Decision Tree Regressor</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Decision Tree Regressor</em>'.
-   * @generated
-   */
-  DecisionTreeRegressor createDecisionTreeRegressor();
-
-  /**
-   * Returns a new object of class '<em>SVR</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>SVR</em>'.
-   * @generated
-   */
-  SVR createSVR();
-
-  /**
    * Returns a new object of class '<em>Numeric Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
