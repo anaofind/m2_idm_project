@@ -18,41 +18,44 @@ public abstract class GeneratorCodeImpl implements GeneratorCode{
 	/**
 	 * the vars
 	 */
-	protected String varRes = "result", varDatas = "datas";
+	protected String varDatas = "datas";
 	protected String varAlgo = "algo";
-	protected String varPredictiveCols = "predictive_cols", varTargetCols = "target_cols", 
-			varXtrain = "X_train", varXtest = "X_test", 
-			varYtrain = "Y_train", varYtest = "Y_test", varYPred = "predict";
-
-	protected String varPred = "preds", varTarget = "targs";
+	protected String varPredict = "predict", varRes = "result";
+	protected String varColsPred = "pred_cols", varColsTarget = "target_cols";
 	
-	
-	protected double testPercent = 0.0;
+	private boolean isCrossValidation = false;
 	
 	@Override
 	public String generate(MLRegression ml) {
-		String pythonCode = "";
-
 		Dataset dataset = ml.getDataset();
-		this.generateDatasetCode(dataset);
-		
 		Variables listVar = ml.getVars();
-		this.generateVarsCode(listVar);
-
 		EvaluationType evalType = ml.getEvaluation();
 		Algo algoToApply = ml.getAlgo();
 		Calculate whatToCalculate = ml.getCalculate();
+		
+		// know if is cross validation
+		this.isCrossValidation = (evalType instanceof CrossValidation);
+		
+		// generate dataset code
+		this.generateDatasetCode(dataset);
+		
+		// generate vars code
+		this.generateVarsCode(listVar);
+		
+		// generate evaluation type code
 		this.generateEvaluationTypeCode(evalType, algoToApply, whatToCalculate);
 		
-		String codeRes = "print(" + this.varRes + ")";
-		this.codeOrdonee.add(codeRes);
+		// generate the showing result code
+		this.generateShowResultCode();
 		
+		// generate all code
+		String code = "";
 		for (String line : this.codeOrdonee) {
-			pythonCode += line + "\n";
+			code += line + "\n";
 		}
 
-		//Construct python code from content of the list (codeOrdonne)
-		return pythonCode;
+		//return code
+		return code;
 	}
 
 	/**
@@ -72,7 +75,37 @@ public abstract class GeneratorCodeImpl implements GeneratorCode{
 	 * @param algoToApply the algo
 	 * @param whatToCalculate the calculate
 	 */
-	public abstract void generateEvaluationTypeCode(EvaluationType evalType, Algo algoToApply, Calculate whatToCalculate);
+	public void generateEvaluationTypeCode(EvaluationType evalType, Algo algoToApply, Calculate whatToCalculate) {
+		if (this.isCrossValidation) {
+			CrossValidation crossValidation = (CrossValidation) evalType;
+			this.generateCrossVCode(crossValidation, algoToApply, whatToCalculate);
+		} else {
+			Partition partition = (Partition) evalType;
+			this.generatePartitionCode(partition, algoToApply, whatToCalculate);	
+		}
+	}
+	
+	/**
+	 * generate partition code
+	 * @param partition the partition 
+	 * @param algo the algo
+	 * @param calculate the calculate
+	 */
+	public abstract void generatePartitionCode(Partition partition, Algo algo, Calculate calculate);
+	
+	
+	/**
+	 * generate cross validation code
+	 * @param crossValidation the cross validation 
+	 * @param algo the algo
+	 * @param calculate the calculate
+	 */
+	public abstract void generateCrossVCode(CrossValidation crossValidation, Algo algo, Calculate calculate);
+	
+	/**
+	 * generate show result code
+	 */
+	public abstract void generateShowResultCode();
 	
 	/**
 	 * add import code
@@ -106,5 +139,13 @@ public abstract class GeneratorCodeImpl implements GeneratorCode{
 			value = f/100;
 		}
 		return value;
+	}
+	
+	/**
+	 * is cross validation
+	 * @return boolean
+	 */
+	protected boolean isCrossValidation() {
+		return this.isCrossValidation;
 	}
 }

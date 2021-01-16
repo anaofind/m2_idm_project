@@ -6,7 +6,7 @@ import m2.idm.project.mLRegression.*;
 
 public class GeneratorPythonCode extends GeneratorCodeImpl{
 	
-	private boolean isCrosssValidation = false;
+	private String varPred = "preds", varTarget = "targs", varTrainPred = "pred_train", varTestPred = "pred_test", varTrainTarget = "target_train", varTestTarget = "target_test";
 	
 	@Override
 	public String getExtension() {
@@ -38,14 +38,14 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 			predictCols = vars.getPredictives().getPredVar();
 			targetCols = vars.getTargets().getTargetVar();
 
-			codeColsPred = this.varPredictiveCols  + "=[\"" + predictCols.get(0)  + "\"";
+			codeColsPred = this.varColsPred  + "=[\"" + predictCols.get(0)  + "\"";
 			for (int i = 1; i<predictCols.size(); i++) {
 				codeColsPred += ",\"" +predictCols.get(i) + "\"";
 
 			}
 			codeColsPred += "]";
 
-			codeColsTarg = this.varTargetCols  + "=[\"" + targetCols.get(0)  + "\"";
+			codeColsTarg = this.varColsTarget  + "=[\"" + targetCols.get(0)  + "\"";
 			for (int i = 1; i<targetCols.size(); i++) {
 				codeColsTarg += ",\"" +targetCols.get(i) + "\"";
 
@@ -56,67 +56,53 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 			String codeListColumns = "cols=" + this.varDatas + "." + "columns.values";
 			this.addLineCode(codeListColumns);
 			
-			codeColsPred = this.varPredictiveCols + "=" + "cols[0:(len(cols)-1)]";
-			codeColsTarg = this.varTargetCols + "=" + "[cols[-1]]";
+			codeColsPred = this.varColsPred + "=" + "cols[0:(len(cols)-1)]";
+			codeColsTarg = this.varColsTarget + "=" + "[cols[-1]]";
 		}
 		
 		this.addLineCode(codeColsPred);
 		this.addLineCode(codeColsTarg);
 		
-		codePred = this.varPred + "=" + this.varDatas + "[" + this.varPredictiveCols + "]";
-		codeTarget = this.varTarget + "=" + this.varDatas + "[" + this.varTargetCols + "]";
+		codePred = this.varPred + "=" + this.varDatas + "[" + this.varColsPred + "]";
+		codeTarget = this.varTarget + "=" + this.varDatas + "[" + this.varColsTarget + "]";
 		
 		this.addLineCode(codeTarget);
 		this.addLineCode(codePred);
 	}
-
+	
 	@Override
-	public void generateEvaluationTypeCode(EvaluationType evalT, Algo algo, Calculate calculate) {
-		this.isCrosssValidation = (evalT instanceof CrossValidation);
-		if(!isCrosssValidation) {
-			this.generatePartitionCode(evalT, algo, calculate);
-		} else {
-			this.generateCrossVCode(evalT, algo, calculate);
-		}
-	}
-
-	private void generatePartitionCode(EvaluationType evalT, Algo algo, Calculate calculate) {
+	public void generatePartitionCode(Partition partition, Algo algo, Calculate calculate) {
 		this.generateAlgoCode(algo);
 		
 		String importPart = "from sklearn.model_selection import train_test_split";
 		this.addImportCode(importPart);
-		/*String code = this.trainPart + "," + this.testPart + "=" + "train_test_split" + "("
-		//		+ this.pathDataset + "," + "test_size" + "=" + ((Partition)evalT).getTest() + ")";
-		//this.addLineCode(code);*/
 
 		//garde la valeur des repartitions pour génération future du code
-		NumericValue testValue = ((Partition)evalT).getTest();
-		this.testPercent = this.getNumberValue(testValue);
-		//this.testPercent = Double.valueOf(((Partition)evalT).getTest())/100;
+		NumericValue testValue = partition.getTest();
+		double testPercent = this.getNumberValue(testValue);
 
 		//partition des variables connue donc on peut split
-		String codePartition = this.varXtrain + "," + this.varXtest  + "," + this.varYtrain + "," + this.varYtest + "=" + "train_test_split" + "("
-				+ this.varPred + "," + this.varTarget + "," + "test_size" + "=" + this.testPercent + ")";
+		String codePartition = this.varTrainPred + "," + this.varTestPred  + "," + this.varTrainTarget + "," + this.varTestTarget + "=" + "train_test_split" + "("
+				+ this.varPred + "," + this.varTarget + "," + "test_size" + "=" + testPercent + ")";
 		this.addLineCode(codePartition);
 		
 		//fit code
-		String fitCode = this.varAlgo +".fit" + "(" + this.varXtrain + "," + this.varYtrain + ")";
+		String fitCode = this.varAlgo +".fit" + "(" + this.varTrainPred + "," + this.varTrainTarget + ")";
 		this.addLineCode(fitCode);
 
-		String predictCode = this.varYPred + "=" + this.varAlgo + ".predict" + "(" + this.varXtest + ")";
+		String predictCode = this.varPredict + "=" + this.varAlgo + ".predict" + "(" + this.varTestPred + ")";
 		this.addLineCode(predictCode);
 		
 		this.generateCalculateCode(calculate);
 	}
 
-	//Todo
-	private void generateCrossVCode(EvaluationType evalT, Algo algo, Calculate calculate) {
+	@Override
+	public void generateCrossVCode(CrossValidation crossValidation, Algo algo, Calculate calculate) {
 		this.generateAlgoCode(algo);
 		this.generateCalculateCode(calculate);
 
 		String calculateType = this.getScoringCalculate(calculate);
 
-		CrossValidation crossValidation = (CrossValidation)evalT; 
 		int k = crossValidation.getK();
 		String importSvmCode = "from sklearn import svm";
 		String importCrossValidate = "from sklearn.model_selection import cross_val_score";
@@ -126,6 +112,12 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 		this.addLineCode(codeScore);
 	}
 
+	@Override
+	public void generateShowResultCode() {
+		String codeRes = "print(" + this.varRes + ")";
+		this.addLineCode(codeRes);
+	}
+	
 	private void generateCalculateCode(Calculate wtc) { //wtc = whatToCalculate
 		String calculate = wtc.getCalculateType();
 		String importCode = "";
@@ -142,7 +134,7 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 		}
 		if (importCode != "") {
 			this.addImportCode(importCode);
-			if (! this.isCrosssValidation) {
+			if (! this.isCrossValidation()) {
 				this.addLineCode(this.codePartTwo(calculate));	
 			}
 		}
@@ -165,22 +157,13 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 	 * Bout de code commun à whatToCalculate donc créa d'une fonction privée
 	 * */
 	private String codePartTwo(String fonctionToCall) {
-		String code = this.varRes + "=" + fonctionToCall + "(" + this.varYtest + "," + this.varYPred + ")";
+		String code = this.varRes + "=" + fonctionToCall + "(" + this.varTestTarget + "," + this.varPredict + ")";
 		return code;
 	}
 
 	private void generateAlgoCode(Algo algoToApply) {
 		String importNP = "import numpy as np";
 		this.addImportCode(importNP);
-
-		//		AlgoType algoType = algoToApply.getAlgo();
-		//		if(algoType instanceof LineRegress) {
-		//			this.generateLRCode(algoType);
-		//		} else if(algoType instanceof SVR) {
-		//			this.generateSVRCode(algoType);
-		//		} else if(algoType instanceof DecisionTreeRegressor) {
-		//			this.generateDTRCode(algoType);
-		//		}
 
 		String algoType = algoToApply.getAlgo();
 
@@ -196,7 +179,7 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 			break;
 		}
 	}
-
+	
 	private void generateLRCode() {
 		String importPart = "from sklearn import linear_model";
 		this.addImportCode(importPart);
