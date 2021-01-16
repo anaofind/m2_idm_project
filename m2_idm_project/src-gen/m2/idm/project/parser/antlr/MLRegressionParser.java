@@ -27,7 +27,7 @@ public class MLRegressionParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "MLRegression";
+		return "Model";
 	}
 
 	public MLRegressionGrammarAccess getGrammarAccess() {

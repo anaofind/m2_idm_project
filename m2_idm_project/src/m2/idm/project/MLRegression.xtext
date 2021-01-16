@@ -2,6 +2,23 @@ grammar m2.idm.project.MLRegression with org.eclipse.xtext.common.Terminals
 
 generate mLRegression "http://www.idm.m2/project/MLRegression"
 
+
+Model : 
+	(languageTarget=LanguageTarget)? ml = MLRegression
+;
+
+LanguageTarget : 
+	'target_language' ':' language=(Python | R) ";"		
+;
+
+Python :
+	'python' | 'Python' | 'PYTHON'
+;
+
+R :
+	'r' | 'R'
+;
+
 MLRegression:
 	dataset=Dataset
 	(vars=Variables) ?
@@ -9,6 +26,8 @@ MLRegression:
     algo=Algo
     calculate=Calculate
 ;
+
+
 
 Dataset:
 	'import' dataPath=STRING (separator=STRING)?  ';'

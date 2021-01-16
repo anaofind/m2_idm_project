@@ -11,9 +11,11 @@ import m2.idm.project.mLRegression.Calculate;
 import m2.idm.project.mLRegression.CrossValidation;
 import m2.idm.project.mLRegression.Dataset;
 import m2.idm.project.mLRegression.FLOAT;
+import m2.idm.project.mLRegression.LanguageTarget;
 import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionPackage;
+import m2.idm.project.mLRegression.Model;
 import m2.idm.project.mLRegression.PERCENT;
 import m2.idm.project.mLRegression.Partition;
 import m2.idm.project.mLRegression.TargetVar;
@@ -61,11 +63,17 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MLRegressionPackage.FLOAT:
 				sequence_FLOAT(context, (FLOAT) semanticObject); 
 				return; 
+			case MLRegressionPackage.LANGUAGE_TARGET:
+				sequence_LanguageTarget(context, (LanguageTarget) semanticObject); 
+				return; 
 			case MLRegressionPackage.LISTE_PREDICTIVE_VAR:
 				sequence_ListePredictiveVar(context, (ListePredictiveVar) semanticObject); 
 				return; 
 			case MLRegressionPackage.ML_REGRESSION:
 				sequence_MLRegression(context, (MLRegression) semanticObject); 
+				return; 
+			case MLRegressionPackage.MODEL:
+				sequence_Model(context, (Model) semanticObject); 
 				return; 
 			case MLRegressionPackage.PERCENT:
 				sequence_PERCENT(context, (PERCENT) semanticObject); 
@@ -178,6 +186,18 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
+	 *     LanguageTarget returns LanguageTarget
+	 *
+	 * Constraint:
+	 *     (language=Python | language=R)
+	 */
+	protected void sequence_LanguageTarget(ISerializationContext context, LanguageTarget semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ListePredictiveVar returns ListePredictiveVar
 	 *
 	 * Constraint:
@@ -196,6 +216,18 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     (dataset=Dataset vars=Variables? evaluation=EvaluationType algo=Algo calculate=Calculate)
 	 */
 	protected void sequence_MLRegression(ISerializationContext context, MLRegression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Model returns Model
+	 *
+	 * Constraint:
+	 *     (languageTarget=LanguageTarget? ml=MLRegression)
+	 */
+	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

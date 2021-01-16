@@ -9,10 +9,12 @@ import m2.idm.project.mLRegression.Calculate;
 import m2.idm.project.mLRegression.CrossValidation;
 import m2.idm.project.mLRegression.Dataset;
 import m2.idm.project.mLRegression.EvaluationType;
+import m2.idm.project.mLRegression.LanguageTarget;
 import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionFactory;
 import m2.idm.project.mLRegression.MLRegressionPackage;
+import m2.idm.project.mLRegression.Model;
 import m2.idm.project.mLRegression.NumericValue;
 import m2.idm.project.mLRegression.Partition;
 import m2.idm.project.mLRegression.TargetVar;
@@ -33,6 +35,20 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  */
 public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressionPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass languageTargetEClass = null;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -192,6 +208,61 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(MLRegressionPackage.eNS_URI, theMLRegressionPackage);
     return theMLRegressionPackage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getModel()
+  {
+    return modelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getModel_LanguageTarget()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getModel_Ml()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLanguageTarget()
+  {
+    return languageTargetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLanguageTarget_Language()
+  {
+    return (EAttribute)languageTargetEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -588,6 +659,13 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     isCreated = true;
 
     // Create classes and their features
+    modelEClass = createEClass(MODEL);
+    createEReference(modelEClass, MODEL__LANGUAGE_TARGET);
+    createEReference(modelEClass, MODEL__ML);
+
+    languageTargetEClass = createEClass(LANGUAGE_TARGET);
+    createEAttribute(languageTargetEClass, LANGUAGE_TARGET__LANGUAGE);
+
     mlRegressionEClass = createEClass(ML_REGRESSION);
     createEReference(mlRegressionEClass, ML_REGRESSION__DATASET);
     createEReference(mlRegressionEClass, ML_REGRESSION__VARS);
@@ -671,6 +749,13 @@ public class MLRegressionPackageImpl extends EPackageImpl implements MLRegressio
     percentEClass.getESuperTypes().add(this.getNumericValue());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModel_LanguageTarget(), this.getLanguageTarget(), null, "languageTarget", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Ml(), this.getMLRegression(), null, "ml", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(languageTargetEClass, LanguageTarget.class, "LanguageTarget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLanguageTarget_Language(), ecorePackage.getEString(), "language", null, 0, 1, LanguageTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(mlRegressionEClass, MLRegression.class, "MLRegression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMLRegression_Dataset(), this.getDataset(), null, "dataset", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMLRegression_Vars(), this.getVariables(), null, "vars", null, 0, 1, MLRegression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

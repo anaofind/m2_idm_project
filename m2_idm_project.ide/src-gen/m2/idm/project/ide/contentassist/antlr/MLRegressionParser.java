@@ -31,11 +31,16 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MLRegressionGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getLanguageTargetAccess().getLanguageAlternatives_2_0(), "rule__LanguageTarget__LanguageAlternatives_2_0");
+			builder.put(grammarAccess.getPythonAccess().getAlternatives(), "rule__Python__Alternatives");
+			builder.put(grammarAccess.getRAccess().getAlternatives(), "rule__R__Alternatives");
 			builder.put(grammarAccess.getEvaluationTypeAccess().getAlternatives(), "rule__EvaluationType__Alternatives");
 			builder.put(grammarAccess.getCalculateTypeAccess().getAlternatives(), "rule__CalculateType__Alternatives");
 			builder.put(grammarAccess.getAlgoTypeAccess().getAlternatives(), "rule__AlgoType__Alternatives");
 			builder.put(grammarAccess.getNumericValueAccess().getAlternatives(), "rule__NumericValue__Alternatives");
 			builder.put(grammarAccess.getBooleanValueAccess().getValueAlternatives_0(), "rule__BooleanValue__ValueAlternatives_0");
+			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+			builder.put(grammarAccess.getLanguageTargetAccess().getGroup(), "rule__LanguageTarget__Group__0");
 			builder.put(grammarAccess.getMLRegressionAccess().getGroup(), "rule__MLRegression__Group__0");
 			builder.put(grammarAccess.getDatasetAccess().getGroup(), "rule__Dataset__Group__0");
 			builder.put(grammarAccess.getPartitionAccess().getGroup(), "rule__Partition__Group__0");
@@ -50,6 +55,9 @@ public class MLRegressionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFLOATAccess().getGroup(), "rule__FLOAT__Group__0");
 			builder.put(grammarAccess.getFLOATAccess().getGroup_1(), "rule__FLOAT__Group_1__0");
 			builder.put(grammarAccess.getPERCENTAccess().getGroup(), "rule__PERCENT__Group__0");
+			builder.put(grammarAccess.getModelAccess().getLanguageTargetAssignment_0(), "rule__Model__LanguageTargetAssignment_0");
+			builder.put(grammarAccess.getModelAccess().getMlAssignment_1(), "rule__Model__MlAssignment_1");
+			builder.put(grammarAccess.getLanguageTargetAccess().getLanguageAssignment_2(), "rule__LanguageTarget__LanguageAssignment_2");
 			builder.put(grammarAccess.getMLRegressionAccess().getDatasetAssignment_0(), "rule__MLRegression__DatasetAssignment_0");
 			builder.put(grammarAccess.getMLRegressionAccess().getVarsAssignment_1(), "rule__MLRegression__VarsAssignment_1");
 			builder.put(grammarAccess.getMLRegressionAccess().getEvaluationAssignment_2(), "rule__MLRegression__EvaluationAssignment_2");

@@ -58,6 +58,71 @@ public interface MLRegressionPackage extends EPackage
   MLRegressionPackage eINSTANCE = m2.idm.project.mLRegression.impl.MLRegressionPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.ModelImpl <em>Model</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see m2.idm.project.mLRegression.impl.ModelImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getModel()
+   * @generated
+   */
+  int MODEL = 0;
+
+  /**
+   * The feature id for the '<em><b>Language Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__LANGUAGE_TARGET = 0;
+
+  /**
+   * The feature id for the '<em><b>Ml</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__ML = 1;
+
+  /**
+   * The number of structural features of the '<em>Model</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.LanguageTargetImpl <em>Language Target</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see m2.idm.project.mLRegression.impl.LanguageTargetImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getLanguageTarget()
+   * @generated
+   */
+  int LANGUAGE_TARGET = 1;
+
+  /**
+   * The feature id for the '<em><b>Language</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LANGUAGE_TARGET__LANGUAGE = 0;
+
+  /**
+   * The number of structural features of the '<em>Language Target</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LANGUAGE_TARGET_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.MLRegressionImpl <em>ML Regression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -65,7 +130,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getMLRegression()
    * @generated
    */
-  int ML_REGRESSION = 0;
+  int ML_REGRESSION = 2;
 
   /**
    * The feature id for the '<em><b>Dataset</b></em>' containment reference.
@@ -129,7 +194,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getDataset()
    * @generated
    */
-  int DATASET = 1;
+  int DATASET = 3;
 
   /**
    * The feature id for the '<em><b>Data Path</b></em>' attribute.
@@ -166,7 +231,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getEvaluationType()
    * @generated
    */
-  int EVALUATION_TYPE = 2;
+  int EVALUATION_TYPE = 4;
 
   /**
    * The number of structural features of the '<em>Evaluation Type</em>' class.
@@ -185,7 +250,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPartition()
    * @generated
    */
-  int PARTITION = 3;
+  int PARTITION = 5;
 
   /**
    * The feature id for the '<em><b>Test</b></em>' containment reference.
@@ -213,7 +278,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getCrossValidation()
    * @generated
    */
-  int CROSS_VALIDATION = 4;
+  int CROSS_VALIDATION = 6;
 
   /**
    * The feature id for the '<em><b>K</b></em>' attribute.
@@ -241,7 +306,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getVariables()
    * @generated
    */
-  int VARIABLES = 5;
+  int VARIABLES = 7;
 
   /**
    * The feature id for the '<em><b>Predictives</b></em>' containment reference.
@@ -278,7 +343,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getListePredictiveVar()
    * @generated
    */
-  int LISTE_PREDICTIVE_VAR = 6;
+  int LISTE_PREDICTIVE_VAR = 8;
 
   /**
    * The feature id for the '<em><b>Pred Var</b></em>' attribute list.
@@ -306,7 +371,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getTargetVar()
    * @generated
    */
-  int TARGET_VAR = 7;
+  int TARGET_VAR = 9;
 
   /**
    * The feature id for the '<em><b>Target Var</b></em>' attribute list.
@@ -334,7 +399,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getCalculate()
    * @generated
    */
-  int CALCULATE = 8;
+  int CALCULATE = 10;
 
   /**
    * The feature id for the '<em><b>Calculate Type</b></em>' attribute.
@@ -362,7 +427,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getAlgo()
    * @generated
    */
-  int ALGO = 9;
+  int ALGO = 11;
 
   /**
    * The feature id for the '<em><b>Algo</b></em>' attribute.
@@ -390,7 +455,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getNumericValue()
    * @generated
    */
-  int NUMERIC_VALUE = 10;
+  int NUMERIC_VALUE = 12;
 
   /**
    * The number of structural features of the '<em>Numeric Value</em>' class.
@@ -409,7 +474,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getFLOAT()
    * @generated
    */
-  int FLOAT = 11;
+  int FLOAT = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -446,7 +511,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPERCENT()
    * @generated
    */
-  int PERCENT = 12;
+  int PERCENT = 14;
 
   /**
    * The feature id for the '<em><b>Float</b></em>' containment reference.
@@ -474,7 +539,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 13;
+  int BOOLEAN_VALUE = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -494,6 +559,59 @@ public interface MLRegressionPackage extends EPackage
    */
   int BOOLEAN_VALUE_FEATURE_COUNT = 1;
 
+
+  /**
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.Model <em>Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Model</em>'.
+   * @see m2.idm.project.mLRegression.Model
+   * @generated
+   */
+  EClass getModel();
+
+  /**
+   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.Model#getLanguageTarget <em>Language Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Language Target</em>'.
+   * @see m2.idm.project.mLRegression.Model#getLanguageTarget()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_LanguageTarget();
+
+  /**
+   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.Model#getMl <em>Ml</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ml</em>'.
+   * @see m2.idm.project.mLRegression.Model#getMl()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Ml();
+
+  /**
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.LanguageTarget <em>Language Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Language Target</em>'.
+   * @see m2.idm.project.mLRegression.LanguageTarget
+   * @generated
+   */
+  EClass getLanguageTarget();
+
+  /**
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.LanguageTarget#getLanguage <em>Language</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Language</em>'.
+   * @see m2.idm.project.mLRegression.LanguageTarget#getLanguage()
+   * @see #getLanguageTarget()
+   * @generated
+   */
+  EAttribute getLanguageTarget_Language();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.MLRegression <em>ML Regression</em>}'.
@@ -867,6 +985,50 @@ public interface MLRegressionPackage extends EPackage
    */
   interface Literals
   {
+    /**
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.ModelImpl <em>Model</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see m2.idm.project.mLRegression.impl.ModelImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getModel()
+     * @generated
+     */
+    EClass MODEL = eINSTANCE.getModel();
+
+    /**
+     * The meta object literal for the '<em><b>Language Target</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__LANGUAGE_TARGET = eINSTANCE.getModel_LanguageTarget();
+
+    /**
+     * The meta object literal for the '<em><b>Ml</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__ML = eINSTANCE.getModel_Ml();
+
+    /**
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.LanguageTargetImpl <em>Language Target</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see m2.idm.project.mLRegression.impl.LanguageTargetImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getLanguageTarget()
+     * @generated
+     */
+    EClass LANGUAGE_TARGET = eINSTANCE.getLanguageTarget();
+
+    /**
+     * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LANGUAGE_TARGET__LANGUAGE = eINSTANCE.getLanguageTarget_Language();
+
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.MLRegressionImpl <em>ML Regression</em>}' class.
      * <!-- begin-user-doc -->

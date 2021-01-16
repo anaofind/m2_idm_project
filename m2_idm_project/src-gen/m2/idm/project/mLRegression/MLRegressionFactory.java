@@ -24,6 +24,24 @@ public interface MLRegressionFactory extends EFactory
   MLRegressionFactory eINSTANCE = m2.idm.project.mLRegression.impl.MLRegressionFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Model</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Model</em>'.
+   * @generated
+   */
+  Model createModel();
+
+  /**
+   * Returns a new object of class '<em>Language Target</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Language Target</em>'.
+   * @generated
+   */
+  LanguageTarget createLanguageTarget();
+
+  /**
    * Returns a new object of class '<em>ML Regression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

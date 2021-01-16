@@ -6,6 +6,13 @@
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="MLRegression" basePackage="m2.idm.project" disposableProviderFactory="true"
       fileExtensions="mlreg" ecorePackage="MLRegression.ecore#/">
+    <genClasses ecoreClass="MLRegression.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Model/languageTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Model/ml"/>
+    </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//LanguageTarget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//LanguageTarget/language"/>
+    </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//MLRegression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/dataset"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/vars"/>

@@ -65,6 +65,8 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
   {
     switch (eClass.getClassifierID())
     {
+      case MLRegressionPackage.MODEL: return createModel();
+      case MLRegressionPackage.LANGUAGE_TARGET: return createLanguageTarget();
       case MLRegressionPackage.ML_REGRESSION: return createMLRegression();
       case MLRegressionPackage.DATASET: return createDataset();
       case MLRegressionPackage.EVALUATION_TYPE: return createEvaluationType();
@@ -82,6 +84,30 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Model createModel()
+  {
+    ModelImpl model = new ModelImpl();
+    return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LanguageTarget createLanguageTarget()
+  {
+    LanguageTargetImpl languageTarget = new LanguageTargetImpl();
+    return languageTarget;
   }
 
   /**

@@ -43,7 +43,7 @@ import m2.idm.project.services.MLRegressionGrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "MLRegression";
+    	return "Model";
    	}
 
    	@Override
@@ -59,6 +59,197 @@ import m2.idm.project.services.MLRegressionGrammarAccess;
         appendSkippedTokens();
     }
 }
+
+// Entry rule entryRuleModel
+entryRuleModel returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModelRule()); }
+	iv_ruleModel=ruleModel
+	{ $current=$iv_ruleModel.current; }
+	EOF;
+
+// Rule Model
+ruleModel returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModelAccess().getLanguageTargetLanguageTargetParserRuleCall_0_0());
+				}
+				lv_languageTarget_0_0=ruleLanguageTarget
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelRule());
+					}
+					set(
+						$current,
+						"languageTarget",
+						lv_languageTarget_0_0,
+						"m2.idm.project.MLRegression.LanguageTarget");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModelAccess().getMlMLRegressionParserRuleCall_1_0());
+				}
+				lv_ml_1_0=ruleMLRegression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelRule());
+					}
+					set(
+						$current,
+						"ml",
+						lv_ml_1_0,
+						"m2.idm.project.MLRegression.MLRegression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleLanguageTarget
+entryRuleLanguageTarget returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLanguageTargetRule()); }
+	iv_ruleLanguageTarget=ruleLanguageTarget
+	{ $current=$iv_ruleLanguageTarget.current; }
+	EOF;
+
+// Rule LanguageTarget
+ruleLanguageTarget returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='target_language'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getLanguageTargetAccess().getTarget_languageKeyword_0());
+		}
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getLanguageTargetAccess().getColonKeyword_1());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getLanguageTargetAccess().getLanguagePythonParserRuleCall_2_0_0());
+					}
+					lv_language_2_1=rulePython
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLanguageTargetRule());
+						}
+						set(
+							$current,
+							"language",
+							lv_language_2_1,
+							"m2.idm.project.MLRegression.Python");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getLanguageTargetAccess().getLanguageRParserRuleCall_2_0_1());
+					}
+					lv_language_2_2=ruleR
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLanguageTargetRule());
+						}
+						set(
+							$current,
+							"language",
+							lv_language_2_2,
+							"m2.idm.project.MLRegression.R");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		otherlv_3=';'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getLanguageTargetAccess().getSemicolonKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRulePython
+entryRulePython returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getPythonRule()); }
+	iv_rulePython=rulePython
+	{ $current=$iv_rulePython.current.getText(); }
+	EOF;
+
+// Rule Python
+rulePython returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='python'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPythonAccess().getPythonKeyword_0());
+		}
+		    |
+		kw='Python'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPythonAccess().getPythonKeyword_1());
+		}
+		    |
+		kw='PYTHON'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPythonAccess().getPYTHONKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleR
+entryRuleR returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getRRule()); }
+	iv_ruleR=ruleR
+	{ $current=$iv_ruleR.current.getText(); }
+	EOF;
+
+// Rule R
+ruleR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='r'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRAccess().getRKeyword_0());
+		}
+		    |
+		kw='R'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getRAccess().getRKeyword_1());
+		}
+	)
+;
 
 // Entry rule entryRuleMLRegression
 entryRuleMLRegression returns [EObject current=null]:

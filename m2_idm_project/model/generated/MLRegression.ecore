@@ -2,6 +2,15 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mLRegression" nsURI="http://www.idm.m2/project/MLRegression"
     nsPrefix="mLRegression">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="languageTarget" eType="#//LanguageTarget"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ml" eType="#//MLRegression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageTarget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MLRegression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" eType="#//Dataset"
         containment="true"/>

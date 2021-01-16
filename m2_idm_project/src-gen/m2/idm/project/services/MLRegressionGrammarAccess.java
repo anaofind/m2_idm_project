@@ -22,6 +22,114 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
+	public class ModelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Model");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cLanguageTargetAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLanguageTargetLanguageTargetParserRuleCall_0_0 = (RuleCall)cLanguageTargetAssignment_0.eContents().get(0);
+		private final Assignment cMlAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMlMLRegressionParserRuleCall_1_0 = (RuleCall)cMlAssignment_1.eContents().get(0);
+		
+		//Model:
+		//	languageTarget=LanguageTarget? ml=MLRegression;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//languageTarget=LanguageTarget? ml=MLRegression
+		public Group getGroup() { return cGroup; }
+		
+		//languageTarget=LanguageTarget?
+		public Assignment getLanguageTargetAssignment_0() { return cLanguageTargetAssignment_0; }
+		
+		//LanguageTarget
+		public RuleCall getLanguageTargetLanguageTargetParserRuleCall_0_0() { return cLanguageTargetLanguageTargetParserRuleCall_0_0; }
+		
+		//ml=MLRegression
+		public Assignment getMlAssignment_1() { return cMlAssignment_1; }
+		
+		//MLRegression
+		public RuleCall getMlMLRegressionParserRuleCall_1_0() { return cMlMLRegressionParserRuleCall_1_0; }
+	}
+	public class LanguageTargetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.LanguageTarget");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTarget_languageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cLanguageAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cLanguageAlternatives_2_0 = (Alternatives)cLanguageAssignment_2.eContents().get(0);
+		private final RuleCall cLanguagePythonParserRuleCall_2_0_0 = (RuleCall)cLanguageAlternatives_2_0.eContents().get(0);
+		private final RuleCall cLanguageRParserRuleCall_2_0_1 = (RuleCall)cLanguageAlternatives_2_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//LanguageTarget:
+		//	'target_language' ':' language=(Python | R) ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'target_language' ':' language=(Python | R) ";"
+		public Group getGroup() { return cGroup; }
+		
+		//'target_language'
+		public Keyword getTarget_languageKeyword_0() { return cTarget_languageKeyword_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//language=(Python | R)
+		public Assignment getLanguageAssignment_2() { return cLanguageAssignment_2; }
+		
+		//(Python | R)
+		public Alternatives getLanguageAlternatives_2_0() { return cLanguageAlternatives_2_0; }
+		
+		//Python
+		public RuleCall getLanguagePythonParserRuleCall_2_0_0() { return cLanguagePythonParserRuleCall_2_0_0; }
+		
+		//R
+		public RuleCall getLanguageRParserRuleCall_2_0_1() { return cLanguageRParserRuleCall_2_0_1; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
+	public class PythonElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.Python");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cPythonKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cPythonKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cPYTHONKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		
+		//Python:
+		//	'python' | 'Python' | 'PYTHON';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'python' | 'Python' | 'PYTHON'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'python'
+		public Keyword getPythonKeyword_0() { return cPythonKeyword_0; }
+		
+		//'Python'
+		public Keyword getPythonKeyword_1() { return cPythonKeyword_1; }
+		
+		//'PYTHON'
+		public Keyword getPYTHONKeyword_2() { return cPYTHONKeyword_2; }
+	}
+	public class RElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.R");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cRKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cRKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//R:
+		//	'r' | 'R';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'r' | 'R'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'r'
+		public Keyword getRKeyword_0() { return cRKeyword_0; }
+		
+		//'R'
+		public Keyword getRKeyword_1() { return cRKeyword_1; }
+	}
 	public class MLRegressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.MLRegression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -590,6 +698,10 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	
+	private final ModelElements pModel;
+	private final LanguageTargetElements pLanguageTarget;
+	private final PythonElements pPython;
+	private final RElements pR;
 	private final MLRegressionElements pMLRegression;
 	private final DatasetElements pDataset;
 	private final EvaluationTypeElements pEvaluationType;
@@ -622,6 +734,10 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
+		this.pModel = new ModelElements();
+		this.pLanguageTarget = new LanguageTargetElements();
+		this.pPython = new PythonElements();
+		this.pR = new RElements();
 		this.pMLRegression = new MLRegressionElements();
 		this.pDataset = new DatasetElements();
 		this.pEvaluationType = new EvaluationTypeElements();
@@ -672,6 +788,46 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		return gaTerminals;
 	}
 
+	
+	//Model:
+	//	languageTarget=LanguageTarget? ml=MLRegression;
+	public ModelElements getModelAccess() {
+		return pModel;
+	}
+	
+	public ParserRule getModelRule() {
+		return getModelAccess().getRule();
+	}
+	
+	//LanguageTarget:
+	//	'target_language' ':' language=(Python | R) ";";
+	public LanguageTargetElements getLanguageTargetAccess() {
+		return pLanguageTarget;
+	}
+	
+	public ParserRule getLanguageTargetRule() {
+		return getLanguageTargetAccess().getRule();
+	}
+	
+	//Python:
+	//	'python' | 'Python' | 'PYTHON';
+	public PythonElements getPythonAccess() {
+		return pPython;
+	}
+	
+	public ParserRule getPythonRule() {
+		return getPythonAccess().getRule();
+	}
+	
+	//R:
+	//	'r' | 'R';
+	public RElements getRAccess() {
+		return pR;
+	}
+	
+	public ParserRule getRRule() {
+		return getRAccess().getRule();
+	}
 	
 	//MLRegression:
 	//	dataset=Dataset

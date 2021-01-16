@@ -3,11 +3,12 @@
  */
 package m2.idm.project.generator
 
+import m2.idm.project.mLRegression.Model
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import m2.idm.project.mLRegression.MLRegression
+import m2.idm.project.mLRegression.LanguageTarget
 
 /**
  * Generates code from your model files on save.
@@ -15,12 +16,14 @@ import m2.idm.project.mLRegression.MLRegression
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class MLRegressionGenerator extends AbstractGenerator {
-
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		val generator = new GeneratorPythonCode();
-		val mlregression = resource.allContents.toIterable.filter(typeof(MLRegression)).head;
-		val code = generator.generate(mlregression);
-		val file = resource.URI.lastSegment.replace('.mlreg', '.py');
+		val model = resource.allContents.toIterable.filter(typeof(Model)).head;
+		val language = model.getLanguageTarget();
+		val ml = model.getMl();
+		val generator = this.getGenerator(language);
+		val code = generator.generate(ml);
+		val file = resource.URI.lastSegment.replace('.mlreg', '.' + generator.getExtension());
 		if (code !== null) {
 			fsa.generateFile(file.toString(), code);	
 		}
@@ -30,5 +33,18 @@ class MLRegressionGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
+	}
+	
+	def GeneratorCode getGenerator(LanguageTarget language) {
+		if (language !== null) {
+			val languageString = language.getLanguage().toUpperCase();
+			switch (languageString) {
+				case 'PYTHON' : 
+				return new GeneratorPythonCode()
+				case 'R' :
+				return new GeneratorRCode()
+			}
+		}
+		return new GeneratorPythonCode();
 	}	
 }
