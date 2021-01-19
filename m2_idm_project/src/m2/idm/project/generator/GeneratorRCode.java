@@ -29,7 +29,11 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 
 	@Override
 	public void generateDatasetCode(Dataset dataset) {
-		String code = this.varDatas + "=read.csv(file=\"" + dataset.getDataPath() + "\")";
+		String separator = dataset.getSeparator();
+		if (separator == null) {
+			separator = ",";
+		}
+		String code = this.varDatas + "=read.csv(file=\"" + dataset.getDataPath() + "\",sep=\"" + separator + "\")";
 		this.addLineCode(code);
 	}
 
@@ -73,12 +77,12 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 		String spliterCode = "spliter=initial_split(" + this.varDatas + ",prop=" + trainPercent + ")";
 		
 		String trainCode =  this.varTrains + "=training(spliter)";
-		String testCode =  this.varTests + "=test_datas=testing(spliter)";
+		String testCode =  this.varTests + "=testing(spliter)";
 				
 		String codePredictFormula = "predict_formula=paste(" + this.varColsPred + ",collapse=\"+\")";
 		String codeTargetFormula = "target_formula=paste(" + this.varColsTarget + ",collapse=\"+\")";
 		String codeFormula = "formula=as.formula(paste(paste(target_formula,\"~\"),predict_formula))";
-		String codeModel = this.varModel + "= lm(formula," + this.varTrains + ")";
+		
 		this.addImportCode("library(rsample)");
 		
 		this.addLineCode(spliterCode);
@@ -87,7 +91,13 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 		this.addLineCode(codePredictFormula);
 		this.addLineCode(codeTargetFormula);
 		this.addLineCode(codeFormula);
-		this.addLineCode(codeModel);
+		
+		this.generateCodeAlgo(algo);
+		
+		String predictCode = this.varPredict + "=predict(" + this.varModel + "," + this.varTests + ")";
+		this.addLineCode(predictCode);
+		
+		this.generateCodeCalculate(calculate);
 	}
 
 	@Override
@@ -99,11 +109,50 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 
 	@Override
 	public void generateShowResultCode() {
-		// TODO Auto-generated method stub
-		
+		String codeResult = "print(" + this.varRes + ")";
+		this.addLineCode(codeResult);
 	}
 
 	private void generateCodeAlgo(Algo algo) {
-		
+		String codeModel = "";
+		switch (algo.getAlgo()) {
+		case "line_regress" :
+			codeModel = this.varModel + "=lm(formula," + this.varTrains + ")";
+			break;
+		case "decision_tree_regressor" :
+			this.addImportCode("library(rpart)");
+			codeModel = this.varModel + "=rpart(formula," + this.varTrains + ")";
+			break;
+		case "svr": 
+			this.addImportCode("library(e1071)");
+			codeModel = this.varModel + "=svm(formula," + this.varTrains + ")";
+			break;
+		}
+		this.addLineCode(codeModel);
+	}
+	
+	private void generateCodeCalculate(Calculate calculate) {
+		String function = "";
+		String codeCalculate = "";
+		String codeYtrue = "as.matrix(" + this.varTests + "[" + this.varColsTarget + "])";
+		String codeYPred = this.varPredict; 
+		switch (calculate.getCalculateType()) {
+		case "mean_absolute_error" :
+			this.addImportCode("library(gencve)");
+			function = "mae";
+			codeCalculate = this.varRes + "=" + function + "(" +  codeYtrue + "," + codeYPred + ")";
+			break;
+		case "mean_squared_error" :
+			this.addImportCode("library(gencve)");
+			function = "mse";
+			codeCalculate = this.varRes + "=" + function + "(" +  codeYtrue + "," + codeYPred + ")";
+			break;
+		case "median_absolute_error" :
+			this.addImportCode("library(MLmetrics,warn.conflicts=FALSE)");
+			function = "MedianAE";
+			codeCalculate = this.varRes + "=" + function + "(" +  codeYPred + "," + codeYtrue + ")";
+			break;
+		}
+		this.addLineCode(codeCalculate);
 	}
 }
