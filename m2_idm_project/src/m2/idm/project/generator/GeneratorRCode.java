@@ -15,13 +15,15 @@ import m2.idm.project.mLRegression.Variables;
  * @author anaofind
  */
 public class GeneratorRCode extends GeneratorCodeImpl{
-	
+
 	/**
 	 * the vars
 	 */
 	private String varTrains = "trains", varTests = "tests";
+	private String varFormula = "formula";
+	private String varTrainsControl = "trains_control";
 	private String varModel = "model";
-	
+
 	@Override
 	public String getExtension() {
 		return "r";
@@ -45,7 +47,7 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 		if (vars != null) {
 			List<String> predictCols = vars.getPredictives().getPredVar();
 			List<String> targetCols = vars.getTargets().getTargetVar();
-			
+
 			colsPredictiveCode = this.varColsPred  + "=c(\"" + predictCols.get(0)  + "\"";
 			for (int i = 1; i<predictCols.size(); i++) {
 				colsPredictiveCode += ",\"" +predictCols.get(i) + "\"";
@@ -63,10 +65,10 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 			String colsCode = "cols=colnames(" + this.varDatas + ")";
 			colsPredictiveCode = this.varColsPred + "=cols[-nrow(datas)+1]";
 			colsTargetCode = this.varColsTarget + "=cols[nrow(datas)-1]";
-			
+
 			this.addLineCode(colsCode);
 		}
-		
+
 		this.addLineCode(colsPredictiveCode);
 		this.addLineCode(colsTargetCode);
 	}
@@ -75,36 +77,42 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 	public void generatePartitionCode(Partition partition, Algo algo, Calculate calculate) {
 		double trainPercent = 1-this.getNumberValue(partition.getTest());
 		String spliterCode = "spliter=initial_split(" + this.varDatas + ",prop=" + trainPercent + ")";
-		
+
 		String trainCode =  this.varTrains + "=training(spliter)";
 		String testCode =  this.varTests + "=testing(spliter)";
-				
-		String codePredictFormula = "predict_formula=paste(" + this.varColsPred + ",collapse=\"+\")";
-		String codeTargetFormula = "target_formula=paste(" + this.varColsTarget + ",collapse=\"+\")";
-		String codeFormula = "formula=as.formula(paste(paste(target_formula,\"~\"),predict_formula))";
-		
+
 		this.addImportCode("library(rsample)");
-		
+
 		this.addLineCode(spliterCode);
 		this.addLineCode(trainCode);
 		this.addLineCode(testCode);
-		this.addLineCode(codePredictFormula);
-		this.addLineCode(codeTargetFormula);
-		this.addLineCode(codeFormula);
-		
+
+		this.generateCodeFormula();
+
 		this.generateCodeAlgo(algo);
-		
+
 		String predictCode = this.varPredict + "=predict(" + this.varModel + "," + this.varTests + ")";
 		this.addLineCode(predictCode);
-		
+
 		this.generateCodeCalculate(calculate);
 	}
 
 	@Override
 	public void generateCrossVCode(CrossValidation crossValidation, Algo algo, Calculate calculate) {
-//		String codePred = this.varPred + "=" + this.varDatas + "[" + this.varColsPred + "]";
-//		String codeTarget = this.varTarget + "=" + this.varDatas + "[" + this.varColsTarget + "]";
-		this.addImportCode("library(DAAG)");
+		this.addImportCode("library(caret,warn.conflicts=FALSE)");
+		
+		this.generateCodeFormula();
+		
+		String codeTrainsControl = this.varTrainsControl + "=trainControl(method=\"cv\",number=" + crossValidation.getK() + ",savePredictions=TRUE)"; 
+		this.addLineCode(codeTrainsControl);
+		
+		this.generateCodeAlgo(algo);
+		
+		String predictCode = this.varPredict + "=" + this.varModel + "$pred$pred";
+		this.addLineCode(predictCode);
+		
+		this.generateCodeCalculate(calculate);
+		
 	}
 
 	@Override
@@ -113,29 +121,57 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 		this.addLineCode(codeResult);
 	}
 
+	private void generateCodeFormula() {
+		String codePredictFormula = "predict_formula=paste(" + this.varColsPred + ",collapse=\"+\")";
+		String codeTargetFormula = "target_formula=paste(" + this.varColsTarget + ",collapse=\"+\")";
+		String codeFormula = this.varFormula + "=as.formula(paste(paste(target_formula,\"~\"),predict_formula))";
+
+		this.addLineCode(codePredictFormula);
+		this.addLineCode(codeTargetFormula);
+		this.addLineCode(codeFormula);
+	}
+
 	private void generateCodeAlgo(Algo algo) {
 		String codeModel = "";
+		String function = "";
 		switch (algo.getAlgo()) {
-		case "line_regress" :
-			codeModel = this.varModel + "=lm(formula," + this.varTrains + ")";
+		case "line_regress" : 
+			function = "lm";
 			break;
 		case "decision_tree_regressor" :
 			this.addImportCode("library(rpart)");
-			codeModel = this.varModel + "=rpart(formula," + this.varTrains + ")";
+			function = "rpart";
 			break;
 		case "svr": 
-			this.addImportCode("library(e1071)");
-			codeModel = this.varModel + "=svm(formula," + this.varTrains + ")";
+			if (this.isCrossValidation()) {
+				function = "svmLinear";
+			} else {
+				this.addImportCode("library(e1071)");
+				function = "svm";
+			}
 			break;
 		}
+		if (this.isCrossValidation()) {
+			codeModel = this.varModel + "=train(" + this.varFormula + ",data=" +  this.varDatas + ", method=\"" + function + "\",trControl=" + this.varTrainsControl + ")";
+		} else {
+			codeModel = this.varModel + "=" + function + "(" + this.varFormula + "," + this.varTrains + ")";
+		}
+		
 		this.addLineCode(codeModel);
 	}
 	
 	private void generateCodeCalculate(Calculate calculate) {
 		String function = "";
 		String codeCalculate = "";
-		String codeYtrue = "as.matrix(" + this.varTests + "[" + this.varColsTarget + "])";
-		String codeYPred = this.varPredict; 
+		String codeYtrue = "";
+		String codeYPred = "";
+		if (this.isCrossValidation()) {
+			codeYtrue = "as.matrix(" + this.varModel + "$pred$obs)";
+			codeYPred = "as.matrix(" + this.varPredict +")";
+		} else {
+			codeYtrue = "as.matrix(" + this.varTests + "[" + this.varColsTarget + "])";
+			codeYPred = this.varPredict;
+		}
 		switch (calculate.getCalculateType()) {
 		case "mean_absolute_error" :
 			this.addImportCode("library(gencve)");
