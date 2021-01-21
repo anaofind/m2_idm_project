@@ -4,7 +4,10 @@
 package m2.idm.project.tests;
 
 import com.google.inject.Inject;
-import m2.idm.project.mLRegression.MLRegression;
+import m2.idm.project.generator.GeneratorPythonCode;
+import m2.idm.project.generator.GeneratorRCode;
+import m2.idm.project.generator.InterpreterMLReg;
+import m2.idm.project.mLRegression.Model;
 import m2.idm.project.tests.MLRegressionInjectorProvider;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -13,6 +16,8 @@ import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.util.ParseHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,33 +28,126 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @SuppressWarnings("all")
 public class MLRegressionParsingTest {
   @Inject
-  private ParseHelper<MLRegression> parseHelper;
+  private ParseHelper<Model> parseHelper;
+  
+  private final String code1 = new Function0<String>() {
+    @Override
+    public String apply() {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("target_language : python;");
+      _builder.newLine();
+      _builder.append("import \"soccer.csv\";");
+      _builder.newLine();
+      _builder.append("predictive_vars : \"odds_ft_draw\", \"odds_ft_away_team_win\";");
+      _builder.newLine();
+      _builder.append("target_vars : \"odds_ft_home_team_win\";");
+      _builder.newLine();
+      _builder.append("partition : 30%;");
+      _builder.newLine();
+      _builder.append("algorithm : svr;");
+      _builder.newLine();
+      _builder.append("calculate : mean_absolute_error; ");
+      _builder.newLine();
+      return _builder.toString();
+    }
+  }.apply();
+  
+  private final String code2 = new Function0<String>() {
+    @Override
+    public String apply() {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("target_language : r;");
+      _builder.newLine();
+      _builder.append("import \"soccer.csv\";");
+      _builder.newLine();
+      _builder.append("predictive_vars : \"odds_ft_draw\", \"odds_ft_away_team_win\";");
+      _builder.newLine();
+      _builder.append("target_vars : \"odds_ft_home_team_win\";");
+      _builder.newLine();
+      _builder.append("partition : 30%; ");
+      _builder.newLine();
+      _builder.append("algorithm : svr;");
+      _builder.newLine();
+      _builder.append("calculate : mean_absolute_error; ");
+      _builder.newLine();
+      return _builder.toString();
+    }
+  }.apply();
   
   @Test
   public void loadModel() {
     try {
+      final Model resultP = this.parseHelper.parse(this.code1);
+      final Model resultR = this.parseHelper.parse(this.code2);
+      Assertions.assertNotNull(resultP);
+      Assertions.assertNotNull(resultR);
+      EList<Resource.Diagnostic> errors = resultP.eResource().getErrors();
+      boolean _isEmpty = errors.isEmpty();
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("import \"test.csv\";");
-      _builder.newLine();
-      _builder.append("partition : 80%, 20%;");
-      _builder.newLine();
-      _builder.append("predictive_vars : \"predict1\",\"predict2\";");
-      _builder.newLine();
-      _builder.append("target_vars : \"target1\", \"target2\";");
-      _builder.newLine();
-      _builder.append("calculate : min_square_error;");
-      _builder.newLine();
-      _builder.append("algorithm : line_regress(\"column\", \"column2\");");
-      _builder.newLine();
-      final MLRegression result = this.parseHelper.parse(_builder);
+      _builder.append("Unexpected errors: ");
+      String _join = IterableExtensions.join(errors, ", ");
+      _builder.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder.toString());
+      errors = resultR.eResource().getErrors();
+      boolean _isEmpty_1 = errors.isEmpty();
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("Unexpected errors: ");
+      String _join_1 = IterableExtensions.join(errors, ", ");
+      _builder_1.append(_join_1);
+      Assertions.assertTrue(_isEmpty_1, _builder_1.toString());
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void loadModelPython() {
+    try {
+      final Model result = this.parseHelper.parse(this.code1);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("Unexpected errors: ");
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Unexpected errors: ");
       String _join = IterableExtensions.join(errors, ", ");
-      _builder_1.append(_join);
-      Assertions.assertTrue(_isEmpty, _builder_1.toString());
+      _builder.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder.toString());
+      final GeneratorPythonCode generator = new GeneratorPythonCode();
+      final String code = generator.generate(result.getMl());
+      InputOutput.<String>print(code);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void loadModelR() {
+    try {
+      final Model result = this.parseHelper.parse(this.code2);
+      Assertions.assertNotNull(result);
+      final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
+      boolean _isEmpty = errors.isEmpty();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Unexpected errors: ");
+      String _join = IterableExtensions.join(errors, ", ");
+      _builder.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder.toString());
+      final GeneratorRCode generator = new GeneratorRCode();
+      final String code = generator.generate(result.getMl());
+      InputOutput.<String>print(code);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void interpreter() {
+    try {
+      final Model resultP = this.parseHelper.parse(this.code1);
+      final Model resultR = this.parseHelper.parse(this.code2);
+      final InterpreterMLReg interpreter = new InterpreterMLReg();
+      interpreter.compileAndRun(resultP);
+      interpreter.compileAndRun(resultR);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
