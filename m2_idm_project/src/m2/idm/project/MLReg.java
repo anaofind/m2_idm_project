@@ -14,7 +14,7 @@ import m2.idm.project.mLRegression.Model;
 public class MLReg {
 
 	public static void main(String[] args) throws Exception {
-				
+		
 		if (args.length == 0) {
 			throw new Exception("Must have argument [path file]");
 		}

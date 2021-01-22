@@ -2,12 +2,14 @@ package m2.idm.project.generator;
 
 import java.io.*;
 import com.google.common.io.Files;
+
+import m2.idm.project.Command;
 import m2.idm.project.mLRegression.LanguageTarget;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.Model;
 
 public class InterpreterMLReg{
-	
+		
 	public void compileAndRun(Model model) throws Exception {
 		this.compileAndRun(null, model);
 	}
@@ -20,12 +22,13 @@ public class InterpreterMLReg{
 		MLRegression mlRegression = model.getMl();
 
 		GeneratorCode generatorCode = this.createGeneratorCode(languageTarget);
-		String command = this.getCommande(languageTarget);
 		
 		String code = generatorCode.generate(mlRegression);
 		
 		String fileOutput = "mlreg." + generatorCode.getExtension() ;
 		Files.write(code.getBytes(), new File(fileOutput));
+		
+		String command = this.getCommand(languageTarget);
 		
 		Process p;
 		if (pathSource != null) {
@@ -67,18 +70,17 @@ public class InterpreterMLReg{
 		}
 	}
 
-	private String getCommande (LanguageTarget languageTarget) {
+	private String getCommand (LanguageTarget languageTarget) {
 		String language = "python";
 		if (languageTarget != null) {
 			language = languageTarget.getLanguage();
 		}
 		switch (language.toUpperCase()) {
 		case "PYTHON" :
-			return "python3";
+			return Command.getPython();
 		case "R" :
-			return "Rscript";
+			return Command.getR();
 		default : return null;
 		}
 	}
-
 }
