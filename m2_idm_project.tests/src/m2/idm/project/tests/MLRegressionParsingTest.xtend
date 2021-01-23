@@ -27,10 +27,10 @@ class MLRegressionParsingTest {
 	import "soccer.csv";
 	predictive_vars : "odds_ft_draw", "odds_ft_away_team_win";
 	target_vars : "odds_ft_home_team_win";
-	partition : 30%;
-	algorithm : svr;
-	calculate : mean_absolute_error;
-	Loop : 3
+	cross_validation : 5;
+	algorithm : line_regress;
+	calculate : mean_squared_error;
+	Loop : 10;
 	'''
 	
 	val code2 = '''
@@ -38,10 +38,10 @@ class MLRegressionParsingTest {
 	import "soccer.csv";
 	predictive_vars : "odds_ft_draw", "odds_ft_away_team_win";
 	target_vars : "odds_ft_home_team_win";
-	partition : 30%; 
-	algorithm : svr;
-	calculate : mean_absolute_error;
-	Loop : 3
+	cross_validation : 5;
+	algorithm : line_regress;
+	calculate : mean_squared_error;
+	Loop : 10;
 	'''
 	
 	@Test

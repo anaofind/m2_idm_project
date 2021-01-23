@@ -2220,6 +2220,7 @@ rule__Loop__Group__2
 	}
 :
 	rule__Loop__Group__2__Impl
+	rule__Loop__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2234,6 +2235,32 @@ rule__Loop__Group__2__Impl
 	{ before(grammarAccess.getLoopAccess().getIAssignment_2()); }
 	(rule__Loop__IAssignment_2)
 	{ after(grammarAccess.getLoopAccess().getIAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Loop__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Loop__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Loop__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getLoopAccess().getSemicolonKeyword_3()); }
+	';'
+	{ after(grammarAccess.getLoopAccess().getSemicolonKeyword_3()); }
 )
 ;
 finally {
