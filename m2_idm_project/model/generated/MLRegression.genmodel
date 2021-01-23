@@ -19,10 +19,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/evaluation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/algo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/calculate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//MLRegression/loop"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Dataset">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Dataset/dataPath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Dataset/separator"/>
+    </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//Variables">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Variables/predictives"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Variables/targets"/>
+    </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//PredictiveVars">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//PredictiveVars/predVar"/>
+    </genClasses>
+    <genClasses ecoreClass="MLRegression.ecore#//TargetVars">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//TargetVars/targetVar"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//EvaluationType"/>
     <genClasses ecoreClass="MLRegression.ecore#//Partition">
@@ -31,21 +42,14 @@
     <genClasses ecoreClass="MLRegression.ecore#//CrossValidation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//CrossValidation/k"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//Variables">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Variables/predictives"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//Variables/targets"/>
-    </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//ListePredictiveVar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//ListePredictiveVar/predVar"/>
-    </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//TargetVar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//TargetVar/targetVar"/>
+    <genClasses ecoreClass="MLRegression.ecore#//Algo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Algo/algo"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//Calculate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Calculate/calculateType"/>
     </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//Algo">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Algo/algo"/>
+    <genClasses ecoreClass="MLRegression.ecore#//Loop">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//Loop/i"/>
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//NumericValue"/>
     <genClasses ecoreClass="MLRegression.ecore#//FLOAT">
@@ -54,9 +58,6 @@
     </genClasses>
     <genClasses ecoreClass="MLRegression.ecore#//PERCENT">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MLRegression.ecore#//PERCENT/float"/>
-    </genClasses>
-    <genClasses ecoreClass="MLRegression.ecore#//BooleanValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MLRegression.ecore#//BooleanValue/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

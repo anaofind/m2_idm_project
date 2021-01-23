@@ -11,10 +11,15 @@ import java.util.*;
 public abstract class GeneratorCodeImpl implements GeneratorCode{
 
 	/**
-	 * the list of code
+	 * list of implements
 	 */
-	private List<String> codeOrdonee = new ArrayList<String>();
+	private List<String> codeImplement = new ArrayList<String>();
 	
+	/**
+	 * the code of body
+	 */
+	private List<String> codeBody = new ArrayList<String>();
+		
 	/**
 	 * the vars
 	 */
@@ -32,12 +37,17 @@ public abstract class GeneratorCodeImpl implements GeneratorCode{
 		EvaluationType evalType = ml.getEvaluation();
 		Algo algoToApply = ml.getAlgo();
 		Calculate whatToCalculate = ml.getCalculate();
+		Loop loop = ml.getLoop();
 		
 		// know if is cross validation
 		this.isCrossValidation = (evalType instanceof CrossValidation);
 		
 		// generate dataset code
 		this.generateDatasetCode(dataset);
+		
+		// generate start loop code
+		this.generateStartLoopCode(loop);
+		int iLineStartLoop = this.codeBody.size();
 		
 		// generate vars code
 		this.generateVarsCode(listVar);
@@ -48,21 +58,32 @@ public abstract class GeneratorCodeImpl implements GeneratorCode{
 		// generate the showing result code
 		this.generateShowResultCode();
 		
-		// generate all code
+		// generate end loop code
+		int iLineEndLoop = this.codeBody.size()-1;
+		for (int i = iLineStartLoop; i<=iLineEndLoop; i++) {
+			this.codeBody.set(i, "\t" + this.codeBody.get(i));
+		}
+		this.generateEndLoopCode();
+		
+		// generate all implements
 		String code = "";
-		for (String line : this.codeOrdonee) {
+		for (String line : this.codeImplement) {
 			code += line + "\n";
 		}
-
+		
+		// generate code body
+		for (String line : this.codeBody) {
+			code += line + "\n";
+		}
+		
 		//return code
 		return code;
 	}
-
+			
 	/**
 	 * generate dataset code
 	 */
 	public abstract void generateDatasetCode(Dataset dataset);
-	
 	
 	/**
 	 * generate vars code
@@ -84,6 +105,17 @@ public abstract class GeneratorCodeImpl implements GeneratorCode{
 			this.generatePartitionCode(partition, algoToApply, whatToCalculate);	
 		}
 	}
+	
+	/**
+	 * generate start loop code
+	 * @param loop the loop
+	 */
+	public abstract void generateStartLoopCode(Loop loop);
+	
+	/**
+	 * generate end loop code
+	 */
+	public abstract void generateEndLoopCode();
 	
 	/**
 	 * generate partition code
@@ -112,7 +144,7 @@ public abstract class GeneratorCodeImpl implements GeneratorCode{
 	 * @param importCode the import code
 	 */
 	protected void addImportCode(String importCode) {
-		this.codeOrdonee.add(0, importCode);
+		this.codeImplement.add(importCode);
 	}
 	
 	/**
@@ -120,7 +152,7 @@ public abstract class GeneratorCodeImpl implements GeneratorCode{
 	 * @param lineCode the line code
 	 */
 	protected void addLineCode(String lineCode) {
-		this.codeOrdonee.add(lineCode);
+		this.codeBody.add(lineCode);
 	}
 	
 	/**

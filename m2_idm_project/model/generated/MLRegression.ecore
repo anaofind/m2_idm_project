@@ -21,10 +21,25 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="algo" eType="#//Algo" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="calculate" eType="#//Calculate"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loop" eType="#//Loop" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dataset">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="separator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variables">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predictives" eType="#//PredictiveVars"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targets" eType="#//TargetVars"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredictiveVars">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predVar" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetVars">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetVar" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EvaluationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Partition" eSuperTypes="#//EvaluationType">
@@ -34,25 +49,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="CrossValidation" eSuperTypes="#//EvaluationType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="k" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variables">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="predictives" eType="#//ListePredictiveVar"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targets" eType="#//TargetVar"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListePredictiveVar">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predVar" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TargetVar">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetVar" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Algo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Calculate">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="calculateType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Algo">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Loop">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="i" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumericValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="FLOAT" eSuperTypes="#//NumericValue">
@@ -62,8 +66,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="PERCENT" eSuperTypes="#//NumericValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="float" eType="#//FLOAT"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

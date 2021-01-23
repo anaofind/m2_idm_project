@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link m2.idm.project.mLRegression.MLRegression#getEvaluation <em>Evaluation</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.MLRegression#getAlgo <em>Algo</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.MLRegression#getCalculate <em>Calculate</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.MLRegression#getLoop <em>Loop</em>}</li>
  * </ul>
  *
  * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression()
@@ -136,5 +137,27 @@ public interface MLRegression extends EObject
    * @generated
    */
   void setCalculate(Calculate value);
+
+  /**
+   * Returns the value of the '<em><b>Loop</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Loop</em>' containment reference.
+   * @see #setLoop(Loop)
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getMLRegression_Loop()
+   * @model containment="true"
+   * @generated
+   */
+  Loop getLoop();
+
+  /**
+   * Sets the value of the '{@link m2.idm.project.mLRegression.MLRegression#getLoop <em>Loop</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Loop</em>' containment reference.
+   * @see #getLoop()
+   * @generated
+   */
+  void setLoop(Loop value);
 
 } // MLRegression

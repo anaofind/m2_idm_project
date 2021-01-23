@@ -29,7 +29,8 @@ class MLRegressionParsingTest {
 	target_vars : "odds_ft_home_team_win";
 	partition : 30%;
 	algorithm : svr;
-	calculate : mean_absolute_error; 
+	calculate : mean_absolute_error;
+	Loop : 3
 	'''
 	
 	val code2 = '''
@@ -39,7 +40,8 @@ class MLRegressionParsingTest {
 	target_vars : "odds_ft_home_team_win";
 	partition : 30%; 
 	algorithm : svr;
-	calculate : mean_absolute_error; 
+	calculate : mean_absolute_error;
+	Loop : 3
 	'''
 	
 	@Test

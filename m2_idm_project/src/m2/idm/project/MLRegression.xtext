@@ -25,12 +25,25 @@ MLRegression:
 	evaluation=EvaluationType
     algo=Algo
     calculate=Calculate
+    (loop=Loop)?
 ;
 
 
 
 Dataset:
 	'import' dataPath=STRING (separator=STRING)?  ';'
+;
+
+Variables: 
+	predictives=PredictiveVars targets=TargetVars 
+;
+
+PredictiveVars : 
+    'predictive_vars' ':' predVar+=STRING(','predVar+=STRING)* ';'
+;
+
+TargetVars : 
+    'target_vars' ':' targetVar+=STRING(','targetVar+=STRING)* ';'
 ;
 
 EvaluationType :
@@ -44,27 +57,6 @@ Partition :
 CrossValidation :
     'cross_validation' ':' k=INT  ';'
 ;
-
-Variables: 
-	predictives=ListePredictiveVar targets=TargetVar 
-;
-
-ListePredictiveVar : 
-    'predictive_vars' ':' predVar+=STRING(','predVar+=STRING)* ';'
-;
-
-TargetVar : 
-    'target_vars' ':' targetVar+=STRING(','targetVar+=STRING)* ';'
-;
-
-Calculate :
-	'calculate' ':' calculateType=CalculateType ';'
-;
-
-CalculateType :
-	MeanAbsoluteError | MeanSquaredError | MedianAbsoluteError
-;
-
 
 Algo :
 	'algorithm' ':' algo=AlgoType ';'
@@ -86,6 +78,13 @@ SVR :
     'svr'
 ;
 
+Calculate :
+	'calculate' ':' calculateType=CalculateType ';'
+;
+
+CalculateType :
+	MeanAbsoluteError | MeanSquaredError | MedianAbsoluteError
+;
 
 MeanAbsoluteError :
 	'mean_absolute_error'
@@ -101,6 +100,9 @@ MedianAbsoluteError :
 	'median_absolute_error'
 ;
 
+Loop:
+	'Loop' ':' i=INT
+;
 
 NumericValue:
 	FLOAT | PERCENT
@@ -112,8 +114,4 @@ FLOAT:
 
 PERCENT:
 	float=FLOAT '%'
-;
-
-BooleanValue :
-	value = ('false' | 'true')
 ;

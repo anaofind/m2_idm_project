@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Liste Predictive Var</b></em>'.
+ * A representation of the model object '<em><b>Predictive Vars</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.ListePredictiveVar#getPredVar <em>Pred Var</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.PredictiveVars#getPredVar <em>Pred Var</em>}</li>
  * </ul>
  *
- * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar()
+ * @see m2.idm.project.mLRegression.MLRegressionPackage#getPredictiveVars()
  * @model
  * @generated
  */
-public interface ListePredictiveVar extends EObject
+public interface PredictiveVars extends EObject
 {
   /**
    * Returns the value of the '<em><b>Pred Var</b></em>' attribute list.
@@ -31,10 +31,10 @@ public interface ListePredictiveVar extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Pred Var</em>' attribute list.
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getListePredictiveVar_PredVar()
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getPredictiveVars_PredVar()
    * @model unique="false"
    * @generated
    */
   EList<String> getPredVar();
 
-} // ListePredictiveVar
+} // PredictiveVars

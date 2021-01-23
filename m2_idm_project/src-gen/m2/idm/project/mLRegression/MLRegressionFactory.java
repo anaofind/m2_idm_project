@@ -60,6 +60,33 @@ public interface MLRegressionFactory extends EFactory
   Dataset createDataset();
 
   /**
+   * Returns a new object of class '<em>Variables</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variables</em>'.
+   * @generated
+   */
+  Variables createVariables();
+
+  /**
+   * Returns a new object of class '<em>Predictive Vars</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predictive Vars</em>'.
+   * @generated
+   */
+  PredictiveVars createPredictiveVars();
+
+  /**
+   * Returns a new object of class '<em>Target Vars</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Target Vars</em>'.
+   * @generated
+   */
+  TargetVars createTargetVars();
+
+  /**
    * Returns a new object of class '<em>Evaluation Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -87,31 +114,13 @@ public interface MLRegressionFactory extends EFactory
   CrossValidation createCrossValidation();
 
   /**
-   * Returns a new object of class '<em>Variables</em>'.
+   * Returns a new object of class '<em>Algo</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variables</em>'.
+   * @return a new object of class '<em>Algo</em>'.
    * @generated
    */
-  Variables createVariables();
-
-  /**
-   * Returns a new object of class '<em>Liste Predictive Var</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Liste Predictive Var</em>'.
-   * @generated
-   */
-  ListePredictiveVar createListePredictiveVar();
-
-  /**
-   * Returns a new object of class '<em>Target Var</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Target Var</em>'.
-   * @generated
-   */
-  TargetVar createTargetVar();
+  Algo createAlgo();
 
   /**
    * Returns a new object of class '<em>Calculate</em>'.
@@ -123,13 +132,13 @@ public interface MLRegressionFactory extends EFactory
   Calculate createCalculate();
 
   /**
-   * Returns a new object of class '<em>Algo</em>'.
+   * Returns a new object of class '<em>Loop</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Algo</em>'.
+   * @return a new object of class '<em>Loop</em>'.
    * @generated
    */
-  Algo createAlgo();
+  Loop createLoop();
 
   /**
    * Returns a new object of class '<em>Numeric Value</em>'.
@@ -157,15 +166,6 @@ public interface MLRegressionFactory extends EFactory
    * @generated
    */
   PERCENT createPERCENT();
-
-  /**
-   * Returns a new object of class '<em>Boolean Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Value</em>'.
-   * @generated
-   */
-  BooleanValue createBooleanValue();
 
   /**
    * Returns the package supported by this factory.

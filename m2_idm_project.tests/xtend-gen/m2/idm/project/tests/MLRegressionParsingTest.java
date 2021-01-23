@@ -46,7 +46,9 @@ public class MLRegressionParsingTest {
       _builder.newLine();
       _builder.append("algorithm : svr;");
       _builder.newLine();
-      _builder.append("calculate : mean_absolute_error; ");
+      _builder.append("calculate : mean_absolute_error;");
+      _builder.newLine();
+      _builder.append("Loop : 3");
       _builder.newLine();
       return _builder.toString();
     }
@@ -68,7 +70,9 @@ public class MLRegressionParsingTest {
       _builder.newLine();
       _builder.append("algorithm : svr;");
       _builder.newLine();
-      _builder.append("calculate : mean_absolute_error; ");
+      _builder.append("calculate : mean_absolute_error;");
+      _builder.newLine();
+      _builder.append("Loop : 3");
       _builder.newLine();
       return _builder.toString();
     }

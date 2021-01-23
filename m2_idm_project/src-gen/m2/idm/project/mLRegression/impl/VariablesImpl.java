@@ -3,9 +3,9 @@
  */
 package m2.idm.project.mLRegression.impl;
 
-import m2.idm.project.mLRegression.ListePredictiveVar;
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.TargetVar;
+import m2.idm.project.mLRegression.PredictiveVars;
+import m2.idm.project.mLRegression.TargetVars;
 import m2.idm.project.mLRegression.Variables;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -41,7 +41,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    * @ordered
    */
-  protected ListePredictiveVar predictives;
+  protected PredictiveVars predictives;
 
   /**
    * The cached value of the '{@link #getTargets() <em>Targets</em>}' containment reference.
@@ -51,7 +51,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    * @ordered
    */
-  protected TargetVar targets;
+  protected TargetVars targets;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    */
   @Override
-  public ListePredictiveVar getPredictives()
+  public PredictiveVars getPredictives()
   {
     return predictives;
   }
@@ -90,9 +90,9 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPredictives(ListePredictiveVar newPredictives, NotificationChain msgs)
+  public NotificationChain basicSetPredictives(PredictiveVars newPredictives, NotificationChain msgs)
   {
-    ListePredictiveVar oldPredictives = predictives;
+    PredictiveVars oldPredictives = predictives;
     predictives = newPredictives;
     if (eNotificationRequired())
     {
@@ -108,7 +108,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    */
   @Override
-  public void setPredictives(ListePredictiveVar newPredictives)
+  public void setPredictives(PredictiveVars newPredictives)
   {
     if (newPredictives != predictives)
     {
@@ -130,7 +130,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    */
   @Override
-  public TargetVar getTargets()
+  public TargetVars getTargets()
   {
     return targets;
   }
@@ -140,9 +140,9 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTargets(TargetVar newTargets, NotificationChain msgs)
+  public NotificationChain basicSetTargets(TargetVars newTargets, NotificationChain msgs)
   {
-    TargetVar oldTargets = targets;
+    TargetVars oldTargets = targets;
     targets = newTargets;
     if (eNotificationRequired())
     {
@@ -158,7 +158,7 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    */
   @Override
-  public void setTargets(TargetVar newTargets)
+  public void setTargets(TargetVars newTargets)
   {
     if (newTargets != targets)
     {
@@ -221,10 +221,10 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
     switch (featureID)
     {
       case MLRegressionPackage.VARIABLES__PREDICTIVES:
-        setPredictives((ListePredictiveVar)newValue);
+        setPredictives((PredictiveVars)newValue);
         return;
       case MLRegressionPackage.VARIABLES__TARGETS:
-        setTargets((TargetVar)newValue);
+        setTargets((TargetVars)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -241,10 +241,10 @@ public class VariablesImpl extends MinimalEObjectImpl.Container implements Varia
     switch (featureID)
     {
       case MLRegressionPackage.VARIABLES__PREDICTIVES:
-        setPredictives((ListePredictiveVar)null);
+        setPredictives((PredictiveVars)null);
         return;
       case MLRegressionPackage.VARIABLES__TARGETS:
-        setTargets((TargetVar)null);
+        setTargets((TargetVars)null);
         return;
     }
     super.eUnset(featureID);

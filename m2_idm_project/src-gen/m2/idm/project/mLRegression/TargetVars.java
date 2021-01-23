@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Target Var</b></em>'.
+ * A representation of the model object '<em><b>Target Vars</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.TargetVar#getTargetVar <em>Target Var</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.TargetVars#getTargetVar <em>Target Var</em>}</li>
  * </ul>
  *
- * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVar()
+ * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVars()
  * @model
  * @generated
  */
-public interface TargetVar extends EObject
+public interface TargetVars extends EObject
 {
   /**
    * Returns the value of the '<em><b>Target Var</b></em>' attribute list.
@@ -31,10 +31,10 @@ public interface TargetVar extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target Var</em>' attribute list.
-   * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVar_TargetVar()
+   * @see m2.idm.project.mLRegression.MLRegressionPackage#getTargetVars_TargetVar()
    * @model unique="false"
    * @generated
    */
   EList<String> getTargetVar();
 
-} // TargetVar
+} // TargetVars

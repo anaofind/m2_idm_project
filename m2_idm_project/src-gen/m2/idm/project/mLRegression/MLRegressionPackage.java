@@ -178,13 +178,22 @@ public interface MLRegressionPackage extends EPackage
   int ML_REGRESSION__CALCULATE = 4;
 
   /**
+   * The feature id for the '<em><b>Loop</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ML_REGRESSION__LOOP = 5;
+
+  /**
    * The number of structural features of the '<em>ML Regression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ML_REGRESSION_FEATURE_COUNT = 5;
+  int ML_REGRESSION_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.DatasetImpl <em>Dataset</em>}' class.
@@ -224,81 +233,6 @@ public interface MLRegressionPackage extends EPackage
   int DATASET_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.EvaluationTypeImpl <em>Evaluation Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.EvaluationTypeImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getEvaluationType()
-   * @generated
-   */
-  int EVALUATION_TYPE = 4;
-
-  /**
-   * The number of structural features of the '<em>Evaluation Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVALUATION_TYPE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.PartitionImpl <em>Partition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.PartitionImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPartition()
-   * @generated
-   */
-  int PARTITION = 5;
-
-  /**
-   * The feature id for the '<em><b>Test</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARTITION__TEST = EVALUATION_TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Partition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARTITION_FEATURE_COUNT = EVALUATION_TYPE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.CrossValidationImpl <em>Cross Validation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.CrossValidationImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getCrossValidation()
-   * @generated
-   */
-  int CROSS_VALIDATION = 6;
-
-  /**
-   * The feature id for the '<em><b>K</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CROSS_VALIDATION__K = EVALUATION_TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Cross Validation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CROSS_VALIDATION_FEATURE_COUNT = EVALUATION_TYPE_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.VariablesImpl <em>Variables</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -306,7 +240,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getVariables()
    * @generated
    */
-  int VARIABLES = 7;
+  int VARIABLES = 4;
 
   /**
    * The feature id for the '<em><b>Predictives</b></em>' containment reference.
@@ -336,14 +270,14 @@ public interface MLRegressionPackage extends EPackage
   int VARIABLES_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.ListePredictiveVarImpl <em>Liste Predictive Var</em>}' class.
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.PredictiveVarsImpl <em>Predictive Vars</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.ListePredictiveVarImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getListePredictiveVar()
+   * @see m2.idm.project.mLRegression.impl.PredictiveVarsImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPredictiveVars()
    * @generated
    */
-  int LISTE_PREDICTIVE_VAR = 8;
+  int PREDICTIVE_VARS = 5;
 
   /**
    * The feature id for the '<em><b>Pred Var</b></em>' attribute list.
@@ -352,26 +286,26 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LISTE_PREDICTIVE_VAR__PRED_VAR = 0;
+  int PREDICTIVE_VARS__PRED_VAR = 0;
 
   /**
-   * The number of structural features of the '<em>Liste Predictive Var</em>' class.
+   * The number of structural features of the '<em>Predictive Vars</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LISTE_PREDICTIVE_VAR_FEATURE_COUNT = 1;
+  int PREDICTIVE_VARS_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.TargetVarImpl <em>Target Var</em>}' class.
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.TargetVarsImpl <em>Target Vars</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.TargetVarImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getTargetVar()
+   * @see m2.idm.project.mLRegression.impl.TargetVarsImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getTargetVars()
    * @generated
    */
-  int TARGET_VAR = 9;
+  int TARGET_VARS = 6;
 
   /**
    * The feature id for the '<em><b>Target Var</b></em>' attribute list.
@@ -380,44 +314,91 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TARGET_VAR__TARGET_VAR = 0;
+  int TARGET_VARS__TARGET_VAR = 0;
 
   /**
-   * The number of structural features of the '<em>Target Var</em>' class.
+   * The number of structural features of the '<em>Target Vars</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TARGET_VAR_FEATURE_COUNT = 1;
+  int TARGET_VARS_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.CalculateImpl <em>Calculate</em>}' class.
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.EvaluationTypeImpl <em>Evaluation Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.CalculateImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getCalculate()
+   * @see m2.idm.project.mLRegression.impl.EvaluationTypeImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getEvaluationType()
    * @generated
    */
-  int CALCULATE = 10;
+  int EVALUATION_TYPE = 7;
 
   /**
-   * The feature id for the '<em><b>Calculate Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CALCULATE__CALCULATE_TYPE = 0;
-
-  /**
-   * The number of structural features of the '<em>Calculate</em>' class.
+   * The number of structural features of the '<em>Evaluation Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALCULATE_FEATURE_COUNT = 1;
+  int EVALUATION_TYPE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.PartitionImpl <em>Partition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see m2.idm.project.mLRegression.impl.PartitionImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPartition()
+   * @generated
+   */
+  int PARTITION = 8;
+
+  /**
+   * The feature id for the '<em><b>Test</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARTITION__TEST = EVALUATION_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Partition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARTITION_FEATURE_COUNT = EVALUATION_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.CrossValidationImpl <em>Cross Validation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see m2.idm.project.mLRegression.impl.CrossValidationImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getCrossValidation()
+   * @generated
+   */
+  int CROSS_VALIDATION = 9;
+
+  /**
+   * The feature id for the '<em><b>K</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CROSS_VALIDATION__K = EVALUATION_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Cross Validation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CROSS_VALIDATION_FEATURE_COUNT = EVALUATION_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.AlgoImpl <em>Algo</em>}' class.
@@ -427,7 +408,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getAlgo()
    * @generated
    */
-  int ALGO = 11;
+  int ALGO = 10;
 
   /**
    * The feature id for the '<em><b>Algo</b></em>' attribute.
@@ -448,6 +429,62 @@ public interface MLRegressionPackage extends EPackage
   int ALGO_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.CalculateImpl <em>Calculate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see m2.idm.project.mLRegression.impl.CalculateImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getCalculate()
+   * @generated
+   */
+  int CALCULATE = 11;
+
+  /**
+   * The feature id for the '<em><b>Calculate Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALCULATE__CALCULATE_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Calculate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALCULATE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.LoopImpl <em>Loop</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see m2.idm.project.mLRegression.impl.LoopImpl
+   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getLoop()
+   * @generated
+   */
+  int LOOP = 12;
+
+  /**
+   * The feature id for the '<em><b>I</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOOP__I = 0;
+
+  /**
+   * The number of structural features of the '<em>Loop</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOOP_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link m2.idm.project.mLRegression.impl.NumericValueImpl <em>Numeric Value</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -455,7 +492,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getNumericValue()
    * @generated
    */
-  int NUMERIC_VALUE = 12;
+  int NUMERIC_VALUE = 13;
 
   /**
    * The number of structural features of the '<em>Numeric Value</em>' class.
@@ -474,7 +511,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getFLOAT()
    * @generated
    */
-  int FLOAT = 13;
+  int FLOAT = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -511,7 +548,7 @@ public interface MLRegressionPackage extends EPackage
    * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPERCENT()
    * @generated
    */
-  int PERCENT = 14;
+  int PERCENT = 15;
 
   /**
    * The feature id for the '<em><b>Float</b></em>' containment reference.
@@ -530,34 +567,6 @@ public interface MLRegressionPackage extends EPackage
    * @ordered
    */
   int PERCENT_FEATURE_COUNT = NUMERIC_VALUE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link m2.idm.project.mLRegression.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see m2.idm.project.mLRegression.impl.BooleanValueImpl
-   * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getBooleanValue()
-   * @generated
-   */
-  int BOOLEAN_VALUE = 15;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_VALUE__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Boolean Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_VALUE_FEATURE_COUNT = 1;
 
 
   /**
@@ -679,6 +688,17 @@ public interface MLRegressionPackage extends EPackage
   EReference getMLRegression_Calculate();
 
   /**
+   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.MLRegression#getLoop <em>Loop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Loop</em>'.
+   * @see m2.idm.project.mLRegression.MLRegression#getLoop()
+   * @see #getMLRegression()
+   * @generated
+   */
+  EReference getMLRegression_Loop();
+
+  /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.Dataset <em>Dataset</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -709,6 +729,80 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    */
   EAttribute getDataset_Separator();
+
+  /**
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.Variables <em>Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variables</em>'.
+   * @see m2.idm.project.mLRegression.Variables
+   * @generated
+   */
+  EClass getVariables();
+
+  /**
+   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.Variables#getPredictives <em>Predictives</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Predictives</em>'.
+   * @see m2.idm.project.mLRegression.Variables#getPredictives()
+   * @see #getVariables()
+   * @generated
+   */
+  EReference getVariables_Predictives();
+
+  /**
+   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.Variables#getTargets <em>Targets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Targets</em>'.
+   * @see m2.idm.project.mLRegression.Variables#getTargets()
+   * @see #getVariables()
+   * @generated
+   */
+  EReference getVariables_Targets();
+
+  /**
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.PredictiveVars <em>Predictive Vars</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predictive Vars</em>'.
+   * @see m2.idm.project.mLRegression.PredictiveVars
+   * @generated
+   */
+  EClass getPredictiveVars();
+
+  /**
+   * Returns the meta object for the attribute list '{@link m2.idm.project.mLRegression.PredictiveVars#getPredVar <em>Pred Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Pred Var</em>'.
+   * @see m2.idm.project.mLRegression.PredictiveVars#getPredVar()
+   * @see #getPredictiveVars()
+   * @generated
+   */
+  EAttribute getPredictiveVars_PredVar();
+
+  /**
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.TargetVars <em>Target Vars</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Target Vars</em>'.
+   * @see m2.idm.project.mLRegression.TargetVars
+   * @generated
+   */
+  EClass getTargetVars();
+
+  /**
+   * Returns the meta object for the attribute list '{@link m2.idm.project.mLRegression.TargetVars#getTargetVar <em>Target Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Target Var</em>'.
+   * @see m2.idm.project.mLRegression.TargetVars#getTargetVar()
+   * @see #getTargetVars()
+   * @generated
+   */
+  EAttribute getTargetVars_TargetVar();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.EvaluationType <em>Evaluation Type</em>}'.
@@ -763,78 +857,25 @@ public interface MLRegressionPackage extends EPackage
   EAttribute getCrossValidation_K();
 
   /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.Variables <em>Variables</em>}'.
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.Algo <em>Algo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variables</em>'.
-   * @see m2.idm.project.mLRegression.Variables
+   * @return the meta object for class '<em>Algo</em>'.
+   * @see m2.idm.project.mLRegression.Algo
    * @generated
    */
-  EClass getVariables();
+  EClass getAlgo();
 
   /**
-   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.Variables#getPredictives <em>Predictives</em>}'.
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Predictives</em>'.
-   * @see m2.idm.project.mLRegression.Variables#getPredictives()
-   * @see #getVariables()
+   * @return the meta object for the attribute '<em>Algo</em>'.
+   * @see m2.idm.project.mLRegression.Algo#getAlgo()
+   * @see #getAlgo()
    * @generated
    */
-  EReference getVariables_Predictives();
-
-  /**
-   * Returns the meta object for the containment reference '{@link m2.idm.project.mLRegression.Variables#getTargets <em>Targets</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Targets</em>'.
-   * @see m2.idm.project.mLRegression.Variables#getTargets()
-   * @see #getVariables()
-   * @generated
-   */
-  EReference getVariables_Targets();
-
-  /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.ListePredictiveVar <em>Liste Predictive Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Liste Predictive Var</em>'.
-   * @see m2.idm.project.mLRegression.ListePredictiveVar
-   * @generated
-   */
-  EClass getListePredictiveVar();
-
-  /**
-   * Returns the meta object for the attribute list '{@link m2.idm.project.mLRegression.ListePredictiveVar#getPredVar <em>Pred Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Pred Var</em>'.
-   * @see m2.idm.project.mLRegression.ListePredictiveVar#getPredVar()
-   * @see #getListePredictiveVar()
-   * @generated
-   */
-  EAttribute getListePredictiveVar_PredVar();
-
-  /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.TargetVar <em>Target Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Target Var</em>'.
-   * @see m2.idm.project.mLRegression.TargetVar
-   * @generated
-   */
-  EClass getTargetVar();
-
-  /**
-   * Returns the meta object for the attribute list '{@link m2.idm.project.mLRegression.TargetVar#getTargetVar <em>Target Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Target Var</em>'.
-   * @see m2.idm.project.mLRegression.TargetVar#getTargetVar()
-   * @see #getTargetVar()
-   * @generated
-   */
-  EAttribute getTargetVar_TargetVar();
+  EAttribute getAlgo_Algo();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.Calculate <em>Calculate</em>}'.
@@ -858,25 +899,25 @@ public interface MLRegressionPackage extends EPackage
   EAttribute getCalculate_CalculateType();
 
   /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.Algo <em>Algo</em>}'.
+   * Returns the meta object for class '{@link m2.idm.project.mLRegression.Loop <em>Loop</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Algo</em>'.
-   * @see m2.idm.project.mLRegression.Algo
+   * @return the meta object for class '<em>Loop</em>'.
+   * @see m2.idm.project.mLRegression.Loop
    * @generated
    */
-  EClass getAlgo();
+  EClass getLoop();
 
   /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Algo#getAlgo <em>Algo</em>}'.
+   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.Loop#getI <em>I</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Algo</em>'.
-   * @see m2.idm.project.mLRegression.Algo#getAlgo()
-   * @see #getAlgo()
+   * @return the meta object for the attribute '<em>I</em>'.
+   * @see m2.idm.project.mLRegression.Loop#getI()
+   * @see #getLoop()
    * @generated
    */
-  EAttribute getAlgo_Algo();
+  EAttribute getLoop_I();
 
   /**
    * Returns the meta object for class '{@link m2.idm.project.mLRegression.NumericValue <em>Numeric Value</em>}'.
@@ -940,27 +981,6 @@ public interface MLRegressionPackage extends EPackage
    * @generated
    */
   EReference getPERCENT_Float();
-
-  /**
-   * Returns the meta object for class '{@link m2.idm.project.mLRegression.BooleanValue <em>Boolean Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Value</em>'.
-   * @see m2.idm.project.mLRegression.BooleanValue
-   * @generated
-   */
-  EClass getBooleanValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link m2.idm.project.mLRegression.BooleanValue#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see m2.idm.project.mLRegression.BooleanValue#getValue()
-   * @see #getBooleanValue()
-   * @generated
-   */
-  EAttribute getBooleanValue_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1080,6 +1100,14 @@ public interface MLRegressionPackage extends EPackage
     EReference ML_REGRESSION__CALCULATE = eINSTANCE.getMLRegression_Calculate();
 
     /**
+     * The meta object literal for the '<em><b>Loop</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ML_REGRESSION__LOOP = eINSTANCE.getMLRegression_Loop();
+
+    /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.DatasetImpl <em>Dataset</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1104,6 +1132,68 @@ public interface MLRegressionPackage extends EPackage
      * @generated
      */
     EAttribute DATASET__SEPARATOR = eINSTANCE.getDataset_Separator();
+
+    /**
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.VariablesImpl <em>Variables</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see m2.idm.project.mLRegression.impl.VariablesImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getVariables()
+     * @generated
+     */
+    EClass VARIABLES = eINSTANCE.getVariables();
+
+    /**
+     * The meta object literal for the '<em><b>Predictives</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLES__PREDICTIVES = eINSTANCE.getVariables_Predictives();
+
+    /**
+     * The meta object literal for the '<em><b>Targets</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLES__TARGETS = eINSTANCE.getVariables_Targets();
+
+    /**
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.PredictiveVarsImpl <em>Predictive Vars</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see m2.idm.project.mLRegression.impl.PredictiveVarsImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getPredictiveVars()
+     * @generated
+     */
+    EClass PREDICTIVE_VARS = eINSTANCE.getPredictiveVars();
+
+    /**
+     * The meta object literal for the '<em><b>Pred Var</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREDICTIVE_VARS__PRED_VAR = eINSTANCE.getPredictiveVars_PredVar();
+
+    /**
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.TargetVarsImpl <em>Target Vars</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see m2.idm.project.mLRegression.impl.TargetVarsImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getTargetVars()
+     * @generated
+     */
+    EClass TARGET_VARS = eINSTANCE.getTargetVars();
+
+    /**
+     * The meta object literal for the '<em><b>Target Var</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TARGET_VARS__TARGET_VAR = eINSTANCE.getTargetVars_TargetVar();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.EvaluationTypeImpl <em>Evaluation Type</em>}' class.
@@ -1152,66 +1242,22 @@ public interface MLRegressionPackage extends EPackage
     EAttribute CROSS_VALIDATION__K = eINSTANCE.getCrossValidation_K();
 
     /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.VariablesImpl <em>Variables</em>}' class.
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.AlgoImpl <em>Algo</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.VariablesImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getVariables()
+     * @see m2.idm.project.mLRegression.impl.AlgoImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getAlgo()
      * @generated
      */
-    EClass VARIABLES = eINSTANCE.getVariables();
+    EClass ALGO = eINSTANCE.getAlgo();
 
     /**
-     * The meta object literal for the '<em><b>Predictives</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Algo</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIABLES__PREDICTIVES = eINSTANCE.getVariables_Predictives();
-
-    /**
-     * The meta object literal for the '<em><b>Targets</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLES__TARGETS = eINSTANCE.getVariables_Targets();
-
-    /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.ListePredictiveVarImpl <em>Liste Predictive Var</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.ListePredictiveVarImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getListePredictiveVar()
-     * @generated
-     */
-    EClass LISTE_PREDICTIVE_VAR = eINSTANCE.getListePredictiveVar();
-
-    /**
-     * The meta object literal for the '<em><b>Pred Var</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LISTE_PREDICTIVE_VAR__PRED_VAR = eINSTANCE.getListePredictiveVar_PredVar();
-
-    /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.TargetVarImpl <em>Target Var</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.TargetVarImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getTargetVar()
-     * @generated
-     */
-    EClass TARGET_VAR = eINSTANCE.getTargetVar();
-
-    /**
-     * The meta object literal for the '<em><b>Target Var</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TARGET_VAR__TARGET_VAR = eINSTANCE.getTargetVar_TargetVar();
+    EAttribute ALGO__ALGO = eINSTANCE.getAlgo_Algo();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.CalculateImpl <em>Calculate</em>}' class.
@@ -1232,22 +1278,22 @@ public interface MLRegressionPackage extends EPackage
     EAttribute CALCULATE__CALCULATE_TYPE = eINSTANCE.getCalculate_CalculateType();
 
     /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.AlgoImpl <em>Algo</em>}' class.
+     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.LoopImpl <em>Loop</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.AlgoImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getAlgo()
+     * @see m2.idm.project.mLRegression.impl.LoopImpl
+     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getLoop()
      * @generated
      */
-    EClass ALGO = eINSTANCE.getAlgo();
+    EClass LOOP = eINSTANCE.getLoop();
 
     /**
-     * The meta object literal for the '<em><b>Algo</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>I</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ALGO__ALGO = eINSTANCE.getAlgo_Algo();
+    EAttribute LOOP__I = eINSTANCE.getLoop_I();
 
     /**
      * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.NumericValueImpl <em>Numeric Value</em>}' class.
@@ -1302,24 +1348,6 @@ public interface MLRegressionPackage extends EPackage
      * @generated
      */
     EReference PERCENT__FLOAT = eINSTANCE.getPERCENT_Float();
-
-    /**
-     * The meta object literal for the '{@link m2.idm.project.mLRegression.impl.BooleanValueImpl <em>Boolean Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see m2.idm.project.mLRegression.impl.BooleanValueImpl
-     * @see m2.idm.project.mLRegression.impl.MLRegressionPackageImpl#getBooleanValue()
-     * @generated
-     */
-    EClass BOOLEAN_VALUE = eINSTANCE.getBooleanValue();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BOOLEAN_VALUE__VALUE = eINSTANCE.getBooleanValue_Value();
 
   }
 

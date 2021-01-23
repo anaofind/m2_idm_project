@@ -3,57 +3,50 @@
  */
 package m2.idm.project.mLRegression.impl;
 
-import m2.idm.project.mLRegression.BooleanValue;
-import m2.idm.project.mLRegression.MLRegressionPackage;
+import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
+import m2.idm.project.mLRegression.MLRegressionPackage;
+import m2.idm.project.mLRegression.PredictiveVars;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Boolean Value</b></em>'.
+ * An implementation of the model object '<em><b>Predictive Vars</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.BooleanValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.PredictiveVarsImpl#getPredVar <em>Pred Var</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BooleanValueImpl extends MinimalEObjectImpl.Container implements BooleanValue
+public class PredictiveVarsImpl extends MinimalEObjectImpl.Container implements PredictiveVars
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getPredVar() <em>Pred Var</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getPredVar()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected EList<String> predVar;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BooleanValueImpl()
+  protected PredictiveVarsImpl()
   {
     super();
   }
@@ -66,7 +59,7 @@ public class BooleanValueImpl extends MinimalEObjectImpl.Container implements Bo
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.BOOLEAN_VALUE;
+    return MLRegressionPackage.Literals.PREDICTIVE_VARS;
   }
 
   /**
@@ -75,23 +68,13 @@ public class BooleanValueImpl extends MinimalEObjectImpl.Container implements Bo
    * @generated
    */
   @Override
-  public String getValue()
+  public EList<String> getPredVar()
   {
-    return value;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setValue(String newValue)
-  {
-    String oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.BOOLEAN_VALUE__VALUE, oldValue, value));
+    if (predVar == null)
+    {
+      predVar = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.PREDICTIVE_VARS__PRED_VAR);
+    }
+    return predVar;
   }
 
   /**
@@ -104,8 +87,8 @@ public class BooleanValueImpl extends MinimalEObjectImpl.Container implements Bo
   {
     switch (featureID)
     {
-      case MLRegressionPackage.BOOLEAN_VALUE__VALUE:
-        return getValue();
+      case MLRegressionPackage.PREDICTIVE_VARS__PRED_VAR:
+        return getPredVar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,13 +98,15 @@ public class BooleanValueImpl extends MinimalEObjectImpl.Container implements Bo
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MLRegressionPackage.BOOLEAN_VALUE__VALUE:
-        setValue((String)newValue);
+      case MLRegressionPackage.PREDICTIVE_VARS__PRED_VAR:
+        getPredVar().clear();
+        getPredVar().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +122,8 @@ public class BooleanValueImpl extends MinimalEObjectImpl.Container implements Bo
   {
     switch (featureID)
     {
-      case MLRegressionPackage.BOOLEAN_VALUE__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case MLRegressionPackage.PREDICTIVE_VARS__PRED_VAR:
+        getPredVar().clear();
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +139,8 @@ public class BooleanValueImpl extends MinimalEObjectImpl.Container implements Bo
   {
     switch (featureID)
     {
-      case MLRegressionPackage.BOOLEAN_VALUE__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case MLRegressionPackage.PREDICTIVE_VARS__PRED_VAR:
+        return predVar != null && !predVar.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +156,10 @@ public class BooleanValueImpl extends MinimalEObjectImpl.Container implements Bo
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (value: ");
-    result.append(value);
+    result.append(" (predVar: ");
+    result.append(predVar);
     result.append(')');
     return result.toString();
   }
 
-} //BooleanValueImpl
+} //PredictiveVarsImpl

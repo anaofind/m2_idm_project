@@ -7,6 +7,7 @@ import m2.idm.project.mLRegression.Algo;
 import m2.idm.project.mLRegression.Calculate;
 import m2.idm.project.mLRegression.Dataset;
 import m2.idm.project.mLRegression.EvaluationType;
+import m2.idm.project.mLRegression.Loop;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 import m2.idm.project.mLRegression.Variables;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getEvaluation <em>Evaluation</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getAlgo <em>Algo</em>}</li>
  *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getCalculate <em>Calculate</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.MLRegressionImpl#getLoop <em>Loop</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,6 +90,16 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
    * @ordered
    */
   protected Calculate calculate;
+
+  /**
+   * The cached value of the '{@link #getLoop() <em>Loop</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoop()
+   * @generated
+   * @ordered
+   */
+  protected Loop loop;
 
   /**
    * <!-- begin-user-doc -->
@@ -366,6 +378,56 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
    * @generated
    */
   @Override
+  public Loop getLoop()
+  {
+    return loop;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetLoop(Loop newLoop, NotificationChain msgs)
+  {
+    Loop oldLoop = loop;
+    loop = newLoop;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__LOOP, oldLoop, newLoop);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLoop(Loop newLoop)
+  {
+    if (newLoop != loop)
+    {
+      NotificationChain msgs = null;
+      if (loop != null)
+        msgs = ((InternalEObject)loop).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__LOOP, null, msgs);
+      if (newLoop != null)
+        msgs = ((InternalEObject)newLoop).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MLRegressionPackage.ML_REGRESSION__LOOP, null, msgs);
+      msgs = basicSetLoop(newLoop, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.ML_REGRESSION__LOOP, newLoop, newLoop));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -380,6 +442,8 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
         return basicSetAlgo(null, msgs);
       case MLRegressionPackage.ML_REGRESSION__CALCULATE:
         return basicSetCalculate(null, msgs);
+      case MLRegressionPackage.ML_REGRESSION__LOOP:
+        return basicSetLoop(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -404,6 +468,8 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
         return getAlgo();
       case MLRegressionPackage.ML_REGRESSION__CALCULATE:
         return getCalculate();
+      case MLRegressionPackage.ML_REGRESSION__LOOP:
+        return getLoop();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -432,6 +498,9 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
         return;
       case MLRegressionPackage.ML_REGRESSION__CALCULATE:
         setCalculate((Calculate)newValue);
+        return;
+      case MLRegressionPackage.ML_REGRESSION__LOOP:
+        setLoop((Loop)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -462,6 +531,9 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
       case MLRegressionPackage.ML_REGRESSION__CALCULATE:
         setCalculate((Calculate)null);
         return;
+      case MLRegressionPackage.ML_REGRESSION__LOOP:
+        setLoop((Loop)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -486,6 +558,8 @@ public class MLRegressionImpl extends MinimalEObjectImpl.Container implements ML
         return algo != null;
       case MLRegressionPackage.ML_REGRESSION__CALCULATE:
         return calculate != null;
+      case MLRegressionPackage.ML_REGRESSION__LOOP:
+        return loop != null;
     }
     return super.eIsSet(featureID);
   }

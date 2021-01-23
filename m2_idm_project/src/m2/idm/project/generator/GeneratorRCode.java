@@ -6,6 +6,7 @@ import m2.idm.project.mLRegression.Algo;
 import m2.idm.project.mLRegression.Calculate;
 import m2.idm.project.mLRegression.CrossValidation;
 import m2.idm.project.mLRegression.Dataset;
+import m2.idm.project.mLRegression.Loop;
 import m2.idm.project.mLRegression.Partition;
 import m2.idm.project.mLRegression.Variables;
 
@@ -71,6 +72,21 @@ public class GeneratorRCode extends GeneratorCodeImpl{
 
 		this.addLineCode(colsPredictiveCode);
 		this.addLineCode(colsTargetCode);
+	}
+
+	@Override
+	public void generateStartLoopCode(Loop loop) {
+		int i = 1;
+		if (loop != null) {
+			i = loop.getI();
+		}
+		String codeStartLoop = "for(i in 1:" + i + "){";
+		this.addLineCode(codeStartLoop);
+	}
+
+	@Override
+	public void generateEndLoopCode() {
+		this.addLineCode("}");
 	}
 
 	@Override

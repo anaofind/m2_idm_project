@@ -3,50 +3,57 @@
  */
 package m2.idm.project.mLRegression.impl;
 
-import java.util.Collection;
-
-import m2.idm.project.mLRegression.ListePredictiveVar;
+import m2.idm.project.mLRegression.Loop;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Liste Predictive Var</b></em>'.
+ * An implementation of the model object '<em><b>Loop</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.ListePredictiveVarImpl#getPredVar <em>Pred Var</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.LoopImpl#getI <em>I</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container implements ListePredictiveVar
+public class LoopImpl extends MinimalEObjectImpl.Container implements Loop
 {
   /**
-   * The cached value of the '{@link #getPredVar() <em>Pred Var</em>}' attribute list.
+   * The default value of the '{@link #getI() <em>I</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPredVar()
+   * @see #getI()
    * @generated
    * @ordered
    */
-  protected EList<String> predVar;
+  protected static final int I_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getI() <em>I</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getI()
+   * @generated
+   * @ordered
+   */
+  protected int i = I_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ListePredictiveVarImpl()
+  protected LoopImpl()
   {
     super();
   }
@@ -59,7 +66,7 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.LISTE_PREDICTIVE_VAR;
+    return MLRegressionPackage.Literals.LOOP;
   }
 
   /**
@@ -68,13 +75,23 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public EList<String> getPredVar()
+  public int getI()
   {
-    if (predVar == null)
-    {
-      predVar = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR);
-    }
-    return predVar;
+    return i;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setI(int newI)
+  {
+    int oldI = i;
+    i = newI;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MLRegressionPackage.LOOP__I, oldI, i));
   }
 
   /**
@@ -87,8 +104,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
-        return getPredVar();
+      case MLRegressionPackage.LOOP__I:
+        return getI();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -98,15 +115,13 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
-        getPredVar().clear();
-        getPredVar().addAll((Collection<? extends String>)newValue);
+      case MLRegressionPackage.LOOP__I:
+        setI((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,8 +137,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
-        getPredVar().clear();
+      case MLRegressionPackage.LOOP__I:
+        setI(I_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -139,8 +154,8 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR__PRED_VAR:
-        return predVar != null && !predVar.isEmpty();
+      case MLRegressionPackage.LOOP__I:
+        return i != I_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -156,10 +171,10 @@ public class ListePredictiveVarImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (predVar: ");
-    result.append(predVar);
+    result.append(" (i: ");
+    result.append(i);
     result.append(')');
     return result.toString();
   }
 
-} //ListePredictiveVarImpl
+} //LoopImpl

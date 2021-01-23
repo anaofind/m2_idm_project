@@ -101,6 +101,27 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MLRegressionPackage.VARIABLES:
+      {
+        Variables variables = (Variables)theEObject;
+        T result = caseVariables(variables);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MLRegressionPackage.PREDICTIVE_VARS:
+      {
+        PredictiveVars predictiveVars = (PredictiveVars)theEObject;
+        T result = casePredictiveVars(predictiveVars);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MLRegressionPackage.TARGET_VARS:
+      {
+        TargetVars targetVars = (TargetVars)theEObject;
+        T result = caseTargetVars(targetVars);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MLRegressionPackage.EVALUATION_TYPE:
       {
         EvaluationType evaluationType = (EvaluationType)theEObject;
@@ -124,24 +145,10 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.VARIABLES:
+      case MLRegressionPackage.ALGO:
       {
-        Variables variables = (Variables)theEObject;
-        T result = caseVariables(variables);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR:
-      {
-        ListePredictiveVar listePredictiveVar = (ListePredictiveVar)theEObject;
-        T result = caseListePredictiveVar(listePredictiveVar);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MLRegressionPackage.TARGET_VAR:
-      {
-        TargetVar targetVar = (TargetVar)theEObject;
-        T result = caseTargetVar(targetVar);
+        Algo algo = (Algo)theEObject;
+        T result = caseAlgo(algo);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -152,10 +159,10 @@ public class MLRegressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MLRegressionPackage.ALGO:
+      case MLRegressionPackage.LOOP:
       {
-        Algo algo = (Algo)theEObject;
-        T result = caseAlgo(algo);
+        Loop loop = (Loop)theEObject;
+        T result = caseLoop(loop);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -179,13 +186,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
         PERCENT percent = (PERCENT)theEObject;
         T result = casePERCENT(percent);
         if (result == null) result = caseNumericValue(percent);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MLRegressionPackage.BOOLEAN_VALUE:
-      {
-        BooleanValue booleanValue = (BooleanValue)theEObject;
-        T result = caseBooleanValue(booleanValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -258,6 +258,54 @@ public class MLRegressionSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Variables</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variables</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariables(Variables object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Predictive Vars</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Predictive Vars</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePredictiveVars(PredictiveVars object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Target Vars</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Target Vars</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTargetVars(TargetVars object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Evaluation Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -306,49 +354,17 @@ public class MLRegressionSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variables</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Algo</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variables</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Algo</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariables(Variables object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Liste Predictive Var</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Liste Predictive Var</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseListePredictiveVar(ListePredictiveVar object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Target Var</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Target Var</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTargetVar(TargetVar object)
+  public T caseAlgo(Algo object)
   {
     return null;
   }
@@ -370,17 +386,17 @@ public class MLRegressionSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Algo</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Loop</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Algo</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Loop</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAlgo(Algo object)
+  public T caseLoop(Loop object)
   {
     return null;
   }
@@ -429,22 +445,6 @@ public class MLRegressionSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePERCENT(PERCENT object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBooleanValue(BooleanValue object)
   {
     return null;
   }

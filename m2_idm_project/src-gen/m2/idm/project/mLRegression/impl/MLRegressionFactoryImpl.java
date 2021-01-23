@@ -69,18 +69,18 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
       case MLRegressionPackage.LANGUAGE_TARGET: return createLanguageTarget();
       case MLRegressionPackage.ML_REGRESSION: return createMLRegression();
       case MLRegressionPackage.DATASET: return createDataset();
+      case MLRegressionPackage.VARIABLES: return createVariables();
+      case MLRegressionPackage.PREDICTIVE_VARS: return createPredictiveVars();
+      case MLRegressionPackage.TARGET_VARS: return createTargetVars();
       case MLRegressionPackage.EVALUATION_TYPE: return createEvaluationType();
       case MLRegressionPackage.PARTITION: return createPartition();
       case MLRegressionPackage.CROSS_VALIDATION: return createCrossValidation();
-      case MLRegressionPackage.VARIABLES: return createVariables();
-      case MLRegressionPackage.LISTE_PREDICTIVE_VAR: return createListePredictiveVar();
-      case MLRegressionPackage.TARGET_VAR: return createTargetVar();
-      case MLRegressionPackage.CALCULATE: return createCalculate();
       case MLRegressionPackage.ALGO: return createAlgo();
+      case MLRegressionPackage.CALCULATE: return createCalculate();
+      case MLRegressionPackage.LOOP: return createLoop();
       case MLRegressionPackage.NUMERIC_VALUE: return createNumericValue();
       case MLRegressionPackage.FLOAT: return createFLOAT();
       case MLRegressionPackage.PERCENT: return createPERCENT();
-      case MLRegressionPackage.BOOLEAN_VALUE: return createBooleanValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -140,6 +140,42 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
+  public Variables createVariables()
+  {
+    VariablesImpl variables = new VariablesImpl();
+    return variables;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PredictiveVars createPredictiveVars()
+  {
+    PredictiveVarsImpl predictiveVars = new PredictiveVarsImpl();
+    return predictiveVars;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TargetVars createTargetVars()
+  {
+    TargetVarsImpl targetVars = new TargetVarsImpl();
+    return targetVars;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EvaluationType createEvaluationType()
   {
     EvaluationTypeImpl evaluationType = new EvaluationTypeImpl();
@@ -176,34 +212,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public Variables createVariables()
+  public Algo createAlgo()
   {
-    VariablesImpl variables = new VariablesImpl();
-    return variables;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ListePredictiveVar createListePredictiveVar()
-  {
-    ListePredictiveVarImpl listePredictiveVar = new ListePredictiveVarImpl();
-    return listePredictiveVar;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TargetVar createTargetVar()
-  {
-    TargetVarImpl targetVar = new TargetVarImpl();
-    return targetVar;
+    AlgoImpl algo = new AlgoImpl();
+    return algo;
   }
 
   /**
@@ -224,10 +236,10 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
    * @generated
    */
   @Override
-  public Algo createAlgo()
+  public Loop createLoop()
   {
-    AlgoImpl algo = new AlgoImpl();
-    return algo;
+    LoopImpl loop = new LoopImpl();
+    return loop;
   }
 
   /**
@@ -264,18 +276,6 @@ public class MLRegressionFactoryImpl extends EFactoryImpl implements MLRegressio
   {
     PERCENTImpl percent = new PERCENTImpl();
     return percent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public BooleanValue createBooleanValue()
-  {
-    BooleanValueImpl booleanValue = new BooleanValueImpl();
-    return booleanValue;
   }
 
   /**

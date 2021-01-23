@@ -6,19 +6,19 @@ package m2.idm.project.serializer;
 import com.google.inject.Inject;
 import java.util.Set;
 import m2.idm.project.mLRegression.Algo;
-import m2.idm.project.mLRegression.BooleanValue;
 import m2.idm.project.mLRegression.Calculate;
 import m2.idm.project.mLRegression.CrossValidation;
 import m2.idm.project.mLRegression.Dataset;
 import m2.idm.project.mLRegression.FLOAT;
 import m2.idm.project.mLRegression.LanguageTarget;
-import m2.idm.project.mLRegression.ListePredictiveVar;
+import m2.idm.project.mLRegression.Loop;
 import m2.idm.project.mLRegression.MLRegression;
 import m2.idm.project.mLRegression.MLRegressionPackage;
 import m2.idm.project.mLRegression.Model;
 import m2.idm.project.mLRegression.PERCENT;
 import m2.idm.project.mLRegression.Partition;
-import m2.idm.project.mLRegression.TargetVar;
+import m2.idm.project.mLRegression.PredictiveVars;
+import m2.idm.project.mLRegression.TargetVars;
 import m2.idm.project.mLRegression.Variables;
 import m2.idm.project.services.MLRegressionGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -48,9 +48,6 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MLRegressionPackage.ALGO:
 				sequence_Algo(context, (Algo) semanticObject); 
 				return; 
-			case MLRegressionPackage.BOOLEAN_VALUE:
-				sequence_BooleanValue(context, (BooleanValue) semanticObject); 
-				return; 
 			case MLRegressionPackage.CALCULATE:
 				sequence_Calculate(context, (Calculate) semanticObject); 
 				return; 
@@ -66,8 +63,8 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MLRegressionPackage.LANGUAGE_TARGET:
 				sequence_LanguageTarget(context, (LanguageTarget) semanticObject); 
 				return; 
-			case MLRegressionPackage.LISTE_PREDICTIVE_VAR:
-				sequence_ListePredictiveVar(context, (ListePredictiveVar) semanticObject); 
+			case MLRegressionPackage.LOOP:
+				sequence_Loop(context, (Loop) semanticObject); 
 				return; 
 			case MLRegressionPackage.ML_REGRESSION:
 				sequence_MLRegression(context, (MLRegression) semanticObject); 
@@ -81,8 +78,11 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MLRegressionPackage.PARTITION:
 				sequence_Partition(context, (Partition) semanticObject); 
 				return; 
-			case MLRegressionPackage.TARGET_VAR:
-				sequence_TargetVar(context, (TargetVar) semanticObject); 
+			case MLRegressionPackage.PREDICTIVE_VARS:
+				sequence_PredictiveVars(context, (PredictiveVars) semanticObject); 
+				return; 
+			case MLRegressionPackage.TARGET_VARS:
+				sequence_TargetVars(context, (TargetVars) semanticObject); 
 				return; 
 			case MLRegressionPackage.VARIABLES:
 				sequence_Variables(context, (Variables) semanticObject); 
@@ -107,18 +107,6 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAlgoAccess().getAlgoAlgoTypeParserRuleCall_2_0(), semanticObject.getAlgo());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     BooleanValue returns BooleanValue
-	 *
-	 * Constraint:
-	 *     (value='false' | value='true')
-	 */
-	protected void sequence_BooleanValue(ISerializationContext context, BooleanValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -198,13 +186,19 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     ListePredictiveVar returns ListePredictiveVar
+	 *     Loop returns Loop
 	 *
 	 * Constraint:
-	 *     (predVar+=STRING predVar+=STRING*)
+	 *     i=INT
 	 */
-	protected void sequence_ListePredictiveVar(ISerializationContext context, ListePredictiveVar semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Loop(ISerializationContext context, Loop semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MLRegressionPackage.Literals.LOOP__I) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.LOOP__I));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLoopAccess().getIINTTerminalRuleCall_2_0(), semanticObject.getI());
+		feeder.finish();
 	}
 	
 	
@@ -213,7 +207,14 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     MLRegression returns MLRegression
 	 *
 	 * Constraint:
-	 *     (dataset=Dataset vars=Variables? evaluation=EvaluationType algo=Algo calculate=Calculate)
+	 *     (
+	 *         dataset=Dataset 
+	 *         vars=Variables? 
+	 *         evaluation=EvaluationType 
+	 *         algo=Algo 
+	 *         calculate=Calculate 
+	 *         loop=Loop?
+	 *     )
 	 */
 	protected void sequence_MLRegression(ISerializationContext context, MLRegression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -272,12 +273,24 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     TargetVar returns TargetVar
+	 *     PredictiveVars returns PredictiveVars
+	 *
+	 * Constraint:
+	 *     (predVar+=STRING predVar+=STRING*)
+	 */
+	protected void sequence_PredictiveVars(ISerializationContext context, PredictiveVars semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TargetVars returns TargetVars
 	 *
 	 * Constraint:
 	 *     (targetVar+=STRING targetVar+=STRING*)
 	 */
-	protected void sequence_TargetVar(ISerializationContext context, TargetVar semanticObject) {
+	protected void sequence_TargetVars(ISerializationContext context, TargetVars semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -287,7 +300,7 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Variables returns Variables
 	 *
 	 * Constraint:
-	 *     (predictives=ListePredictiveVar targets=TargetVar)
+	 *     (predictives=PredictiveVars targets=TargetVars)
 	 */
 	protected void sequence_Variables(ISerializationContext context, Variables semanticObject) {
 		if (errorAcceptor != null) {
@@ -297,8 +310,8 @@ public class MLRegressionSemanticSequencer extends AbstractDelegatingSemanticSeq
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MLRegressionPackage.Literals.VARIABLES__TARGETS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariablesAccess().getPredictivesListePredictiveVarParserRuleCall_0_0(), semanticObject.getPredictives());
-		feeder.accept(grammarAccess.getVariablesAccess().getTargetsTargetVarParserRuleCall_1_0(), semanticObject.getTargets());
+		feeder.accept(grammarAccess.getVariablesAccess().getPredictivesPredictiveVarsParserRuleCall_0_0(), semanticObject.getPredictives());
+		feeder.accept(grammarAccess.getVariablesAccess().getTargetsTargetVarsParserRuleCall_1_0(), semanticObject.getTargets());
 		feeder.finish();
 	}
 	

@@ -6,7 +6,7 @@ package m2.idm.project.mLRegression.impl;
 import java.util.Collection;
 
 import m2.idm.project.mLRegression.MLRegressionPackage;
-import m2.idm.project.mLRegression.TargetVar;
+import m2.idm.project.mLRegression.TargetVars;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Target Var</b></em>'.
+ * An implementation of the model object '<em><b>Target Vars</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link m2.idm.project.mLRegression.impl.TargetVarImpl#getTargetVar <em>Target Var</em>}</li>
+ *   <li>{@link m2.idm.project.mLRegression.impl.TargetVarsImpl#getTargetVar <em>Target Var</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TargetVarImpl extends MinimalEObjectImpl.Container implements TargetVar
+public class TargetVarsImpl extends MinimalEObjectImpl.Container implements TargetVars
 {
   /**
    * The cached value of the '{@link #getTargetVar() <em>Target Var</em>}' attribute list.
@@ -46,7 +46,7 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TargetVarImpl()
+  protected TargetVarsImpl()
   {
     super();
   }
@@ -59,7 +59,7 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   @Override
   protected EClass eStaticClass()
   {
-    return MLRegressionPackage.Literals.TARGET_VAR;
+    return MLRegressionPackage.Literals.TARGET_VARS;
   }
 
   /**
@@ -72,7 +72,7 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     if (targetVar == null)
     {
-      targetVar = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.TARGET_VAR__TARGET_VAR);
+      targetVar = new EDataTypeEList<String>(String.class, this, MLRegressionPackage.TARGET_VARS__TARGET_VAR);
     }
     return targetVar;
   }
@@ -87,7 +87,7 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__TARGET_VAR:
+      case MLRegressionPackage.TARGET_VARS__TARGET_VAR:
         return getTargetVar();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -104,7 +104,7 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__TARGET_VAR:
+      case MLRegressionPackage.TARGET_VARS__TARGET_VAR:
         getTargetVar().clear();
         getTargetVar().addAll((Collection<? extends String>)newValue);
         return;
@@ -122,7 +122,7 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__TARGET_VAR:
+      case MLRegressionPackage.TARGET_VARS__TARGET_VAR:
         getTargetVar().clear();
         return;
     }
@@ -139,7 +139,7 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
   {
     switch (featureID)
     {
-      case MLRegressionPackage.TARGET_VAR__TARGET_VAR:
+      case MLRegressionPackage.TARGET_VARS__TARGET_VAR:
         return targetVar != null && !targetVar.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -162,4 +162,4 @@ public class TargetVarImpl extends MinimalEObjectImpl.Container implements Targe
     return result.toString();
   }
 
-} //TargetVarImpl
+} //TargetVarsImpl

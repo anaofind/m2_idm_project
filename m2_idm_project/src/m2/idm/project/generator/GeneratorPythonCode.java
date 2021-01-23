@@ -12,7 +12,7 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 	public String getExtension() {
 		return "py";
 	}
-	
+
 	@Override
 	public void generateDatasetCode(Dataset ds) {
 		String importPart = "import pandas as pd";
@@ -68,6 +68,20 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 		
 		this.addLineCode(codeTarget);
 		this.addLineCode(codePred);
+	}
+	
+	@Override
+	public void generateStartLoopCode(Loop loop) {
+		int i = 1;
+		if (loop != null) {
+			i = loop.getI();
+		}
+		String codeStartLoop = "for i in range(" + i + "):";
+		this.addLineCode(codeStartLoop);
+	}
+
+	@Override
+	public void generateEndLoopCode() {
 	}
 	
 	@Override
