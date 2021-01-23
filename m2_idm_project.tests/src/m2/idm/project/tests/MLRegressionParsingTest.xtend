@@ -30,7 +30,7 @@ class MLRegressionParsingTest {
 	cross_validation : 5;
 	algorithm : line_regress;
 	calculate : mean_squared_error;
-	Loop : 10;
+	loop : 10;
 	'''
 	
 	val code2 = '''
@@ -41,7 +41,7 @@ class MLRegressionParsingTest {
 	cross_validation : 5;
 	algorithm : line_regress;
 	calculate : mean_squared_error;
-	Loop : 10;
+	loop : 10;
 	'''
 	
 	@Test
