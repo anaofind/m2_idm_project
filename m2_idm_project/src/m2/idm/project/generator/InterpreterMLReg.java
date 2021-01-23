@@ -4,9 +4,7 @@ import java.io.*;
 import com.google.common.io.Files;
 
 import m2.idm.project.Command;
-import m2.idm.project.mLRegression.LanguageTarget;
-import m2.idm.project.mLRegression.MLRegression;
-import m2.idm.project.mLRegression.Model;
+import m2.idm.project.mLRegression.*;
 
 public class InterpreterMLReg{
 		
@@ -18,6 +16,7 @@ public class InterpreterMLReg{
 		if (model == null) {
 			throw new Exception("model must not null");
 		}
+		System.out.println("\n" + getInfo(model) + "\n");
 		LanguageTarget languageTarget = model.getLanguageTarget();
 		MLRegression mlRegression = model.getMl();
 
@@ -82,5 +81,31 @@ public class InterpreterMLReg{
 			return Command.getR();
 		default : return null;
 		}
+	}
+	
+	private static String getInfo(Model model) {
+		LanguageTarget language = model.getLanguageTarget();
+		Loop loop = model.getMl().getLoop();
+		Dataset datas = model.getMl().getDataset();
+		EvaluationType eval = model.getMl().getEvaluation();
+		Algo algo = model.getMl().getAlgo();
+		Calculate calculate = model.getMl().getCalculate();
+		
+		String info = "MLRegression {";
+		info += "\n\tlanguage_target : " + language.getLanguage().toLowerCase();
+		if (loop != null) {
+			info += "\n\tloop : " + loop.getI();	
+		}
+		info += "\n\tdataset : " + datas.getDataPath();
+		if (eval instanceof Partition) {
+			info += "\n\tevaluation : partition";	
+		} else {
+			info += "\n\tevaluation : cross_validation";
+		}
+		info += "\n\talgo : " + algo.getAlgo();
+		info += "\n\tcalculate : " + calculate.getCalculateType();
+		info += "\n}";
+		
+		return info;
 	}
 }
