@@ -612,12 +612,13 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cIAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cIINTTerminalRuleCall_2_0 = (RuleCall)cIAssignment_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Loop:
-		//	'Loop' ':' i=INT;
+		//	'Loop' ':' i=INT ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Loop' ':' i=INT
+		//'Loop' ':' i=INT ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'Loop'
@@ -631,6 +632,9 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		
 		//INT
 		public RuleCall getIINTTerminalRuleCall_2_0() { return cIINTTerminalRuleCall_2_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	public class NumericValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "m2.idm.project.MLRegression.NumericValue");
@@ -1028,7 +1032,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//Loop:
-	//	'Loop' ':' i=INT;
+	//	'Loop' ':' i=INT ';';
 	public LoopElements getLoopAccess() {
 		return pLoop;
 	}

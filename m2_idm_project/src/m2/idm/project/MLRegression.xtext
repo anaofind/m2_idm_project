@@ -101,7 +101,7 @@ MedianAbsoluteError :
 ;
 
 Loop:
-	'Loop' ':' i=INT
+	'Loop' ':' i=INT ';'
 ;
 
 NumericValue:

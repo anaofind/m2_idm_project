@@ -7,6 +7,7 @@ import m2.idm.project.mLRegression.*;
 public class GeneratorPythonCode extends GeneratorCodeImpl{
 	
 	private String varPred = "preds", varTarget = "targs", varTrainPred = "pred_train", varTestPred = "pred_test", varTrainTarget = "target_train", varTestTarget = "target_test";
+	private String varScore = "score";
 	
 	@Override
 	public String getExtension() {
@@ -120,10 +121,18 @@ public class GeneratorPythonCode extends GeneratorCodeImpl{
 		int k = crossValidation.getK();
 		String importSvmCode = "from sklearn import svm";
 		String importCrossValidate = "from sklearn.model_selection import cross_val_score";
+		String importKFold = "from sklearn.model_selection import KFold";
+		String importRandom = "import random";
 		this.addImportCode(importCrossValidate);
 		this.addImportCode(importSvmCode);
-		String codeScore = this.varRes + "=cross_val_score(" + this.varAlgo + "," + this.varPred + "," + this.varTarget + ",scoring=\"" + calculateType + "\",cv=" + k + ")";
+		this.addImportCode(importKFold);
+		this.addImportCode(importRandom);
+		String codeKFold = "cv=KFold(n_splits=" + k +",random_state=random.randint(1,100), shuffle=True)";
+		String codeScore = this.varScore + "=cross_val_score(" + this.varAlgo + "," + this.varPred + "," + this.varTarget + ",scoring=\"" + calculateType + "\",cv=cv)";
+		String codeRes = this.varRes + "=abs(sum(" + this.varScore + ")" + "/len(" + this.varScore + "))";  
+		this.addLineCode(codeKFold);
 		this.addLineCode(codeScore);
+		this.addLineCode(codeRes);
 	}
 
 	@Override
