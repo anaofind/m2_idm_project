@@ -32,7 +32,6 @@ public class InterpreterMLReg{
 		String command = this.getCommand(languageTarget);
 		
 		Process p;
-		System.out.println(pathSource);
 		if (pathSource != null) {
 			p = Runtime.getRuntime().exec(command + " " + fileOutput, null, new File(pathSource));	
 		} else {
