@@ -1,7 +1,8 @@
 package m2.idm.project.generator;
 
 import java.io.*;
-import com.google.common.io.Files;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import m2.idm.project.Command;
 import m2.idm.project.mLRegression.*;
@@ -25,11 +26,13 @@ public class InterpreterMLReg{
 		String code = generatorCode.generate(mlRegression);
 		
 		String fileOutput = "mlreg." + generatorCode.getExtension() ;
-		Files.write(code.getBytes(), new File(fileOutput));
+		
+		Files.write(Path.of(pathSource, fileOutput), code.getBytes());
 		
 		String command = this.getCommand(languageTarget);
 		
 		Process p;
+		System.out.println(pathSource);
 		if (pathSource != null) {
 			p = Runtime.getRuntime().exec(command + " " + fileOutput, null, new File(pathSource));	
 		} else {

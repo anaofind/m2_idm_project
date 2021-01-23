@@ -23,14 +23,14 @@ class MLRegressionParsingTest {
 	
 	
 	val code1 = '''
-	target_language : python;
-	import "soccer.csv";
-	predictive_vars : "odds_ft_draw", "odds_ft_away_team_win";
-	target_vars : "odds_ft_home_team_win";
-	cross_validation : 5;
-	algorithm : line_regress;
-	calculate : mean_squared_error;
-	loop : 10;
+target_language : python;
+import : "soccer.csv";
+predictive_vars : "odds_ft_draw","odds_ft_away_team_win";
+target_vars : "odds_ft_home_team_win";
+cross_validation : 5;
+algorithm : svr;
+calculate : median_absolute_error;
+loop : 10;
 	'''
 	
 	val code2 = '''
