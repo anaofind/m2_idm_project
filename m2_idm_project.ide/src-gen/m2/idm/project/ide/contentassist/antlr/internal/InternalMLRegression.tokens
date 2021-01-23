@@ -3,7 +3,6 @@
 '.'=34
 ':'=23
 ';'=24
-'Loop'=33
 'PYTHON'=19
 'Python'=18
 'R'=21
@@ -13,6 +12,7 @@
 'decision_tree_regressor'=12
 'import'=25
 'line_regress'=11
+'loop'=33
 'mean_absolute_error'=14
 'mean_squared_error'=15
 'median_absolute_error'=16

@@ -615,13 +615,13 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Loop:
-		//	'Loop' ':' i=INT ';';
+		//	'loop' ':' i=INT ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Loop' ':' i=INT ';'
+		//'loop' ':' i=INT ';'
 		public Group getGroup() { return cGroup; }
 		
-		//'Loop'
+		//'loop'
 		public Keyword getLoopKeyword_0() { return cLoopKeyword_0; }
 		
 		//':'
@@ -1032,7 +1032,7 @@ public class MLRegressionGrammarAccess extends AbstractElementFinder.AbstractGra
 	}
 	
 	//Loop:
-	//	'Loop' ':' i=INT ';';
+	//	'loop' ':' i=INT ';';
 	public LoopElements getLoopAccess() {
 		return pLoop;
 	}

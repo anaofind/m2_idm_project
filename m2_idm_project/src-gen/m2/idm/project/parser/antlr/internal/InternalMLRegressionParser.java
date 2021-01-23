@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'target_language'", "':'", "';'", "'python'", "'Python'", "'PYTHON'", "'r'", "'R'", "'import'", "'predictive_vars'", "','", "'target_vars'", "'partition'", "'cross_validation'", "'algorithm'", "'line_regress'", "'decision_tree_regressor'", "'svr'", "'calculate'", "'mean_absolute_error'", "'mean_squared_error'", "'median_absolute_error'", "'Loop'", "'.'", "'%'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'target_language'", "':'", "';'", "'python'", "'Python'", "'PYTHON'", "'r'", "'R'", "'import'", "'predictive_vars'", "','", "'target_vars'", "'partition'", "'cross_validation'", "'algorithm'", "'line_regress'", "'decision_tree_regressor'", "'svr'", "'calculate'", "'mean_absolute_error'", "'mean_squared_error'", "'median_absolute_error'", "'loop'", "'.'", "'%'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -3008,7 +3008,7 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLoop"
-    // InternalMLRegression.g:1130:1: ruleLoop returns [EObject current=null] : (otherlv_0= 'Loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';' ) ;
+    // InternalMLRegression.g:1130:1: ruleLoop returns [EObject current=null] : (otherlv_0= 'loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';' ) ;
     public final EObject ruleLoop() throws RecognitionException {
         EObject current = null;
 
@@ -3021,11 +3021,11 @@ public class InternalMLRegressionParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMLRegression.g:1136:2: ( (otherlv_0= 'Loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';' ) )
-            // InternalMLRegression.g:1137:2: (otherlv_0= 'Loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';' )
+            // InternalMLRegression.g:1136:2: ( (otherlv_0= 'loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';' ) )
+            // InternalMLRegression.g:1137:2: (otherlv_0= 'loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';' )
             {
-            // InternalMLRegression.g:1137:2: (otherlv_0= 'Loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';' )
-            // InternalMLRegression.g:1138:3: otherlv_0= 'Loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';'
+            // InternalMLRegression.g:1137:2: (otherlv_0= 'loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';' )
+            // InternalMLRegression.g:1138:3: otherlv_0= 'loop' otherlv_1= ':' ( (lv_i_2_0= RULE_INT ) ) otherlv_3= ';'
             {
             otherlv_0=(Token)match(input,33,FOLLOW_4); 
 

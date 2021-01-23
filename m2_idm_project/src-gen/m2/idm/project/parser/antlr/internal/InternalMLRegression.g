@@ -1135,7 +1135,7 @@ ruleLoop returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Loop'
+		otherlv_0='loop'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getLoopAccess().getLoopKeyword_0());
 		}

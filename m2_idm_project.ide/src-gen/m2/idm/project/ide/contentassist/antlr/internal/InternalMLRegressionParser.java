@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMLRegressionParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'line_regress'", "'decision_tree_regressor'", "'svr'", "'mean_absolute_error'", "'mean_squared_error'", "'median_absolute_error'", "'python'", "'Python'", "'PYTHON'", "'r'", "'R'", "'target_language'", "':'", "';'", "'import'", "'predictive_vars'", "','", "'target_vars'", "'partition'", "'cross_validation'", "'algorithm'", "'calculate'", "'Loop'", "'.'", "'%'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'line_regress'", "'decision_tree_regressor'", "'svr'", "'mean_absolute_error'", "'mean_squared_error'", "'median_absolute_error'", "'python'", "'Python'", "'PYTHON'", "'r'", "'R'", "'target_language'", "':'", "';'", "'import'", "'predictive_vars'", "','", "'target_vars'", "'partition'", "'cross_validation'", "'algorithm'", "'calculate'", "'loop'", "'.'", "'%'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -6579,17 +6579,17 @@ public class InternalMLRegressionParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Loop__Group__0__Impl"
-    // InternalMLRegression.g:2175:1: rule__Loop__Group__0__Impl : ( 'Loop' ) ;
+    // InternalMLRegression.g:2175:1: rule__Loop__Group__0__Impl : ( 'loop' ) ;
     public final void rule__Loop__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMLRegression.g:2179:1: ( ( 'Loop' ) )
-            // InternalMLRegression.g:2180:1: ( 'Loop' )
+            // InternalMLRegression.g:2179:1: ( ( 'loop' ) )
+            // InternalMLRegression.g:2180:1: ( 'loop' )
             {
-            // InternalMLRegression.g:2180:1: ( 'Loop' )
-            // InternalMLRegression.g:2181:2: 'Loop'
+            // InternalMLRegression.g:2180:1: ( 'loop' )
+            // InternalMLRegression.g:2181:2: 'loop'
             {
              before(grammarAccess.getLoopAccess().getLoopKeyword_0()); 
             match(input,33,FOLLOW_2); 

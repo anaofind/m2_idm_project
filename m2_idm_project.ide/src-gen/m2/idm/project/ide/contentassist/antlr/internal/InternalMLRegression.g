@@ -2179,7 +2179,7 @@ rule__Loop__Group__0__Impl
 :
 (
 	{ before(grammarAccess.getLoopAccess().getLoopKeyword_0()); }
-	'Loop'
+	'loop'
 	{ after(grammarAccess.getLoopAccess().getLoopKeyword_0()); }
 )
 ;
