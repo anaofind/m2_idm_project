@@ -1,0 +1,23 @@
+#Dockerfile R
+
+FROM ubuntu:20.10
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+WORKDIR /home/py_user
+
+COPY mlreg.jar WORKDIR/
+
+RUN apt-get update
+RUN apt-get install -y r-base
+
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk && \
+    apt-get install -y vim && \
+    Rscript -e "install.packages('kernlab')" && \
+    Rscript -e "install.packages('rsample')" && \
+    Rscript -e "install.packages('caret')" && \
+    Rscript -e "install.packages('rpart')" && \
+    Rscript -e "install.packages('e1071')" && \
+    Rscript -e "install.packages('gencve')" && \
+    Rscript -e "install.packages('MLmetrics')
