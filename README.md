@@ -93,13 +93,7 @@ Dans le répertoire docker :
 	
 - Une fois lancé, il faut copier le repertoire datas contenant le dataset puis copier également dans le benchmark dans ```home/py_user/WORKDIR``` ;
 		
-- Copier enfin le fichier lanceur_py.sh permettant de lancer tous les programmes de test écrits (qui utilisent le même dataset) ;
-	
--  Rendre le ```lanceur_py.sh``` exécutable ```chmod ugo+x lanceur_py.sh``` ;
-	
-- Exécuter ```lanceur_py.sh``` ;
-	
-- Les résultats sont sauvés dans le dossier resultat_py (resp resultat_r pour le R) ;
+- insérer les fichiers de tests dans le répertoire ```home/py_user/WORKDIR```
 
 - Reprendre les mêmes étapes pour le R depuis le build de l’image correspondante
 
