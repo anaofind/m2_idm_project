@@ -9,6 +9,10 @@ import m2.idm.project.mLRegression.*;
 
 public class InterpreterMLReg{
 		
+	public void compileAndRun(Model model) throws Exception {
+		this.compileAndRun(null, model, System.out);
+	}
+	
 	public void compileAndRun(Model model, PrintStream printer) throws Exception {
 		this.compileAndRun(null, model, printer);
 	}
@@ -58,6 +62,8 @@ public class InterpreterMLReg{
 		while ((err = stdError.readLine()) != null) {
 			printer.println(err);
 		}
+		
+		printer.println("\n" + p.info());
 	}
 
 	private GeneratorCode createGeneratorCode(LanguageTarget languageTarget)  {
