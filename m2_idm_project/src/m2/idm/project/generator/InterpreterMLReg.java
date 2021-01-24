@@ -9,15 +9,18 @@ import m2.idm.project.mLRegression.*;
 
 public class InterpreterMLReg{
 		
-	public void compileAndRun(Model model) throws Exception {
-		this.compileAndRun(null, model);
+	public void compileAndRun(Model model, PrintStream printer) throws Exception {
+		this.compileAndRun(null, model, printer);
 	}
 	
-	public void compileAndRun(String pathSource, Model model) throws Exception{
+	public void compileAndRun(String pathSource, Model model, PrintStream printer) throws Exception{		
 		if (model == null) {
 			throw new Exception("model must not null");
 		}
-		System.out.println("\n" + getInfo(model) + "\n");
+		if (printer == null) {
+			throw new Exception("printer must not null");
+		}
+		printer.println(getInfo(model) + "\n");
 		LanguageTarget languageTarget = model.getLanguageTarget();
 		MLRegression mlRegression = model.getMl();
 
@@ -48,12 +51,12 @@ public class InterpreterMLReg{
 
 		String o;
 		while ((o = stdInput.readLine()) != null) {
-			System.out.println(o);
+			printer.println(o);
 		}
 
 		String err; 
 		while ((err = stdError.readLine()) != null) {
-			System.out.println(err);
+			printer.println(err);
 		}
 	}
 
