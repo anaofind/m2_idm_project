@@ -10,7 +10,7 @@
 
 ## Importation du projet dans Eclipse
 
-#### étapes
+### étapes
 
 - importer dans eclipse tout les sous projets un par un
     - ```m2_idm_project```
@@ -29,7 +29,7 @@
 
 ## Programme mlreg
 
-#### Structure
+### Structure
 
 - **le choix du langage** (optionel) *[Python par défaut]*
     - python
@@ -50,7 +50,7 @@
     - mean_absolute_error
     - median_absolute_error
 
-#### Exemple
+### Exemple
 
 ```
 target_language : r;
@@ -68,7 +68,7 @@ loop : 10;
 
 ## Diagrammes
 
-#### Méta modèle
+### Méta modèle
 
 ![plot](meta_model.png)
 
@@ -83,12 +83,12 @@ loop : 10;
 ## Faire des tests avec docker
 
 
-#### Description
+### Description
 Dans le répertoire docker : 
 - Deux fichiers DockerFile : ```DockerFileP``` pour python et ```DockerFileR``` pour R
 - Un fichier jar pour l'interpréteur ```mlreg.jar```
 
-#### Lancement
+### Lancement
 - Builder les dockerfiles (les dockerfile respectifs copient le fichier mlreg.jar au sein du repertoire ```home/py_user/WORKDIR```) ;
 	
 - Une fois lancé, il faut copier le repertoire datas contenant le dataset puis copier également dans le benchmark dans ```home/py_user/WORKDIR``` ;
@@ -107,7 +107,7 @@ Dans le répertoire docker :
 - ```docker build -f DockerFileR -t mlreg_r:1.0``` .
 
 
-#### Lancer un programme
+### Lancer un programme
 
 - Utiliser l'interpréteur avec la commande ```java -jar mlreg.jar [chemin-fichier-mlreg] ([chemin-fichier-resultats])?```
 - Le deuxième argument sert à spécifier le fichier oû sera stocké les résultats.
