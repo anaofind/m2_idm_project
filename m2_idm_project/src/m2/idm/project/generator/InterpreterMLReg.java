@@ -8,15 +8,15 @@ import m2.idm.project.Command;
 import m2.idm.project.mLRegression.*;
 
 public class InterpreterMLReg{
-		
+
 	public void compileAndRun(Model model) throws Exception {
 		this.compileAndRun(null, model, System.out);
 	}
-	
+
 	public void compileAndRun(Model model, PrintStream printer) throws Exception {
 		this.compileAndRun(null, model, printer);
 	}
-	
+
 	public void compileAndRun(String pathSource, Model model, PrintStream printer) throws Exception{		
 		if (model == null) {
 			throw new Exception("model must not null");
@@ -29,22 +29,28 @@ public class InterpreterMLReg{
 		MLRegression mlRegression = model.getMl();
 
 		GeneratorCode generatorCode = this.createGeneratorCode(languageTarget);
-		
+
 		String code = generatorCode.generate(mlRegression);
-		
+
 		String fileOutput = "mlreg." + generatorCode.getExtension() ;
-		
+
 		Files.write(Path.of(pathSource, fileOutput), code.getBytes());
-		
+
 		String command = this.getCommand(languageTarget);
-		
+
+
 		Process p;
+		long timeStart = System.currentTimeMillis();
 		if (pathSource != null) {
 			p = Runtime.getRuntime().exec(command + " " + fileOutput, null, new File(pathSource));	
 		} else {
 			p = Runtime.getRuntime().exec(command + " " + fileOutput);
 		}
 		
+		p.waitFor();
+		
+		long timeEnd = System.currentTimeMillis();
+
 		// output
 		BufferedReader stdInput = new BufferedReader(new 
 				InputStreamReader(p.getInputStream()));
@@ -62,8 +68,9 @@ public class InterpreterMLReg{
 		while ((err = stdError.readLine()) != null) {
 			printer.println(err);
 		}
-		
-		printer.println("\n" + p.info());
+
+
+		printer.println("\n[Execution time: " + (timeEnd-timeStart)*0.001 + "s]");
 	}
 
 	private GeneratorCode createGeneratorCode(LanguageTarget languageTarget)  {
@@ -93,7 +100,7 @@ public class InterpreterMLReg{
 		default : return null;
 		}
 	}
-	
+
 	private static String getInfo(Model model) {
 		LanguageTarget language = model.getLanguageTarget();
 		Loop loop = model.getMl().getLoop();
@@ -101,7 +108,7 @@ public class InterpreterMLReg{
 		EvaluationType eval = model.getMl().getEvaluation();
 		Algo algo = model.getMl().getAlgo();
 		Calculate calculate = model.getMl().getCalculate();
-		
+
 		String info = "MLRegression {";
 		info += "\n\tlanguage_target : " + language.getLanguage().toLowerCase();
 		if (loop != null) {
@@ -116,7 +123,8 @@ public class InterpreterMLReg{
 		info += "\n\talgo : " + algo.getAlgo();
 		info += "\n\tcalculate : " + calculate.getCalculateType();
 		info += "\n}";
-		
+
 		return info;
 	}
 }
+
