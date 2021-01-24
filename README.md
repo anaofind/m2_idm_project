@@ -89,16 +89,16 @@ Dans le répertoire docker :
 - Un fichier jar pour l'interpréteur ```mlreg.jar```
 
 ### Lancement
-- Builder les dockerfiles (les dockerfile respectifs copient le fichier mlreg.jar au sein du repertoire ```home/py_user/WORKDIR```) ;
+- Builder les dockerfiles (les dockerfile respectifs copient le fichier mlreg.jar au sein du repertoire ```home/py_user/WORKDIR```)
 	
-- Une fois lancé, il faut copier le repertoire datas contenant le dataset puis copier également dans le benchmark dans ```home/py_user/WORKDIR``` ;
+- Une fois lancé, il faut copier le repertoire datas contenant le dataset puis copier également dans le benchmark dans ```home/py_user/WORKDIR```
 		
 - insérer les fichiers de tests dans le répertoire ```home/py_user/WORKDIR```
 
 - Reprendre les mêmes étapes pour le R depuis le build de l’image correspondante
 
-- ```docker build -f DockerFileP -t mlreg_python:1.0``` .
-- ```docker build -f DockerFileR -t mlreg_r:1.0``` .
+- ```docker build -f DockerFileP -t mlreg_python:1.0```
+- ```docker build -f DockerFileR -t mlreg_r:1.0```
 
 
 ### Lancer un programme
